@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ __(' Detail Data Santri') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
         <div class="px-2 py-2 ">
@@ -22,22 +22,11 @@
             </a>
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx-3 font-semibold">
-                Detail Data Santri <a href="/santri"><button class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-                        </svg></button></a>
-            </div>
-        </div>
     </div>
-
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
         <div class=" w-full  py-2">
@@ -46,6 +35,14 @@
                     <div class="overflow-x-auto w-full">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
+                                <tr
+                                    class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800  border-b">
+                                    <th class=" px-4 py-3">
+                                        Detail Data Santri
+                                    </th>
+                                    <th class=" px-4 py-3">
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody class="bg-white divide-y">
                                 <tr class="text-gray-700">
@@ -91,7 +88,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

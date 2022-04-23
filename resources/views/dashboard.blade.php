@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ __('Dashboard') }}
     </x-slot>
-    <div class=" flex w-full gap-2">
+    <div class=" flex w-full gap-2 sm:col-span-2">
         <!-- str -->
         <div class="  w-1/4">
             <div class="inline-flex overflow-hidden mb-4 w-full bg-green-200 rounded-lg shadow-md">
@@ -83,14 +83,16 @@
             <div class="inline-flex overflow-hidden mb-4 w-full bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 bg-green-800">
                 </div>
-                <div class=" w-full  px-0 py-2">
+                <div class=" w-full  px-4 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
-                        <div class=" py-2 px-1">
+                        <div class="  py-2 px-1">
                             <span class="font-semibold text-green-800"> Total Asrama</span>
-                            <p class=" text-red-700  text-5xl">{{$asrama}}</p>
-                            <div class=" flex">
-                                <p class="  text-red-700">Putra {{ $aslk }}</p>
-                                <p class="  text-red-700">Putri {{ $aspr }}</p>
+                            <div class="  grid grid-cols-3  ">
+                                <small>Pa :{{$aslk}}</small>
+                                <small> Pi :{{$aspr}}</small>
+                            </div>
+                            <div class=" grid grid-cols-2">
+                                <p class=" text-red-700  text-5xl">{{$asrama}}</p>
                             </div>
                         </div>
                         <div class=" bg-green-800 rounded-md px-4 py-2 ">
@@ -105,7 +107,6 @@
             </div>
         </div>
         <!-- end -->
-        {{ $usia }}
     </div>
 
 </x-app-layout>

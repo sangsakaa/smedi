@@ -45,6 +45,11 @@
                 </div>
                 <input name="tgl_lahir" type="date" class=" border border-green-800 py-1 px-2 w-1/4  rounded-md"
                     placeholder=" Masuk tempat lahir " required>
+                <div class=" w-full flex">
+                    <label for="" class=" mr-2"> Tanggal Masuk </label>
+                </div>
+                <input name="tgl_masuk" type="date" class=" border border-green-800 py-1 px-2 w-1/4  rounded-md"
+                    placeholder=" Masuk tempat lahir " required>
                 <br>
                 <div class=" w-full flex">
                     <label for="" class=" mr-2"> Nomor Hp </label>

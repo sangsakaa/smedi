@@ -11,7 +11,6 @@
                 <div class=" w-full flex">
                     <label for="" class=" capitalize mr-2"> Nama Lengkap</label>
                 </div>
-
                 <input name="nama_ustadz" type="text" class=" py-1 px-2 w-1/4  rounded-md"
                     placeholder=" Masuk nama Lengkap " value="{{old('nama_ustadz')}}" required>
                 <div class=" w-full flex">

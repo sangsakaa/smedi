@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('no_hp')->nullable();
             $table->string('bank_id')->nullable();
             $table->string('no_rekening')->nullable();
+            $table->date('tgl_masuk')->nullable();
             $table->timestamps();
         });
     }

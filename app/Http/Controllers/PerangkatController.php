@@ -47,6 +47,7 @@ class PerangkatController extends Controller
             'no_hp'=>'',
             'bank_id'=>'',
             'no_rekening'=>'',
+            'tgl_masuk'=>'',
         ]);
         $ustadz = New Perangkat();
         $ustadz->nama_perangkat = $request->nama_perangkat;
@@ -57,6 +58,7 @@ class PerangkatController extends Controller
         $ustadz->no_hp = $request->no_hp;
         $ustadz->bank_id = $request->bank_id;
         $ustadz->no_rekening = $request->no_rekening;
+        $ustadz->tgl_masuk = $request->tgl_masuk;
         $ustadz->save();
         return redirect('perangkat')->with('succes','ok');
     }
@@ -81,7 +83,7 @@ class PerangkatController extends Controller
      */
     public function edit(Perangkat $perangkat)
     {
-        //
+        return view('admin/perangkat/editperangkat',['perangkat'=>$perangkat]);
     }
 
     /**

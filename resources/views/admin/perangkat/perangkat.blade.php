@@ -44,7 +44,8 @@
                                             <th class="px-4 py-3">Jenis Kelamin</th>
                                             <th class="px-4 py-3">Nomor Hp </th>
                                             <th class="px-4 py-3">Rekening </th>
-                                            <th class="px-4 py-3">Tahun Masuk</th>
+                                            <th class="px-4 py-3 text-center">Masa Khitmad</th>
+                                            <th class="px-4 py-3 text-center">Tahun Masuk</th>
                                             <th class="px-4 py-3">Aksi</th>
                                         </tr>
                                     </thead>
@@ -67,8 +68,11 @@
                                             <td class="px-4 py-2 text-sm ">
                                                 {{ $perang->no_rekening }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
-                                                {{ date_format(date_create($perang->tanggal_masuk),'Y') }}
+                                            <td class="px-4 py-2 text-sm text-center ">
+                                                {{ $perang->khitmad }} Tahun
+                                            </td>
+                                            <td class="px-4 py-2 text-sm  text-center ">
+                                                {{ date_format(date_create($perang->tgl_masuk),'Y') }}
                                             </td>
                                             <td class=" px-4 py-2 text-sm">
                                                 <div class=" flex">
