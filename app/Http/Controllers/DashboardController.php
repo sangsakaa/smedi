@@ -18,18 +18,16 @@ class DashboardController extends Controller
      */
     public function index(  )
     {
-        
-        $now = Carbon::now();
-        $tgl = Carbon::parse('14-01-2013');
-        $usia = $tgl->diffInYears($now);
-       
+    
+    $as =Asrama::where('type_asrama','putra')->get();
+    $asi =Asrama::where('type_asrama','putri')->get();
     $asrama =Asrama::count();
     $asramapr =Asrama::where('type_asrama','putri')->count();
     $asramalk =Asrama::where('type_asrama','putra')->count();
     $putra =Santri::count();
     $l = Santri::where('jenis_kelamin','L')->count();
     $p = Santri::where('jenis_kelamin','p')->count();
-    return view('/dashboard',['usia'=>$usia,'putra'=>$putra,'l'=>$l,'p'=>$p,'asrama'=>$asrama,'aspr'=>$asramapr,'aslk'=>$asramalk]); 
+    return view('/dashboard',['asi'=>$asi,'as'=>$as,'putra'=>$putra,'l'=>$l,'p'=>$p,'asrama'=>$asrama,'aspr'=>$asramapr,'aslk'=>$asramalk]); 
     }
 
     /**

@@ -52,7 +52,11 @@
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-2 text-sm ">
+                                                @if( $kelas !== null)
                                                 <a href="/kelas/{{$kelas->id}}">{{$kelas->nama_kelas}}</a>
+                                                @else
+
+                                                @endif
                                             </td>
 
                                         </tr>
