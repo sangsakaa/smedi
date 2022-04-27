@@ -28,7 +28,7 @@
                         @csrf
                         <input name="nama_asrama" type="text" class=" rounded-md py-1 px-4" placeholder=" nama_asrama ">
                         <input name="kuota_asrama" type="text" class=" rounded-md py-1 px-4"
-                            placeholder=" kuota_asrama ">
+                            placeholder="kuota_asrama ">
                         <select name="type_asrama" id="" class=" py-1 px-7 rounded-md">
                             <option value=""> Pilih Asrama </option>
                             <option value="Putra" @if (old('type_asrama')=="Putra" ) {{ 'selected' }} @endif>
