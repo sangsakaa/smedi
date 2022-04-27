@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ __('Dashboard Utama') }}
     </x-slot>
-    <div class=" grid w-full gap-2  md:grid-cols-4 sm:grid-cols-1 sm:text-sm">
+    <div class=" grid w-full gap-2  grid-cols-1 sm:grid-cols-4 sm:text-sm">
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
             <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
@@ -34,7 +34,7 @@
         </div>
         <!-- end -->
         <!-- str -->
-        <div class=" grid grid-cols-1 w-full">
+        <div class=" grid grid-cols-1 sm:grid-cols-1 w-full">
             <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 bg-purple-800">
                 </div>
