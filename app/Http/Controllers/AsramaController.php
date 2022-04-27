@@ -52,18 +52,9 @@ public function store(Request $request)
             'type_asrama'=>'required',
             'kuota_asrama'=>'required', 
         ]);
-        $asrama_akhir = asrama::orderBy('id', 'desc')->first();
-        if (is_null($asrama_akhir)) {
-            $kode_asrama = 'A' . '001';
-        } else {
-            $kode_akhir = $asrama_akhir->kode_asrama;
-            $nomor = (int) substr($kode_akhir, -3); // 2013002 -> 003
-            $nomor = $nomor + 1;
-            $kode_asrama = 'A' . str_pad($nomor, 3, '0', STR_PAD_LEFT); // 4 -> 004
-        }
         
+    
         $asrama = New Asrama;
-        $asrama->kode_asrama = $kode_asrama;
         $asrama->nama_asrama = $request->nama_asrama;
         $asrama->type_asrama = $request->type_asrama;
         $asrama->kuota_asrama = $request->kuota_asrama;

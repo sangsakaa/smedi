@@ -47,7 +47,6 @@
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3">Kode Asrama</th>
                                             <th class="px-4 py-3">Nama Asrama</th>
                                             <th class="px-4 py-3 text-center ">Type Asrama</th>
                                             <th class="px-4 py-3 text-center">Total Anggota</th>
@@ -62,9 +61,6 @@
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-2 text-sm ">
                                                 {{ $loop->iteration }}
-                                            </td>
-                                            <td class="px-4 py-2 text-sm ">
-                                                <a href="">{{ $as->kode_asrama}}</a>
                                             </td>
                                             <td class="px-4 py-2 text-sm uppercase ">
                                                 <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
