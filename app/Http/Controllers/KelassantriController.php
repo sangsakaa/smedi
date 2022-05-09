@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Asramasantri;
 use App\Models\Kelassantri;
 
@@ -16,12 +15,11 @@ class KelassantriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Asramasantri $asramasantri)
+    public function index()
 
     {
-        
-        // $kelas =Kelas::all();
-        // return view('admin/kelas/kelassantri',['kelas'=>$kelas]);
+        $kelassantri = Asramasantri::all();
+        return view('admin/kelas/listsantri',['list'=>$kelassantri]);
     }
 
     /**

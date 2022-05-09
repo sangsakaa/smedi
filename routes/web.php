@@ -100,4 +100,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
+    Route::resource('listsantri', KelassantriController::class)->only([
+    'index', 'edit','update','show','destroy','create','store'
+    ]);
 });
