@@ -95,18 +95,18 @@
                     <form action="/histori/{{$santri->id}}" method="post">
                         @csrf
                         <input name="santri_id" type="hidden" value="{{$santri->id}} " class=" px-2 py-1 rounded-md">
-                        <input type="hidden" name="pondok_id" value="1" class=" px-2 py-1 rounded-md"
-                            placeholder="nama_pondok">
+                        <input type="hidden" name="pondok_id" value="1"
+                            class=" border border-green-800 px-2 py-1 rounded-md" placeholder="nama_pondok">
                         @if($santri)
-                        <input name="nis" type="text" class=" py-1 px-2 w-1/5 rounded-md"
+                        <input name="nis" type="text" class="border border-green-800 py-1 px-2 w-1/5 rounded-md"
                             placeholder=" Nomor Induk Santri" value="{{ $santri->nis }}">
                         @else
                         <input name="nis" type="text" class=" py-1 px-2 w-1/5 rounded-md"
                             placeholder=" Nomor Induk Santri" value="">
                         @endif
-                        <input name="tanggal_masuk" type="date" class=" py-1 px-2 w-1/6 rounded-md">
-
-                        <select name="status_pendaftaran" class=" rounded-md py-1 w-1/4 px-2">
+                        <input name="tanggal_masuk" type="date"
+                            class="border border-green-800 py-1 px-2 w-1/6 rounded-md">
+                        <select name="status_pendaftaran" class="border border-green-800 rounded-md py-1 w-1/4 px-2">
                             <option value="">-Pilih Status-</option>
                             <option value="Santri Baru">Santri Baru</option>
                             <option value="Pindahan">Pindahan</option>
