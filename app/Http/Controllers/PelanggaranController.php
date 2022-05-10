@@ -17,11 +17,8 @@ class PelanggaranController extends Controller
      */
     public function index()
     {
-        $cari = Pelanggaran::latest();
-        if (request('cari')){
-            $cari->where('pelanggaran','like','%'.request('cari').'%');
-        }
-        return view('admin/pelanggaran/pelanggaran',['pelanggaran'=>$cari->get()]);
+        $pelanggaran = Pelanggaran::all();
+        return view('admin/pelanggaran/pelanggaran',['pelanggaran'=>$pelanggaran]);
     }
 
     /**
