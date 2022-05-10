@@ -4,7 +4,7 @@
     </x-slot>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex  justify-end items-center  w-1/4   px-2 py-2 bg-green-800">
-            <div class="  flex w-1/4 text-white font-semibold">
+            <div class="  flex  text-white font-semibold">
                 {{ $kelas->nama_kelas }}
             </div>
         </div>
