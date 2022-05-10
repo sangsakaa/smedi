@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('tanggal_masuk');
             $table->string('nama_ibu');
+            $table->string('asal_kota');
             $table->timestamps();
         });
     }
