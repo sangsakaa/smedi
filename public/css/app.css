@@ -551,6 +551,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .left-0 {
   left: 0px;
 }
+.bottom-1 {
+  bottom: 0.25rem;
+}
 .z-0 {
   z-index: 0;
 }
