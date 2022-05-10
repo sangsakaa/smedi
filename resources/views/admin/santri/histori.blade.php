@@ -19,69 +19,20 @@
     <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class=" w-full py-2">
-            <div class="mx-3  font-semibold">
-                <div class="overflow-hidden mb-2 rounded-lg border shadow-xs">
-                    <div class="overflow-x-auto ">
-                        <table class=" w-full  whitespace-no-wrap">
-                            <thead>
-                                <tr
-                                    class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                    <th class=" px-4 py-3">
-                                        Detail Data Santri
-                                    </th>
-                                    <th class=" px-4 py-3">
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y">
-                                <tr class="text-gray-700">
-                                    @if( $data !== null)
-                                    <td class="px-4 py-2 text-sm  ">
-                                        Nama Lengkap
-                                    </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $data->nama_santri}}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 text-sm">
-                                        Jenis Kelamin
-                                    </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $data->jenis_kelamin}}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 text-sm">
-                                        Agama
-                                    </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $data->agama}}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 text-sm">
-                                        Tempat Lahir , Tanggal Lahir
-                                    </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $data->tempat_lahir}} ,{{ $data->tanggal_lahir}}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 text-sm">
-                                        Nama Ibu
-                                    </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $data->nama_ibu}}
-                                    </td>
-                                </tr>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
 
-                </div>
+        <div class=" w-full">
+            <div class=" bg-green-50  border  px-4 py-2 grid grid-cols-1 sm:grid-cols-2">
+                <div>Nama Lengkap</div>
+                <div> : {{ $data->nama_santri}}</div>
+                <div>Jenis Kelamin</div>
+                <div> : {{ $data->jenis_kelamin}}</div>
+                <div> Agama</div>
+                <div> : {{ $data->agama}}</div>
+                <div>Tempat Lahir</div>
+                <div> : {{ $data->tempat_lahir}}, {{ $data->tanggal_lahir}}</div>
+                <div>Nama Ibu</div>
+                <div> : {{ $data->nama_ibu}}</div>
+
             </div>
         </div>
     </div>
@@ -89,36 +40,33 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div class=" w-full px-2 py-4 ">
+        <div class=" w-full  py-4 ">
             <div class="mx-3">
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/histori/{{$santri->id}}" method="post">
                         @csrf
-                        <input name="santri_id" type="hidden" value="{{$santri->id}} " class=" px-2 py-1 rounded-md">
-                        <input type="hidden" name="pondok_id" value="1"
-                            class=" border border-green-800 px-2 py-1 rounded-md" placeholder="nama_pondok">
-                        @if($santri)
-                        <input name="nis" type="text" class="border border-green-800 py-1 px-2 w-1/5 rounded-md"
-                            placeholder=" Nomor Induk Santri" value="{{ $santri->nis }}">
-                        @else
-                        <input name="nis" type="text" class=" py-1 px-2 w-1/5 rounded-md"
-                            placeholder=" Nomor Induk Santri" value="">
-                        @endif
-                        <input name="tanggal_masuk" type="date"
-                            class="border border-green-800 py-1 px-2 w-1/6 rounded-md">
-                        <select name="status_pendaftaran" class="border border-green-800 rounded-md py-1 w-1/4 px-2">
-                            <option value="">-Pilih Status-</option>
-                            <option value="Santri Baru">Santri Baru</option>
-                            <option value="Pindahan">Pindahan</option>
-                        </select>
-                        <button type="submit" class="  bg-green-800 py-2 px-2 d-block  mb-2 text-white rounded-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-person-plus-fill block  " viewBox="0 0 16 16">
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                <path fill-rule="evenodd"
-                                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                            </svg>
-                        </button>
+                        <div class=" grid grid-cols-1 sm:grid-cols-5 gap-2">
+                            <input name="santri_id" type="hidden" value="{{$santri->id}} " class=" px-2  rounded-md">
+                            <input type="hidden" name="pondok_id" value="1"
+                                class=" border border-green-800 px-2  rounded-md" placeholder="nama_pondok">
+                            @if($santri)
+                            <input name="nis" type="text" class="sm:py-1 py-2 border border-green-800  px-2  rounded-md"
+                                placeholder=" Nomor Induk Santri" value="{{ $santri->nis }}">
+                            @else
+                            <input name="nis" type="text" class="  px-2  rounded-md" placeholder=" Nomor Induk Santri"
+                                value="">
+                            @endif
+                            <input name="tanggal_masuk" type="date"
+                                class=" sm:py-1 py-2 border border-green-800  px-2  rounded-md">
+                            <select name="status_pendaftaran"
+                                class="sm:py-1 py-2 border border-green-800 rounded-md   px-2">
+                                <option value="">-Pilih Status-</option>
+                                <option value="Santri Baru">Santri Baru</option>
+                                <option value="Pindahan">Pindahan</option>
+                            </select>
+                            <button type="submit"
+                                class=" rounded-md text-white sm:py-1 py-2 bg-green-800">simpan</button>
+                        </div>
                     </form>
                     <div class=" mt-2 bg-gray-50">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">

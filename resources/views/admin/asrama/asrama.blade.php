@@ -26,10 +26,11 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asrama" method="post">
                         @csrf
-                        <input name="nama_asrama" type="text" class=" rounded-md py-1 px-4" placeholder=" nama_asrama ">
-                        <input name="kuota_asrama" type="text" class=" rounded-md py-1 px-4"
+                        <input name="nama_asrama" type="text" class=" border border-green-800 rounded-md py-1 px-4"
+                            placeholder=" nama_asrama ">
+                        <input name="kuota_asrama" type="text" class=" border border-green-800 rounded-md py-1 px-4"
                             placeholder="kuota_asrama ">
-                        <select name="type_asrama" id="" class=" py-1 px-7 rounded-md">
+                        <select name="type_asrama" id="" class="border border-green-800 py-1 px-2 rounded-md">
                             <option value=""> Pilih Asrama </option>
                             <option value="Putra" @if (old('type_asrama')=="Putra" ) {{ 'selected' }} @endif>
                                 Asrama Putra</option>
