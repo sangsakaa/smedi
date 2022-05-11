@@ -98,7 +98,7 @@
                                                 {{ $s->historiTerakhir->nis }}
                                                 @else
                                                 <div class=" text-red-600">
-                                                    NIS
+                                                    Nomor Induk
                                                 </div>
                                                 @endif
                                             </td>
