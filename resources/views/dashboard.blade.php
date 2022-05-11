@@ -5,7 +5,7 @@
     <div class=" grid w-full gap-2  grid-cols-1 sm:grid-cols-4 sm:text-sm">
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2 bg-green-100 rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2 bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
@@ -34,7 +34,7 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 sm:grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-green-100 rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2  bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
@@ -63,7 +63,7 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-green-100 rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2  bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
@@ -75,7 +75,7 @@
                         </div>
                         <div class=" grid  grid-cols-1    ">
                             <div
-                                class=" bg-green-100 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
+                                class=" bg-green-200 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" fill="currentColor"
                                     class="bi bi-people-fill text-green-800 " viewBox="0 0 16 16">
                                     <path
@@ -94,7 +94,7 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2   rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2 bg-green-200   rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
@@ -126,7 +126,7 @@
     <div class=" grid w-full gap-2  md:grid-cols-2 sm:grid-cols-1 sm:text-sm">
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-green-100 rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2  bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
@@ -145,7 +145,7 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-green-100 rounded-lg shadow-md">
+            <div class="inline-flex overflow-hidden mb-2  bg-green-200 rounded-lg shadow-md">
                 <div class="flex justify-center items-center w-1 ">
                 </div>
                 <div class=" w-full  px-2 py-2">
