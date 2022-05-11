@@ -5,8 +5,8 @@
     <div class=" grid w-full gap-2  grid-cols-1 sm:grid-cols-4 sm:text-sm">
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-100 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
@@ -16,9 +16,9 @@
                         </div>
                         <div class=" grid  grid-cols-1    ">
                             <div
-                                class=" bg-purple-800 lg:px-2 lg:py-1    px-8 py-2   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
+                                class=" bg-blue-400 lg:px-2 lg:py-1    px-8 py-2   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" fill="currentColor"
-                                    class="bi bi-people-fill text-yellow-300 " viewBox="0 0 16 16">
+                                    class="bi bi-people-fill text-white " viewBox="0 0 16 16">
                                     <path
                                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     <path fill-rule="evenodd"
@@ -35,8 +35,8 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 sm:grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-100 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
@@ -46,9 +46,9 @@
                         </div>
                         <div class=" grid  grid-cols-1    ">
                             <div
-                                class=" bg-purple-800 lg:px-2 lg:py-1  px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
+                                class=" bg-blue-800 lg:px-2 lg:py-1  px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" fill="currentColor"
-                                    class="bi bi-people-fill text-yellow-300 " viewBox="0 0 16 16">
+                                    class="bi bi-people-fill text-white " viewBox="0 0 16 16">
                                     <path
                                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     <path fill-rule="evenodd"
@@ -65,8 +65,8 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-100 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
@@ -76,10 +76,9 @@
                             <p class=" text-purple-800 lg:text-4xl  text-5xl">{{ $putra }}</p>Santriwan
                         </div>
                         <div class=" grid  grid-cols-1    ">
-                            <div
-                                class=" bg-purple-800 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
+                            <div class=" bg-blue-800 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" fill="currentColor"
-                                    class="bi bi-people-fill text-yellow-300 " viewBox="0 0 16 16">
+                                    class="bi bi-people-fill text-white " viewBox="0 0 16 16">
                                     <path
                                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     <path fill-rule="evenodd"
@@ -96,8 +95,8 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-400 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
@@ -106,10 +105,9 @@
                             <p class=" text-purple-800 lg:text-4xl  text-5xl">{{$asrama}}</p>Putra Putri
                         </div>
                         <div class=" grid  grid-cols-1    ">
-                            <div
-                                class=" bg-purple-800 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
+                            <div class=" bg-blue-800 lg:px-2 lg:py-1 px-8   lg:grid-cols-1 sm:grid-cols-1  rounded-lg ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" fill="currentColor"
-                                    class="bi bi-people-fill text-yellow-300 " viewBox="0 0 16 16">
+                                    class="bi bi-people-fill text-white " viewBox="0 0 16 16">
                                     <path
                                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     <path fill-rule="evenodd"
@@ -129,14 +127,14 @@
     <div class=" grid w-full gap-2  md:grid-cols-2 sm:grid-cols-1 sm:text-sm">
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-100 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-1 text-2xl gap-2 w-full">
                         @foreach($as as $as)
                         <a href="/asrama/{{ $as->id}}">
-                            <div class="  bg-purple-800 px-2 py-2  text-white rounded-md">
+                            <div class="  bg-blue-400 px-2 py-2  text-white rounded-md">
                                 {{ $as->nama_asrama  }} <span class=" float-right">{{$as->hitung}}</span>
                             </div>
                         </a>
@@ -148,14 +146,14 @@
         <!-- end -->
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
-            <div class="inline-flex overflow-hidden mb-2  bg-yellow-300 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-purple-800">
+            <div class="inline-flex overflow-hidden mb-2  bg-blue-100 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 bg-blue-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-1 text-2xl gap-2 w-full">
                         @foreach($asi as $as)
                         <a href="/asrama/{{ $as->id}}">
-                            <div class="  bg-purple-800 px-2 py-2  text-white rounded-md">
+                            <div class="   bg-blue-400 px-2 py-2  text-white rounded-md">
                                 {{ $as->nama_asrama  }} <span class=" float-right">{{$as->hitung}}</span>
                             </div>
                         </a>
