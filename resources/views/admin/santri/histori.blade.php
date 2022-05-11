@@ -21,7 +21,7 @@
         </div>
 
         <div class=" w-full">
-            <div class=" bg-green-50  border   px-4 py-2 grid grid-cols-2 sm:grid-cols-2">
+            <div class=" bg-green-50  border sm:text-2xl text-sm   px-4 py-2 grid grid-cols-2 sm:grid-cols-2">
                 <div>Nama Lengkap</div>
                 <div> : {{ $data->nama_santri}}</div>
                 <div>Jenis Kelamin</div>
@@ -45,7 +45,7 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/histori/{{$santri->id}}" method="post">
                         @csrf
-                        <div class=" grid grid-cols-1 sm:grid-cols-5 gap-2">
+                        <div class=" grid grid-cols-1 sm:grid-cols-4 gap-2">
                             <input name="santri_id" type="hidden" value="{{$santri->id}} " class=" px-2  rounded-md">
                             <input type="hidden" name="pondok_id" value="1"
                                 class=" border border-green-800 px-2  rounded-md" placeholder="nama_pondok">
