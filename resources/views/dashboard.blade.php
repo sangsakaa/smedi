@@ -134,7 +134,7 @@
                     <div class=" grid grid-cols-1 text-2xl gap-2 w-full">
                         @foreach($as as $as)
                         <a href="/asrama/{{ $as->id}}">
-                            <div class="  bg-blue-400 px-2 py-2  text-white rounded-md">
+                            <div class="  bg-blue-300 px-2 py-2  text-white rounded-md">
                                 {{ $as->nama_asrama  }} <span class=" float-right">{{$as->hitung}}</span>
                             </div>
                         </a>
