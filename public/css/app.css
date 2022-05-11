@@ -984,21 +984,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(4 108 78 / var(--tw-bg-opacity));
 }
-.bg-blue-800 {
+.bg-green-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+  background-color: rgb(222 247 236 / var(--tw-bg-opacity));
 }
-.bg-blue-400 {
+.bg-green-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(118 169 250 / var(--tw-bg-opacity));
-}
-.bg-purple-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 215 254 / var(--tw-bg-opacity));
-}
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(164 202 254 / var(--tw-bg-opacity));
+  background-color: rgb(132 225 188 / var(--tw-bg-opacity));
 }
 .bg-red-600 {
   --tw-bg-opacity: 1;
@@ -1012,25 +1004,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(5 122 85 / var(--tw-bg-opacity));
 }
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 245 255 / var(--tw-bg-opacity));
-}
-.bg-purple-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 235 254 / var(--tw-bg-opacity));
-}
-.bg-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(222 247 236 / var(--tw-bg-opacity));
-}
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 225 188 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;

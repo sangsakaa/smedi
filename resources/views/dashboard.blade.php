@@ -11,7 +11,7 @@
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
                         <div class=" py-4 px-2">
-                            <span class="font-semibold text-green-800"> Santri Putra</span>
+                            <span class="font-semibold text-green-700"> Santri Putra</span>
                             <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $l }}</p>Santriwan
                         </div>
                         <div class=" grid  grid-cols-1    ">
