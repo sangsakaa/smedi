@@ -22,18 +22,18 @@
 
         <div class=" w-full">
             <div class=" bg-green-50  border sm:text-sm text-sm   px-4 py-2 grid grid-cols-2 sm:grid-cols-2">
-                <div>Nama Lengkap</div>
-                <div> : {{ $data->nama_santri}}</div>
-                <div>Jenis Kelamin</div>
-                <div> : {{ $data->jenis_kelamin}}</div>
-                <div> Agama</div>
-                <div> : {{ $data->agama}}</div>
-                <div>Tempat Lahir</div>
-                <div> : {{ date_format(date_create($data->tanggal_lahir),'d-m-Y') }}</div>
-                <div>Nama Ibu</div>
-                <div> : {{ $data->nama_ibu}}</div>
-                <div>Angkatan</div>
-                <div> : {{ date_format(date_create($data->tanggal_masuk),'Y') }}</div>
+                <div class=" py-1">Nama Lengkap</div>
+                <div class=" py-1"> : {{ $data->nama_santri}}</div>
+                <div class=" py-1">Jenis Kelamin</div>
+                <div class=" py-1"> : {{ $data->jenis_kelamin}}</div>
+                <div class=" py-1"> Agama</div>
+                <div class=" py-1"> : {{ $data->agama}}</div>
+                <div class=" py-1">Tempat Lahir</div>
+                <div class=" py-1"> : {{ date_format(date_create($data->tanggal_lahir),'d-m-Y') }}</div>
+                <div class=" py-1">Nama Ibu</div>
+                <div class=" py-1"> : {{ $data->nama_ibu}}</div>
+                <div class=" py-1">Angkatan</div>
+                <div class=" py-1"> : {{ date_format(date_create($data->tanggal_masuk),'Y') }}</div>
 
             </div>
         </div>
@@ -52,16 +52,16 @@
                             <input type="hidden" name="pondok_id" value="1"
                                 class=" border border-green-800 px-2  rounded-md" placeholder="nama_pondok">
                             @if($santri)
-                            <input name="nis" type="text" class="sm:py-1 py-2 border border-green-800  px-2  rounded-md"
+                            <input name="nis" type="text" class="sm:py-1 py-1 border border-green-800  px-2  rounded-md"
                                 placeholder=" Nomor Induk Santri" value="{{ $santri->nis }}">
                             @else
                             <input name="nis" type="text" class="  px-2  rounded-md" placeholder=" Nomor Induk Santri"
                                 value="">
                             @endif
                             <input name="tanggal_masuk" type="date"
-                                class=" sm:py-1 py-2 border border-green-800  px-2  rounded-md">
+                                class=" sm:py-1 py-1 border border-green-800  px-2  rounded-md">
                             <select name="status_pendaftaran"
-                                class="sm:py-1 py-2 border border-green-800 rounded-md   px-2">
+                                class="sm:py-1 py-1 border border-green-800 rounded-md   px-2">
                                 <option value="">-Pilih Status-</option>
                                 <option value="Santri Baru">Santri Baru</option>
                                 <option value="Pindahan">Pindahan</option>
