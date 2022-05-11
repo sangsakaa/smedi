@@ -1024,6 +1024,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-purple-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 191 253 / var(--tw-bg-opacity));
+}
+.bg-purple-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 215 254 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(158 158 158 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
