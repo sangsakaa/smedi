@@ -98,7 +98,7 @@
                                                 {{ $s->historiTerakhir->nis }}
                                                 @else
                                                 <div class=" text-red-600">
-                                                    Masih Belum Punya NIS
+                                                    NIS
                                                 </div>
                                                 @endif
                                             </td>
@@ -117,7 +117,7 @@
                                                     {{ $s->asramaTerakhir->asrama->nama_asrama }}
                                                     @else
                                                     <div class=" text-red-600">
-                                                        "Gak Duwe Asrama"
+                                                        "Asrama"
                                                     </div>
                                                     @endif
                                                 </a>
