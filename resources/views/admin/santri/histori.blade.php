@@ -29,9 +29,11 @@
                 <div> Agama</div>
                 <div> : {{ $data->agama}}</div>
                 <div>Tempat Lahir</div>
-                <div> : {{ $data->tempat_lahir}}, {{ $data->tanggal_lahir}}</div>
+                <div> : {{ date_format(date_create($data->tanggal_lahir),'d-m-Y') }}</div>
                 <div>Nama Ibu</div>
                 <div> : {{ $data->nama_ibu}}</div>
+                <div>Angkatan</div>
+                <div> : {{ date_format(date_create($data->tanggal_masuk),'Y') }}</div>
 
             </div>
         </div>
