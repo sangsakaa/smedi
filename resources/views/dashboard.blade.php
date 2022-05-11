@@ -6,7 +6,7 @@
         <!-- str -->
         <div class=" grid grid-cols-1 w-full">
             <div class="inline-flex overflow-hidden mb-2 bg-gray-100 rounded-lg shadow-md">
-                <div class="flex justify-center items-center w-1 bg-blue-800">
+                <div class="flex justify-center items-center w-1 bg-purple-800">
                 </div>
                 <div class=" w-full  px-2 py-2">
                     <div class=" grid grid-cols-2 gap-2 w-full">
