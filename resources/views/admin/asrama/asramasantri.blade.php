@@ -59,12 +59,14 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asramasantri" method="post">
                         @csrf
-                        <select name="santri_id" id="" class=" px-4 py-1 w-1/4 rounded-md">
+                        <input name="santri_id" class="form-control w-1/3 py-1 px-2 rounded-md  border"
+                            list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                        <datalist id="datalistOptions">
                             <option value=""> Pilih Anggota Asrama </option>
                             @foreach($datasantri as $santri)
                             <option class="text-green-800" value="{{$santri->id}}">{{$santri->nama_santri}} </option>
                             @endforeach
-                        </select>
+                        </datalist>
                         <input name="asrama_id" type="hidden" value="{{$asrama->id}}" class=" rounded-md py-1"
                             placeholder=" asrama_id">
                         <input name="histori_id" type="hidden" value="1" class=" rounded-md py-1"
