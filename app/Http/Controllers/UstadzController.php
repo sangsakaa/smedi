@@ -123,6 +123,7 @@ class UstadzController extends Controller
             'agama'=>'',
             'alamat'=>'',
             'no_hp'=>'',
+            'nama_bank'=>'',
             'no_rekening'=>'',
         ]);
         Ustadz::where('id', $ustadz->id)
@@ -136,6 +137,7 @@ class UstadzController extends Controller
                 'agama' => $request->agama,
                 'alamat' => $request->alamat,
                 'no_hp' => $request->no_hp,
+                'nama_bank' => $request->nama_bank,
                 'no_rekening' => $request->no_rekening,
                 
                 
