@@ -21,7 +21,7 @@
         </div>
 
         <div class=" w-full">
-            <div class=" bg-green-50  border sm:text-2xl text-sm   px-4 py-2 grid grid-cols-2 sm:grid-cols-2">
+            <div class=" bg-green-50  border sm:text-sm text-sm   px-4 py-2 grid grid-cols-2 sm:grid-cols-2">
                 <div>Nama Lengkap</div>
                 <div> : {{ $data->nama_santri}}</div>
                 <div>Jenis Kelamin</div>
