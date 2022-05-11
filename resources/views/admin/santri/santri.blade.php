@@ -25,12 +25,15 @@
         <div class=" w-full px-2 py-4 ">
             <div class="mx-3">
                 <div class=" bg-white rounded-lg shadow-xs">
-                    <form action="/santri" method="get">
-                        <input type="text" autofocus name="cari" value="{{ request('cari') }}"
-                            class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                            Cari</button>
-                    </form>
+                    <div class=" grid grid-cols-1 sm:grid-cols-3">
+                        <form action="/santri" method="get">
+                            <input type="text" autofocus name="cari" value="{{ request('cari') }}"
+                                class=" border border-green-800 text-green-800 rounded-md py-1 px-4"
+                                placeholder=" Cari ..">
+                            <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">
+                                Cari</button>
+                        </form>
+                    </div>
 
                     <div class=" bg-gray-50 mt-2">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
