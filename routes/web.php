@@ -84,4 +84,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('listsantri', App\Http\Controllers\KelassantriController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
+    Route::resource('absen', App\Http\Controllers\PresensiController::class)->only([
+    'index', 'edit','update','show','destroy','create','store'
+    ]);
 });

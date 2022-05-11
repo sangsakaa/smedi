@@ -47,6 +47,7 @@ class Santri extends Model
     {
         return $this->hasMany(Asramasantri::class,'asramasantri_id','id');
     }
+    
     //  kelas santri
     
     

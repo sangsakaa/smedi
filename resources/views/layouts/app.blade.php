@@ -11,7 +11,7 @@
         <!-- Styles -->
         <link rel="shortcut icon" href="{{ asset('images/logo.ico') }}" type="image/x-icon">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="https://cdn.tailwindcss.com"></script>
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/init-alpine.js') }}"></script>
