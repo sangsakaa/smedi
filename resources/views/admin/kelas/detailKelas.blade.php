@@ -5,7 +5,9 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex  justify-end items-center  w-1/4   px-2 py-2 bg-green-800">
             <div class="  flex  text-white font-semibold">
-                {{ $kelas->nama_kelas }}
+                <a href="/kelas">
+                    {{ $kelas->nama_kelas }}
+                </a>
             </div>
         </div>
         <div class=" w-full py-2 ">

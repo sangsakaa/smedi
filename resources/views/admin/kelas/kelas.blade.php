@@ -40,7 +40,7 @@
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3"> Kode Kelas</th>
+
                                             <th class="px-4 py-3">Kelas</th>
                                             <th class="px-4 py-3">Peserta</th>
 
@@ -55,13 +55,12 @@
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-2 text-sm ">
-                                                {{ $kela->kode_kelas }}
+                                                <a href="/kelas/{{$kela->id}}">
+                                                    {{ $kela->nama_kelas }}
+                                                </a>
                                             </td>
                                             <td class="px-4 py-2 text-sm ">
-                                                {{ $kela->nama_kelas }}
-                                            </td>
-                                            <td class="px-4 py-2 text-sm ">
-
+                                                {{ $kela->hitung }}
                                             </td>
                                             </td>
                                             <td class=" px-4 py-2 text-sm">
@@ -95,19 +94,7 @@
                                                             </svg>
                                                         </a>
                                                     </div>
-                                                    <div class=" flex">
-                                                        <a href="/kelas/{{$kela->id}}">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" fill="currentColor"
-                                                                class="bi bi-eye-fill ml-1 text-green-800"
-                                                                viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                                <path
-                                                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
+
                                                 </div>
                                             </td>
                                         </tr>

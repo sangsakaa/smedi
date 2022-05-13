@@ -15,4 +15,7 @@ class Kelas extends Model
     {
         return $this->hasMany(Kelassantri::class,'kelas_id','id');
     }
+    public function getHitungAttribute(){
+    return $this->hasMany(Kelassantri::class)->whereKelasId($this->id)->count();    
+    }
 }

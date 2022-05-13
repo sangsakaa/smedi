@@ -27,5 +27,8 @@ class Kelassantri extends Model
      {
          return $this->belongsTo(Asramasantri::class,'asramasantri_id','id');
      }
+     public function getHitungAttribute(){
+    return $this->hasMany(Kelassantri::class)->whereAsramaId($this->id)->count();    
+    }
 
 }
