@@ -18,7 +18,7 @@ class PelanggaranController extends Controller
     public function index()
     {
         $pelanggaran = Pelanggaran::all();
-        return view('admin/pelanggaran/pelanggaran',['pelanggaran'=>$pelanggaran]);
+        return view('admin/pelanggaran/Pelanggaran',['pelanggaran'=>$pelanggaran]);
     }
 
     /**
