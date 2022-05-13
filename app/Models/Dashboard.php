@@ -17,4 +17,7 @@ class Dashboard extends Model
     {
         return $this->belongsTo(santri::class,'santri_id','id');
     }
+    public function getKelasAttribute(){
+    return $this->hasMany(Kelassantri::class)->whereKelasId($this->id)->count();    
+    }
 }

@@ -161,6 +161,21 @@
                 </div>
             </div>
         </div>
+        <div class=" grid grid-cols-1 w-full">
+            <div class="inline-flex overflow-hidden mb-2  bg-green-200 rounded-lg shadow-md">
+                <div class="flex justify-center items-center w-1 ">
+                </div>
+                <div class=" w-full  px-2 py-2">
+                    <div class=" grid grid-cols-1 text-2xl gap-2 w-full">
+
+                        <div class="    px-2 py-2  text-green-800 rounded-md">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- end -->
     </div>
     <!-- end -->

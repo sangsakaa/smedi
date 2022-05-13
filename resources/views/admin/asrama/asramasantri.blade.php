@@ -4,7 +4,9 @@
     </x-slot>
     <div class="inline-flex overflow-hidden mb-1 w-full bg-white rounded-lg shadow-md">
         <div class="  text-white px-4 py-2 w-1/3 justify-end  bg-green-800 font-semibold  uppercase">
-            <span class=" text-4xl text-left">{{ $asrama->nama_asrama }}</span>
+            <span class=" text-4xl text-left"><a href="/asrama">
+                    {{ $asrama->nama_asrama }}
+                </a></span>
 
         </div>
         <div class=" w-full flex py-4 text-green-800 font-semibold">

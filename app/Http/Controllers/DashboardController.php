@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Asrama;
 use App\Models\Dashboard;
+use App\Models\Kelassantri;
 use App\Models\Santri;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -27,7 +28,8 @@ class DashboardController extends Controller
     $putra =Santri::count();
     $l = Santri::where('jenis_kelamin','L')->count();
     $p = Santri::where('jenis_kelamin','p')->count();
-    return view('/dashboard',['asi'=>$asi,'as'=>$as,'putra'=>$putra,'l'=>$l,'p'=>$p,'asrama'=>$asrama,'aspr'=>$asramapr,'aslk'=>$asramalk]); 
+    $kelas = Kelassantri::count();
+    return view('/dashboard',['kelas'=>$kelas,'asi'=>$asi,'as'=>$as,'putra'=>$putra,'l'=>$l,'p'=>$p,'asrama'=>$asrama,'aspr'=>$asramapr,'aslk'=>$asramalk]); 
     }
 
     /**

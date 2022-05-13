@@ -24,6 +24,7 @@
                 <option value="{{$as->id}}">{{$as->santri->nama_santri}}</option>
                 @endforeach
             </select>
+
             <button type="submit" class=" bg-green-800 px-1 ml-1 text-white rounded-md">KELAS</button>
     </form>
     </div>
