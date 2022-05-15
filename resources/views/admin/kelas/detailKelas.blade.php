@@ -10,22 +10,23 @@
                 </a>
             </div>
         </div>
-        <div class=" w-full py-2 ">
+        <div class=" w-full mt-2 ">
             <marquee behavior="" direction=""> informati ini bisa berubah sewaktu waktu </marquee>
         </div>
     </div>
     <form action="/kelas/create" method="post">
         @csrf
-        <div class=" flex">
+        <div class=" grid grid-cols-1 sm:grid-cols-2 gap-2">
             <input name="kelas_id" type="hidden" value="{{$kelas->id}}" class=" px-1 py-1 rounded-md mr-2">
-            <select name="asramasantri_id" id="" class=" border border-green-800 py-1 px-1 rounded-md w-1/4">
+            <input name="asramasantri_id" class="form-control px-2 py-1 border border-green-800 rounded-md "
+                list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
                 <option value="">pilih Anggota Kelas</option>
                 @foreach($DataAsrama as $as)
                 <option value="{{$as->id}}">{{$as->santri->nama_santri}}</option>
                 @endforeach
-            </select>
-
-            <button type="submit" class=" bg-green-800 px-1 ml-1 text-white rounded-md">KELAS</button>
+            </datalist>
+            <button type="submit" class=" bg-green-800 px-1  w-1/4 text-white rounded-md">KELAS</button>
     </form>
     </div>
     <div class=" bg-gray-50 mt-2">

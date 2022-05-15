@@ -10,10 +10,13 @@
         <div class="px-4 py-2 -mx-3">
             <div class="mx-3 font-semibold uppercase text-green-800">
                 Daftar List Santri <form action="/asrama" method="get">
-                    <input type="text" name="cari" value="{{ request('cari') }}"
-                        class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari .." autofocus>
-                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Cari</button>
+                    <div class=" grid grid-cols-2 gap-2">
+                        <input type="text" name="cari" value="{{ request('cari') }}"
+                            class=" border -border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari .."
+                            autofocus>
+                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                            Cari</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -26,19 +29,22 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asrama" method="post">
                         @csrf
-                        <input name="nama_asrama" type="text" class=" border border-green-800 rounded-md py-1 px-4"
-                            placeholder=" nama_asrama ">
-                        <input name="kuota_asrama" type="text" class=" border border-green-800 rounded-md py-1 px-4"
-                            placeholder="kuota_asrama ">
-                        <select name="type_asrama" id="" class="border border-green-800 py-1 px-2 rounded-md">
-                            <option value=""> Pilih Asrama </option>
-                            <option value="Putra" @if (old('type_asrama')=="Putra" ) {{ 'selected' }} @endif>
-                                Asrama Putra</option>
-                            <option value="Putri" @if (old('type_asrama')=="Putri" ) {{ 'selected' }} @endif>
-                                Asrama Putri</option>
-                        </select>
-                        <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white" onClick="swal()">
-                            Asrama</button>
+                        <div class=" gap-2 grid grid-cols-1 sm:grid-cols-4">
+                            <input name="nama_asrama" type="text"
+                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
+                            <input name="kuota_asrama" type="text"
+                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder="kuota_asrama ">
+                            <select name="type_asrama" id="" class=" mb-2 border border-green-800 py-1 px-2 rounded-md">
+                                <option value=""> Pilih Asrama </option>
+                                <option value="Putra" @if (old('type_asrama')=="Putra" ) {{ 'selected' }} @endif>
+                                    Asrama Putra</option>
+                                <option value="Putri" @if (old('type_asrama')=="Putri" ) {{ 'selected' }} @endif>
+                                    Asrama Putri</option>
+                            </select>
+                            <button type="submit" class=" mb-2  bg-green-800 py-1 px-2 rounded-md text-white"
+                                onClick="swal()">
+                                Asrama</button>
+                        </div>
                     </form>
                     <div class=" bg-gray-50 mt-2">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">

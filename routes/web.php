@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -85,6 +86,9 @@ Route::middleware('auth')->group(function () {
     'index', 'edit','update','show','destroy','create','store'
     ]);
     Route::resource('absen', App\Http\Controllers\PresensiController::class)->only([
+    'index', 'edit','update','show','destroy','create','store'
+    ]);
+    Route::resource('pdf', App\Http\Controllers\PdfController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
 });
