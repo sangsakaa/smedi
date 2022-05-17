@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Asrama;
 use App\Models\Histori;
+use App\Models\Kelassantri;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
