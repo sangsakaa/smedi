@@ -47,7 +47,6 @@
                                             <th class="px-4 py-3">Nama Santri</th>
                                             <th class="px-4 py-3">NIS</th>
                                             <th class="px-4 py-3 text-center">Jenis Kelamin</th>
-                                            <th class="px-4 py-3 text-center">Agama</th>
                                             <th class="px-4 py-3 text-center">Tanggal Lahir</th>
                                             <th class="px-4 py-3 text-center">Asrama</th>
                                             <th class="px-4 py-3 text-center">Angkatan</th>
@@ -57,7 +56,7 @@
                                         @if($listSantri->count())
                                         @foreach ($listSantri as $s)
                                         <tr class="text-gray-700">
-                                            <td class=" px-4 py-2 text-sm">
+                                            <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class="flex">
                                                         <form action="/santri/{{$s->id}}" method="post">
@@ -90,13 +89,13 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration}}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
+                                            <td class="px-4 py-1 text-sm  ">
                                                 <a href="/santri/{{ $s->id }}">{{ $s->nama_santri}}</a>
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 @if ($s->historiTerakhir !== null)
                                                 {{ $s->historiTerakhir->nis }}
                                                 @else
@@ -105,16 +104,14 @@
                                                 </div>
                                                 @endif
                                             </td>
-                                            <td class=" px-4 py-2 text-sm text-center">
+                                            <td class=" px-4 py-1 text-sm text-center">
                                                 {{ $s->jenis_kelamin }}
                                             </td>
-                                            <td class=" px-4 py-2 text-sm text-center">
-                                                {{ $s->agama }}
-                                            </td>
-                                            <td class="px-4 py-2 text-sm text-center">
+
+                                            <td class="px-4 py-1 text-sm text-center">
                                                 {{ date_format(date_create($s->tanggal_lahir),'d-m-Y') }}
                                             </td>
-                                            <td class=" px-4 py-2 text-sm text-center uppercase">
+                                            <td class=" px-4 py-1 text-sm text-center uppercase">
                                                 <a href="/asrama">
                                                     @if($s->asramaTerakhir !== null)
                                                     {{ $s->asramaTerakhir->asrama->nama_asrama }}
@@ -125,7 +122,7 @@
                                                     @endif
                                                 </a>
                                             </td>
-                                            <td class=" px-4 py-2 text-sm text-center">
+                                            <td class=" px-4 py-1 text-sm text-center">
                                                 @if ($s !== null)
                                                 <?php
                                                 $date=date_create($s->tanggal_masuk);

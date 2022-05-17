@@ -19,7 +19,7 @@
         <div class=" grid grid-cols-1 sm:grid-cols-2 gap-2">
             <input name="kelas_id" type="hidden" value="{{$kelas->id}}" class=" px-1 py-1 rounded-md mr-2">
             <input name="asramasantri_id" class="form-control px-2 py-1 border border-green-800 rounded-md "
-                list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                list="datalistOptions" id="exampleDataList" placeholder="Type to search..." autofocus>
             <datalist id="datalistOptions">
                 <option value="">pilih Anggota Kelas</option>
                 @foreach($DataAsrama as $as)

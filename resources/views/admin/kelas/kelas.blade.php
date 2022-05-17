@@ -8,13 +8,19 @@
         </div>
         <div class="px-4 py-2 -mx-3">
             <div class="mx-3 font-semibold uppercase text-green-800">
-
-                <form action="/kelas" method="get">
-                    <input type="text" name="cari" value="{{ request('cari') }}"
-                        class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Cari</button>
-                </form>
+                <div class=" grid grid-cols-2 gap-2">
+                    <form action="/kelas" method="get">
+                        <input type="text" name="cari" value="{{ request('cari') }}"
+                            class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                            Cari</button>
+                    </form>
+                    <a href="/about">
+                        <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
+                            about
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -31,7 +37,6 @@
                         <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                             Kelas</button>
                     </form>
-
                     <div class=" bg-gray-50 mt-2">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
                             <div class="overflow-x-auto w-full">

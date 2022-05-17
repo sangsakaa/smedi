@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Presensi extends Model
+class Report extends Model
 {
     use HasFactory;
-
-    protected $table = "absensi_kelas";
-
     public function santri()
     {
         return $this->belongsTo(santri::class,'santri_id','id');

@@ -3,9 +3,9 @@
 namespace App\Models;
 
 
+use App\Models\Report;
 use App\Models\Histori;
 use App\Models\Pengurus;
-use App\Models\Kelassantri;
 use App\Models\Asramasantri;
 use App\Models\Historipelanggaran;
 use Illuminate\Database\Eloquent\Model;
@@ -49,7 +49,10 @@ class Santri extends Model
     }
     
     //  kelas santri
-    
+    public function santriReport()
+    {
+        return $this->hasMany(Report::class,'asramasantri_id','id');
+    }
     
     
 }

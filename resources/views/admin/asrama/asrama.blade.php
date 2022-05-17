@@ -12,8 +12,7 @@
                 Daftar List Santri <form action="/asrama" method="get">
                     <div class=" grid grid-cols-2 gap-2">
                         <input type="text" name="cari" value="{{ request('cari') }}"
-                            class=" border -border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari .."
-                            autofocus>
+                            class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
                         <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                             Cari</button>
                     </div>
@@ -30,6 +29,7 @@
                     <form action="/asrama" method="post">
                         @csrf
                         <div class=" gap-2 grid grid-cols-1 sm:grid-cols-4">
+
                             <input name="nama_asrama" type="text"
                                 class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
                             <input name="kuota_asrama" type="text"

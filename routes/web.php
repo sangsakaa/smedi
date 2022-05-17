@@ -23,7 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::get('suratizin/{santri}', [App\Http\Controllers\SantriController::class, 'surat'])->name('suratizin.surat');
 
     Route::post('kelas/{kelas}', [App\Http\Controllers\KelasController::class, 'kelasstore'])->name('kelas.kelasstore');
-    
+
+    Route::get('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'absen']);
+    Route::get('about', [App\Http\Controllers\DashboardController::class, 'rekap']);
+    Route::post('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'simpanabsen']);    
     
     // pondok
     Route::resource('pondok', App\Http\Controllers\PondokController::class)->only([
@@ -85,10 +88,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('listsantri', App\Http\Controllers\KelassantriController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
-    Route::resource('absen', App\Http\Controllers\PresensiController::class)->only([
+    Route::resource('absen', App\Http\Controllers\SesikelasController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
     Route::resource('pdf', App\Http\Controllers\PdfController::class)->only([
+    'index', 'edit','update','show','destroy','create','store'
+    ]);
+    Route::resource('report', App\Http\Controllers\ReportController::class)->only([
     'index', 'edit','update','show','destroy','create','store'
     ]);
 });
