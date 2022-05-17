@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Santri;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Presensi extends Model
 {
@@ -13,6 +14,6 @@ class Presensi extends Model
 
     public function santri()
     {
-        return $this->belongsTo(santri::class,'santri_id','id');
+        return $this->belongsTo(Santri::class,'santri_id','id');
     }
 }
