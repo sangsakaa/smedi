@@ -6,7 +6,6 @@
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
         <div class=" grid grid-cols-1 sm:grid-cols-4 py-1 gap-2 px-4 ">
-            Menu Utama :
             <div>
                 <a href="/histori/{{$santri->id}}">
                     <button class=" px-4 py-1 bg-green-700 rounded-md text-white">Histori</button>

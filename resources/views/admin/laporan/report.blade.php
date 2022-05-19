@@ -3,10 +3,7 @@
         {{ __('Report Daily') }}
     </x-slot>
 
-    <div class="p-4 bg-white rounded-lg shadow-xs">
-        <a href="/about">
-            <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">about</button>
-        </a>
+    <div class="  px-2 py-2 bg-white rounded-lg shadow-xs">
         <form action="/absen/{{$sesi->id}}" method="post">
             <button type="submit" class="mt-2 bg-green-700 rounded-md text-white py-1 px-2">save</button>
             @csrf

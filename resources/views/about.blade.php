@@ -3,12 +3,12 @@
         {{ __('About us') }}
     </x-slot>
     <div type="text" class="p-4 bg-white rounded-lg shadow-xs py-4 mb-2">
-
-    </div>
-    <div class="p-4 bg-white rounded-lg shadow-xs">
         <a href="/absen">
             <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Presnsi</button>
         </a>
+    </div>
+    <div class="p-4 bg-white rounded-lg shadow-xs">
+
         <div>
 
         </div>
