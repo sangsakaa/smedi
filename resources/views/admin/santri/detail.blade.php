@@ -40,50 +40,50 @@
                             </thead>
                             <tbody class="bg-white divide-y">
                                 <tr class="text-gray-700">
-                                    <td class=" w-1/3 sm:px-4 px-2 py-2 text-sm  ">
+                                    <td class=" w-1/3 sm:px-4 px-2 py-1 text-sm  ">
                                         Nama Lengkap
                                     </td>
-                                    <td class="sm:px-4 w px-2 py-2 text-sm">
+                                    <td class="sm:px-4 w px-2 py-1 text-sm">
                                         : {{ $santri->nama_santri }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         Jenis Kelamin
                                     </td>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         : {{ $santri->jenis_kelamin }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         Agama
                                     </td>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         : {{ $santri->agama }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         Tempat
                                     </td>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         : {{ $santri->tempat_lahir}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         Tanggal Lahir
                                     </td>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         : {{ $santri->tanggal_lahir}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         Nama Ibu
                                     </td>
-                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-1 text-sm">
                                         : {{ $santri->nama_ibu}}
                                     </td>
                                 </tr>
