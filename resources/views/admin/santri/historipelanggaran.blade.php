@@ -96,27 +96,25 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/historipelanggaran/{{$santri->id}}" method="post">
                         @csrf
-                        <input name="santri_id" type="hidden" class="py-1 px-2 w-1/12 rounded-md"
-                            placeholder=" Masuk nama Lengkap " value="{{$santri->id}}">
-                        <select name="pelanggaran_id" id="" class=" py-1 px-2 w-1/4  rounded-md">
-                            <option value=""> Pilih Jenis Pelanggaran </option>
-                            @foreach( $list as $l)
-                            <option value="{{$l->id}}">
-                                {{ $l->pelanggaran }}
-                            </option>
-                            @endforeach
-                        </select>
-                        <input name="waktu" type="date" class=" py-1 px-2  rounded-md">
-                        <input name="keterangan" type="text" placeholder=" keterangan"
-                            class=" py-1 px-2 w-1/4 rounded-md">
-                        <button type="submit" class="  bg-green-800 py-2 px-2 d-block  mb-2 text-white rounded-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-person-plus-fill block  " viewBox="0 0 16 16">
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                <path fill-rule="evenodd"
-                                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                            </svg>
-                        </button>
+                        <div class=" grid grid-cols-1 sm:grid-cols-4 gap-2">
+                            <input name="santri_id" type="hidden"
+                                class=" border border-green-800  px-2 text-sm  rounded-md"
+                                placeholder=" Masuk nama Lengkap " value="{{$santri->id}}">
+                            <select name="pelanggaran_id" id="" class=" border border-green-800  py-1 px-2  rounded-md">
+                                <option value=""> Pilih Jenis Pelanggaran </option>
+                                @foreach( $list as $l)
+                                <option value="{{$l->id}}">
+                                    {{ $l->pelanggaran }}
+                                </option>
+                                @endforeach
+                            </select>
+                            <input name="waktu" type="date" class=" border border-green-800  py-1 px-2  rounded-md">
+                            <input name="keterangan" type="text" placeholder=" keterangan"
+                                class=" border border-green-800  py-1 px-2 rounded-md">
+                            <button type="submit" class=" bg-green-800 rounded-md text-white py-1 "> Kasus</button>
+
+
+                        </div>
                     </form>
                     <div class=" mt-2 bg-gray-50">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
