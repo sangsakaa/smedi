@@ -5,19 +5,14 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class=" grid grid-cols-1 sm:grid-cols-4 py-1 gap-2 ">
-
-            <div class=" px-2 py-1">
-                Menu Utama :
-            </div>
+        <div class=" grid grid-cols-1 sm:grid-cols-4 py-1 gap-2 px-4 ">
+            Menu Utama :
             <div>
                 <a href="/histori/{{$santri->id}}">
-                    <button class=" text-white bg-green-800  py-1 px-2 rounded-md">Histori Santri</button>
+                    <button class=" px-4 py-1 bg-green-700 rounded-md text-white">Histori</button>
                 </a>
-            </div>
-            <div>
                 <a href="/historipelanggaran/{{$santri->id}}">
-                    <button class=" text-white bg-green-800 sm:px-2  py-1 px-2 rounded-md">Riwayat Pelanggaran</button>
+                    <button class=" px-4 py-1 bg-green-700 rounded-md text-white">Histori Pelanggaran</button>
                 </a>
             </div>
         </div>
