@@ -100,14 +100,15 @@ class SesikelasController extends Controller
     {
         return view('admin/laporan/report', ['sesi' => $sesi]);
     }
+    
     public function simpanabsen(Request $request, SesiKelas $sesi)
     {
         foreach ($sesi->kelas->kelassantri as $pesertakelas) {
-            $presensi = new Presensi();
+            $presensi = new Presensi;
             $presensi->sesi_id = $sesi->id;
-            $presensi->santri_id = $pesertakelas->asramasantri->santri_id;
+            $presensi->kelassantri_id = $pesertakelas->kelassantri_id;
             //dd($request->keterangan);
-            $presensi->keterangan = $request->keterangan[$pesertakelas->asramasantri_id];
+            $presensi->keterangan = $request->keterangan[$pesertakelas->kelassantri_id];
             $presensi->save();
         }
         return redirect()->back();

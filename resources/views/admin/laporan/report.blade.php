@@ -26,15 +26,9 @@
                         <td>{{ $pesertakelas->asramasantri->santri->nama_santri }}</td>
                         <td>{{ $pesertakelas->kelas->nama_kelas }}</td>
                         <td class=" text-right ">
-                            <input type="radio" id="keteranganhadir['{{ $pesertakelas->asramasantri_id }}']"
-                                name="keterangan[{{ $pesertakelas->asramasantri_id }}]" value="Hadir" checked><label
-                                for="keteranganhadir['{{ $pesertakelas->asramasantri_id }}']">Hadir</label>
-                            <input type="radio" id="keteranganalfa['{{ $pesertakelas->asramasantri_id }}']"
-                                name="keterangan[{{ $pesertakelas->asramasantri_id }}]" value="Alfa"> <label
-                                for="keteranganalfa['{{ $pesertakelas->asramasantri_id }}']">Alfa</label>
-                            <input type="radio" id="keterangansakit['{{ $pesertakelas->asramasantri_id }}']"
-                                name="keterangan[{{ $pesertakelas->asramasantri_id }}]" value="Sakit"> <label
-                                for="keterangansakit['{{ $pesertakelas->asramasantri_id }}']">Sakit</label>
+                            <input type="radio" id="keteranganhadir['{{ $pesertakelas->kelassantri_id }}']"
+                                name="keterangan[{{ $pesertakelas->kelassantri_id }}]" value="Hadir" checked><label
+                                for="keteranganhadir['{{ $pesertakelas->kelassantri_id }}']">Hadir</label>
                         </td>
 
                     </tr>

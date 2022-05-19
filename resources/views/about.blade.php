@@ -3,12 +3,7 @@
         {{ __('About us') }}
     </x-slot>
     <div type="text" class="p-4 bg-white rounded-lg shadow-xs py-4 mb-2">
-        <input type="date" value="" class=" py-1 px-4">
-        <select name="" id="">
-            <option value="">1A</option>
-            <option value="">1B</option>
-            <option value="">1C</option>
-        </select>
+
     </div>
     <div class="p-4 bg-white rounded-lg shadow-xs">
         <a href="/absen">
@@ -22,6 +17,7 @@
                 <tr>
                     <th class=" text-left">Tgl</th>
                     <th class=" text-left">Nama Santri</th>
+                    <th class=" text-left">Asrama</th>
                     <th class=" text-left">Keterangan</th>
                 </tr>
             </thead>
@@ -33,7 +29,9 @@
                         {{ date_format(date_create($rekap->created_at),'d-m-Y') }}
                     </td>
                     <td>
-                        {{ $rekap->santri->nama_santri }}
+                        {{ $rekap->kelassantri_id}}
+                    </td>
+                    <td>
                     </td>
                     <td>
                         {{ $rekap->keterangan }}

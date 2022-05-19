@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('absensi_kelas', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('sesi_id');
-            $table->bigInteger('santri_id');
+            $table->bigInteger('kelassantri_id');
             $table->string('keterangan')->default('Alfa');
             $table->timestamps();
         });

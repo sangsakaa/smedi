@@ -34,6 +34,10 @@ class Asramasantri extends Model
     {
         return $this->belongsTo(santri::class,'asramasantri_id','id');
     }
+    public function Presensi()
+    {
+        return $this->belongsTo(Presensi::class,'asramasantri_id','id');
+    }
     
     
 }

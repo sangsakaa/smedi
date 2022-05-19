@@ -5,21 +5,21 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-2 py-2 ">
-            <div class=" font-semibold">
-                <span>
-                    Menu Utama :
-                </span>
+        <div class=" grid grid-cols-1 sm:grid-cols-4 py-1 gap-2 ">
+
+            <div class=" px-2 py-1">
+                Menu Utama :
             </div>
-            <a href="/histori/{{$santri->id}}">
-                <button class=" text-white bg-green-800  py-1 px-2 rounded-md">Histori Santri</button>
-            </a>
-            <a href="/historipelanggaran/{{$santri->id}}">
-                <button class=" text-white bg-green-800  py-1 px-2 rounded-md">Riwayat Pelanggaran</button>
-            </a>
-            <a href="/suratizin/{{$santri->id}}">
-                <button class=" text-white bg-green-800  py-1 px-2 rounded-md">Surat Izin</button>
-            </a>
+            <div>
+                <a href="/histori/{{$santri->id}}">
+                    <button class=" text-white bg-green-800  py-1 px-2 rounded-md">Histori Santri</button>
+                </a>
+            </div>
+            <div>
+                <a href="/historipelanggaran/{{$santri->id}}">
+                    <button class=" text-white bg-green-800 sm:px-2  py-1 px-2 rounded-md">Riwayat Pelanggaran</button>
+                </a>
+            </div>
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
@@ -46,42 +46,50 @@
                             </thead>
                             <tbody class="bg-white divide-y">
                                 <tr class="text-gray-700">
-                                    <td class="px-4 py-2 text-sm  ">
+                                    <td class=" w-1/3 sm:px-4 px-2 py-2 text-sm  ">
                                         Nama Lengkap
                                     </td>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 w px-2 py-2 text-sm">
                                         : {{ $santri->nama_santri }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         Jenis Kelamin
                                     </td>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         : {{ $santri->jenis_kelamin }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         Agama
                                     </td>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         : {{ $santri->agama }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-2 text-sm">
-                                        Tempat , Tanggal Lahir
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                        Tempat
                                     </td>
-                                    <td class="px-4 py-2 text-sm">
-                                        : {{ $santri->tempat_lahir}} ,{{ $santri->tanggal_lahir}}
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                        : {{ $santri->tempat_lahir}}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                        Tanggal Lahir
+                                    </td>
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
+                                        : {{ $santri->tanggal_lahir}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         Nama Ibu
                                     </td>
-                                    <td class="px-4 py-2 text-sm">
+                                    <td class="sm:px-4 px-2 py-2 text-sm">
                                         : {{ $santri->nama_ibu}}
                                     </td>
                                 </tr>

@@ -14,6 +14,6 @@ class Presensi extends Model
 
     public function santri()
     {
-        return $this->belongsTo(Santri::class,'santri_id','id');
+        return $this->belongsTo(Kelassantri::class,'kelassantri_id','id');
     }
 }
