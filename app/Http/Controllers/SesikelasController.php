@@ -102,8 +102,11 @@ class SesikelasController extends Controller
         foreach ($sesi->presensi as $pr) {
             $presensi[$pr->kelassantri_id] = $pr->keterangan;
         }
+        $jumlahHadir = $sesi->presensi()->where('keterangan', 'Hadir')->count();
+        $jumlahSakit = $sesi->presensi()->where('keterangan', 'Sakit')->count();
+        $jumlahAlfa = $sesi->presensi()->where('keterangan', 'alfa')->count();
         //dd($presensi);
-        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi]);
+        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi, 'jumlahHadir' => $jumlahHadir, 'jumlahSakit' => $jumlahSakit, 'jumlahAlfa' => $jumlahAlfa]);
     }
 
     public function simpanabsen(Request $request, SesiKelas $sesi)

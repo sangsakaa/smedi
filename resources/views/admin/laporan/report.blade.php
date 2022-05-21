@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Report Daily') }} Kelas {{ $sesi->kelas->nama_kelas }}
+        {{ __('Presensi Harian') }}
     </x-slot>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
@@ -17,15 +17,38 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div class=" w-full px-4">
-            <div class=" py-1">
-                Tanggal : {{ $sesi->tgl }}
+        <div class=" w-full px-4 py-2">
+            <div class=" grid grid-cols-2">
+                <div class=" font-semibold grid grid-cols-2">
+
+                    <div>Kelas MI</div>
+                    <div> : {{ $sesi->kelas->nama_kelas }}</div>
+                    <div> Tanggal Presensi</div>
+                    <div> : {{ $sesi->tgl }} </div>
+                    <div>Status Presensi</div>
+                    <div> :@if (!$presensi)
+                        <label for="" class=" text-red-600">Belum diabsen</label>
+                        @else
+                        <label for="" class=" text-green-600">Sudah di Absen</label>
+
+                        @endif
+                    </div>
+                </div>
+                <div class=" py-2 px-4 border rounded-md grid grid-cols-4">
+                    <div class=" bg-gray-50 px-4 py-1 border">Keterangan</div>
+                    <div class=" bg-gray-50 px-4 py-1 border">Hadir</div>
+                    <div class=" bg-gray-50 px-4 py-1 border">Sakit</div>
+                    <div class=" bg-gray-50 px-4 py-1 border">Alfa</div>
+                    <div class=" px-4 py-1 border">Jumlah</div>
+                    <div class=" px-4 py-1 border">{{$jumlahHadir}}</div>
+                    <div class=" px-4 py-1 border">{{$jumlahSakit}}</div>
+                    <div class=" px-4 py-1 border">{{$jumlahAlfa}}</div>
+
+                </div>
             </div>
             <form action="/absen/{{$sesi->id}}" method="post">
                 <button type="submit" class="mt-2 bg-green-700 rounded-md text-white py-1 px-2">save</button>
-                @if (!$presensi)
-                Belum diabsen
-                @endif
+
                 @csrf
 
                 <table class="border w-full mb-2 mt-2">
