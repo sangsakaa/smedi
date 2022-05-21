@@ -9,6 +9,9 @@
             <a href="/about">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
             </a>
+            <a href="/about">
+                <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
+            </a>
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-2 mt-2 w-full bg-white rounded-lg shadow-md">
