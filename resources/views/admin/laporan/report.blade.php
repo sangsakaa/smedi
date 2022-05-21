@@ -34,7 +34,7 @@
                         @endif
                     </div>
                 </div>
-                <div class=" py-2 px-4  rounded-md grid grid-cols-5">
+                <div class=" py-2 px-4  rounded-md grid grid-cols-1 sm:grid-cols-5">
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Keterangan</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Total</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Hadir</div>
