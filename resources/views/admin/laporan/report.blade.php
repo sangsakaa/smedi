@@ -38,7 +38,7 @@
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Hadir</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Sakit</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Alfa</div>
-                        <div class="font-semibold bg-gray-50 px-2 py-1 border"></div>
+                        <div class="font-semibold bg-gray-50 px-2 py-1 border">{{$total}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahHadir}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahSakit}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahAlfa}}</div>
