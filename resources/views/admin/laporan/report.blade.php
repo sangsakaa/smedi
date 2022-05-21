@@ -20,7 +20,6 @@
         <div class=" w-full px-4 py-2">
             <div class=" grid grid-cols-2">
                 <div class=" font-semibold grid grid-cols-2">
-
                     <div>Kelas MI</div>
                     <div> : {{ $sesi->kelas->nama_kelas }}</div>
                     <div> Tanggal Presensi</div>
@@ -30,11 +29,10 @@
                         <label for="" class=" text-red-600">Belum diabsen</label>
                         @else
                         <label for="" class=" text-green-600">Sudah di Absen</label>
-
                         @endif
                     </div>
                 </div>
-                <div class=" py-2 px-4  rounded-md grid grid-cols-5 sm:grid-cols-5">
+                <div class=" py-2 px-4  rounded-md grid grid-cols-2 sm:grid-cols-2">
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Keterangan</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Total</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Hadir</div>
@@ -45,7 +43,6 @@
                     <div class=" px-4 py-1 border">{{$jumlahHadir}}</div>
                     <div class=" px-4 py-1 border">{{$jumlahSakit}}</div>
                     <div class=" px-4 py-1 border">{{$jumlahAlfa}}</div>
-
                 </div>
             </div>
             <form action="/absen/{{$sesi->id}}" method="post">
