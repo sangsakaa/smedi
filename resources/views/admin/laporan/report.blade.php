@@ -32,14 +32,12 @@
                         @endif
                     </div>
                 </div>
-                <div class=" py-2 px-4  rounded-md grid grid-cols-5 sm:grid-cols-5">
+                <div class=" py-2 px-4  rounded-md grid grid-cols-4  sm:grid-cols-4">
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Keterangan</div>
-                    <div class="font-semibold bg-gray-50 px-4 py-1 border">Total</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Hadir</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Sakit</div>
                     <div class="font-semibold bg-gray-50 px-4 py-1 border">Alfa</div>
                     <div class=" font-semibold px-4 py-1 border">Jumlah</div>
-                    <div class=" px-4 py-1 border"> {{ $total }}</div>
                     <div class=" px-4 py-1 border">{{$jumlahHadir}}</div>
                     <div class=" px-4 py-1 border">{{$jumlahSakit}}</div>
                     <div class=" px-4 py-1 border">{{$jumlahAlfa}}</div>
