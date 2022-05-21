@@ -17,7 +17,7 @@
                     </form>
                     <a href="/about">
                         <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
-                            about
+                            Presensi Kelas
                         </button>
                     </a>
                 </div>

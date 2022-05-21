@@ -27,7 +27,7 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <div class=" grid grid-cols-1 sm:grid-cols-3">
                         <form action="/santri" method="get">
-                            <input type="text" autofocus name="cari" value="{{ request('cari') }}"
+                            <input type="text" name="cari" value="{{ request('cari') }}"
                                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4"
                                 placeholder=" Cari ..">
                             <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">

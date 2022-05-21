@@ -18,7 +18,7 @@ class SesikelasController extends Controller
     {
         $sesikelas = Sesikelas::all();
         $kelas = Kelas::all();
-        return view('admin/presensi/absen',['kelas'=>$kelas,'sesi'=>$sesikelas]);
+        return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $sesikelas]);
     }
 
     /**
@@ -39,12 +39,12 @@ class SesikelasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([    
-            'tgl'=>'required',
-            'kelas_id'=>'required',
+        $request->validate([
+            'tgl' => 'required',
+            'kelas_id' => 'required',
         ]);
-        
-        $sesikelas = New Sesikelas();
+
+        $sesikelas = new Sesikelas();
         $sesikelas->tgl = $request->tgl;
         $sesikelas->kelas_id = $request->kelas_id;
         $sesikelas->save();
@@ -98,18 +98,29 @@ class SesikelasController extends Controller
 
     public function absen(SesiKelas $sesi)
     {
-        return view('admin/laporan/report', ['sesi' => $sesi]);
+        $presensi = [];
+        foreach ($sesi->presensi as $pr) {
+            $presensi[$pr->kelassantri_id] = $pr->keterangan;
+        }
+        //dd($presensi);
+        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi]);
     }
-    
+
     public function simpanabsen(Request $request, SesiKelas $sesi)
     {
-        foreach ($sesi->kelas->kelassantri as $pesertakelas) {
-            $presensi = new Presensi;
-            $presensi->sesi_id = $sesi->id;
-            $presensi->kelassantri_id = $pesertakelas->kelassantri_id;
-            //dd($request->keterangan);
-            $presensi->keterangan = $request->keterangan[$pesertakelas->kelassantri_id];
-            $presensi->save();
+        foreach ($sesi->kelas->kelassantri  as $kelassantri) {
+            $presensi = $sesi->presensi()->where('kelassantri_id', $kelassantri->id)->first();
+            if ($presensi) {
+                $presensi->keterangan = $request->keterangan[$presensi->kelassantri_id];
+                $presensi->save();
+            } else {
+                $presensi = new Presensi;
+                $presensi->sesi_id = $sesi->id;
+                $presensi->kelassantri_id = $kelassantri->id;
+                //dd($request->keterangan);
+                $presensi->keterangan = $request->keterangan[$kelassantri->id];
+                $presensi->save();
+            }
         }
         return redirect()->back();
     }

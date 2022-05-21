@@ -16,28 +16,26 @@ class Asramasantri extends Model
 
     public function santri()
     {
-        return $this->belongsTo(santri::class,'santri_id','id');
+        return $this->belongsTo(santri::class, 'santri_id', 'id');
     }
     public function pendaftaran()
     {
-        return $this->belongsTo(Histori::class,'histori_id','id');
+        return $this->belongsTo(Histori::class, 'histori_id', 'id');
     }
     public function asrama()
     {
-        return $this->belongsTo(Asrama::class,'asrama_id','id');
+        return $this->belongsTo(Asrama::class, 'asrama_id', 'id');
     }
     public function KelasAsramasantri()
     {
-        return $this->belongsTo(Kelassantri::class,'asramasantri_id','id');
+        return $this->belongsTo(Kelassantri::class, 'asramasantri_id', 'id');
     }
     public function Asramasantri()
     {
-        return $this->belongsTo(santri::class,'asramasantri_id','id');
+        return $this->belongsTo(santri::class, 'asramasantri_id', 'id');
     }
     public function Presensi()
     {
-        return $this->belongsTo(Presensi::class,'asramasantri_id','id');
+        return $this->belongsTo(Presensi::class, 'asramasantri_id', 'id');
     }
-    
-    
 }

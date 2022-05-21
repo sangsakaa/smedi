@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Models\Report;
 use App\Models\Histori;
 use App\Models\Pengurus;
+use App\Models\Kelassantri;
 use App\Models\Asramasantri;
 use App\Models\Historipelanggaran;
 use Illuminate\Database\Eloquent\Model;
@@ -18,16 +19,16 @@ class Santri extends Model
     protected $table = "santri";
     public function historiTerakhir()
     {
-        return $this->hasOne(Histori::class)->latestOfMany(); 
+        return $this->hasOne(Histori::class)->latestOfMany();
     }
-    
+
     public function histori()
     {
         return $this->hasMany(Histori::class, 'histori_id', 'id');
     }
     public function asrama()
     {
-        return $this->belongsTo(Asramasantri::class,'santri_id','id');
+        return $this->belongsTo(Asramasantri::class, 'santri_id', 'id');
     }
     // 
     public function asramaTerakhir()
@@ -41,18 +42,20 @@ class Santri extends Model
     }
     public function santriPengurus()
     {
-        return $this->hasMany(Pengurus::class,'santri_id','id');
+        return $this->hasMany(Pengurus::class, 'santri_id', 'id');
     }
     public function santriAsrama()
     {
-        return $this->hasMany(Asramasantri::class,'asramasantri_id','id');
+        return $this->hasMany(Asramasantri::class, 'asramasantri_id', 'id');
     }
-    
+
     //  kelas santri
     public function santriReport()
     {
-        return $this->hasMany(Report::class,'asramasantri_id','id');
+        return $this->hasMany(Report::class, 'asramasantri_id', 'id');
     }
-    
-    
+    public function santri()
+    {
+        return $this->hasMany(Kelassantri::class, 'kelassantri_id', 'id');
+    }
 }

@@ -10,7 +10,7 @@ class Presensi extends Model
 {
     use HasFactory;
 
-    protected $table = "absensi_kelas";
+    protected $table = 'absensi_kelas';
 
     public function santri()
     {
