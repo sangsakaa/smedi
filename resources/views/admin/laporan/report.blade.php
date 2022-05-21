@@ -33,14 +33,12 @@
                     </div>
                 </div>
                 <div class="">
-                    <div class=" py-2  rounded-md grid grid-cols-5  sm:grid-cols-5">
+                    <div class=" py-2  rounded-md grid grid-cols-4  sm:grid-cols-4">
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Ket</div>
-                        <div class="font-semibold bg-gray-50 px-2 py-1 border">Total</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Hadir</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Sakit</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border">Alfa</div>
                         <div class="font-semibold bg-gray-50 px-2 py-1 border"></div>
-                        <div class=" px-2 py-1 border">{{$total}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahHadir}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahSakit}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahAlfa}}</div>
