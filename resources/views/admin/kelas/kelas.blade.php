@@ -6,20 +6,25 @@
     <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx-3 font-semibold uppercase text-green-800">
+        <div class="px-4 py-2 w-full ">
+            <div class=" w-full font-semibold uppercase text-green-800">
                 <div class=" grid grid-cols-2 gap-2">
-                    <form action="/kelas" method="get">
-                        <input type="text" name="cari" value="{{ request('cari') }}"
-                            class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                            Cari</button>
-                    </form>
-                    <a href="/about">
-                        <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
-                            Presensi Kelas
-                        </button>
-                    </a>
+                    <div>
+                        <a href="/about">
+                            <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
+                                Presensi Kelas
+                            </button>
+                        </a>
+                    </div>
+                    <div class=" grid justify-items-end">
+                        <form action="/kelas" method="get">
+                            <input type="text" name="cari" value="{{ request('cari') }}"
+                                class="border border-green-800 text-green-800 rounded-md py-1 px-4"
+                                placeholder=" Cari ..">
+                            <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                                Cari</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,9 +37,9 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/kelas" method="post">
                         @csrf
-                        <input autofocus name="nama_kelas" type="text" class=" w-1/4 rounded-md px-2 py-1"
+                        <input name="nama_kelas" type="text" class=" border border-green-800 w-1/4 rounded-md px-2 py-1"
                             placeholder=" masukan nama Kelas">
-                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                        <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">
                             Kelas</button>
                     </form>
                     <div class=" bg-gray-50 mt-2">
@@ -56,19 +61,19 @@
                                         @if($kelas->count())
                                         @foreach( $kelas as $kela)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 <a href="/kelas/{{$kela->id}}">
                                                     {{ $kela->nama_kelas }}
                                                 </a>
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{ $kela->hitung }}
                                             </td>
                                             </td>
-                                            <td class=" px-4 py-2 text-sm">
+                                            <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class="flex">
                                                         <form action="/kelas/{{$kela->id}}" method="post">

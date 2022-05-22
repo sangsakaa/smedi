@@ -10,17 +10,18 @@
             <a href="/kelas">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
             </a>
+            <a href="/about"><button class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                    Reset</button></a>
         </div>
-        <div class=" grid grid-cols-1 justify-items-end">
+        <div class=" grid grid-cols-1 justify-items-end ">
             <div>
                 <form action="/about" method="get">
                     <input type="date" name="cari" value="{{ request('cari') }}"
                         class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
                     <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                         Cari</button>
-                    <button type="reset" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Reset</button>
                 </form>
+
             </div>
         </div>
     </div>
@@ -29,6 +30,25 @@
         </div>
         <h1 class=" text-2xl text-center uppercase"> Rekapitulasi Madrsah Ibtida'iyah Wahidiyah</h1>
         <hr>
+        <div class=" grid grid-cols-2">
+            <div class=" grid grid-cols-2">
+
+            </div>
+            <div class=" ">
+                <div class=" mt-2 grid grid-cols-4 uppercase text-center  ">
+                    <div class=" bg-green-50 px-2 py-1 border ">Total</div>
+                    <div class=" bg-green-50 px-2 py-1 border ">Hadir</div>
+                    <div class=" bg-green-50 px-2 py-1 border ">Sakit</div>
+                    <div class=" bg-green-50 px-2 py-1 border ">Alfa</div>
+                    <div class=" px-2 py-1 border ">100</div>
+                    <div class=" px-2 py-1 border ">100</div>
+                    <div class=" px-2 py-1 border ">2</div>
+                    <div class=" px-2 py-1 border ">2</div>
+
+                </div>
+            </div>
+        </div>
+
         <table class=" table-auto mt-4 w-full border">
             <thead class=" border px-2 py-2">
                 <tr class=" uppercase">

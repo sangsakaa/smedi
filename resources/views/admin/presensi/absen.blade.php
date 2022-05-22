@@ -17,20 +17,20 @@
     <div class="inline-flex overflow-hidden mb-2 mt-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div class=" px-4 py-1">
+        <div class=" sm:w-1/2 w-full px-4 py-1">
             <form action="/absen" method="post">
                 @csrf
-                <label for="">Tanggal</label>
-                <input class=" border border-green-600 rounded-md px-2 py-1" placeholder=" masukan data" type="date"
-                    name="tgl">
-                <label for="">Kelas</label>
-                <select name="kelas_id" id="" class=" border border-green-800 px-2 py-1 rounded-md">
-                    <option value=""> -- Pilih Kelas --</option>
-                    @foreach ($kelas as $kelas)
-                    <option value="{{$kelas->id}} "> {{ $kelas->nama_kelas  }}</option>
-                    @endforeach
-                </select>
-                <button type="submit" class=" bg-green-600 text-white px-2 py-1 rounded-md">Sesi</button>
+                <div class=" w-full grid sm:grid-cols-3 grid-cols-1 gap-2">
+                    <input class=" border border-green-600 rounded-md px-2 py-1" placeholder=" masukan data" type="date"
+                        name="tgl">
+                    <select name="kelas_id" id="" class=" border border-green-800 px-2 py-1 rounded-md">
+                        <option value=""> -- Pilih Kelas --</option>
+                        @foreach ($kelas as $kelas)
+                        <option value="{{$kelas->id}} "> {{ $kelas->nama_kelas  }}</option>
+                        @endforeach
+                    </select>
+                    <button type="submit" class=" bg-green-600 text-white px-2 py-1 rounded-md">Sesi</button>
+                </div>
             </form>
         </div>
     </div>
@@ -41,7 +41,7 @@
             <div class=" font-semibold mt-4">
                 SESI KELAS
             </div>
-            <table class=" mt-2 mb-4 w-1/2 table border rounded-md">
+            <table class=" mt-2 mb-4 sm:w-1/2 w-full table border rounded-md">
                 <thead class=" border rounded-md ">
                     <tr class=" bg-gray-50">
                         <th class="px-2 py-1 text-center border">

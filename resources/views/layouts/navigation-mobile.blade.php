@@ -42,7 +42,7 @@
                 </x-nav-link>
             </li>
             <li class="relative px-6 py-3">
-                <x-nav-link href="{{ route('santri.index') }}" :active="request()->routeIs('santri.index')">
+                <x-nav-link href="{{ route('absen.index') }}" :active="request()->routeIs('absen.index')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@
                             </path>
                         </svg>
                     </x-slot>
-                    {{ __('santri') }}
+                    {{ __('Presensi') }}
                 </x-nav-link>
             </li>
 
