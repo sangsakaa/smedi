@@ -20,4 +20,9 @@ class Presensi extends Model
     {
         return $this->hasMany(Presensi::class)->whereKelassantriId($this->id)->count();
     }
+
+    public function sesi()
+    {
+        return $this->belongsTo(Sesikelas::class, 'sesi_id', 'id');
+    }
 }

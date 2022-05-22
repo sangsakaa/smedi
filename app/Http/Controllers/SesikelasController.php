@@ -6,6 +6,7 @@ use App\Models\Kelas;
 use App\Models\Presensi;
 use App\Models\Sesikelas;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SesikelasController extends Controller
 {
@@ -40,7 +41,12 @@ class SesikelasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tgl' => 'required',
+            'tgl' => [
+                'required',
+                'date',
+                'before_or_equal:now',
+                Rule::unique('sesi_kelas')->where(fn ($query) => $query->where('kelas_id', $request->kelas_id))
+            ],
             'kelas_id' => 'required',
         ]);
 

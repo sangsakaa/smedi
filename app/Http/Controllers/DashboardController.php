@@ -35,7 +35,9 @@ class DashboardController extends Controller
     {
         $rekap = Presensi::latest();
         if (request('cari')) {
-            $rekap->where('created_at', 'like', '%' . request('cari') . '%');
+            $rekap->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
+                ->select('absensi_kelas.*', 'sesi_kelas.tgl')
+                ->where('sesi_kelas.tgl', 'like', '%' . request('cari') . '%');
         }
         return view('about', ['rekap' => $rekap->get()]);
     }

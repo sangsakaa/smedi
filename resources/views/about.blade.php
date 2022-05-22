@@ -18,6 +18,8 @@
                         class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
                     <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                         Cari</button>
+                    <button type="reset" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                        Reset</button>
                 </form>
             </div>
         </div>
@@ -44,7 +46,7 @@
                 <tr class=" hover:bg-gray-100 border">
                     <td class=" text-center border ">{{$loop->iteration}}</td>
                     <td class=" text-center border ">
-                        {{ date_format(date_create($rekap->created_at),'d-m-Y') }}
+                        {{ date_format(date_create($rekap->sesi->tgl),'d-m-Y') }}
                     </td>
                     <td class=" px-2 border">
                         {{ $rekap->santri->asramasantri->santri->nama_santri}}
