@@ -58,9 +58,9 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <form action="/absen/{{$sesi->id}}" method="post">
                 <button type="submit" class="mt-2 bg-green-700 rounded-md text-white py-1 px-2">Simpan Presensi</button>
-
                 @csrf
 
                 <table class="border w-full mb-2 mt-2">
