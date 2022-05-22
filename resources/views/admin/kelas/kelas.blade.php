@@ -60,7 +60,7 @@
                                     <tbody class="bg-white divide-y capitalize">
                                         @if($kelas->count())
                                         @foreach( $kelas as $kela)
-                                        <tr class="text-gray-700">
+                                        <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
