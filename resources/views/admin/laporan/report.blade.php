@@ -12,9 +12,22 @@
             <a href="/about">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
             </a>
+            <script>
+            function printContent(el) {
+                var fullbody = document.body.innerHTML;
+                var printContent = document.getElementById(el).innerHTML;
+                document.body.innerHTML = printContent;
+                window.print();
+                document.body.innerHTML = fullbody;
+            }
+            </script>
+
+            <button class="text-white rounded-md mb-2 bg-green-800 px-2 py-1 " onclick="printContent('div1')">
+                Cetak Presensi</button>
+
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div id="div1" class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-4  py-4">

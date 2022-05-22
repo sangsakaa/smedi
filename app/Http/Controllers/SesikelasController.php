@@ -17,7 +17,7 @@ class SesikelasController extends Controller
      */
     public function index()
     {
-        $sesikelas = Sesikelas::paginate(12);
+        $sesikelas = Sesikelas::paginate(9);
         $kelas = Kelas::all();
         return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $sesikelas]);
     }
@@ -97,9 +97,11 @@ class SesikelasController extends Controller
      * @param  \App\Models\Sesikelas  $sesikelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sesikelas $sesikelas)
+    public function destroy(Sesikelas $absen)
     {
-        //
+        // dd($absen);
+        // Sesikelas::destroy($absen->id);
+        // return redirect()->back();
     }
 
     public function absen(SesiKelas $sesi)

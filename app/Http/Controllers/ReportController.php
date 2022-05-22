@@ -17,7 +17,7 @@ class ReportController extends Controller
     public function index()
     {
         $report = Kelassantri::all();
-        
+
         // return view('admin/laporan/report',['kelas'=>$report]);
     }
 

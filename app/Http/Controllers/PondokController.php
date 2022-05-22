@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pondok;
 use Illuminate\Http\Request;
+
 class PondokController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class PondokController extends Controller
     public function index()
     {
         $pondok = Pondok::all();
-        return view('admin/pondok/pondok',['pondok'=>$pondok]);
+        return view('admin/pondok/pondok', ['pondok' => $pondok]);
     }
 
     /**

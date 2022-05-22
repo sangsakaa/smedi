@@ -84,6 +84,6 @@ class PresensiController extends Controller
      */
     public function destroy(Presensi $presensi)
     {
-        //
+        //    
     }
 }

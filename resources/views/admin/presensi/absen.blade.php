@@ -2,7 +2,7 @@
     <x-slot name="header">
         Presensi Kelas
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden  w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div type="text" class=" bg-white rounded-lg shadow-xs px-4 py-2 ">
@@ -14,7 +14,7 @@
             </a>
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-2 mt-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-1 mt-1 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" sm:w-1/2 w-full px-4 py-1">
@@ -34,7 +34,7 @@
             </form>
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-2 mt-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-1 mt-1 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-4">
@@ -53,6 +53,9 @@
                         <th class="px-2 py-1 text-left">
                             Kelas
                         </th>
+                        <th class="px-2 py-1 text-left">
+                            Aksi
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,11 +68,14 @@
                         <td class=" border px-2 py-1">
                             <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
                         </td>
+                        <td class=" border px-2 py-1">
+
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            <div class="   py-4">
+            <div class=" py-1  ">
                 {{ $sesi->links() }}
             </div>
         </div>
