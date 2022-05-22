@@ -64,15 +64,15 @@
                         {{ $rekap->where('keterangan')->count() *100 /$rekap->where('keterangan')->count()}} %
                     </div>
                     <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Hadir')->count() *100 /$rekap->where('keterangan')->count(),1)}}
+                        {{ number_format($rekap->where('keterangan','Hadir')->count() *100 /$rekap->where('keterangan')->count(),0)}}
                         %
                     </div>
                     <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Sakit')->count() *100 /$rekap->where('keterangan')->count(),1)}}
+                        {{ number_format($rekap->where('keterangan','Sakit')->count() *100 /$rekap->where('keterangan')->count(),0)}}
                         %
                     </div>
                     <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Alfa')->count() *100 /$rekap->where('keterangan')->count(),1)}}
+                        {{ number_format($rekap->where('keterangan','Alfa')->count() *100 /$rekap->where('keterangan')->count(),0)}}
                         %
                     </div>
 
