@@ -16,7 +16,7 @@ class SesikelasController extends Controller
      */
     public function index()
     {
-        $sesikelas = Sesikelas::all();
+        $sesikelas = Sesikelas::paginate(12);
         $kelas = Kelas::all();
         return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $sesikelas]);
     }

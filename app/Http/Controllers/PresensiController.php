@@ -15,10 +15,10 @@ class PresensiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Santri $santri)
+    public function index(Santri $santri)
     {
-        $presensi = Asramasantri::where('santri_id',$santri->id)->get();
-        return view('admin/presensi/absen',['absen'=>$presensi,'santri'=>$santri]);
+        $presensi = Asramasantri::where('santri_id', $santri->id)->get();
+        return view('admin/presensi/absen', ['absen' => $presensi, 'santri' => $santri]);
     }
 
     /**

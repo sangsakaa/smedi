@@ -2,8 +2,8 @@
     <x-slot name="header">
         {{ __(' Form Tambah Data Anggota Asrama') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-1 w-full bg-white rounded-lg shadow-md">
-        <div class="  text-white px-4 py-2 w-1/3 justify-end  bg-green-800 font-semibold  uppercase">
+    <div class="inline-flex overflow-hidden  w-full bg-white rounded-lg shadow-md">
+        <div class="  text-white px-4 py-2 w-1/3  text-right  bg-green-800 font-semibold  uppercase">
             <span class=" text-4xl text-left"><a href="/asrama">
                     {{ $asrama->nama_asrama }}
                 </a></span>
@@ -14,8 +14,9 @@
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-1 mt-2 w-full bg-white rounded-lg shadow-md">
-        <div class=" w-1/4  text-white    bg-green-800 font-semibold px-4 py-4 uppercase">
-            Kepengurusan Asrama
+        <div class=" w-1/3 grid grid-cols-1 text-white text-right    bg-green-800 font-semibold px-4 py-2 uppercase">
+            <div>Kepengurusan</div>
+            <div>Asrama</div>
         </div>
         <div class=" w-1"></div>
         <div class="flex justify-center items-center w-2  bg-green-800">
@@ -61,7 +62,8 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asramasantri" method="post">
                         @csrf
-                        <input name="santri_id" class="form-control w-1/3 py-1 px-2 rounded-md  border"
+                        <input name="santri_id"
+                            class=" border-green-800 form-control w-1/3 py-1 px-2 rounded-md  border"
                             list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
                         <datalist id="datalistOptions">
                             <option value=""> Pilih Anggota Asrama </option>
@@ -69,14 +71,14 @@
                             <option class="text-green-800" value="{{$santri->id}}">{{$santri->nama_santri}} </option>
                             @endforeach
                         </datalist>
-                        <input name="asrama_id" type="hidden" value="{{$asrama->id}}" class=" rounded-md py-1"
-                            placeholder=" asrama_id">
-                        <input name="histori_id" type="hidden" value="1" class=" rounded-md py-1"
-                            placeholder=" histori_id">
-                        <input name="tanggal_masuk" type="date" value="1" class=" rounded-md py-1"
-                            placeholder=" tanggal_masuk">
-                        <input name="tanggal_keluar" type="date" value="1" class=" rounded-md py-1"
-                            placeholder=" tanggal_keluar">
+                        <input name="asrama_id" type="hidden" value="{{$asrama->id}}"
+                            class="border-green-800 rounded-md py-1" placeholder=" asrama_id">
+                        <input name="histori_id" type="hidden" value="1"
+                            class=" px-4 border border-green-800 rounded-md py-1" placeholder=" histori_id">
+                        <input name="tanggal_masuk" type="date" value="1"
+                            class=" px-4 border border-green-800 rounded-md py-1" placeholder=" tanggal_masuk">
+                        <input name="tanggal_keluar" type="date" value="1"
+                            class=" px-4 border border-green-800 rounded-md py-1" placeholder=" tanggal_keluar">
                         <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">
                             Anggota Asrama</button>
                     </form>
@@ -100,29 +102,29 @@
                                     <tbody class="bg-white divide-y">
                                         @if($anggota->count())
                                         @foreach ( $anggota as $item)
-                                        <tr class="text-gray-700 uppercase">
-                                            <td class="px-4 py-2 text-sm  ">
+                                        <tr class=" hover:bg-gray-50 text-gray-700 uppercase">
+                                            <td class="px-4 py-1 text-sm  ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
+                                            <td class="px-4 py-1 text-sm  ">
                                                 {{ $item->santri->nama_santri}}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
+                                            <td class="px-4 py-1 text-sm  ">
                                                 {{ $item->santri->asal_kota}}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{$item->asrama->nama_asrama }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{$item->asrama->type_asrama }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{$item->tanggal_masuk }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{$item->tanggal_keluar }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 <form action="/asramasantri/{{$item->id}}" method="post">
                                                     @csrf
                                                     @method('delete')

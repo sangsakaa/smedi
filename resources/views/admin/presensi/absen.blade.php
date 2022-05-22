@@ -38,7 +38,9 @@
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-4">
-            <label for="" class=" py-4 font-semibold">SESI KELAS</label>
+            <div class=" font-semibold mt-4">
+                SESI KELAS
+            </div>
             <table class=" mt-2 mb-4 w-1/2 table border rounded-md">
                 <thead class=" border rounded-md ">
                     <tr class=" bg-gray-50">
@@ -54,19 +56,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($sesi as $sesi)
-                    <tr>
+                    @foreach($sesi as $sesikelas)
+                    <tr class=" hover:bg-gray-100">
                         <td class=" border text-center">{{$loop->iteration}}</td>
                         <td class=" border px-2 py-1">
-                            {{ date_format(date_create($sesi->tgl),'d-m-Y') }}
+                            {{ date_format(date_create($sesikelas->tgl),'d-m-Y') }}
                         </td>
                         <td class=" border px-2 py-1">
-                            <a href="/absen/{{ $sesi->id }}">{{ $sesi->kelas->nama_kelas }}</a>
+                            <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="   py-4">
+                {{ $sesi->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>
