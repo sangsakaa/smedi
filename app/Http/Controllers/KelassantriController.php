@@ -19,7 +19,7 @@ class KelassantriController extends Controller
 
     {
         $kelassantri = Asramasantri::all();
-        return view('admin/kelas/listsantri',['list'=>$kelassantri]);
+        return view('admin/kelas/listsantri', ['list' => $kelassantri]);
     }
 
     /**
@@ -49,9 +49,8 @@ class KelassantriController extends Controller
      * @param  \App\Models\Kelassantri  $kelassantri
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelassantri $kelassantri,$kela)
+    public function show(Kelassantri $kelassantri, $kela)
     {
-        
     }
 
     /**
