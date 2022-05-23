@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'absen']);
     Route::get('about', [App\Http\Controllers\DashboardController::class, 'rekap']);
-    Route::get('welcome', [App\Http\Controllers\DashboardController::class, 'rekap1']);
+    // Route::get('welcome', [App\Http\Controllers\DashboardController::class, 'rekap1']);
     Route::post('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'simpanabsen']);
 
     // pondok

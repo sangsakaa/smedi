@@ -2,8 +2,8 @@
     <x-slot name="header">
         {{ __('Rekapitulasi Harian') }}
     </x-slot>
-    <div type="text" class=" grid grid-cols-2 px-4  bg-white rounded-lg shadow-xs py-2 mb-2">
-        <div>
+    <div type="text" class=" grid grid-cols-2 sm:grid-cols-2 px-4  bg-white rounded-lg shadow-xs py-2 mb-2">
+        <div class="">
             <a href="/absen">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Presensi</button>
             </a>
@@ -21,11 +21,8 @@
                 document.body.innerHTML = fullbody;
             }
             </script>
-
-
             <button class="text-white rounded-md mb-2 bg-green-800 px-2 py-1 " onclick="printContent('div1')">
                 Cetak Presensi</button>
-
         </div>
         <div class=" grid grid-cols-1 justify-items-end ">
             <div>
@@ -86,17 +83,17 @@
 
         <div class="">
             <table class="  table-auto mt-4 w-full border">
-                <thead class=" border px-2 ">
+                <thead class=" text-sm border px-2 ">
                     <tr class=" text-green-800 bg-gray-50 uppercase">
                         <th class=" py-1 text-center border">#</th>
                         <th class=" border text-center ">Tgl</th>
                         <th class=" px-2 border text-left">Nama Santri</th>
                         <th class=" border text-center">Asrama</th>
                         <th class=" border text-center">Kelas MI</th>
-                        <th class="  ">Keterangan</th>
+                        <th class="  ">Ket</th>
                     </tr>
                 </thead>
-                <tbody class=" text-sm  ">
+                <tbody class="  text-xs  ">
                     @if($rekap->count())
                     @foreach ($rekap as $rekap)
                     <tr class=" hover:bg-gray-100 border">
