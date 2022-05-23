@@ -39,51 +39,55 @@
             </div>
         </div>
     </div>
-    <div class="p-4 bg-white rounded-lg shadow-xs">
+    <div id="div1" class="p-4 bg-white rounded-lg shadow-xs">
         <div>
         </div>
-        <h1 class=" text-2xl text-center font-semibold  uppercase "> Madrasah Ibtida'iyah Wahidiyah</h1>
+        <h1 class=" text-2xl text-center font-semibold  uppercase text-green-800 "> Madrasah Ibtida'iyah Wahidiyah</h1>
+        <hr>
+        <p class=" text-center text-sm text-green-800">Alamat : Jln.Gang Pondok, Desa Bandar Lor, Kec. Mojoroto, Bandar
+            Lor, Kec.
+            Kediri, Jawa
+            Timur 64112
+        </p>
         <hr>
         <div class=" grid grid-cols-2">
-            <div class=" grid grid-cols-2">
-
+            <div class=" grid  col-span-1">
             </div>
-            <div class=" ">
-                <div class=" mt-2 grid grid-cols-4 uppercase text-center  ">
-                    <div class=" bg-gray-50 px-2 py-1 border ">Total</div>
-                    <div class=" bg-gray-50 px-2 py-1 border ">Hadir</div>
-                    <div class=" bg-gray-50 px-2 py-1 border ">Sakit</div>
-                    <div class=" bg-gray-50  px-2 py-1 border ">Alfa</div>
-                    <div class=" px-2 py-1 border ">{{ $rekap->where('keterangan')->count()}}</div>
-                    <div class=" px-2 py-1 border ">
-                        {{ $rekap->where('keterangan','Hadir')->count() }}
-                    </div>
-                    <div class=" px-2 py-1 border ">{{ $rekap->where('keterangan','Sakit')->count()}}</div>
-                    <div class=" px-2 py-1 border ">{{ $rekap->where('keterangan','Alfa')->count()}}</div>
-                    <div class=" px-2 py-1 border ">
-                        {{ $rekap->where('keterangan')->count() *100 /$rekap->where('keterangan')->count()}} %
-                    </div>
-                    <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Hadir')->count() *100 /$rekap->where('keterangan')->count(),0)}}
-                        %
-                    </div>
-                    <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Sakit')->count() *100 /$rekap->where('keterangan')->count(),0)}}
-                        %
-                    </div>
-                    <div class=" px-2 py-1 border ">
-                        {{ number_format($rekap->where('keterangan','Alfa')->count() *100 /$rekap->where('keterangan')->count(),0)}}
-                        %
-                    </div>
-
+            <div class=" text-sm mt-2 grid grid-cols-4   uppercase text-center  ">
+                <div class=" bg-gray-50 px-2 py-1 border ">Total</div>
+                <div class=" bg-gray-50 px-2 py-1 border ">Hadir</div>
+                <div class=" bg-gray-50 px-2 py-1 border ">Sakit</div>
+                <div class=" bg-gray-50  px-2 py-1 border ">Alfa</div>
+                <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan')->count()}}</div>
+                <div class=" px-2 py-0 border ">
+                    {{ $rekap->where('keterangan','Hadir')->count() }}
                 </div>
+                <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Sakit')->count()}}</div>
+                <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Alfa')->count()}}</div>
+                <div class=" px-2 py-0 border ">
+                    {{ $rekap->where('keterangan')->count() *100 /$rekap->where('keterangan')->count()}} %
+                </div>
+                <div class=" px-2 py-0 border ">
+                    {{ number_format($rekap->where('keterangan','Hadir')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    %
+                </div>
+                <div class=" px-2 py-0 border ">
+                    {{ number_format($rekap->where('keterangan','Sakit')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    %
+                </div>
+                <div class=" px-2 py-0 border ">
+                    {{ number_format($rekap->where('keterangan','Alfa')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    %
+                </div>
+
             </div>
+
         </div>
 
-        <div id="div1" class="">
+        <div class="">
             <table class="  table-auto mt-4 w-full border">
                 <thead class=" border px-2 ">
-                    <tr class=" bg-gray-50 uppercase">
+                    <tr class=" text-green-800 bg-gray-50 uppercase">
                         <th class=" py-1 text-center border">#</th>
                         <th class=" border text-center ">Tgl</th>
                         <th class=" px-2 border text-left">Nama Santri</th>
@@ -100,7 +104,7 @@
                         <td class=" text-center border ">
                             {{ date_format(date_create($rekap->sesi->tgl),'d-m-Y') }}
                         </td>
-                        <td class=" px-2 border">
+                        <td class=" px-2 border uppercase">
                             {{ $rekap->santri->asramasantri->santri->nama_santri}}
                         </td>
                         <td class=" border text-center">
@@ -116,7 +120,7 @@
                             @elseif ($rekap->keterangan === 'Sakit')
                             <p class=" text-yellow-300">Sakit</p>
                             @else
-                            <p class=" text-red-700">Alfa</p>
+                            <p class=" text-red-800">Alfa</p>
                             @endif
 
                         </td>

@@ -563,6 +563,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
 .float-right {
   float: right;
 }
@@ -1082,6 +1088,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0px;
   padding-right: 0px;
 }
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1244,6 +1254,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-indigo-700 {
   --tw-text-opacity: 1;
   color: rgb(81 69 205 / var(--tw-text-opacity));
+}
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(155 28 28 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;

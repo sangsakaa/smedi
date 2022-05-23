@@ -62,7 +62,7 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asramasantri" method="post">
                         @csrf
-                        <input name="santri_id"
+                        <input autofocus name="santri_id"
                             class=" border-green-800 form-control w-1/3 py-1 px-2 rounded-md  border"
                             list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
                         <datalist id="datalistOptions">
