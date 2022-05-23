@@ -125,8 +125,8 @@
                                             <td class=" px-4 py-1 text-sm text-center">
                                                 @if ($s !== null)
                                                 <?php
-                                                $date=date_create($s->tanggal_masuk);
-                                                echo date_format($date,"Y");
+                                                $date = date_create($s->tanggal_masuk);
+                                                echo date_format($date, "Y");
                                                 ?>
                                                 @endif
                                             </td>

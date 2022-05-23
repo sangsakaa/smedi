@@ -96,7 +96,7 @@
                         <th class="  ">Keterangan</th>
                     </tr>
                 </thead>
-                <tbody class=" ">
+                <tbody class=" text-sm  ">
                     @if($rekap->count())
                     @foreach ($rekap as $rekap)
                     <tr class=" hover:bg-gray-100 border">
