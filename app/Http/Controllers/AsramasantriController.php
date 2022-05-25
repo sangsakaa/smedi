@@ -99,7 +99,7 @@ class AsramasantriController extends Controller
 
     public function addManyPage()
     {
-        $asrama = Asrama::all();
+        $asrama = Asrama::orderBy('nama_asrama');
         $kelassantri = Santri::leftJoin('asramasantri', 'santri.id', '=', 'asramasantri.santri_id')
             ->where('asramasantri.santri_id', '=', null)->select('santri.*')->get();
         return view('admin/kelas/listsantri', ['list' => $kelassantri, 'asrama' => $asrama]);
