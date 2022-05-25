@@ -102,29 +102,29 @@
                                     <tbody class="bg-white divide-y">
                                         @if($anggota->count())
                                         @foreach ( $anggota as $item)
-                                        <tr class=" hover:bg-gray-50 text-gray-700 uppercase">
-                                            <td class="px-4 py-1 text-sm  ">
+                                        <tr class=" hover:bg-gray-50 text-gray-700  text-xs ">
+                                            <td class="px-4  text-sm  ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm  ">
+                                            <td class="px-4  text-sm  ">
                                                 {{ $item->santri->nama_santri}}
                                             </td>
-                                            <td class="px-4 py-1 text-sm  ">
+                                            <td class="px-4  text-sm  ">
                                                 {{ $item->santri->asal_kota}}
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4  text-sm ">
                                                 {{$item->asrama->nama_asrama }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4  text-sm ">
                                                 {{$item->asrama->type_asrama }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4  text-sm ">
                                                 {{$item->tanggal_masuk }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4  text-sm ">
                                                 {{$item->tanggal_keluar }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4  text-sm ">
                                                 <form action="/asramasantri/{{$item->id}}" method="post">
                                                     @csrf
                                                     @method('delete')
