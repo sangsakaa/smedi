@@ -18,7 +18,7 @@ class KelassantriController extends Controller
     public function index()
 
     {
-        $kelassantri = Asramasantri::orderBy('santri_id');
+        $kelassantri = Asramasantri::orderBy('id', 'asc')->all();
         return view('admin/kelas/listsantri', ['list' => $kelassantri]);
     }
 
