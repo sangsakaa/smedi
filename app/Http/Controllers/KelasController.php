@@ -19,11 +19,11 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $cari = Kelas::latest();
-        if (request('cari')){
-            $cari->where('nama_kelas','like','%'.request('cari').'%');
+        $cari = Kelas::orderBy('id', 'asc');
+        if (request('cari')) {
+            $cari->where('nama_kelas', 'like', '%' . request('cari') . '%');
         }
-        return view('admin/kelas/kelas',['kelas'=>$cari->get()]);
+        return view('admin/kelas/kelas', ['kelas' => $cari->get()]);
     }
 
     /**
@@ -44,9 +44,9 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([    
-            
-            'nama_kelas'=>'required',
+        $request->validate([
+
+            'nama_kelas' => 'required',
         ]);
         $kelas_akhir = Kelas::orderBy('id', 'desc')->first();
         if (is_null($kelas_akhir)) {
@@ -56,24 +56,24 @@ class KelasController extends Controller
             $nomor = (int) substr($kode_akhir, -3); // 2013002 -> 003
             $nomor = $nomor + 1;
             $kode_kelas = 'K' . str_pad($nomor, 3, '0', STR_PAD_LEFT); // 4 -> 004
-        
+
         }
-        $kelas = New Kelas;
+        $kelas = new Kelas;
         $kelas->kode_kelas = $kode_kelas;
-        $kelas->nama_kelas = $request->nama_kelas; 
+        $kelas->nama_kelas = $request->nama_kelas;
         $kelas->save();
         return redirect()->back();
     }
     public function kelasstore(Request $request)
     {
-        $request->validate([    
-            'asramasantri_id'=>'required',
-            'kelas_id'=>'required',
+        $request->validate([
+            'asramasantri_id' => 'required',
+            'kelas_id' => 'required',
         ]);
-        
-        $kelas = New Kelassantri();
+
+        $kelas = new Kelassantri();
         $kelas->asramasantri_id = $request->asramasantri_id;
-        $kelas->kelas_id = $request->kelas_id; 
+        $kelas->kelas_id = $request->kelas_id;
         $kelas->save();
         return redirect()->back();
     }
@@ -84,15 +84,15 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show( Kelas $kelas ,Asrama $asrama)
+    public function show(Kelas $kelas, Asrama $asrama)
     {
-    
+
         $dataAsrama = Asrama::all();
         $dataSantri = Santri::all();
         $asramasantri = Asramasantri::all();
-        $kelasSantri = Kelassantri::where('kelas_id',$kelas->id)->get();
+        $kelasSantri = Kelassantri::where('kelas_id', $kelas->id)->get();
         $dataKelas = Kelas::all();
-        return view('admin/kelas/detailKelas',['list'=>$dataAsrama,'dataSantri'=>$dataSantri,'asrama'=>$asrama,'datakelas'=>$dataKelas,'kelas'=>$kelas,'DataAsrama'=>$asramasantri,'kelasSantri'=>$kelasSantri]);
+        return view('admin/kelas/detailKelas', ['list' => $dataAsrama, 'dataSantri' => $dataSantri, 'asrama' => $asrama, 'datakelas' => $dataKelas, 'kelas' => $kelas, 'DataAsrama' => $asramasantri, 'kelasSantri' => $kelasSantri]);
     }
 
     /**
@@ -103,7 +103,7 @@ class KelasController extends Controller
      */
     public function edit(Kelas $kelas)
     {
-        return view('admin/kelas/editkelas',['kelas'=>$kelas]);
+        return view('admin/kelas/editkelas', ['kelas' => $kelas]);
     }
 
     /**
@@ -116,11 +116,11 @@ class KelasController extends Controller
     public function update(Request $request, Kelas $kelas)
     {
         $request->validate([
-            'kode_kelas'=>'required',
-            'nama_kelas'=>'required',
+            'kode_kelas' => 'required',
+            'nama_kelas' => 'required',
         ]);
         Kelas::where('id', $kelas->id)
-            ->update([ 
+            ->update([
                 'kode_kelas' => $request->kode_kelas,
                 'nama_kelas' => $request->nama_kelas,
             ]);
