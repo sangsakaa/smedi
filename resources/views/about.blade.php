@@ -89,7 +89,7 @@
                         <th class=" border text-center ">Tgl</th>
                         <th class=" px-2 border text-left">Nama Santri</th>
                         <th class=" border text-center">Asrama</th>
-                        <th class=" border text-center">Kelas MI</th>
+                        <th class=" border text-center">Kelas</th>
                         <th class="  ">Ket</th>
                     </tr>
                 </thead>
