@@ -30,8 +30,7 @@ class DashboardController extends Controller
         $l = Santri::where('jenis_kelamin', 'L')->count();
         $p = Santri::where('jenis_kelamin', 'p')->count();
         $kelas = Kelas::all();
-        $kelassantri = Kelassantri::where('id', 'kelasantri')->count();
-        return view('/dashboard', ['kelass' => $kelassantri, 'kelas' => $kelas, 'asi' => $asi, 'as' => $as, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
+        return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $as, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
     }
     public function rekap()
     {
