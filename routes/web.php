@@ -29,7 +29,13 @@ Route::middleware('auth')->group(function () {
     // Route::get('welcome', [App\Http\Controllers\DashboardController::class, 'rekap1']);
     Route::post('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'simpanabsen']);
     Route::get('asramasantri/add_many', [App\Http\Controllers\AsramasantriController::class, 'addManyPage']);
-    Route::post('asramasantri/add_many', [App\Http\Controllers\AsramasantriController::class, 'addMany']);
+    Route::post(
+        'asramasantri/add_many',
+        [
+            App\Http\Controllers\AsramasantriController::class,
+            'addMany'
+        ]
+    );
 
     // pondok
     Route::resource('pondok', App\Http\Controllers\PondokController::class)->only([
