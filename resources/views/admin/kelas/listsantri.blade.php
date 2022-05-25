@@ -37,12 +37,12 @@
                                         </thead>
                                         <tbody class="bg-white divide-y capitalize">
                                             @foreach ($list as $santri)
-                                            <tr class="text-gray-700">
-                                                <td class="px-4 py-2 text-sm ">
+                                            <tr class="text-gray-700 hover:bg-gray-50">
+                                                <td class="px-4 py-1 text-sm ">
                                                     <input type="checkbox" name="santri[]" id=""
                                                         value="{{$santri->id}}">
                                                 </td>
-                                                <td class="px-4 py-2 text-sm ">
+                                                <td class="px-4 py-1 text-sm ">
                                                     {{ $santri->nama_santri }}
                                                 </td>
                                             </tr>

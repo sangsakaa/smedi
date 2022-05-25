@@ -69,22 +69,22 @@
                                         @if($asrama->count())
                                         @foreach ( $asrama as $as)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm uppercase ">
+                                            <td class="px-4 py-1 text-sm uppercase ">
                                                 <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
                                             </td>
-                                            <td class="px-4 py-2 text-sm text-center ">
+                                            <td class="px-4 py-1 text-sm text-center ">
                                                 {{ $as->type_asrama}}
                                             </td>
-                                            <td class="px-4 py-2 text-sm text-center">
+                                            <td class="px-4 py-1 text-sm text-center">
                                                 {{ $as->hitung}}
                                             </td>
-                                            <td class="px-4 py-2 text-sm text-center">
+                                            <td class="px-4 py-1 text-sm text-center">
                                                 {{ $as->kuota_asrama}}
                                             </td>
-                                            <td class=" px-4 py-2 text-sm text-center">
+                                            <td class=" px-4 py-1 text-sm text-center">
 
                                                 @if (( $as->hitung) === ($as->kuota_asrama))
                                                 <span class="   text-green-800 "> Penuh kuota cuma
@@ -101,7 +101,7 @@
 
                                             </td>
 
-                                            <td class=" px-4 py-2 text-sm">
+                                            <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class=" flex">
                                                         <form action="asrama/{{$as->id}}" method="post">

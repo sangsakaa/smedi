@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asrama;
+use App\Models\Kelas;
 use App\Models\Kelassantri;
 use App\Models\Presensi;
 use App\Models\Santri;
@@ -28,7 +29,7 @@ class DashboardController extends Controller
         $putra = Santri::count();
         $l = Santri::where('jenis_kelamin', 'L')->count();
         $p = Santri::where('jenis_kelamin', 'p')->count();
-        $kelas = Kelassantri::count();
+        $kelas = Kelas::all();
         return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $as, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
     }
     public function rekap()

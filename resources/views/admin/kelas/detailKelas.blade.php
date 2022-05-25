@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class=" w-full mt-2 ">
-            <marquee behavior="" direction=""> informati ini bisa berubah sewaktu waktu </marquee>
+            <marquee behavior="" direction=""> xinformati ini bisa berubah sewaktu waktu </marquee>
         </div>
     </div>
     <form action="/kelas/create" method="post">
@@ -43,22 +43,22 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y capitalize">
-                        @if($kelasSantri !== null)
+
                         @foreach($kelasSantri as $as)
                         <tr class="text-gray-700">
-                            <td class="px-4 py-2 text-sm ">
+                            <td class="px-4 py-1 text-sm ">
                                 {{ $loop->iteration}}
                             </td>
-                            <td class="px-4 py-2 text-sm ">
+                            <td class="px-4 py-1 text-sm ">
                                 {{ $as->Asramasantri->santri->nama_santri }}
                             </td>
-                            <td class="px-4 py-2 text-sm ">
+                            <td class="px-4 py-1 text-sm ">
                                 {{ $as->Asramasantri->asrama->nama_asrama }}
                             </td>
-                            <td class="px-4 py-2 text-sm ">
+                            <td class="px-4 py-1 text-sm ">
                                 {{ $as->kelas->nama_kelas }}
                             </td>
-                            <td class="px-4 py-2 text-sm ">
+                            <td class="px-4 py-1 text-sm ">
                                 <form action="/kelassantri/{{$as->id}}" method="post">
                                     @csrf
                                     @method('delete')
@@ -75,14 +75,6 @@
                             </td>
                         </tr>
                         @endforeach
-                        @else
-                        <tr
-                            class=" text-red-600 text-center font-semibold tracking-wide text-left text-gray-500  bg-gray-50 border-b">
-                            <td>
-                                data tidak ada / sudah terhapus !!!
-                            </td>
-                        </tr>
-                        @endif
                     </tbody>
                 </table>
             </div>

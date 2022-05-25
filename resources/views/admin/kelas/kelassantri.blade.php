@@ -31,7 +31,6 @@
                         <button type="submit" class=" bg-green-600 py-1 px-2 rounded-md text-white">
                             Kelas</button>
                     </form>
-
                     <div class=" bg-gray-50 mt-2">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
                             <div class="overflow-x-auto w-full">
@@ -52,11 +51,7 @@
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                @if( $kelas !== null)
                                                 <a href="/kelas/{{$kelas->id}}">{{$kelas->nama_kelas}}</a>
-                                                @else
-
-                                                @endif
                                             </td>
 
                                         </tr>
