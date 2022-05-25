@@ -32,7 +32,7 @@
             <div class=" bg-green-200 px-2 py-2 rounded-md">
                 <div class=" grid grid-cols-2">
                     <div>{{ $kelas->nama_kelas }}</div>
-                    <div class=" text-right px-2">0</div>
+                    <div class=" text-right px-2">{{$kelas->hitung}}</div>
                 </div>
             </div>
         </a>
