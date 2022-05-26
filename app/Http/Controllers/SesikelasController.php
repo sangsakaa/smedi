@@ -18,10 +18,10 @@ class SesikelasController extends Controller
     public function index()
     {
 
-        $kelas = Kelas::all();
-        $cari = Sesikelas::latest();
+        $kelas = Kelas::orderBy('nama_kelas')->get();
+        $cari = Sesikelas::orderBy('kelas_id');
         if (request('cari')) {
-            $cari->where('tgl', 'like', '%' . request('cari') . '%');
+            $cari->where('tgl', 'like', '%' . request('cari') . '%')->orderBy('kelas_id');
         }
         return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $cari->get()]);
     }

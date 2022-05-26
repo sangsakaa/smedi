@@ -16,12 +16,12 @@ class UstadzController extends Controller
      */
     public function index()
     {
-        $cari = Ustadz::latest();
-        if (request('cari')){
-            $cari->where('nama_ustadz','like','%'.request('cari').'%');
+        $cari = Ustadz::orderBy('nama_ustadz');
+        if (request('cari')) {
+            $cari->where('nama_ustadz', 'like', '%' . request('cari') . '%')->orderBy('nama_ustadz');
         }
-        
-        return view('admin/ustadz/ustadz',['ustadz'=>$cari->get()]);
+
+        return view('admin/ustadz/ustadz', ['ustadz' => $cari->get()]);
     }
 
     /**
@@ -43,31 +43,31 @@ class UstadzController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_ustadz'=>'',
-            'tempat_lahir'=>'',
-            'tanggal_lahir'=>'',
-            'jenis_kelamin'=>'',
-            'tanggal_masuk'=>'',
-            'agama'=>'',
-            'alamat'=>'',
-            'no_hp'=>'',
-            'nama_bank'=>'',
-            'no_rekening'=>'',
+            'nama_ustadz' => '',
+            'tempat_lahir' => '',
+            'tanggal_lahir' => '',
+            'jenis_kelamin' => '',
+            'tanggal_masuk' => '',
+            'agama' => '',
+            'alamat' => '',
+            'no_hp' => '',
+            'nama_bank' => '',
+            'no_rekening' => '',
         ]);
-        $santri_akhir = Ustadz::orderBy('id', 'desc')->first();   
+        $santri_akhir = Ustadz::orderBy('id', 'desc')->first();
         $a = date_create($request->tanggal_masuk);
-        $c = date_format(date_create($request->tanggal_lahir),"dmY");
-        $b = date_format($a,"Y");
-        
+        $c = date_format(date_create($request->tanggal_lahir), "dmY");
+        $b = date_format($a, "Y");
+
         if (is_null($santri_akhir)) {
             $nig = $b . '000001';
         } else {
             $kode_akhir = $santri_akhir->nig;
             $nomor = (int) substr($kode_akhir, -6); // 2013002 -> 003
             $nomor = $nomor + 1;
-            $nig = $b.$c . str_pad($nomor, 6, '0', STR_PAD_LEFT); // 4 -> 004
+            $nig = $b . $c . str_pad($nomor, 6, '0', STR_PAD_LEFT); // 4 -> 004
         }
-        $ustadz = New Ustadz();
+        $ustadz = new Ustadz();
         $ustadz->nig = $nig;
         $ustadz->nama_ustadz = $request->nama_ustadz;
         $ustadz->tanggal_masuk = $request->tanggal_masuk;
@@ -80,7 +80,7 @@ class UstadzController extends Controller
         $ustadz->nama_bank = $request->nama_bank;
         $ustadz->no_rekening = $request->no_rekening;
         $ustadz->save();
-        return redirect('ustadz')->with('succes','ok');
+        return redirect('ustadz')->with('succes', 'ok');
     }
 
     /**
@@ -91,7 +91,7 @@ class UstadzController extends Controller
      */
     public function show(Ustadz $ustadz)
     {
-        return view('admin/ustadz/detail',['ustadz'=>$ustadz]);
+        return view('admin/ustadz/detail', ['ustadz' => $ustadz]);
     }
 
     /**
@@ -102,7 +102,7 @@ class UstadzController extends Controller
      */
     public function edit(Ustadz $ustadz)
     {
-        return view('admin/ustadz/editustadz',['ustadz'=>$ustadz]);
+        return view('admin/ustadz/editustadz', ['ustadz' => $ustadz]);
     }
 
     /**
@@ -115,20 +115,20 @@ class UstadzController extends Controller
     public function update(Request $request, Ustadz $ustadz)
     {
         $request->validate([
-            'nama_ustadz'=>'',
-            'tempat_lahir'=>'',
-            'tanggal_lahir'=>'',
-            'jenis_kelamin'=>'',
-            'tanggal_masuk'=>'',
-            'agama'=>'',
-            'alamat'=>'',
-            'no_hp'=>'',
-            'nama_bank'=>'',
-            'no_rekening'=>'',
+            'nama_ustadz' => '',
+            'tempat_lahir' => '',
+            'tanggal_lahir' => '',
+            'jenis_kelamin' => '',
+            'tanggal_masuk' => '',
+            'agama' => '',
+            'alamat' => '',
+            'no_hp' => '',
+            'nama_bank' => '',
+            'no_rekening' => '',
         ]);
         Ustadz::where('id', $ustadz->id)
             ->update([
-                
+
                 'nama_ustadz' => $request->nama_ustadz,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
@@ -139,8 +139,8 @@ class UstadzController extends Controller
                 'no_hp' => $request->no_hp,
                 'nama_bank' => $request->nama_bank,
                 'no_rekening' => $request->no_rekening,
-                
-                
+
+
             ]);
         return redirect('/ustadz')->with('success', 'Data Asrama berhasil diperbaharui');
     }

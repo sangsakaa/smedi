@@ -3,21 +3,19 @@
         {{ __(' Form Tambah Data Anggota Asrama') }}
     </x-slot>
     <div class="inline-flex overflow-hidden  w-full bg-white rounded-lg shadow-md">
-        <div class="  text-white px-4 py-2 w-1/3  text-right  bg-green-800 font-semibold  uppercase">
-            <span class=" text-4xl text-left"><a href="/asrama">
-                    {{ $asrama->nama_asrama }}
+        <div class="  text-white px-4  w-1/3  text-right  bg-green-800 font-semibold  uppercase">
+            <span class=" text-2xl py-4 text-left"><a href="/asrama">
+                    INFO TERBARU
                 </a></span>
-
         </div>
-
-        <div class=" w-full flex py-4 text-green-800 font-semibold">
+        <div class=" w-full flex py-1 px-4  text-green-800 font-semibold">
             <marquee> Bacalah selalu dalam hati "Yaa sayyidii Yaa rasulallah"</marquee>
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-1 mt-2 w-full bg-white rounded-lg shadow-md">
         <div class=" w-1/3 grid grid-cols-1 text-white text-right    bg-green-800 font-semibold px-4 py-2 uppercase">
             <div>Kepengurusan</div>
-            <div>Asrama</div>
+            <div>Asrama - {{ $asrama->nama_asrama }}</div>
         </div>
         <div class=" w-1"></div>
         <div class="flex justify-center items-center w-2  bg-green-800">

@@ -17,8 +17,13 @@
                             Cari</button>
                     </div>
                 </form>
-                <a href="asramasantri/add_many"><button class=" px-2 py-1 rounded-md bg-green-800 text-white"> Tambah
-                        Kolektif</button></a>
+                <div>
+                    <a href="asramasantri/add_many">
+                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                            Tambah Kolektif</button>
+                    </a>
+                </div>
+
             </div>
 
         </div>
@@ -68,7 +73,7 @@
                                     <tbody class="bg-white divide-y">
                                         @if($asrama->count())
                                         @foreach ( $asrama as $as)
-                                        <tr class="text-gray-700">
+                                        <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>

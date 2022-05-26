@@ -16,14 +16,14 @@ class SantriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( )
+    public function index()
     {
-        
-        $cari = Santri::latest();
-        if (request('cari')){
-            $cari->where('nama_santri','like','%'.request('cari').'%');
+
+        $cari = Santri::orderBy('nama_santri');
+        if (request('cari')) {
+            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderBy('nama_santri');
         }
-        return view('admin/santri/santri',['listSantri'=>$cari->get()]);
+        return view('admin/santri/santri', ['listSantri' => $cari->get()]);
     }
     /**
      * Show the form for creating a new resource.
@@ -32,7 +32,7 @@ class SantriController extends Controller
      */
     public function create()
     {
-        return view ('admin/santri/addsantri');
+        return view('admin/santri/addsantri');
     }
     /**
      * Store a newly created resource in storage.
@@ -43,29 +43,29 @@ class SantriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_santri'=>'',
-            'tempat_lahir'=>'',
-            'tanggal_lahir'=>'',
-            'jenis_kelamin'=>'',
-            'tanggal_masuk'=>'',
-            'agama'=>'',
-            'nama_ibu'=>'',
-            'asal_kota'=>'',
+            'nama_santri' => '',
+            'tempat_lahir' => '',
+            'tanggal_lahir' => '',
+            'jenis_kelamin' => '',
+            'tanggal_masuk' => '',
+            'agama' => '',
+            'nama_ibu' => '',
+            'asal_kota' => '',
         ]);
-        $santri_akhir = Histori::orderBy('id', 'desc')->first();   
+        $santri_akhir = Histori::orderBy('id', 'desc')->first();
         $a = date_create($request->tanggal_masuk);
-        $c = date_format(date_create($request->tanggal_lahir),"dmY");
-        $b = date_format($a,"Y");
-        
+        $c = date_format(date_create($request->tanggal_lahir), "dmY");
+        $b = date_format($a, "Y");
+
         if (is_null($santri_akhir)) {
             $nis = $b . '000001';
         } else {
             $kode_akhir = $santri_akhir->nis;
             $nomor = (int) substr($kode_akhir, -6); // 2013002 -> 003
             $nomor = $nomor + 1;
-            $nis = $b.$c . str_pad($nomor, 6, '0', STR_PAD_LEFT); // 4 -> 004
+            $nis = $b . $c . str_pad($nomor, 6, '0', STR_PAD_LEFT); // 4 -> 004
         }
-        $santri = New Santri;
+        $santri = new Santri;
         $santri->nis = $nis;
         $santri->nama_santri = $request->nama_santri;
         $santri->tanggal_masuk = $request->tanggal_masuk;
@@ -76,7 +76,7 @@ class SantriController extends Controller
         $santri->nama_ibu = $request->nama_ibu;
         $santri->asal_kota = $request->asal_kota;
         $santri->save();
-        return redirect('santri')->with('succes','ok');
+        return redirect('santri')->with('succes', 'ok');
     }
     /**
      * Display the specified resource.
@@ -86,33 +86,33 @@ class SantriController extends Controller
      */
     public function show(Santri $santri)
     {
-        return view('admin/santri/detail',['santri'=>$santri]);
+        return view('admin/santri/detail', ['santri' => $santri]);
     }
 
     public function tampilkan(Santri $santri)
     {
-       
+
         $datasantri = Santri::find($santri->id);
-        $h = Histori::where('santri_id',$santri->id)->paginate(2);
-        return view('admin/santri/histori',['santri'=>$santri,'data'=>$datasantri,'h'=>$h]);
+        $h = Histori::where('santri_id', $santri->id)->paginate(2);
+        return view('admin/santri/histori', ['santri' => $santri, 'data' => $datasantri, 'h' => $h]);
     }
     public function surat(Santri $santri)
     {
-       
+
         $datasantri = Santri::find($santri->id);
-        $h = Histori::where('santri_id',$santri->id)->paginate(2);
-        return view('admin/santri/suratizin',['santri'=>$santri,'data'=>$datasantri,'h'=>$h]);
+        $h = Histori::where('santri_id', $santri->id)->paginate(2);
+        return view('admin/santri/suratizin', ['santri' => $santri, 'data' => $datasantri, 'h' => $h]);
     }
     public function buatstore(Request $request)
     {
-    $request->validate([
-            'santri_id'=>'required',
-            'tanggal_masuk'=>'required',
-            'status_pendaftaran'=>'required',
-            'pondok_id'=>'required',
-            'nis'=>'required',          
-        ]);  
-        $histori = New Histori;
+        $request->validate([
+            'santri_id' => 'required',
+            'tanggal_masuk' => 'required',
+            'status_pendaftaran' => 'required',
+            'pondok_id' => 'required',
+            'nis' => 'required',
+        ]);
+        $histori = new Histori;
         $histori->nis = $request->nis;
         $histori->santri_id = $request->santri_id;
         $histori->tanggal_masuk = $request->tanggal_masuk;
@@ -121,23 +121,23 @@ class SantriController extends Controller
         $histori->save();
         return redirect()->back()->with('success', 'hehehe');
     }
-    public function tampilkanpelanggaran(Historipelanggaran $historipelanggaran ,Santri $santri)
+    public function tampilkanpelanggaran(Historipelanggaran $historipelanggaran, Santri $santri)
     {
-        $pelanggaran = Historipelanggaran::where('santri_id',$santri->id)->paginate(3);
-        $santri = Santri::where('id',$santri->id)->first();
-        $listSantri = Santri::where('id',$santri->id)->first();
+        $pelanggaran = Historipelanggaran::where('santri_id', $santri->id)->paginate(3);
+        $santri = Santri::where('id', $santri->id)->first();
+        $listSantri = Santri::where('id', $santri->id)->first();
         $list = Pelanggaran::all();
-        return view('admin/santri/historipelanggaran',['historipelanggaran'=>$historipelanggaran, 'list'=>$list,'santri'=>$santri,'listSantri'=>$listSantri,'pelanggaran'=>$pelanggaran]);
+        return view('admin/santri/historipelanggaran', ['historipelanggaran' => $historipelanggaran, 'list' => $list, 'santri' => $santri, 'listSantri' => $listSantri, 'pelanggaran' => $pelanggaran]);
     }
     public function pelanggarantstore(Request $request)
     {
         $request->validate([
-            'santri_id'=>'required',
-            'waktu'=>'required',           
-            'keterangan'=>'required',            
-            'pelanggaran_id'=>'required',            
-        ]);  
-        $histori = New Historipelanggaran;
+            'santri_id' => 'required',
+            'waktu' => 'required',
+            'keterangan' => 'required',
+            'pelanggaran_id' => 'required',
+        ]);
+        $histori = new Historipelanggaran;
         $histori->santri_id = $request->santri_id;
         $histori->pelanggaran_id = $request->pelanggaran_id;
         $histori->waktu = $request->waktu;
@@ -145,7 +145,7 @@ class SantriController extends Controller
         $histori->save();
         return redirect()->back()->with('success', 'hehehe');
     }
-    
+
     // public function histori(Histori $histori, Santri $santri )
     // {
     //     $santri = Santri::where('id',$santri->id)->first();
@@ -161,7 +161,7 @@ class SantriController extends Controller
      */
     public function edit(Santri $santri)
     {
-        return view('admin/santri/editsantri',['santri'=>$santri]);
+        return view('admin/santri/editsantri', ['santri' => $santri]);
     }
     /**
      * Update the specified resource in storage.
@@ -173,17 +173,17 @@ class SantriController extends Controller
     public function update(Request $request, Santri $santri)
     {
         $request->validate([
-            'nama_santri'=>'',
-            'tempat_lahir'=>'',
-            'tanggal_lahir'=>'',
-            'jenis_kelamin'=>'',
-            'agama'=>'',
-            'nama_ibu'=>'', 
-            'tanggal_masuk'=>'', 
+            'nama_santri' => '',
+            'tempat_lahir' => '',
+            'tanggal_lahir' => '',
+            'jenis_kelamin' => '',
+            'agama' => '',
+            'nama_ibu' => '',
+            'tanggal_masuk' => '',
         ]);
         Santri::where('id', $santri->id)
             ->update([
-                
+
                 'nama_santri' => $request->nama_santri,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
@@ -191,7 +191,7 @@ class SantriController extends Controller
                 'agama' => $request->agama,
                 'nama_ibu' => $request->nama_ibu,
                 'tanggal_masuk' => $request->tanggal_masuk,
-                
+
             ]);
         return redirect('/santri')->with('success', 'Data Asrama berhasil diperbaharui');
     }
@@ -204,6 +204,6 @@ class SantriController extends Controller
     public function destroy(Santri $santri)
     {
         Santri::destroy($santri->id);
-        return redirect('santri')->with('error','ok cuy');
+        return redirect('santri')->with('error', 'ok cuy');
     }
 }

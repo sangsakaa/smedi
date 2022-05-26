@@ -23,38 +23,36 @@
                         </select>
                         <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                             Simpan</button>
-                        <div class=" bg-gray-50 mt-2">
-                            <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
-                                <div class="overflow-x-auto w-full">
-                                    <table class="w-full whitespace-no-wrap" id="#myTable">
-                                        <thead>
-                                            <tr
-                                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                                <th class="px-4 py-3"> <input type="checkbox" name="santri[]" id="">
-                                                </th>
-                                                <th class="px-4 py-3">Nama Santri</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y capitalize">
-                                            @foreach ($list as $santri)
-                                            <tr class="text-gray-700 hover:bg-gray-50">
-                                                <td class="px-4 py-1 text-sm ">
-                                                    <input type="checkbox" name="santri[]" id=""
-                                                        value="{{$santri->id}}">
-                                                </td>
-                                                <td class="px-4 py-1 text-sm ">
-                                                    {{ $santri->nama_santri }}
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class=" px-4 py-1 text-xs font-semibold tracking-wide text-gray-500 bg-gray-50
+                        <div class="overflow-hidden mb-2 w-1/2 mt-4 rounded-lg border shadow-xs">
+                            <div class="overflow-x-auto ">
+                                <table class="w-full  whitespace-no-wrap" id="#myTable">
+                                    <thead>
+                                        <tr
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
+                                            <th class="px-4 py-3"> <input type="checkbox" name="santri[]" id="">
+                                            </th>
+                                            <th class="px-4 py-3">Nama Santri</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y capitalize">
+                                        @foreach ($list as $santri)
+                                        <tr class="text-gray-700 hover:bg-gray-50">
+                                            <td class="px-4 py-1 text-sm ">
+                                                <input type="checkbox" name="santri[]" id="" value="{{$santri->id}}">
+                                            </td>
+                                            <td class="px-4 py-1 text-sm ">
+                                                {{ $santri->nama_santri }}
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class=" px-4 py-1 text-xs font-semibold tracking-wide text-gray-500 bg-gray-50
                                                         border-t sm:grid-cols-9">
-                                </div>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

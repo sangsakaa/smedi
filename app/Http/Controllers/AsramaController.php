@@ -20,11 +20,11 @@ class AsramaController extends Controller
      */
     public function index()
     {
-        $asrama = Asrama::latest();
-        if (request('cari')){
-            $asrama->where('nama_asrama','like','%'.request('cari').'%');
+        $asrama = Asrama::orderBy('nama_asrama');
+        if (request('cari')) {
+            $asrama->where('nama_asrama', 'like', '%' . request('cari') . '%')->orderBy('nama_asrama');
         }
-        return view('admin/asrama/asrama',['asrama'=>$asrama->get()]);
+        return view('admin/asrama/asrama', ['asrama' => $asrama->get()]);
     }
 
     /**
@@ -32,10 +32,8 @@ class AsramaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create( )
+    public function create()
     {
-        
-        
     }
 
     /**
@@ -44,22 +42,22 @@ class AsramaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
-            
-            'nama_asrama'=>'required',
-            'type_asrama'=>'required',
-            'kuota_asrama'=>'required', 
+
+            'nama_asrama' => 'required',
+            'type_asrama' => 'required',
+            'kuota_asrama' => 'required',
         ]);
-        
-    
-        $asrama = New Asrama;
+
+
+        $asrama = new Asrama;
         $asrama->nama_asrama = $request->nama_asrama;
         $asrama->type_asrama = $request->type_asrama;
         $asrama->kuota_asrama = $request->kuota_asrama;
-        
-        
+
+
         $asrama->save();
         return redirect('asrama')->with('success', 'hehehe');
     }
@@ -69,20 +67,20 @@ public function store(Request $request)
      * @param  \App\Models\Asrama  $asrama
      * @return \Illuminate\Http\Response
      */
-    public function show( Jabatan $jabatan, Asrama $asrama, Asramasantri $asramasantri , Santri $santri)
+    public function show(Jabatan $jabatan, Asrama $asrama, Asramasantri $asramasantri, Santri $santri)
     {
-        
+
         $listsantri = Santri::all();
         $listasrama = Asrama::all();
-        $jabatan = Penugasan::where('asrama_id',$asrama->id)->get();
+        $jabatan = Penugasan::where('asrama_id', $asrama->id)->get();
         $listpengurus = [];
         foreach ($jabatan as $pengurus) {
-            $listpengurus[$pengurus->pengurusJabatan->nama_jabatan] = $pengurus; 
+            $listpengurus[$pengurus->pengurusJabatan->nama_jabatan] = $pengurus;
         }
-        $anggota = Asramasantri::where('asrama_id',$asrama->id)->get();
-        return view('admin/asrama/asramasantri',['jabatan'=>$jabatan,'anggota'=>$anggota,'datasantri'=>$listsantri,'dataAsrama'=>$listasrama,'asramasantri'=>$asramasantri,'asrama'=>$asrama,'santri'=>$santri, 'listpengurus' => $listpengurus]);
+        $anggota = Asramasantri::where('asrama_id', $asrama->id)->get();
+        return view('admin/asrama/asramasantri', ['jabatan' => $jabatan, 'anggota' => $anggota, 'datasantri' => $listsantri, 'dataAsrama' => $listasrama, 'asramasantri' => $asramasantri, 'asrama' => $asrama, 'santri' => $santri, 'listpengurus' => $listpengurus]);
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -92,7 +90,7 @@ public function store(Request $request)
      */
     public function edit(Asrama $asrama)
     {
-        return view('admin/asrama/editasrama',['asrama'=>$asrama]);
+        return view('admin/asrama/editasrama', ['asrama' => $asrama]);
     }
 
     /**
@@ -105,13 +103,13 @@ public function store(Request $request)
     public function update(Request $request, Asrama $asrama)
     {
         $request->validate([
-            'nama_asrama'=>'required',
-            'type_asrama'=>'required',
-            'kuota_asrama'=>'required',
+            'nama_asrama' => 'required',
+            'type_asrama' => 'required',
+            'kuota_asrama' => 'required',
         ]);
         Asrama::where('id', $asrama->id)
             ->update([
-                
+
                 'nama_asrama' => $request->nama_asrama,
                 'type_asrama' => $request->type_asrama,
                 'kuota_asrama' => $request->kuota_asrama,

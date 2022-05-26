@@ -39,14 +39,14 @@
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3"> Kelas </th>
+                                            <th class="px-4 py-3"> KelasX </th>
 
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
                                         @if($kelas->count())
                                         @foreach($kelas as $kelas)
-                                        <tr class="text-gray-700">
+                                        <tr class="text-gray-700 hover:bg-gray-100">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
