@@ -17,9 +17,13 @@ class SesikelasController extends Controller
      */
     public function index()
     {
-        $sesikelas = Sesikelas::paginate(9);
+
         $kelas = Kelas::all();
-        return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $sesikelas]);
+        $cari = Sesikelas::latest();
+        if (request('cari')) {
+            $cari->where('tgl', 'like', '%' . request('cari') . '%');
+        }
+        return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $cari->get()]);
     }
 
     /**

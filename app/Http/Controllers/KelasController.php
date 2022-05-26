@@ -19,9 +19,9 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $cari = Kelas::orderBy('id', 'asc');
+        $cari = Kelas::orderBy('nama_kelas');
         if (request('cari')) {
-            $cari->where('nama_kelas', 'like', '%' . request('cari') . '%');
+            $cari->where('nama_kelas', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
         }
         return view('admin/kelas/kelas', ['kelas' => $cari->get()]);
     }
