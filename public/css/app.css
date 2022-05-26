@@ -1558,6 +1558,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .sm\:items-center {
     align-items: center;
   }
