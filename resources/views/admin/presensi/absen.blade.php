@@ -5,13 +5,23 @@
     <div class="inline-flex overflow-hidden  w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div type="text" class=" bg-white rounded-lg shadow-xs px-4 py-2 ">
-            <a href="/about">
-                <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
-            </a>
-            <a href="/about">
-                <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
-            </a>
+        <div type="text" class=" w-full grid grid-cols-2 bg-white rounded-lg shadow-xs px-4 py-2 ">
+            <div>
+                <a href="/about">
+                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
+                </a>
+                <a href="/about">
+                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
+                </a>
+            </div>
+            <div class=" grid justify-items-end">
+                <form action="/absen" method="get">
+                    <input type="date" name="cari" value="{{ request('cari') }}"
+                        class="border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                        Cari</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-1 mt-1 w-full bg-white rounded-lg shadow-md">
@@ -76,7 +86,7 @@
                 </tbody>
             </table>
             <div class=" py-1  ">
-                {{ $sesi->links() }}
+
             </div>
         </div>
     </div>

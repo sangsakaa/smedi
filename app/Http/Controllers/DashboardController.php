@@ -34,12 +34,24 @@ class DashboardController extends Controller
     }
     public function rekap()
     {
+        $asrama = Asrama::orderBy('nama_asrama')->get();
         $rekap = Presensi::latest();
-        if (request('cari')) {
-            $rekap->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
+        if (request('cari') || request('asrama') || request('keterangan')) {
+            $req_asrama = request('asrama');
+            $req_keterangan = request(('keterangan'));
+            $rekap
+                ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
+                ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
+                ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
                 ->select('absensi_kelas.*', 'sesi_kelas.tgl')
                 ->where('sesi_kelas.tgl', 'like', '%' . request('cari') . '%');
+            if ($req_asrama != null) {
+                $rekap->where('asramasantri.asrama_id', '=', request('asrama'));
+            }
+            if ($req_keterangan != null) {
+                $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));
+            }
         }
-        return view('about', ['rekap' => $rekap->get()]);
+        return view('about', ['rekap' => $rekap->get(), 'asrama' => $asrama]);
     }
 }

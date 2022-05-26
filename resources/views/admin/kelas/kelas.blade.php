@@ -42,10 +42,10 @@
                         <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">
                             Kelas</button>
                     </form>
-                    <div class=" bg-gray-50 mt-2">
-                        <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
-                            <div class="overflow-x-auto w-full">
-                                <table class="w-full whitespace-no-wrap" id="#myTable">
+                    <div class=" w-1/2  bg-gray-50 mt-2">
+                        <div class="overflow-hidden mb-2 rounded-lg border shadow-xs">
+                            <div class="overflow-x-auto ">
+                                <table class=" w-full whitespace-no-wrap" id="#myTable">
                                     <thead>
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">

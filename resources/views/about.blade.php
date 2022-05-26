@@ -24,24 +24,40 @@
             <button class="text-white rounded-md mb-2 bg-green-800 px-2 py-1 " onclick="printContent('div1')">
                 Cetak Presensi</button>
         </div>
-        <div class=" grid grid-cols-1 justify-items-end ">
-            <div>
-                <form action="/about" method="get">
-                    <input type="date" name="cari" value="{{ request('cari') }}"
-                        class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Cari</button>
-                </form>
-
-            </div>
-        </div>
     </div>
+    <div type="text" class=" w-full bg-red-50 grid grid-cols-4   px-4  rounded-md shadow-xs py-2 mb-2">
+        <form action="/about" method="get">
+            <label for="cari_tanggal">Tanggal</label>
+            <input type="date" id="cari_tanggal" name="cari" value="{{ request('cari') }}"
+                class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+            <label for="cari_asrama">Asrama</label>
+            <select id="cari_asrama" name="asrama">
+                <option value="">Semua</option>
+                @foreach ($asrama as $asrama)
+                <option value="{{ $asrama->id }}">{{ $asrama->nama_asrama  }}</option>
+                @endforeach
+            </select>
+            <label for="cari_keterangan">Keterangan</label>
+            <select id="cari_keterangan" name="keterangan">
+                <option value="">Semua</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Sakit">Sakit</option>
+                <option value="Alfa">Alfa</option>
+            </select>
+            <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                Cari</button>
+        </form>
+
+    </div>
+
     <div id="div1" class="p-4 bg-white rounded-lg shadow-xs">
         <div>
         </div>
-        <h1 class=" text-2xl text-center font-semibold  uppercase text-green-800 "> Madrasah Ibtida'iyah Wahidiyah</h1>
+        <h1 class=" text-2xl text-center font-semibold  uppercase text-green-800 "> Madrasah Ibtida'iyah
+            Wahidiyah</h1>
         <hr>
-        <p class=" text-center text-sm text-green-800">Alamat : Jln.Gang Pondok, Desa Bandar Lor, Kec. Mojoroto, Bandar
+        <p class=" text-center text-sm text-green-800">Alamat : Jln.Gang Pondok, Desa Bandar Lor, Kec. Mojoroto,
+            Bandar
             Lor, Kec.
             Kediri, Jawa
             Timur 64112
@@ -61,22 +77,23 @@
                 </div>
                 <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Sakit')->count()}}</div>
                 <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Alfa')->count()}}</div>
+                @if ($rekap->where('keterangan')->count())
                 <div class=" px-2 py-0 border ">
-                    {{ $rekap->where('keterangan')->count() *100 /$rekap->where('keterangan')->count()}} %
+                    {{ $rekap->where('keterangan')->count()*100/$rekap->where('keterangan')->count() }} %
                 </div>
                 <div class=" px-2 py-0 border ">
-                    {{ number_format($rekap->where('keterangan','Hadir')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    {{ number_format($rekap->where('keterangan','Hadir')->count()*100/$rekap->where('keterangan')->count(),0) }}
                     %
                 </div>
                 <div class=" px-2 py-0 border ">
-                    {{ number_format($rekap->where('keterangan','Sakit')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    {{ number_format($rekap->where('keterangan','Sakit')->count()*100/$rekap->where('keterangan')->count(),0) }}
                     %
                 </div>
                 <div class=" px-2 py-0 border ">
-                    {{ number_format($rekap->where('keterangan','Alfa')->count() *100 /$rekap->where('keterangan')->count(),0)}}
+                    {{ number_format($rekap->where('keterangan','Alfa')->count()*100/$rekap->where('keterangan')->count(),0) }}
                     %
                 </div>
-
+                @endif
             </div>
 
         </div>
