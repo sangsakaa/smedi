@@ -27,24 +27,24 @@
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $asrama }}</p>Putra Putri
             </div>
         </div>
-
-    </div>
-
-    <div class=" mt-2 grid  grid-cols-8 sm:grid-cols-8 gap-2">
-        @foreach($kelas as $kelas)
-        <div>
-            <a href="/kelas">
-                <div class=" bg-green-200 px-2 py-2 rounded-md">
-                    <div>
-                        <div class=" grid grid-cols-1 sm:grid-cols-2">
-                            <div class=" text-xs sm:text-5xl text-green-800">{{ $kelas->nama_kelas }}</div>
-                            <div class=" text-right px-2">{{$kelas->hitung}}</div>
+        <div class=" w-full mt-2 grid  grid-cols-8 sm:grid-cols-2 gap-2">
+            @foreach($kelas as $kelas)
+            <div>
+                <a href="/kelas">
+                    <div class=" bg-green-200 px-2 py-2 rounded-md">
+                        <div>
+                            <div class=" grid grid-cols-1 sm:grid-cols-2">
+                                <div class=" text-xs sm:text-5xl text-green-800">{{ $kelas->nama_kelas }}</div>
+                                <div class=" text-right px-2">{{$kelas->hitung}}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
+
+
 
 </x-app-layout>
