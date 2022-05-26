@@ -31,7 +31,7 @@
     </div>
 
 
-    <div class=" w-full mt-2 grid  grid-cols-8 sm:grid-cols-5 gap-2">
+    <div class=" w-full mt-2 grid  grid-cols-8 sm:grid-cols-4 gap-2">
         @foreach($kelas as $kelas)
         <div>
             <a href="/kelas">
