@@ -25,24 +25,28 @@
                 Cetak Presensi</button>
         </div>
     </div>
-    <div type="text" class=" w-full bg-red-50 grid grid-cols-4   px-4  rounded-md shadow-xs py-2 mb-2">
+    <div type="text" class=" w-full bg-white  grid grid-cols-1   px-4  rounded-md shadow-xs py-2 mb-2">
         <form action="/about" method="get">
             <label for="cari_tanggal">Tanggal</label>
             <input type="date" id="cari_tanggal" name="cari" value="{{ request('cari') }}"
                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
             <label for="cari_asrama">Asrama</label>
-            <select id="cari_asrama" name="asrama">
+            <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_asrama" name="asrama"
+                value="{{ request('asrama') }}">
                 <option value="">Semua</option>
                 @foreach ($asrama as $asrama)
-                <option value="{{ $asrama->id }}">{{ $asrama->nama_asrama  }}</option>
+                <option value="{{ $asrama->id }}" {{ request('asrama') == $asrama->id ? "selected" : "" }}>
+                    {{ $asrama->nama_asrama  }}
+                </option>
                 @endforeach
             </select>
             <label for="cari_keterangan">Keterangan</label>
-            <select id="cari_keterangan" name="keterangan">
+            <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan"
+                value="{{ request('keterangan') }}">
                 <option value="">Semua</option>
-                <option value="Hadir">Hadir</option>
-                <option value="Sakit">Sakit</option>
-                <option value="Alfa">Alfa</option>
+                <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
+                <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>
+                <option value="Alfa" {{ request('keterangan') == 'Alfa' ? "selected" : "" }}>Alfa</option>
             </select>
             <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                 Cari</button>

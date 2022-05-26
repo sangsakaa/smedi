@@ -79,7 +79,11 @@
                             <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
                         </td>
                         <td class=" border px-2 py-1">
-
+                            @if (!$sesikelas->presensi->count())
+                            <label for="" class=" text-red-600">Belum diabsen</label>
+                            @else
+                            <label for="" class=" text-green-600">Sudah di Absen</label>
+                            @endif
                         </td>
                     </tr>
                     @endforeach
