@@ -29,22 +29,22 @@
         </div>
 
     </div>
-    <div class=" grid mt-2 ">
-        <div class=" grid  grid-cols-8 sm:grid-cols-8 gap-2">
-            @foreach($kelas as $kelas)
-            <div>
-                <a href="/kelas">
-                    <div class=" bg-green-200 px-2 py-2 rounded-md">
-                        <div>
-                            <div class=" grid grid-cols-1 sm:grid-cols-2">
-                                <div class=" text-xs sm:text-5xl text-green-800">{{ $kelas->nama_kelas }}</div>
-                                <div class=" text-right px-2">{{$kelas->hitung}}</div>
-                            </div>
+
+    <div class=" mt-2 grid  grid-cols-8 sm:grid-cols-8 gap-2">
+        @foreach($kelas as $kelas)
+        <div>
+            <a href="/kelas">
+                <div class=" bg-green-200 px-2 py-2 rounded-md">
+                    <div>
+                        <div class=" grid grid-cols-1 sm:grid-cols-2">
+                            <div class=" text-xs sm:text-5xl text-green-800">{{ $kelas->nama_kelas }}</div>
+                            <div class=" text-right px-2">{{$kelas->hitung}}</div>
                         </div>
                     </div>
-                </a>
-            </div>
-            @endforeach
+                </div>
+            </a>
         </div>
+        @endforeach
     </div>
+
 </x-app-layout>
