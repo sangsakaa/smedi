@@ -30,7 +30,7 @@
 
     </div>
     <div class=" grid mt-2 ">
-        <div class=" grid  grid-cols-1 sm:grid-cols-8 gap-2">
+        <div class=" grid  grid-cols-8 sm:grid-cols-8 gap-2">
             @foreach($kelas as $kelas)
             <div>
                 <a href="/kelas">
