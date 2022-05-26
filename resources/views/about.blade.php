@@ -61,9 +61,7 @@
             Wahidiyah</h1>
         <hr>
         <p class=" text-center text-sm text-green-800">Alamat : Jln.Gang Pondok, Desa Bandar Lor, Kec. Mojoroto,
-            Bandar
-            Lor, Kec.
-            Kediri, Jawa
+            Jawa
             Timur 64112
         </p>
         <hr>
