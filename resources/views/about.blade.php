@@ -110,6 +110,7 @@
                         <th class=" border text-center">Asrama</th>
                         <th class=" border text-center">Kelas</th>
                         <th class="  ">Ket</th>
+                        <th class="  ">Alasan</th>
                     </tr>
                 </thead>
                 <tbody class="  text-xs  ">
@@ -139,6 +140,9 @@
                             <p class=" text-red-800">Alfa</p>
                             @endif
 
+                        </td>
+                        <td class=" border px-2">
+                            {{ $rekap->alasan }}
                         </td>
                     </tr>
                     @endforeach

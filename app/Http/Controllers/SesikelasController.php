@@ -112,7 +112,7 @@ class SesikelasController extends Controller
     {
         $presensi = [];
         foreach ($sesi->presensi as $pr) {
-            $presensi[$pr->kelassantri_id] = $pr->keterangan;
+            $presensi[$pr->kelassantri_id] = ['keterangan' => $pr->keterangan, 'alasan' => $pr->alasan];
         }
         $jumlahHadir = $sesi->presensi()->where('keterangan', 'Hadir')->count();
         $jumlahSakit = $sesi->presensi()->where('keterangan', 'Sakit')->count();
@@ -128,6 +128,7 @@ class SesikelasController extends Controller
             $presensi = $sesi->presensi()->where('kelassantri_id', $kelassantri->id)->first();
             if ($presensi) {
                 $presensi->keterangan = $request->keterangan[$presensi->kelassantri_id];
+                $presensi->alasan = $request->alasan[$kelassantri->id];
                 $presensi->save();
             } else {
                 $presensi = new Presensi;
@@ -135,6 +136,7 @@ class SesikelasController extends Controller
                 $presensi->kelassantri_id = $kelassantri->id;
                 //dd($request->keterangan);
                 $presensi->keterangan = $request->keterangan[$kelassantri->id];
+                $presensi->alasan = $request->alasan[$kelassantri->id];
                 $presensi->save();
             }
         }

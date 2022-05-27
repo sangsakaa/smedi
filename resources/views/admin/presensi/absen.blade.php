@@ -13,6 +13,9 @@
                 <a href="/about">
                     <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
                 </a>
+                <a href="/absen">
+                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Reset</button>
+                </a>
             </div>
             <div class=" grid justify-items-end">
                 <form action="/absen" method="get">
@@ -57,28 +60,29 @@
                         <th class="px-2 py-1 text-center border">
                             #
                         </th>
-                        <th class="px-2 py-1 text-left border">
+                        <th class="px-2 py-1 text-center border">
                             Tanggal
                         </th>
-                        <th class="px-2 py-1 text-left">
+                        <th class="px-2 py-1 text-center">
                             Kelas
                         </th>
-                        <th class="px-2 py-1 text-left">
+                        <th class=" border px-2 py-1 text-center">
                             Aksi
                         </th>
                     </tr>
                 </thead>
                 <tbody>
+                    @if($sesi->count())
                     @foreach($sesi as $sesikelas)
                     <tr class=" hover:bg-gray-100">
                         <td class=" border text-center">{{$loop->iteration}}</td>
-                        <td class=" border px-2 py-1">
+                        <td class=" border text-center px-2 py-1">
                             {{ date_format(date_create($sesikelas->tgl),'d-m-Y') }}
                         </td>
-                        <td class=" border px-2 py-1">
+                        <td class=" border px-2 py- text-center">
                             <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
                         </td>
-                        <td class=" border px-2 py-1">
+                        <td class=" border px-2 py-1 text-center">
                             @if (!$sesikelas->presensi->count())
                             <label for="" class=" text-red-600">Belum diabsen</label>
                             @else
@@ -87,6 +91,11 @@
                         </td>
                     </tr>
                     @endforeach
+                    @else
+                    <tr>
+                        <td class=" text-red-600 px-4 py-1">Data Berdasakan Tanggal Tidak di Temukan !!!</td>
+                    </tr>
+                    @endif
                 </tbody>
             </table>
             <div class=" py-1  ">
