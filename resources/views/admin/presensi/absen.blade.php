@@ -67,7 +67,7 @@
                             Kelas
                         </th>
                         <th class=" border px-2 py-1 text-center">
-                            Aksi
+                            Status
                         </th>
                     </tr>
                 </thead>
@@ -86,7 +86,7 @@
                             @if (!$sesikelas->presensi->count())
                             <label for="" class=" text-red-600">Belum diabsen</label>
                             @else
-                            <label for="" class=" text-green-600">Sudah di Absen</label>
+                            <label for="" class=" text-green-600">Sudah diabsen</label>
                             @endif
                         </td>
                     </tr>

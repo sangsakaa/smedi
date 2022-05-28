@@ -70,14 +70,14 @@ class AsramaController extends Controller
     public function show(Jabatan $jabatan, Asrama $asrama, Asramasantri $asramasantri, Santri $santri)
     {
 
-        $listsantri = Santri::all();
+        $listsantri = Santri::orderBy('nama_santri')->get();
         $listasrama = Asrama::all();
         $jabatan = Penugasan::where('asrama_id', $asrama->id)->get();
         $listpengurus = [];
         foreach ($jabatan as $pengurus) {
             $listpengurus[$pengurus->pengurusJabatan->nama_jabatan] = $pengurus;
         }
-        $anggota = Asramasantri::where('asrama_id', $asrama->id)->get();
+        $anggota = Asramasantri::where('asrama_id', $asrama->id)->orderBy('santri_id')->get();
         return view('admin/asrama/asramasantri', ['jabatan' => $jabatan, 'anggota' => $anggota, 'datasantri' => $listsantri, 'dataAsrama' => $listasrama, 'asramasantri' => $asramasantri, 'asrama' => $asrama, 'santri' => $santri, 'listpengurus' => $listpengurus]);
     }
 

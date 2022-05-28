@@ -34,7 +34,7 @@
     <div class=" w-full mt-2 grid  grid-cols-8 sm:grid-cols-4 gap-2">
         @foreach($kelas as $kelas)
         <div>
-            <a href="/kelas">
+            <a href="/kelas/{{$kelas->id}}">
                 <div class=" bg-green-200 px-2 py-2 rounded-md">
                     <div>
                         <div class=" grid grid-cols-1 sm:grid-cols-2">
