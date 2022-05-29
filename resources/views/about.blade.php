@@ -57,14 +57,9 @@
     <div id="div1" class="p-4 bg-white rounded-lg shadow-xs">
         <div>
         </div>
-        <h1 class=" text-2xl text-center font-semibold  uppercase text-green-800 "> Madrasah Ibtida'iyah
-            Wahidiyah</h1>
-        <hr>
-        <p class=" text-center text-sm text-green-800">Alamat : Jln.Gang Pondok, Desa Bandar Lor, Kec. Mojoroto,
-            Jawa
-            Timur 64112
-        </p>
-        <hr>
+        <img src="images/03.png" alt="">
+        <h1 class=" py-4 text-2xl text-center font-semibold  uppercase text-green-800 "> LAPORAN HARIAN</h1>
+
         <div class=" grid grid-cols-2">
             <div class=" grid  col-span-1">
             </div>

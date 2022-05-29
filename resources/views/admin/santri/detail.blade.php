@@ -14,6 +14,7 @@
                     <button class=" px-4 py-1 bg-green-700 rounded-md text-white">Histori Pelanggaran</button>
                 </a>
             </div>
+
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
@@ -92,6 +93,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+    </div>
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+        <div class="flex justify-center items-center w-1  bg-green-800">
+        </div>
+        <div class="  border px-4 py-2 grid grid-cols-2">
+            <div class=" border  w-1/2">TGL</div>
+            <div class=" border">KELAS</div>
         </div>
     </div>
 </x-app-layout>
