@@ -45,6 +45,7 @@
                 value="{{ request('keterangan') }}">
                 <option value="">Semua</option>
                 <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
+                <option value="Izin" {{ request('keterangan') == 'Izin' ? "selected" : "" }}>Izin</option>
                 <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>
                 <option value="Alfa" {{ request('keterangan') == 'Alfa' ? "selected" : "" }}>Alfa</option>
             </select>
@@ -63,14 +64,18 @@
         <div class=" grid grid-cols-2">
             <div class=" grid  col-span-1">
             </div>
-            <div class=" text-sm mt-2 grid grid-cols-4   uppercase text-center  ">
+            <div class=" text-sm mt-2 grid grid-cols-5   uppercase text-center  ">
                 <div class=" bg-gray-50 px-2 py-1 border ">Total</div>
                 <div class=" bg-gray-50 px-2 py-1 border ">Hadir</div>
+                <div class=" bg-gray-50 px-2 py-1 border ">Izin</div>
                 <div class=" bg-gray-50 px-2 py-1 border ">Sakit</div>
                 <div class=" bg-gray-50  px-2 py-1 border ">Alfa</div>
                 <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan')->count()}}</div>
                 <div class=" px-2 py-0 border ">
                     {{ $rekap->where('keterangan','Hadir')->count() }}
+                </div>
+                <div class=" px-2 py-0 border ">
+                    {{ $rekap->where('keterangan','Izin')->count() }}
                 </div>
                 <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Sakit')->count()}}</div>
                 <div class=" px-2 py-0 border ">{{ $rekap->where('keterangan','Alfa')->count()}}</div>
@@ -80,6 +85,10 @@
                 </div>
                 <div class=" px-2 py-0 border ">
                     {{ number_format($rekap->where('keterangan','Hadir')->count()*100/$rekap->where('keterangan')->count(),0) }}
+                    %
+                </div>
+                <div class=" px-2 py-0 border ">
+                    {{ number_format($rekap->where('keterangan','Izin')->count()*100/$rekap->where('keterangan')->count(),0) }}
                     %
                 </div>
                 <div class=" px-2 py-0 border ">
@@ -127,13 +136,7 @@
                         </td>
 
                         <td class=" text-center">
-                            @if ($rekap->keterangan === 'Hadir')
-                            <p class=" text-green-700">Hadir</p>
-                            @elseif ($rekap->keterangan === 'Sakit')
-                            <p class=" text-yellow-300">Sakit</p>
-                            @else
-                            <p class=" text-red-800">Alfa</p>
-                            @endif
+                            {{ $rekap->keterangan }}
 
                         </td>
                         <td class=" border px-2">

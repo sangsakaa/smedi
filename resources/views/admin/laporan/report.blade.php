@@ -61,6 +61,7 @@
             <hr>
             <form action="/absen/{{$sesi->id}}" method="post">
                 <button type="submit" class="mt-2 bg-green-700 rounded-md text-white py-1 px-2">Simpan Presensi</button>
+
                 @csrf
 
                 <table class="border w-full mb-2 mt-2">
@@ -86,6 +87,10 @@
                                     name="keterangan[{{ $kelassantri->id }}]" value="Hadir"
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label
                                     for="keteranganhadir[{{ $kelassantri->id }}]">&nbsp;Hadir</label>&nbsp;
+                                <input type="radio" id="keteranganizin[{{ $kelassantri->id }}]"
+                                    name="keterangan[{{ $kelassantri->id }}]" value="Izin"
+                                    {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Izin'  ? 'checked' : ''}}><label
+                                    for="keteranganizin[{{ $kelassantri->id }}]">&nbsp;Izin</label>&nbsp;
                                 <input type="radio" id="keterangansakit[{{ $kelassantri->id }}]"
                                     name="keterangan[{{ $kelassantri->id }}]" value="Sakit"
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Sakit' ? 'checked' : '' }}><label
