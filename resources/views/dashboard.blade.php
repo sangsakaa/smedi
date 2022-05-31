@@ -3,12 +3,12 @@
         {{ __('Dashboard Utama') }}
     </x-slot>
     <div class=" grid grid-cols-1 sm:grid-cols-4 w-full gap-2 ">
-        <div class=" bg-green-200  rounded-md  grid grid-cols-2">
-            <div class=" py-2 px-4">
+        <div class=" bg-green-200  px-4 rounded-md  grid grid-cols-2">
+            <div class=" grid content-center">
                 <span class="font-semibold text-green-700"> Santri Putra</span>
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $l }}</p>Santriwan
             </div>
-            <div class=" grid py-4 justify-end px-4  ">
+            <div class=" grid  justify-end content-center  ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
                     class="bi bi-people" viewBox="0 0 16 16">
                     <path
@@ -16,30 +16,38 @@
                 </svg>
             </div>
         </div>
-        <div class=" bg-green-200  rounded-md">
-            <div class=" py-2 px-4">
+        <div class=" bg-green-200 px-4  rounded-md grid grid-cols-2">
+            <div class=" grid content-center">
                 <span class="font-semibold text-green-700"> Santri Putri</span>
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $p }}</p>Santriwati
             </div>
+            <div class=" grid  content-center  justify-end">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    <path fill-rule="evenodd"
+                        d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                </svg>
+            </div>
         </div>
-        <div class=" bg-green-200  rounded-md grid-cols-2">
-            <div class=" py-2 px-4">
+        <div class=" bg-green-200  rounded-md grid grid-cols-2">
+            <div class=" px-4 grid content-center ">
                 <span class="font-semibold text-green-700"> Total Santri</span>
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $putra }}</p>Santriwan
+            </div>
+            <div class=" grid content-center justify-end">
+
             </div>
 
         </div>
         <div class=" bg-green-200  rounded-md grid grid-cols-2">
-            <div class=" py-2 px-4">
+            <div class="px-4   grid content-center">
                 <span class="font-semibold text-green-700"> Total Asrama</span>
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $asrama }}</p>Putra Putri
             </div>
-            <div class=" grid py-4 justify-end  ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
+            <div class=" grid justify-end content-center  ">
+
             </div>
         </div>
 
