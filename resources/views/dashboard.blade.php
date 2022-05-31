@@ -27,6 +27,5 @@
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $asrama }}</p>Putra Putri
             </div>
         </div>
-
     </div>
 </x-app-layout>

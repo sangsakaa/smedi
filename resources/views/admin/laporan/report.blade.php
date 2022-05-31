@@ -77,12 +77,12 @@
                     </thead>
                     <tbody>
                         @foreach ($sesi->kelas->kelassantri as $kelassantri)
-                        <tr class=" border hover:bg-gray-100">
+                        <tr class=" border hover:bg-gray-100 text-xs">
                             <td class=" border text-center">{{$loop->iteration}}</td>
                             <td class=" px-2 border">{{ $kelassantri->asramasantri->santri->nama_santri }}</td>
                             <td class=" text-center border">{{ $kelassantri->asramasantri->asrama->nama_asrama }}</td>
                             <td class=" text-center border">{{ $kelassantri->kelas->nama_kelas }}</td>
-                            <td class=" text-right px-2 ">
+                            <td class=" text-right px-2 text-xs ">
                                 <input type="radio" id="keteranganhadir[{{ $kelassantri->id }}]"
                                     name="keterangan[{{ $kelassantri->id }}]" value="Hadir"
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label
@@ -100,7 +100,7 @@
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Alfa' ? 'checked' : '' }}><label
                                     for="keteranganalfa[{{ $kelassantri->id }}]">&nbsp;Alfa</label>
                             </td>
-                            <td class=" px-1 py-1">
+                            <td class=" px-1 py-1 text-xs">
                                 <input type="text" id="alasan[{{ $kelassantri->id }}]"
                                     name=" alasan[{{ $kelassantri->id }}]" placeholder="masukan alasan"
                                     class="  w-full rounded-md border border-green-800 px-2 "
