@@ -22,11 +22,12 @@
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $p }}</p>Santriwati
             </div>
         </div>
-        <div class=" bg-green-200  rounded-md">
+        <div class=" bg-green-200  rounded-md grid-cols-2">
             <div class=" py-2 px-4">
                 <span class="font-semibold text-green-700"> Total Santri</span>
                 <p class=" text-green-800 lg:text-4xl  text-5xl">{{ $putra }}</p>Santriwan
             </div>
+
         </div>
         <div class=" bg-green-200  rounded-md grid grid-cols-2">
             <div class=" py-2 px-4">
