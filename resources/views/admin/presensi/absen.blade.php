@@ -88,11 +88,9 @@
                         <td class=" border px-2 py- text-center">
                             <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
                         </td>
-                        <td class=" border  text-center">
+                        <td class=" border   ">
                             @if (!$sesikelas->presensi->count())
-
-
-                            <div class=" inline-block px-15">
+                            <div class="  text-center ">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-calendar-  text-center inline-table text-red-600" viewBox="0 0 16 16">
                                     <path
