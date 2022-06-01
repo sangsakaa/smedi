@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Asrama;
 use App\Models\Kelas;
-use App\Models\Kelassantri;
+
 use App\Models\Presensi;
 use App\Models\Santri;
 

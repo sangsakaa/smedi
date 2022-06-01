@@ -6,7 +6,7 @@
     <div class="p-4 bg-white rounded-lg shadow-xs">
 
         <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
-            <div class="flex justify-center items-center w-12 bg-blue-500">
+            <div class="flex justify-center items-center w-12 bg-green-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z">
@@ -16,7 +16,7 @@
 
             <div class="px-4 py-2 -mx-3">
                 <div class="mx-3">
-                    <span class="font-semibold text-blue-500">Info</span>
+                    <span class="font-semibold text-green-500">Info</span>
                     <p class="text-sm text-gray-600 font-semibold"> Pengurus yang bertugas sesui SK yg berlaku</p>
                 </div>
             </div>
@@ -24,31 +24,26 @@
 
         <form action="/penugasan" method="post">
             @csrf
-            <div class=" flex ">
-                <div class=" mr-2 w-1/4">
-                    <select name="santri_id" id="" class=" w-full px-2 py-1 rounded-md">
-                        @foreach( $santri as $santri )
-                        <option value="{{$santri->id}}">{{ $santri->nama_santri}} </option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class=" mr-2 w-1/4">
-                    <select name="jabatan_id" id="" class=" w-full px-2 py-1 rounded-md">
-                        @foreach($jabatan as $jabatan)
-                        <option value="{{$jabatan->id}}"> {{$jabatan->nama_jabatan}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class=" mr-2 w-1/6">
-                    <select name="asrama_id" id="" class=" w-full px-2 py-1 rounded-md">
-                        @foreach($asrama as $asrama)
-                        <option value="{{$asrama->id}}"> {{$asrama->nama_asrama}}</option>
-                        @endforeach
+            <div class=" grid grid-cols-4 gap-2  ">
+                <select name="santri_id" id="" class=" border border-green-800  px-2  rounded-md">
+                    @foreach( $santri as $santri )
+                    <option value="{{$santri->id}}">{{ $santri->nama_santri}} </option>
+                    @endforeach
+                </select>
 
-                    </select>
-                </div>
+                <select name="jabatan_id" id="" class=" border border-green-800  px-2  rounded-md">
+                    @foreach($jabatan as $jabatan)
+                    <option value="{{$jabatan->id}}"> {{$jabatan->nama_jabatan}}</option>
+                    @endforeach
+                </select>
+
+                <select name="asrama_id" id="" class=" border border-green-800  px-2  rounded-md">
+                    @foreach($asrama as $asrama)
+                    <option value="{{$asrama->id}}"> {{$asrama->nama_asrama}}</option>
+                    @endforeach
+                </select>
                 <div>
-                    <button type="submit" class="  bg-purple-600 px-2 py-1 text-white rounded-lg"><svg
+                    <button type="submit" class="  bg-green-600 px-2 py-1 text-white rounded-lg"><svg
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -57,6 +52,7 @@
                         </svg></button>
                 </div>
             </div>
+
         </form>
         <div class="overflow-hidden mt-2 w-full rounded-lg border shadow-xs">
             <div class="overflow-x-auto w-full">

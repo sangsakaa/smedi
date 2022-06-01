@@ -91,42 +91,42 @@
                                 <thead>
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800 border-b">
-                                        <th class="px-4 py-3">#</th>
-                                        <th class="px-4 py-3">Nama Anggota Asrama</th>
-                                        <th class="px-4 py-3">Asal Kota</th>
-                                        <th class="px-4 py-3">Nama Asrama</th>
-                                        <th class="px-4 py-3">Type Asrama</th>
-                                        <th class="px-4 py-3">Tanggal Masuk</th>
-                                        <th class="px-4 py-3">Tanggal Keluar</th>
-                                        <th class="px-4 py-3">Aksi</th>
+                                        <th class="px-2 py-3">#</th>
+                                        <th class="px-2 py-3">Nama Anggota Asrama</th>
+                                        <th class="px-2 py-3">Asal Kota</th>
+                                        <th class="px-2 py-3">Nama Asrama</th>
+                                        <th class="px-2 py-3">Type Asrama</th>
+                                        <th class="px-2 py-3">Tanggal Masuk</th>
+                                        <th class="px-2 py-3">Tanggal Keluar</th>
+                                        <th class="px-2 py-3">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y">
                                     @if($anggota->count())
                                     @foreach ( $anggota as $item)
                                     <tr class=" hover:bg-gray-50 text-gray-700  text-xs ">
-                                        <td class="px-4  text-sm  ">
+                                        <td class="px-2 py-1  text-sm  ">
                                             {{ $loop->iteration }}
                                         </td>
-                                        <td class="px-4  text-sm  ">
+                                        <td class="px-2 py-1  text-sm  ">
                                             {{ $item->santri->nama_santri}}
                                         </td>
-                                        <td class="px-4  text-sm  ">
+                                        <td class="px-2 py-1  text-sm  ">
                                             {{ $item->santri->asal_kota}}
                                         </td>
-                                        <td class="px-4  text-sm ">
+                                        <td class="px-2 py-1  text-sm ">
                                             {{$item->asrama->nama_asrama }}
                                         </td>
-                                        <td class="px-4  text-sm ">
+                                        <td class="px-2 py-1  text-sm ">
                                             {{$item->asrama->type_asrama }}
                                         </td>
-                                        <td class="px-4  text-sm ">
+                                        <td class="px-2 py-1  text-sm ">
                                             {{$item->tanggal_masuk }}
                                         </td>
-                                        <td class="px-4  text-sm ">
+                                        <td class="px-2 py-1  text-sm ">
                                             {{$item->tanggal_keluar }}
                                         </td>
-                                        <td class="px-4  text-sm ">
+                                        <td class="px-2 py-1  text-sm ">
                                             <form action="/asramasantri/{{$item->id}}" method="post">
                                                 @csrf
                                                 @method('delete')

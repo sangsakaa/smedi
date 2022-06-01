@@ -2,8 +2,10 @@
     <x-slot name="header">
         {{ __('Rekapitulasi Harian') }}
     </x-slot>
-    <div type="text" class=" grid grid-cols-2 sm:grid-cols-2 px-4  bg-white rounded-lg shadow-xs py-2 mb-2">
-        <div class="">
+    <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-lg shadow-md">
+        <div class="flex justify-center items-center w-1 bg-green-800">
+        </div>
+        <div class=" px-4 py-1">
             <a href="/absen">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Presensi</button>
             </a>
@@ -21,7 +23,7 @@
                 document.body.innerHTML = fullbody;
             }
             </script>
-            <button class="text-white rounded-md mb-2 bg-green-800 px-2 py-1 " onclick="printContent('div1')">
+            <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
                 Cetak Presensi</button>
         </div>
     </div>

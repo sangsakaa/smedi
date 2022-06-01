@@ -7,25 +7,19 @@
     <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx- grid grid-cols-2 gap-2 font-semibold uppercase text-green-800">
-                <form action="/asrama" method="get">
-                    <div class=" grid grid-cols-2 gap-2">
-                        <input type="text" name="cari" value="{{ request('cari') }}"
-                            class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                            Cari</button>
-                    </div>
-                </form>
-                <div>
-                    <a href="asramasantri/add_many">
-                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                            Tambah Kolektif</button>
-                    </a>
-                </div>
-
+        <div class=" grid grid-cols-1 gap-2 px-4 py-1 sm:grid-cols-2">
+            <form action="/asrama" method="get">
+                <input type="text" name="cari" value="{{ request('cari') }}"
+                    class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                    Cari</button>
+            </form>
+            <div>
+                <a href="asramasantri/add_many">
+                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                        Tambah Kolektif</button>
+                </a>
             </div>
-
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">

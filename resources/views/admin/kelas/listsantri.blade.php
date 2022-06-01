@@ -2,12 +2,6 @@
     <x-slot name="header">
         {{ __(' Tambah Santri ke Asrama') }}
     </x-slot>
-
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
-        <div class="flex justify-center items-center w-1  bg-green-800">
-        </div>
-
-    </div>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
@@ -28,19 +22,19 @@
                                 <table class="w-full  whitespace-no-wrap" id="#myTable">
                                     <thead>
                                         <tr
-                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                            <th class="px-4 py-3"> <input type="checkbox" name="santri[]" id="">
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b ">
+                                            <th class="px-4  py-2"> <input type="checkbox" name="santri[]" id="">
                                             </th>
-                                            <th class="px-4 py-3">Nama Santri</th>
+                                            <th class="px-4  py-2">Nama Santri</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
                                         @foreach ($list as $santri)
                                         <tr class="text-gray-700 hover:bg-gray-50">
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4 py-2 text-sm ">
                                                 <input type="checkbox" name="santri[]" id="" value="{{$santri->id}}">
                                             </td>
-                                            <td class="px-4 py-1 text-sm ">
+                                            <td class="px-4 py-2 text-sm ">
                                                 {{ $santri->nama_santri }}
                                             </td>
                                         </tr>

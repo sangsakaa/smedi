@@ -2,16 +2,18 @@
     <x-slot name="header">
         {{ __('Presensi Harian') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div type="text" class=" bg-white rounded-lg shadow-xs px-4 py-2 ">
+        <div type="text" class=" bg-white rounded-lg shadow-xs py-1  px-4  ">
             <a href="/absen">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
             </a>
             <a href="/about">
                 <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
             </a>
+            <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
+                Cetak Presensi</button>
             <script>
             function printContent(el) {
                 var fullbody = document.body.innerHTML;
@@ -22,8 +24,7 @@
             }
             </script>
 
-            <button class="text-white rounded-md mb-2 bg-green-800 px-2 py-1 " onclick="printContent('div1')">
-                Cetak Presensi</button>
+
 
         </div>
     </div>
