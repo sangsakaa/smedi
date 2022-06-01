@@ -92,7 +92,7 @@
                             @if (!$sesikelas->presensi->count())
 
 
-                            <div class=" inline-block">
+                            <div class=" inline-block px-15">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-calendar-  text-center inline-table text-red-600" viewBox="0 0 16 16">
                                     <path
