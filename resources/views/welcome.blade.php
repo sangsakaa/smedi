@@ -14,10 +14,15 @@
     </head>
 
     <body class=" bg-green-200">
+        <div class=" h-52 grid grid-cols-1 text-center  bg-green-800  text-white content-center">
+            <h2 class=" text-5xl  uppercase content-center   ">
+                <hr class=" mt-1">
+                Madrasah Diniyah Wahidiyah
+                <hr class=" mt-1">
+            </h2>
 
-        <div class=" text-center py-5 bg-green-700 text-white">
-            <h2 class=" text-5xl capitalize">Madrasah ibtida'iyah Wahidiyah</h2>
         </div>
     </body>
+
 
 </html>
