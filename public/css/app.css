@@ -779,6 +779,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/6 {
   width: 16.666667%;
 }
+.w-2\/3 {
+  width: 66.666667%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1019,10 +1022,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(155 28 28 / var(--tw-bg-opacity));
 }
-.bg-blue-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 86 219 / var(--tw-bg-opacity));
-}
 .bg-blue-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(195 221 253 / var(--tw-bg-opacity));
@@ -1030,6 +1029,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-blue-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+}
+.bg-red-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 242 242 / var(--tw-bg-opacity));
 }
 .bg-green-500 {
   --tw-bg-opacity: 1;
@@ -1553,6 +1556,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 
   .sm\:max-w-md {

@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ __('Presensi Harian') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden  mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div type="text" class=" bg-white rounded-lg shadow-xs py-1  px-4  ">
@@ -28,7 +28,7 @@
 
         </div>
     </div>
-    <div id="div1" class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div id="div1" class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-4  py-4">
@@ -56,6 +56,7 @@
                         <div class=" px-2 py-1 border">{{$jumlahHadir}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahSakit}}</div>
                         <div class=" px-2 py-1 border">{{$jumlahAlfa}}</div>
+
                     </div>
                 </div>
             </div>
@@ -83,7 +84,7 @@
                             <td class=" px-2 border">{{ $kelassantri->asramasantri->santri->nama_santri }}</td>
                             <td class=" text-center border">{{ $kelassantri->asramasantri->asrama->nama_asrama }}</td>
                             <td class=" text-center border">{{ $kelassantri->kelas->nama_kelas }}</td>
-                            <td class=" text-right px-2 text-xs ">
+                            <td class=" text-right px-2 py-1 text-xs ">
                                 <input type="radio" id="keteranganhadir[{{ $kelassantri->id }}]"
                                     name="keterangan[{{ $kelassantri->id }}]" value="Hadir"
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label
@@ -101,10 +102,10 @@
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Alfa' ? 'checked' : '' }}><label
                                     for="keteranganalfa[{{ $kelassantri->id }}]">&nbsp;Alfa</label>
                             </td>
-                            <td class=" px-1 py-1 text-xs">
+                            <td class=" px-1 text-xs">
                                 <input type="text" id="alasan[{{ $kelassantri->id }}]"
                                     name=" alasan[{{ $kelassantri->id }}]" placeholder="masukan alasan"
-                                    class="  w-full rounded-md border border-green-800 px-2 "
+                                    class=" py-0  w-full  border border-green-800 px-2 "
                                     value={{ array_key_exists($kelassantri->id, $presensi) ? $presensi[$kelassantri->id]['alasan'] : '' }}>
                             </td>
                         </tr>

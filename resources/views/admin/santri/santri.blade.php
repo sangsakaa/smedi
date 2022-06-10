@@ -42,14 +42,14 @@
                                     <thead>
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                            <th class="px-4 py-3">Aksi</th>
-                                            <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3">Nama Santri</th>
-                                            <th class="px-4 py-3">NIS</th>
-                                            <th class="px-4 py-3 text-center">Jenis Kelamin</th>
-                                            <th class="px-4 py-3 text-center">Tanggal Lahir</th>
-                                            <th class="px-4 py-3 text-center">Asrama</th>
-                                            <th class="px-4 py-3 text-center">Angkatan</th>
+                                            <th class="px-4  py-1">Aksi</th>
+                                            <th class="px-4 ">#</th>
+                                            <th class="px-4 ">Nama Santri</th>
+                                            <th class="px-4 ">NIS</th>
+                                            <th class="px-4  text-center">JK</th>
+                                            <th class="px-4  text-center">Tanggal Lahir</th>
+                                            <th class="px-4  text-center">Asrama</th>
+                                            <th class="px-4  text-center">Angkatan</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">

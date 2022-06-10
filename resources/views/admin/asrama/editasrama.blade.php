@@ -26,7 +26,7 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asrama/{{$asrama->id}}" method="post">
                         @csrf
-                        @method('patch')
+                        @method('PATCH')
                         <input value="{{ $asrama->nama_asrama}}" name="nama_asrama" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
                         <input value="{{ $asrama->kuota_asrama}}" name="kuota_asrama" type="text"

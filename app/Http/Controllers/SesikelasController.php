@@ -104,8 +104,9 @@ class SesikelasController extends Controller
     public function destroy(Sesikelas $absen)
     {
         // dd($absen);
-        // Sesikelas::destroy($absen->id);
-        // return redirect()->back();
+        Sesikelas::destroy($absen->id);
+        Presensi::where('sesi_id', $absen->id)->delete();
+        return redirect()->back();
     }
 
     public function absen(SesiKelas $sesi)
