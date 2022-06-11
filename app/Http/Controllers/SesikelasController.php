@@ -18,7 +18,7 @@ class SesikelasController extends Controller
     public function index()
     {
 
-        $kelas = Kelas::orderBy('jejang')->get();
+        $kelas = Kelas::orderBy('jenjang')->get();
         $cari = Sesikelas::orderBy('kelas_id');
         if (request('cari')) {
             $cari->where('tgl', 'like', '%' . request('cari') . '%')->orderBy('kelas_id');
