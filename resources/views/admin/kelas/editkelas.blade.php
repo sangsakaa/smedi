@@ -18,6 +18,14 @@
                             <input name="nama_kelas" type="text" value="{{$kelas->nama_kelas}}"
                                 class=" border border-green-800  rounded-md px-2 py-1"
                                 placeholder=" masukan nama Kelas">
+                            <select name="jenjang" id=""
+                                class="border border-green-800  text-green-800 py-1 px-2  rounded-md  " required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option {{old('jenjang',$kelas->jenjang)=="Ula"? 'selected':''}} value="Ula">
+                                    Madin Ula</option>
+                                <option {{old('jenjang',$kelas->jenjang)=="Whusto"? 'selected':''}} value="Whusto">
+                                    Madin Whusto</option>
+                            </select>
                             <button type="submit" class=" bg-green-600 py-1 px-2 rounded-md text-white">
                                 Update</button>
                         </div>

@@ -42,7 +42,7 @@
                     <select name="kelas_id" id="" class=" border border-green-800 px-2 py-1 rounded-md">
                         <option value=""> -- Pilih Kelas --</option>
                         @foreach ($kelas as $kelas)
-                        <option value="{{$kelas->id}} "> {{ $kelas->nama_kelas  }}</option>
+                        <option value="{{$kelas->id}} "> {{ $kelas->nama_kelas  }} - {{$kelas->jenjang}}</option>
                         @endforeach
                     </select>
                     <button type="submit" class=" bg-green-600 text-white px-2 py-1 rounded-md">Sesi</button>
@@ -69,6 +69,9 @@
                         <th class="px-4 py-1 text-center">
                             Kelas
                         </th>
+                        <th class="px-4 py-1 text-center">
+                            Jenjang
+                        </th>
                         <th class=" border px-4 py-1 text-center">
                             Status
                         </th>
@@ -87,6 +90,9 @@
                         </td>
                         <td class=" border px-2 py- text-center">
                             <a href="/absen/{{ $sesikelas->id }}">{{ $sesikelas->kelas->nama_kelas }}</a>
+                        </td>
+                        <td class=" border px-2 py- text-center">
+                            {{ $sesikelas->kelas->jenjang }}
                         </td>
                         <td class=" border   ">
                             @if (!$sesikelas->presensi->count())

@@ -34,10 +34,12 @@
         <div class=" w-full px-4  py-4">
             <div class="  grid grid-cols-2">
                 <div class="    font-semibold grid grid-cols-2">
-                    <div>Kelas MI</div>
-                    <div> : {{ $sesi->kelas->nama_kelas }}</div>
                     <div> Tanggal Presensi</div>
                     <div> : {{ $sesi->tgl }} </div>
+                    <div>Kelas</div>
+                    <div> : {{ $sesi->kelas->nama_kelas }}</div>
+                    <div>Jenjang</div>
+                    <div> : {{ $sesi->kelas->jenjang }}</div>
                     <div>Status Presensi</div>
                     <div> :@if (!$presensi)
                         <label for="" class=" text-red-600">Belum diabsen</label>

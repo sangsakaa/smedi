@@ -121,10 +121,12 @@ class KelasController extends Controller
         $request->validate([
             'kode_kelas' => 'required',
             'nama_kelas' => 'required',
+            'jenjang' => 'required',
         ]);
         Kelas::where('id', $kelas->id)
             ->update([
                 'kode_kelas' => $request->kode_kelas,
+                'jenjang' => $request->jenjang,
                 'nama_kelas' => $request->nama_kelas,
             ]);
         return redirect('/kelas')->with('success', 'Data Asrama berhasil diperbaharui');
