@@ -20,7 +20,7 @@
                                 placeholder=" masukan nama Kelas">
                             <select name="jenjang" id=""
                                 class="border border-green-800  text-green-800 py-1 px-2  rounded-md  " required>
-                                <option value="">Pilih Jenjanh</option>
+                                <option value="">-- Pilih Jenjang --</option>
                                 <option {{old('jenjang',$kelas->jenjang)=="Ula"? 'selected':''}} value="Ula">
                                     Madin Ula</option>
                                 <option {{old('jenjang',$kelas->jenjang)=="Whusto"? 'selected':''}} value="Whusto">
