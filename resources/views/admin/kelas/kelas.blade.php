@@ -39,6 +39,11 @@
                         @csrf
                         <input name="nama_kelas" type="text" class=" border border-green-800 w-1/4 rounded-md px-2 py-1"
                             placeholder=" masukan nama Kelas">
+                        <select name="jenjang" id="" class=" border border-green-800 py-1 px-2 rounded-md">
+                            <option value="">-- Pilih Jenjang --</option>
+                            <option value="Ula">Ula</option>
+                            <option value="Whusto">Whusto</option>
+                        </select>
                         <button type="submit" class="  bg-green-800 py-1 px-2 rounded-md text-white">
                             Kelas</button>
                     </form>
@@ -49,12 +54,13 @@
                                     <thead>
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                            <th class="px-4 py-3">#</th>
+                                            <th class="px-4 py-2">#</th>
 
-                                            <th class="px-4 py-3">Kelas</th>
-                                            <th class="px-4 py-3">Peserta</th>
+                                            <th class="px-4 py-2">Kelas</th>
+                                            <th class="px-4 py-2">Jenjang</th>
+                                            <th class="px-4 py-2 text-center">Peserta</th>
 
-                                            <th class="px-4 py-3">Aksi</th>
+                                            <th class="px-4 py-2">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
@@ -70,6 +76,9 @@
                                                 </a>
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
+                                                {{ $kela->jenjang }}
+                                            </td>
+                                            <td class="px-4 py-1 text-sm text-center ">
                                                 {{ $kela->hitung }}
                                             </td>
                                             </td>

@@ -51,7 +51,10 @@
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                <a href="/kelas/{{$kelas->id}}">{{$kelas->nama_kelas}}</a>
+                                                <a href="/kelas/{{$kelas->id}}">k{{$kelas->nama_kelas}}</a>
+                                            </td>
+                                            <td class="px-4 py-1 text-sm ">
+                                                {{$kelas->jenjang}}
                                             </td>
 
                                         </tr>

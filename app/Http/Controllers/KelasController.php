@@ -47,6 +47,7 @@ class KelasController extends Controller
         $request->validate([
 
             'nama_kelas' => 'required',
+            // 'jenjang' => 'required',
         ]);
         $kelas_akhir = Kelas::orderBy('id', 'desc')->first();
         if (is_null($kelas_akhir)) {
@@ -60,7 +61,9 @@ class KelasController extends Controller
         }
         $kelas = new Kelas;
         $kelas->kode_kelas = $kode_kelas;
+        $kelas->jenjang = $request->jenjang;
         $kelas->nama_kelas = $request->nama_kelas;
+        // dd($kelas);
         $kelas->save();
         return redirect()->back();
     }

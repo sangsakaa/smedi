@@ -6,12 +6,12 @@
         <div class="flex  justify-end items-center  w-1/4   px-2 py-2 bg-green-800">
             <div class="  flex  text-white font-semibold">
                 <a href="/kelas">
-                    {{ $kelas->nama_kelas }}
+                    {{ $kelas->nama_kelas }} |{{ $kelas->jenjang }}
                 </a>
             </div>
         </div>
         <div class=" w-full mt-2 ">
-            <marquee behavior="" direction=""> xinformati ini bisa berubah sewaktu waktu </marquee>
+            <marquee behavior="" direction=""> informati ini bisa berubah sewaktu waktu </marquee>
         </div>
     </div>
     <form action="/kelas/create" method="post">
@@ -39,7 +39,8 @@
                             <th class="px-4 py-3">#</th>
                             <th class="px-4 py-3"> Nama Santri </th>
                             <th class="px-4 py-3"> Asrama </th>
-                            <th class="px-4 py-3"> Kelas MI </th>
+                            <th class="px-4 py-3"> Kelas </th>
+                            <th class="px-4 py-3"> Jenjang </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y capitalize">
@@ -57,6 +58,9 @@
                             </td>
                             <td class="px-4 py-1 text-sm ">
                                 {{ $as->kelas->nama_kelas }}
+                            </td>
+                            <td class="px-4 py-1 text-sm ">
+                                {{ $as->kelas->jenjang }}
                             </td>
                             <td class="px-4 py-1 text-sm ">
                                 <form action="/kelassantri/{{$as->id}}" method="post">
