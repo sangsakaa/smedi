@@ -15,6 +15,11 @@
                                 Presensi Kelas
                             </button>
                         </a>
+                        <a href="/kolektifkelas">
+                            <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
+                                Kolektif Kelas
+                            </button>
+                        </a>
                     </div>
                     <div class=" grid justify-items-end">
                         <form action="/kelas" method="get">

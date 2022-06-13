@@ -80,6 +80,12 @@ class KelasController extends Controller
         $kelas->save();
         return redirect()->back();
     }
+    public function hapus(Kelassantri $kelassantri)
+    {
+        Kelassantri::destroy($kelassantri->id);
+        // dd($kelassantri);
+        return redirect()->back();
+    }
 
     /**
      * Display the specified resource.
@@ -142,5 +148,32 @@ class KelasController extends Controller
     {
         Kelas::destroy($kelas->id);
         return redirect()->back();
+    }
+
+    public function index2()
+    {
+        $kelassantri = Asramasantri::orderBy('asramasantri_id')->get();
+        return view('admin/kelas/listsantri', ['list' => $kelassantri]);
+    }
+
+    public function kolektifkelas()
+    {
+        $asrama = Kelas::all();
+        $kelassantri = Asramasantri::leftJoin('kelassantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->where('kelassantri.asramasantri_id', '=', null)->select('asramasantri.*')->get();
+        return view('admin/kelas/kolektifkelas', ['list' => $kelassantri, 'asrama' => $asrama]);
+    }
+
+
+    public function tambahkelas(Request $request)
+    {
+        foreach ($request->asramasantri as $asramasantri) {
+            // dd($request);
+            $kelassantri = new Kelassantri();
+            $kelassantri->asramasantri_id = $asramasantri;
+            $kelassantri->kelas_id = $request->kelas_id;
+            $kelassantri->save();
+        }
+        return redirect('/kelas/' . $request->kelas);
     }
 }

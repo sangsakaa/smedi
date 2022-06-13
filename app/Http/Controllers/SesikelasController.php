@@ -116,11 +116,12 @@ class SesikelasController extends Controller
             $presensi[$pr->kelassantri_id] = ['keterangan' => $pr->keterangan, 'alasan' => $pr->alasan];
         }
         $jumlahHadir = $sesi->presensi()->where('keterangan', 'Hadir')->count();
+        $jumlahIzin = $sesi->presensi()->where('keterangan', 'Izin')->count();
         $jumlahSakit = $sesi->presensi()->where('keterangan', 'Sakit')->count();
         $jumlahAlfa = $sesi->presensi()->where('keterangan', 'Alfa')->count();
         $total = $sesi->presensi()->count();
         //dd($presensi);
-        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi, 'jumlahHadir' => $jumlahHadir, 'jumlahSakit' => $jumlahSakit, 'jumlahAlfa' => $jumlahAlfa, 'total' => $total]);
+        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi, 'jumlahHadir' => $jumlahHadir, 'jumlahSakit' => $jumlahSakit, 'jumlahAlfa' => $jumlahAlfa, 'jumlahIzin' => $jumlahIzin, 'total' => $total]);
     }
 
     public function simpanabsen(Request $request, SesiKelas $sesi)

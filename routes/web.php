@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,18 +24,23 @@ Route::middleware('auth')->group(function () {
     Route::get('suratizin/{santri}', [App\Http\Controllers\SantriController::class, 'surat'])->name('suratizin.surat');
 
     Route::post('kelas/{kelas}', [App\Http\Controllers\KelasController::class, 'kelasstore'])->name('kelas.kelasstore');
+    Route::delete('kelas/{kelassantri}', [App\Http\Controllers\KelasController::class, 'hapus']);
 
     Route::get('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'absen']);
     Route::get('about', [App\Http\Controllers\DashboardController::class, 'rekap']);
-    // Route::get('welcome', [App\Http\Controllers\DashboardController::class, 'rekap1']);
     Route::post('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'simpanabsen']);
     Route::get('asramasantri/add_many', [App\Http\Controllers\AsramasantriController::class, 'addManyPage']);
+    Route::get('kolektifkelas', [App\Http\Controllers\KelasController::class, 'kolektifkelas']);
     Route::post(
         'asramasantri/add_many',
         [
             App\Http\Controllers\AsramasantriController::class,
             'addMany'
         ]
+    );
+    Route::post(
+        'kolektifkelas',
+        [App\Http\Controllers\KelasController::class, 'tambahkelas']
     );
 
     // pondok
@@ -83,27 +89,19 @@ Route::middleware('auth')->group(function () {
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
     Route::resource('kelas', App\Http\Controllers\KelasController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
-    ])->parameters(['kelas' => 'kelas']);
-    Route::resource('kelassantri', App\Http\Controllers\KelassantriController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
+        'index', 'index2', 'edit', 'update', 'show', 'destroy', 'create', 'store',
+    ])->parameters([
+        'kelas' => 'kelas',
     ]);
+
     Route::resource('mapel', App\Http\Controllers\MapelController::class)->only([
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
     Route::resource('perangkat', App\Http\Controllers\PerangkatController::class)->only([
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
-    Route::resource('listsantri', App\Http\Controllers\KelassantriController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
-    ]);
+
     Route::resource('absen', App\Http\Controllers\SesikelasController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
-    ]);
-    Route::resource('pdf', App\Http\Controllers\PdfController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
-    ]);
-    Route::resource('report', App\Http\Controllers\ReportController::class)->only([
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
 });

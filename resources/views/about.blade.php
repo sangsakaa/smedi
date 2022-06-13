@@ -156,8 +156,8 @@
             <div class=" mt-4 grid justify-items-end">
                 @if($rekap->count())
                 Kediri, {{ $rekap->tgl}} <br>
-                Kepala Madrasah Ibtida'iyah Wahidiyah <br><br><br><br>
-                Muslihin,S.Sy.
+                Kepala Madrasah Wustho Wahidiyah <br><br><br><br>
+                Muh. Bahrul Ulum
                 @endif
             </div>
         </div>

@@ -8,11 +8,7 @@
             PDF
         </button>
         <ul>
-            <!-- @foreach( $data as $dat)
-            <li>
-                {{ $loop->iteration }} {{ $dat->nama_santri }}
-            </li>
-            @endforeach -->
+            
         </ul>
     </div>
 </x-app-layout>
