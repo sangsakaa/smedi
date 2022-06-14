@@ -32,8 +32,9 @@ class DashboardController extends Controller
         $kelas = Kelas::all();
         return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $as, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
     }
-    public function rekap()
+    public function rekap(Kelas $kelas)
     {
+        // $nama = Kelas::all();
         $asrama = Asrama::orderBy('nama_asrama')->get();
         $rekap = Presensi::latest();
         if (request('cari') || request('asrama') || request('keterangan')) {
@@ -52,6 +53,6 @@ class DashboardController extends Controller
                 $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));
             }
         }
-        return view('about', ['rekap' => $rekap->get(), 'asrama' => $asrama]);
+        return view('about', ['rekap' => $rekap->get(), 'asrama' => $asrama, 'kelas' => $kelas]);
     }
 }

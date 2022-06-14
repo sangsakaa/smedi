@@ -65,14 +65,14 @@
 
         <div class=" grid grid-cols-2">
             <div class=" grid  col-span-1">
-                Kelas :
+                Kelas :{{ $kelas->nama_kelas}}
             </div>
-            <div class=" text-sm mt-2 grid grid-cols-5 font-semibold   uppercase text-center  ">
-                <div class=" bg-gray-50 px-2 py-1 border border-green-700 ">Total</div>
-                <div class=" bg-gray-50 px-2 py-1 border border-green-700 ">Hadir</div>
-                <div class=" bg-gray-50 px-2 py-1 border border-green-700 ">Izin</div>
-                <div class=" bg-gray-50 px-2 py-1 border border-green-700 ">Sakit</div>
-                <div class=" bg-gray-50  px-2 py-1 border border-green-700 ">Alfa</div>
+            <div class=" text-sm mt-1 grid grid-cols-5 font-semibold   uppercase text-center  ">
+                <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Total</div>
+                <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Hadir</div>
+                <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Izin</div>
+                <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Sakit</div>
+                <div class=" bg-green-800 text-white  px-2 py-1 border border-green-700 ">Alfa</div>
                 <div class=" px-2 py-0 border border-green-700 ">{{ $rekap->where('keterangan')->count()}}</div>
                 <div class=" px-2 py-0 border border-green-700 ">
                     {{ $rekap->where('keterangan','Hadir')->count() }}
@@ -109,8 +109,8 @@
 
         <div class="">
             <table class="  table-auto mt-4 w-full border border-green-700">
-                <thead class=" text-sm border px-2 ">
-                    <tr class=" text-green-800 border-green-700 border bg-gray-50 uppercase">
+                <thead class="  text-sm border px-2 ">
+                    <tr class=" bg-green-800 text-white  border-green-700 border  uppercase">
                         <th class=" py-1 text-center border border-green-700">#</th>
                         <th class=" border border-green-700 text-center ">Tgl</th>
                         <th class=" px-2 border border-green-700 text-left">Nama Santri</th>
@@ -156,7 +156,7 @@
             </table>
             <div class=" mt-4 grid justify-items-end">
                 @if($rekap->count())
-                Kediri, {{ $rekap->tgl}} <br>
+                Kedunglo, {{ $rekap->tgl}} <br>
                 Kepala Madrasah Wustho Wahidiyah <br><br><br><br>
                 Muh. Bahrul Ulum
                 @endif
