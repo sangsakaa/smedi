@@ -21,7 +21,7 @@ class KelasController extends Controller
     {
         $cari = Kelas::orderBy('jenjang');
         if (request('cari')) {
-            $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('jenjang');
+            $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
         }
         return view('admin/kelas/kelas', ['' => $kelas, 'datakelas' => $cari->get()]);
     }
