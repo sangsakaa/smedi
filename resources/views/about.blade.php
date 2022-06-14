@@ -107,41 +107,41 @@
         </div>
 
         <div class="">
-            <table class="  table-auto mt-4 w-full border">
+            <table class="  table-auto mt-4 w-full border border-green-700">
                 <thead class=" text-sm border px-2 ">
-                    <tr class=" text-green-800 bg-gray-50 uppercase">
-                        <th class=" py-1 text-center border">#</th>
-                        <th class=" border text-center ">Tgl</th>
-                        <th class=" px-2 border text-left">Nama Santri</th>
-                        <th class=" border text-center">Asrama</th>
-                        <th class=" border text-center">Kelas</th>
-                        <th class="  ">Ket</th>
-                        <th class="  ">Alasan</th>
+                    <tr class=" text-green-800 border-green-700 border bg-gray-50 uppercase">
+                        <th class=" py-1 text-center border border-green-700">#</th>
+                        <th class=" border border-green-700 text-center ">Tgl</th>
+                        <th class=" px-2 border border-green-700 text-left">Nama Santri</th>
+                        <th class=" border border-green-700 text-center">Asrama</th>
+                        <th class=" border border-green-700 text-center">Kelas</th>
+                        <th class="border border-green-700  ">Ket</th>
+                        <th class=" border border-green-700  ">Alasan</th>
                     </tr>
                 </thead>
                 <tbody class="  text-xs  ">
                     @if($rekap->count())
                     @foreach ($rekap as $rekap)
-                    <tr class=" hover:bg-gray-100 border">
-                        <td class=" text-center border ">{{$loop->iteration}}</td>
-                        <td class=" text-center border ">
+                    <tr class=" hover:bg-gray-100  border border-green-700">
+                        <td class=" text-center border  border-green-700">{{$loop->iteration}}</td>
+                        <td class=" text-center border  border-green-700">
                             {{ date_format(date_create($rekap->sesi->tgl),'d-m-Y') }}
                         </td>
-                        <td class=" px-2 border uppercase">
+                        <td class=" px-2  border border-green-700 uppercase">
                             {{ $rekap->santri->asramasantri->santri->nama_santri}}
                         </td>
-                        <td class=" border text-center">
+                        <td class="  border border-green-700 text-center">
                             {{ $rekap->santri->asramasantri->asrama->nama_asrama}}
                         </td>
-                        <td class=" border text-center">
+                        <td class="  border border-green-700 text-center">
                             {{ $rekap->santri->kelas->nama_kelas}}
                         </td>
 
-                        <td class=" text-center">
+                        <td class=" border border-green-700 text-center">
                             {{ $rekap->keterangan }}
 
                         </td>
-                        <td class=" border px-2">
+                        <td class="  border border-green-700 px-2">
                             {{ $rekap->alasan }}
                         </td>
                     </tr>
