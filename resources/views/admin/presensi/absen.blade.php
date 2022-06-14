@@ -136,8 +136,11 @@
                     </tr>
                     @endforeach
                     @else
-                    <tr>
-                        <td class=" text-red-600 px-4 py-1">Data Berdasakan Tanggal Tidak di Temukan !!!</td>
+                    <tr class=" ">
+                        <td colspan="6" class=" text-center px-1 text-red-600">Data Berdasakan Kategori Tidak
+                            di Temukan
+                            !!!
+                        </td>
                     </tr>
                     @endif
                 </tbody>
