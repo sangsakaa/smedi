@@ -20,17 +20,26 @@
                                 Kolektif Kelas
                             </button>
                         </a>
+                        <a href="/kelas">
+                            <button class="  bg-green-700 py-1 px-4 text-white rounded-md ">
+                                Reset
+                            </button>
+                        </a>
                     </div>
                     <div class=" grid justify-items-end">
                         <form action="/kelas" method="get">
-                            <input type="text" name="cari" value="{{ request('cari') }}"
-                                class="border border-green-800 text-green-800 rounded-md py-1 px-4"
-                                placeholder=" Cari ..">
+                            <select name="cari" value="{{ request('cari') }}"
+                                class="border border-green-800 text-green-800 rounded-md py-1 px-4">
+                                <option value="">-- Pilih Jenjang --</option>
+                                <option value="Ula">Madin Ula</option>
+                                <option value="Whusto">Madin Whusto</option>
                             </select>
                             <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                                 Cari</button>
                         </form>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -70,8 +79,8 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
-                                        @if($kelas->count())
-                                        @foreach( $kelas as $kela)
+                                        @if($datakelas->count())
+                                        @foreach( $datakelas as $kela)
                                         <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}

@@ -17,13 +17,13 @@ class KelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Kelas $kelas)
     {
-        $cari = Kelas::orderBy('nama_kelas');
+        $cari = Kelas::orderBy('jenjang');
         if (request('cari')) {
-            $cari->where('nama_kelas', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
+            $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('jenjang');
         }
-        return view('admin/kelas/kelas', ['kelas' => $cari->get()]);
+        return view('admin/kelas/kelas', ['' => $kelas, 'datakelas' => $cari->get()]);
     }
 
     /**
