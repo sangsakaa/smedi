@@ -58,16 +58,14 @@
     </div>
 
     <div id="div1" class="p-4 bg-white rounded-lg shadow-xs">
-        <div>
-        </div>
-        <img src="images/03.png" alt="">
-        <h1 class=" py-4 text-2xl text-center font-semibold  uppercase text-green-800 "> LAPORAN HARIAN</h1>
 
-        <div class=" grid grid-cols-2">
-            <div class=" grid  col-span-1">
-                Kelas :{{ $kelas->nama_kelas}}
-            </div>
-            <div class=" text-sm mt-1 grid grid-cols-5 font-semibold   uppercase text-center  ">
+        <img src="images/03.png" alt="">
+        <h1 class=" py-2 text-2xl text-center font-semibold  uppercase text-green-800 "> LAPORAN HARIAN
+            <hr>
+        </h1>
+        <div class=" grid grid-cols-2  ">
+            <div></div>
+            <div class="     text-sm  grid grid-cols-5 font-semibold   uppercase text-center  ">
                 <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Total</div>
                 <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Hadir</div>
                 <div class=" bg-green-800 text-white px-2 py-1 border border-green-700 ">Izin</div>
@@ -157,7 +155,7 @@
             <div class=" mt-4 grid justify-items-end">
                 @if($rekap->count())
                 Kedunglo, {{ $rekap->tgl}} <br>
-                Kepala Madrasah Wustho Wahidiyah <br><br><br><br>
+                Kepala Madin Wustho Wahidiyah <br><br><br><br>
                 Muh. Bahrul Ulum
                 @endif
             </div>

@@ -788,6 +788,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/6 {
   width: 16.666667%;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
