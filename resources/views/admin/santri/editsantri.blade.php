@@ -10,6 +10,9 @@
                 @csrf
                 @method('patch')
                 <div class=" grid grid-cols-1 sm:grid-cols-1 w-full sm:w-1/4">
+                    <label for="" class=" capitalize mr-2"> Nomor Induk Santri</label>
+                    <input name="nis" type="text" class=" border border-green-800 text-green-800 py-1 px-2   rounded-md"
+                        placeholder=" Masuk nama Lengkap " value="{{$santri->nis}}" required>
                     <label for="" class=" capitalize mr-2"> Nama Lengkap</label>
                     <input name="nama_santri" type="text"
                         class=" border border-green-800 text-green-800 py-1 px-2   rounded-md"

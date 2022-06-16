@@ -12,6 +12,7 @@
                         @csrf
                         @method('patch')
                         <div class=" gris grid-cols-3">
+
                             <input name="kode_kelas" type="text" value="{{$kelas->kode_kelas}}"
                                 class=" border border-green-800  rounded-md px-2 py-1"
                                 placeholder=" masukan Kode Kelas">

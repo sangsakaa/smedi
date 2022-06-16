@@ -52,21 +52,8 @@ class SantriController extends Controller
             'nama_ibu' => '',
             'asal_kota' => '',
         ]);
-        $santri_akhir = Histori::orderBy('id', 'desc')->first();
-        $a = date_create($request->tanggal_masuk);
-        $c = date_format(date_create($request->tanggal_lahir), "dmY");
-        $b = date_format($a, "Y");
-
-        if (is_null($santri_akhir)) {
-            $nis = $b . '000001';
-        } else {
-            $kode_akhir = $santri_akhir->nis;
-            $nomor = (int) substr($kode_akhir, -6); // 2013002 -> 003
-            $nomor = $nomor + 1;
-            $nis = $b . $c . str_pad($nomor, 6, '0', STR_PAD_LEFT); // 4 -> 004
-        }
         $santri = new Santri;
-        $santri->nis = $nis;
+        $santri->nis = $request->nis;
         $santri->nama_santri = $request->nama_santri;
         $santri->tanggal_masuk = $request->tanggal_masuk;
         $santri->jenis_kelamin = $request->jenis_kelamin;
@@ -184,6 +171,7 @@ class SantriController extends Controller
         Santri::where('id', $santri->id)
             ->update([
 
+                'nis' => $request->nis,
                 'nama_santri' => $request->nama_santri,
                 'tempat_lahir' => $request->tempat_lahir,
                 'tanggal_lahir' => $request->tanggal_lahir,
