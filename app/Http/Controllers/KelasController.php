@@ -19,7 +19,7 @@ class KelasController extends Controller
      */
     public function index(Kelas $kelas)
     {
-        $cari = Kelas::orderBy('nama_kelas');
+        $cari = Kelas::orderBy('jenjang')->orderby('nama_kelas');
         if (request('cari')) {
             $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
         }
