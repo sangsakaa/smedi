@@ -102,6 +102,9 @@
         <div class="  border px-4 py-2 grid grid-cols-2">
             <div class=" border  w-1/2">TGL</div>
             <div class=" border">KELAS</div>
+            @foreach($presensi as $presensi)
+            {{ $loop->iteration }}
+            @endforeach
 
         </div>
     </div>

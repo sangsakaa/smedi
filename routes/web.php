@@ -57,9 +57,7 @@ Route::middleware('auth')->group(function () {
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
     // Surat Izin
-    Route::resource('suratizin', App\Http\Controllers\SuratizinController::class)->only([
-        'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
-    ]);
+
 
     // Pelanggaran
     Route::resource('pelanggaran', App\Http\Controllers\PelanggaranController::class)->only([

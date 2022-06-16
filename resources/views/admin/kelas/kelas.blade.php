@@ -30,9 +30,9 @@
                         <form action="/kelas" method="get">
                             <select name="cari" value="{{ request('cari') }}"
                                 class="border border-green-800 text-green-800 rounded-md py-1 px-4">
-                                <option value="">-- Pilih Jenjang --</option>
-                                <option value="Ula">Madin Ula</option>
+
                                 <option value="Wustha">Madin Whusto</option>
+                                <option value="Ula">Madin Ula</option>
                             </select>
                             <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                                 Cari</button>

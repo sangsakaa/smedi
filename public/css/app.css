@@ -560,17 +560,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-10 {
   z-index: 10;
 }
-.col-span-1 {
-  grid-column: span 1 / span 1;
-}
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-.col-span-5 {
-  grid-column: span 5 / span 5;
+.col-span-1 {
+  grid-column: span 1 / span 1;
 }
 .float-right {
   float: right;
@@ -787,9 +781,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/6 {
   width: 16.666667%;
-}
-.w-3\/4 {
-  width: 75%;
 }
 .max-w-6xl {
   max-width: 72rem;
