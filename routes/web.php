@@ -29,6 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'absen']);
     Route::get('about', [App\Http\Controllers\DashboardController::class, 'rekap']);
     Route::post('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'simpanabsen']);
+
+    Route::get('rekapitulasi', [App\Http\Controllers\SesikelasController::class, 'rekapitulasi']);
+
     Route::get('asramasantri/add_many', [App\Http\Controllers\AsramasantriController::class, 'addManyPage']);
     Route::get('kolektifkelas', [App\Http\Controllers\KelasController::class, 'kolektifkelas']);
     Route::post(

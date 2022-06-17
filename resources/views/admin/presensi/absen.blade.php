@@ -16,6 +16,9 @@
                 <a href="/absen">
                     <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Reset</button>
                 </a>
+                <a href="/rekapitulasi">
+                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi Siswa</button>
+                </a>
             </div>
             <div class=" grid justify-items-end">
                 <form action="/absen" method="get">

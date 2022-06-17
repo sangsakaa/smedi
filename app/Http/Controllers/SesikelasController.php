@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
-use App\Models\Kelassantri;
 use App\Models\Presensi;
 use App\Models\Sesikelas;
+use App\Models\Kelassantri;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class SesikelasController extends Controller
 {
@@ -20,9 +22,14 @@ class SesikelasController extends Controller
     {
 
         $kelas = Kelas::orderBy('jenjang')->orderby('nama_kelas')->get();
-        $cari = Sesikelas::orderBy('kelas_id');
+        $cari = Sesikelas::query()
+            ->select('sesi_kelas.*')
+            ->join('kelas', 'kelas.id', '=', 'sesi_kelas.kelas_id')
+            ->orderBy('sesi_kelas.tgl')
+            ->orderBy('kelas.jenjang')
+            ->orderBy('kelas.nama_kelas');
         if (request('cari')) {
-            $cari->where('tgl', 'like', '%' . request('cari') . '%')->orderBy('kelas_id');
+            $cari->where('tgl', 'like', '%' . request('cari') . '%');
         }
         return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $cari->get()]);
     }
@@ -153,5 +160,16 @@ class SesikelasController extends Controller
             }
         }
         return redirect()->back();
+    }
+    public function rekapitulasi()
+    {
+        $rekapitulasi = DB::table('absensi_kelas')
+            ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
+            ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
+            ->selectRaw("kelassantri_id, santri.nama_santri, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
+            ->groupBy('kelassantri_id', 'nama_santri')
+            ->get();
+        return view('admin/presensi/rekapitulasi', ['rekapitulasi' => $rekapitulasi]);
     }
 }
