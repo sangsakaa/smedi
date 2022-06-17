@@ -41,7 +41,7 @@
                                 <table class="w-full whitespace-no-wrap" id="#myTable">
                                     <thead>
                                         <tr
-                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 capitalize  bg-gray-50 border-b">
                                             <th class="px-4  py-1">Aksi</th>
                                             <th class="px-4 ">#</th>
                                             <th class="px-4 ">Nomor Induk Siswa</th>
