@@ -51,7 +51,7 @@
                         {{ date("Y") }}
                         -
                         Madrasah
-                        Ibtida'iyah
+                        Diniyah
                         Wahidiyah
                     </div>
                 </footer>
