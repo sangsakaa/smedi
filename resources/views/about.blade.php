@@ -109,17 +109,17 @@
         </div>
 
         <div class="">
-            <table class="  table-auto mt-4 w-full border border-green-700">
+            <table class="  table-auto mt-4 w-full border border-green-800">
                 <thead class="  text-sm border px-2 ">
-                    <tr class=" bg-green-800 text-white  border-green-700 border  uppercase">
-                        <th class=" py-1 text-center border border-green-700">#</th>
-                        <th class=" border border-green-700 text-center ">Tgl</th>
-                        <th class=" px-2 border border-green-700 text-left">Nama Santri</th>
-                        <th class=" border border-green-700 text-center">Asrama</th>
-                        <th class=" border border-green-700 text-center">Kelas</th>
-                        <th class=" border border-green-700 text-center">Jejang</th>
-                        <th class="border border-green-700  ">Ket</th>
-                        <th class=" border border-green-700  ">Alasan</th>
+                    <tr class="  bg-green-800 text-white  border-green-800 border  uppercase">
+                        <th class=" py-1 text-center border border-green-800">#</th>
+                        <th class=" border border-green-800 text-center ">Tgl</th>
+                        <th class=" px-2 border border-green-800 text-left">Nama Santri</th>
+                        <th class=" border border-green-800 text-center">Asrama</th>
+                        <th class=" border border-green-800 text-center">Kelas</th>
+                        <th class=" border border-green-800 text-center">Jejang</th>
+                        <th class="border border-green-800  ">Ket</th>
+                        <th class=" border border-green-800  ">Alasan</th>
                     </tr>
                 </thead>
                 <tbody class="  text-xs  ">

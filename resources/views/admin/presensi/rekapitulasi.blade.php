@@ -32,10 +32,20 @@
         </div>
         <div type="text" class=" w-full grid grid-cols-2 bg-white rounded-lg shadow-xs px-4 py-2 ">
             <div class=" grid justify-items-end">
-                <table class=" w-full border border-green-800">
-
+                <script>
+                function printContent(el) {
+                    var fullbody = document.body.innerHTML;
+                    var printContent = document.getElementById(el).innerHTML;
+                    document.body.innerHTML = printContent;
+                    window.print();
+                    document.body.innerHTML = fullbody;
+                }
+                </script>
+                <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
+                    Cetak Presensi</button>
+                <table id="div1" class=" w-full border border-green-80">
                     <thead>
-                        <tr class=" border">
+                        <tr class=" uppercase border">
                             <th class=" border border-green-800 bg-green-200 ">#</th>
                             <th class=" border border-green-800 bg-green-200 ">Nama Siswa</th>
                             <th class=" border border-green-800 bg-green-200 ">Hadir</th>
@@ -46,7 +56,7 @@
                     </thead>
                     <tbody>
                         @foreach($rekapitulasi as $presensi)
-                        <tr class=" hover:bg-green-100">
+                        <tr class=" hover:bg-gray-200">
                             <td class=" px-2 border border-green-800 text-center">{{$loop->iteration}}</td>
                             <td class=" px-2 border border-green-800 text-left">{{$presensi->nama_santri}}</td>
                             <td class=" px-2 border border-green-800 text-center">{{ $presensi->hadir }}</td>
