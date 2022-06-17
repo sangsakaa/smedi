@@ -58,7 +58,7 @@
                 SESI KELAS
             </div>
             @if (session('error'))
-            <div class=" w-1/2 bg-red-300 px-2 py-1 capitalize alert-dismissible fade show" role="alert" type="button">
+            <div class=" w-1/2 bg-red-200 px-2 py-1 capitalize alert-dismissible fade show" role="alert" type="button">
                 {{session('error')}}
             </div>
             @endif
