@@ -72,13 +72,13 @@
 
                 <table class="border w-full mb-2 mt-2">
                     <thead>
-                        <tr class=" uppercase">
+                        <tr class=" text-xs uppercase">
                             <th class=" border">#</th>
                             <th class=" px-4 text-left">Nama</th>
-                            <th class=" px-4 border ">Asrama</th>
-                            <th class=" px-4 border ">Kelas</th>
-                            <th class=" px-4 text-right">Keterangan</th>
-                            <th class=" px-4 text-left">Alasan</th>
+                            <th class=" px-2 border ">Asrama</th>
+                            <th class=" px-2 border ">KLs</th>
+                            <th class=" px-2 text-right">Keterangan</th>
+                            <th class=" px-2 text-left">Alasan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +88,7 @@
                             <td class=" px-2 border">{{ $kelassantri->asramasantri->santri->nama_santri }}</td>
                             <td class=" text-center border">{{ $kelassantri->asramasantri->asrama->nama_asrama }}</td>
                             <td class=" text-center border">{{ $kelassantri->kelas->nama_kelas }}</td>
-                            <td class=" text-right px-2 py-1 text-xs ">
+                            <td class=" text-right px-2 border py-1 text-xs ">
                                 <input type="radio" id="keteranganhadir[{{ $kelassantri->id }}]"
                                     name="keterangan[{{ $kelassantri->id }}]" value="Hadir"
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label
@@ -106,11 +106,11 @@
                                     {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Alfa' ? 'checked' : '' }}><label
                                     for="keteranganalfa[{{ $kelassantri->id }}]">&nbsp;Alfa</label>
                             </td>
-                            <td class=" px-1 text-xs">
+                            <td class=" text-xs py-0">
                                 <input type="text" id="alasan[{{ $kelassantri->id }}]"
                                     name=" alasan[{{ $kelassantri->id }}]" placeholder="masukan alasan"
                                     class=" py-0  w-full  border border-green-800 px-2 "
-                                    value={{ array_key_exists($kelassantri->id, $presensi) ? $presensi[$kelassantri->id]['alasan'] : '' }}>
+                                    value="{{ array_key_exists($kelassantri->id, $presensi) ? $presensi[$kelassantri->id]['alasan'] : '' }}">
                             </td>
                         </tr>
                         @endforeach
