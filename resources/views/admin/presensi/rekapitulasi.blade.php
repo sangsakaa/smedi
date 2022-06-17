@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        Presensi Kelas
+        Rekapitulasi Presensi Kelas
     </x-slot>
     <div class=" w-full ">
         <div class="inline-flex overflow-hidden  w-full bg-white  shadow-md">
@@ -33,7 +33,9 @@
                 <div class="flex justify-center items-center w-1 bg-green-800">
                 </div>
                 <div class=" w-full  bg-white  shadow-xs px-4 py-2 ">
-                    <table class=" w-full  border border-green-80">
+                    <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
+                    <hr class=" border border-b-green-800  ">
+                    <table class=" w-full  border border-green-80 mt-4">
                         <thead>
                             <tr class=" uppercase border">
                                 <th class=" border border-green-800 bg-green-200 ">#</th>
