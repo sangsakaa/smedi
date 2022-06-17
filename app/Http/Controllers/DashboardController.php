@@ -35,7 +35,7 @@ class DashboardController extends Controller
     public function rekap(Kelas $kelas)
     {
         // $nama = Kelas::all();
-        $asrama = Asrama::orderBy('nama_asrama')->get();
+        $asrama = Kelas::orderBy('nama_kelas')->get();
         $rekap = Presensi::latest();
         if (request('cari') || request('asrama') || request('keterangan')) {
             $req_asrama = request('asrama');
@@ -43,11 +43,11 @@ class DashboardController extends Controller
             $rekap
                 ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
                 ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
-                ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+                ->join('kelas', 'kelas.id', '=', 'kelassantri.kelas_id')
                 ->select('absensi_kelas.*', 'sesi_kelas.tgl')
                 ->where('sesi_kelas.tgl', 'like', '%' . request('cari') . '%');
             if ($req_asrama != null) {
-                $rekap->where('asramasantri.asrama_id', '=', request('asrama'));
+                $rekap->where('kelas.kelassantri_id', '=', request('asrama'));
             }
             if ($req_keterangan != null) {
                 $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));

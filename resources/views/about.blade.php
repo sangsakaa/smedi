@@ -36,11 +36,14 @@
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_asrama" name="asrama"
                 value="{{ request('asrama') }}">
                 <option value="">Semua</option>
-                @foreach ($asrama as $asrama)
-                <option value="{{ $asrama->id }}" {{ request('asrama') == $asrama->id ? "selected" : "" }}>
-                    {{ $asrama->nama_asrama  }}
+
+                <option value="Ula" {{ request('asrama')  }}>
+                    Ula
                 </option>
-                @endforeach
+                <option value="Wustha" {{ request('asrama')  }}>
+                    Wustha
+                </option>
+
             </select>
             <label for="cari_keterangan">Keterangan</label>
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan"
@@ -114,6 +117,7 @@
                         <th class=" px-2 border border-green-700 text-left">Nama Santri</th>
                         <th class=" border border-green-700 text-center">Asrama</th>
                         <th class=" border border-green-700 text-center">Kelas</th>
+                        <th class=" border border-green-700 text-center">Jejang</th>
                         <th class="border border-green-700  ">Ket</th>
                         <th class=" border border-green-700  ">Alasan</th>
                     </tr>
@@ -134,6 +138,9 @@
                         </td>
                         <td class="  border border-green-700 text-center">
                             {{ $rekap->santri->kelas->nama_kelas}}
+                        </td>
+                        <td class="  border border-green-700 text-center">
+                            {{ $rekap->santri->kelas->jenjang}}
                         </td>
 
                         <td class=" border border-green-700 text-center">

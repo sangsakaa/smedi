@@ -58,7 +58,7 @@ class SesikelasController extends Controller
         $sesikelas->tgl = $request->tgl;
         $sesikelas->kelas_id = $request->kelas_id;
         $sesikelas->save();
-        return redirect()->back();
+        return redirect()->back()->with('succes', 'Sesi Berhasil ditambahkan');
     }
 
     /**
@@ -106,7 +106,7 @@ class SesikelasController extends Controller
         // dd($absen);
         Sesikelas::destroy($absen->id);
         Presensi::where('sesi_id', $absen->id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Sesi Ini sudah berhasil di hapus');
     }
 
     public function absen(SesiKelas $sesi)

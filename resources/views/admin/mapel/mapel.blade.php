@@ -3,25 +3,25 @@
         {{ __(' Daftar Mata Pelajaran') }}
     </x-slot>
 
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-4 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx-3 font-semibold uppercase text-green-800">
+        <div class="px-2 py-2 ">
+            <div class=" font-semibold uppercase text-green-800">
                 <form action="/mapel" method="get">
                     <input type="text" autofocus name="cari" value="{{ request('cari') }}"
-                        class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                        class=" text-green-800 rounded-md py-1 px-4 border border-green-800" placeholder=" Cari ..">
                     <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                         Cari</button>
                 </form>
             </div>
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-2 py-4 ">
-            <div class=" bg-white rounded-lg shadow-xs">
+            <div class=" bg-white  shadow-xs">
                 <form action="/mapel" method="post">
                     @csrf
                     <div class="   grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -34,12 +34,12 @@
                     </div>
                 </form>
                 <div class=" bg-gray-50 mt-2">
-                    <div class="overflow-hidden  w-full rounded-lg border shadow-xs">
+                    <div class="overflow-hidden  w-full  border shadow-xs">
                         <div class="overflow-x-auto w-full">
                             <table class="w-full whitespace-no-wrap" id="#myTable">
                                 <thead>
                                     <tr
-                                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
+                                        class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800 border-b">
                                         <th class="px-4 py-2">#</th>
                                         <th class="px-4 py-2"> Kode Mata Pelajaran</th>
                                         <th class="px-4 py-2">Mata Pelajaran</th>

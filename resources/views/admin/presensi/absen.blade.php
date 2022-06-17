@@ -57,6 +57,16 @@
             <div class=" font-semibold mt-4">
                 SESI KELAS
             </div>
+            @if (session('error'))
+            <div class=" w-1/2 bg-red-300 px-2 py-1 capitalize alert-dismissible fade show" role="alert" type="button">
+                {{session('error')}}
+            </div>
+            @endif
+            @if (session('succes'))
+            <div class=" w-1/2 bg-blue-300 px-2 py-1 capitalize alert-dismissible fade show" role="alert" type="button">
+                {{session('succes')}}
+            </div>
+            @endif
             <table class=" mt-2 mb-4 sm:w-1/2 w-full table border rounded-md">
                 <thead class=" border rounded-md ">
                     <tr class=" bg-gray-50">

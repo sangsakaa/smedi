@@ -12,7 +12,6 @@
                         @csrf
                         @method('patch')
                         <div class=" gris grid-cols-3">
-
                             <input name="kode_kelas" type="text" value="{{$kelas->kode_kelas}}"
                                 class=" border border-green-800  rounded-md px-2 py-1"
                                 placeholder=" masukan Kode Kelas">
@@ -24,8 +23,8 @@
                                 <option value="">-- Pilih Jenjang --</option>
                                 <option {{old('jenjang',$kelas->jenjang)=="Ula"? 'selected':''}} value="Ula">
                                     Madin Ula</option>
-                                <option {{old('jenjang',$kelas->jenjang)=="Whusto"? 'selected':''}} value="Whusto">
-                                    Madin Whusto</option>
+                                <option {{old('jenjang',$kelas->jenjang)=="Wustha"? 'selected':''}} value="Wustha">
+                                    Madin Wustha</option>
                             </select>
                             <button type="submit" class=" bg-green-600 py-1 px-2 rounded-md text-white">
                                 Update</button>

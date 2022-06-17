@@ -6,7 +6,7 @@
     <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
+        <div class="px-2 py-2 -mx-3">
             <div class="mx-3 font-semibold uppercase text-green-800">
                 Daftar List Santri <a href="/santri/create"><button
                         class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +22,8 @@
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div class=" w-full px-2 py-4 ">
-            <div class="mx-3">
+        <div class=" w-full px-2 py-2 ">
+            <div class="">
                 <div class=" bg-white rounded-lg shadow-xs">
                     <div class=" grid grid-cols-1 sm:grid-cols-3">
                         <form action="/santri" method="get">
@@ -34,7 +34,6 @@
                                 Cari</button>
                         </form>
                     </div>
-
                     <div class=" bg-gray-50 mt-2">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
                             <div class="overflow-x-auto w-full">
@@ -66,7 +65,8 @@
                                                             <button type="submit" class=" text-green-800"
                                                                 onclick="return confirm (' Apakah Anda Ingin Menghapus Data ini : {{$s->nama_santri}}')"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                    height="16" fill="currentColor" class="bi bi-trash"
+                                                                    height="16" fill="currentColor"
+                                                                    class="bi bi-trash text-red-600"
                                                                     viewBox="0 0 16 16">
                                                                     <path
                                                                         d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -76,7 +76,8 @@
                                                         </form>
                                                     </div>
                                                     <div class=" flex">
-                                                        <a href="/santri/{{$s->id}}/edit">
+                                                        <a href="/santri/{{$s->id}}/edit"
+                                                            onclick="return confirm (' Apakah Anda Ingin Mengubah Data ini : {{$s->nama_santri}}')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square text-green-800 "
