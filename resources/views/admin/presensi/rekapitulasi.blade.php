@@ -32,17 +32,6 @@
         </div>
         <div type="text" class=" w-full grid grid-cols-2 bg-white rounded-lg shadow-xs px-4 py-2 ">
             <div class=" grid justify-items-end">
-                <script>
-                function printContent(el) {
-                    var fullbody = document.body.innerHTML;
-                    var printContent = document.getElementById(el).innerHTML;
-                    document.body.innerHTML = printContent;
-                    window.print();
-                    document.body.innerHTML = fullbody;
-                }
-                </script>
-                <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
-                    Cetak Presensi</button>
                 <table id="div1" class=" w-full border border-green-80">
                     <thead>
                         <tr class=" uppercase border">
