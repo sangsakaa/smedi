@@ -147,6 +147,7 @@ class KelasController extends Controller
     public function destroy(Kelas $kelas)
     {
         Kelas::destroy($kelas->id);
+        dd($kelas);
         return redirect()->back();
     }
 

@@ -80,31 +80,31 @@
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
                                         @if($datakelas->count())
-                                        @foreach( $datakelas as $kela)
+                                        @foreach( $datakelas as $kelas)
                                         <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                <a href="/kelas/{{$kela->id}}">
-                                                    {{ $kela->nama_kelas }}
+                                                <a href="/kelas/{{$kelas->id}}">
+                                                    {{ $kelas->nama_kelas }}
                                                 </a>
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                {{ $kela->jenjang }}
+                                                {{ $kelas->jenjang }}
                                             </td>
                                             <td class="px-4 py-1 text-sm text-center ">
-                                                {{ $kela->hitung }}
+                                                {{ $kelas->hitung }}
                                             </td>
                                             </td>
                                             <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class="flex">
-                                                        <form action="/kelas/{{$kela->id}}" method="post">
+                                                        <form action="/kelas/{{$kelas->id}}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button type="submit" class=" text-green-800"
-                                                                onclick="return confirm (' Apakah Anda Ingin Menghapus Data ini : ')"><svg
+                                                                onclick="return confirm (' Apakah Anda Ingin Menghapus Kelas : {{$kelas->nama_kelas}} ')"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor" class="bi bi-trash"
                                                                     viewBox="0 0 16 16">
@@ -116,7 +116,8 @@
                                                         </form>
                                                     </div>
                                                     <div class=" flex">
-                                                        <a href="/kelas/{{$kela->id}}/edit">
+                                                        <a href="/kelas/{{$kelas->id}}/edit"
+                                                            onclick="return confirm (' Apakah Anda Ingin Merubah Kelas : {{$kelas->nama_kelas}} ')">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" fill="currentColor"
                                                                 class="bi bi-pencil-square ml-1 text-green-800 "

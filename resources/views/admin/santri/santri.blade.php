@@ -55,7 +55,7 @@
                                     <tbody class="bg-white divide-y capitalize">
                                         @if($listSantri->count())
                                         @foreach ($listSantri as $s)
-                                        <tr class="text-gray-700">
+                                        <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class="flex">

@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('historipelanggaran/{santri}', [App\Http\Controllers\SantriController::class, 'tampilkanpelanggaran'])->name('historipelanggaran.tampilkanpelanggaran');
     Route::post('historipelanggaran/{santri}', [App\Http\Controllers\SantriController::class, 'pelanggarantstore'])->name('historipelanggaran.pelanggarantstore');
-    Route::get('suratizin/{santri}', [App\Http\Controllers\SantriController::class, 'surat'])->name('suratizin.surat');
+
 
     Route::post('kelas/{kelas}', [App\Http\Controllers\KelasController::class, 'kelasstore'])->name('kelas.kelasstore');
     Route::delete('kelas/{kelassantri}', [App\Http\Controllers\KelasController::class, 'hapus']);
@@ -56,8 +56,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('asrama', App\Http\Controllers\AsramaController::class)->only([
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
-    // Surat Izin
-
 
     // Pelanggaran
     Route::resource('pelanggaran', App\Http\Controllers\PelanggaranController::class)->only([
