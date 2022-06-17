@@ -24,7 +24,7 @@ class SantriController extends Controller
 
         $cari = Santri::orderBy('nama_santri');
         if (request('cari')) {
-            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderBy('nama_santri')->orderby('tanggal_masuk');
+            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderby('tanggal_masuk')->orderBy('nama_santri');
         }
         return view('admin/santri/santri', ['listSantri' => $cari->get()]);
     }
