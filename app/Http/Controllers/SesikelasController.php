@@ -167,8 +167,8 @@ class SesikelasController extends Controller
             ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
-            ->selectRaw("kelassantri_id, santri.nama_santri, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
-            ->groupBy('kelassantri_id', 'nama_santri')
+            ->selectRaw("kelassantri_id, santri.nama_santri,santri.jenis_kelamin, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
+            ->groupBy('kelassantri_id', 'nama_santri', 'jenis_kelamin')
             ->get();
         return view('admin/presensi/rekapitulasi', ['rekapitulasi' => $rekapitulasi]);
     }

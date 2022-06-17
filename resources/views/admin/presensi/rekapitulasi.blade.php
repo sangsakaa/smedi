@@ -40,6 +40,7 @@
                             <tr class=" uppercase border">
                                 <th class=" border border-green-800 bg-green-200 ">#</th>
                                 <th class=" border border-green-800 bg-green-200 ">Nama Siswa</th>
+                                <th class=" border border-green-800 bg-green-200 ">JK</th>
                                 <th class=" border border-green-800 bg-green-200 ">Asrama</th>
                                 <th class=" border border-green-800 bg-green-200 ">KLS</th>
                                 <th class=" border border-green-800 bg-green-200 ">Hadir</th>
@@ -53,6 +54,7 @@
                             <tr class=" hover:bg-gray-100 ">
                                 <td class=" px-2 border border-green-800 text-center">{{$loop->iteration}}</td>
                                 <td class=" px-2 border border-green-800 text-left">{{$presensi->nama_santri}}</td>
+                                <td class=" px-2 border border-green-800 text-center">{{$presensi->jenis_kelamin}}</td>
                                 <td class=" px-2 border border-green-800 text-left"></td>
                                 <td class=" px-2 border border-green-800 text-left"></td>
                                 <td class=" px-2 border border-green-800 text-center">{{ $presensi->hadir }}</td>
