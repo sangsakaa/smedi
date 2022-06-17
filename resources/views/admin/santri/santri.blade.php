@@ -44,12 +44,13 @@
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4  py-1">Aksi</th>
                                             <th class="px-4 ">#</th>
+                                            <th class="px-4 ">Nomor Induk Siswa</th>
                                             <th class="px-4 ">Nama Santri</th>
-                                            <th class="px-4 ">NIS</th>
                                             <th class="px-4  text-center">JK</th>
                                             <th class="px-4  text-center">Tanggal Lahir</th>
                                             <th class="px-4  text-center">Asrama</th>
                                             <th class="px-4  text-center">Angkatan</th>
+                                            <th class="px-4  text-center">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
@@ -92,9 +93,6 @@
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration}}
                                             </td>
-                                            <td class="px-4 py-1 text-sm  ">
-                                                <a href="/santri/{{ $s->id }}">{{ $s->nama_santri}}</a>
-                                            </td>
                                             <td class="px-4 py-1 text-sm ">
                                                 @if ($s->historiTerakhir !== null)
                                                 {{ $s->historiTerakhir->nis }}
@@ -104,6 +102,10 @@
                                                 </div>
                                                 @endif
                                             </td>
+                                            <td class="px-4 py-1 text-sm  ">
+                                                <a href="/santri/{{ $s->id }}">{{ $s->nama_santri}}</a>
+                                            </td>
+
                                             <td class=" px-4 py-1 text-sm text-center">
                                                 {{ $s->jenis_kelamin }}
                                             </td>
@@ -129,6 +131,9 @@
                                                 echo date_format($date, "Y");
                                                 ?>
                                                 @endif
+                                            </td>
+                                            <td class=" px-4 py-1 text-sm text-center">
+                                                Aktif
                                             </td>
                                         </tr>
                                         @endforeach
