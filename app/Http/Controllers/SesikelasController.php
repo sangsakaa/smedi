@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
+use App\Models\Kelassantri;
 use App\Models\Presensi;
 use App\Models\Sesikelas;
 use Illuminate\Http\Request;
@@ -121,7 +122,16 @@ class SesikelasController extends Controller
         $jumlahAlfa = $sesi->presensi()->where('keterangan', 'Alfa')->count();
         $total = $sesi->presensi()->count();
         //dd($presensi);
-        return view('admin/laporan/report', ['sesi' => $sesi, 'presensi' => $presensi, 'jumlahHadir' => $jumlahHadir, 'jumlahSakit' => $jumlahSakit, 'jumlahAlfa' => $jumlahAlfa, 'jumlahIzin' => $jumlahIzin, 'total' => $total]);
+
+        $liskelassantri = Kelassantri::query()
+            ->select('kelassantri.*')
+            ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
+            ->where('kelassantri.kelas_id', $sesi->kelas->id)
+            ->orderBy('santri.nama_santri')
+            ->get();
+
+        return view('admin/laporan/report', ['sesi' => $sesi, 'liskelassantri' => $liskelassantri, 'presensi' => $presensi, 'jumlahHadir' => $jumlahHadir, 'jumlahSakit' => $jumlahSakit, 'jumlahAlfa' => $jumlahAlfa, 'jumlahIzin' => $jumlahIzin, 'total' => $total]);
     }
 
     public function simpanabsen(Request $request, SesiKelas $sesi)
