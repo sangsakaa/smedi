@@ -63,7 +63,8 @@
             </div>
             @endif
             @if (session('succes'))
-            <div class=" w-1/2 bg-blue-300 px-2 py-1 capitalize alert-dismissible fade show" role="alert" type="button">
+            <div class=" w-1/2 bg-green-300 px-2 py-1 capitalize alert-dismissible fade show" role="alert"
+                type="button">
                 {{session('succes')}}
             </div>
             @endif
