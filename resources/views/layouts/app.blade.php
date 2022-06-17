@@ -52,7 +52,7 @@
                         -
                         Madrasah
                         Diniyah
-                        Wahidiyah
+                        Wahidiyah - Kedunglo Kediri
                     </div>
                 </footer>
             </div>
