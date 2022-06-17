@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
                             @foreach($rekapitulasi as $presensi)
-                            <tr class=" hover:bg-gray-200">
+                            <tr class=" hover:bg-gray-100 ">
                                 <td class=" px-2 border border-green-800 text-center">{{$loop->iteration}}</td>
                                 <td class=" px-2 border border-green-800 text-left">{{$presensi->nama_santri}}</td>
                                 <td class=" px-2 border border-green-800 text-left"></td>
