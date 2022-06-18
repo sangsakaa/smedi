@@ -33,22 +33,20 @@
             <input type="date" id="cari_tanggal" name="cari" value="{{ request('cari') }}"
                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
             <label for="cari_asrama">Asrama</label>
+
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_asrama" name="asrama"
                 value="{{ request('asrama') }}">
-                <option value="">Semua</option>
-
-                <option value="Ula" {{ request('asrama')  }}>
-                    Ula
+                <option value="">- pilih Semua Kategori --</option>
+                @foreach( $asrama as $asrama)
+                <option value="Ula" {{ request('asrama')  }}>{{ $asrama->nama_kelas }} - {{ $asrama->jenjang }}
                 </option>
-                <option value="Wustha" {{ request('asrama')  }}>
-                    Wustha
-                </option>
+                @endforeach
 
             </select>
             <label for="cari_keterangan">Keterangan</label>
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan"
                 value="{{ request('keterangan') }}">
-                <option value="">Semua</option>
+                <option value="">- pilih Semua Kategori --</option>
                 <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
                 <option value="Izin" {{ request('keterangan') == 'Izin' ? "selected" : "" }}>Izin</option>
                 <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>

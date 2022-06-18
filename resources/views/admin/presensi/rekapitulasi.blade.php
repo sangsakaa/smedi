@@ -46,9 +46,13 @@
                 <div id="div1" class=" w-full  bg-white  shadow-xs px-4 py-2 ">
                     <img src="images/04.jpg" alt="">
                     <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
+
                     <hr class=" border border-b-green-800  ">
-                    <h2 class=" text-center text-2xl">Mulai Dari :{{ $date->min_date }} Sampai Dari
-                        {{ $date->max_date }}
+                    <h2 class=" text-center text-2xl">Mulai Dari
+                        :{{ date_format(date_create($date->min_date),'d-M-Y') }} Sampai Dari
+                        {{ date_format(date_create($date->max_date),'d-M-Y') }}
+                        <br>
+                        Bulan : {{ date_format(date_create($date->max_date),'M') }}
                     </h2>
                     <table class=" w-full  border border-green-80 mt-4">
                         <thead>
@@ -73,7 +77,8 @@
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                     {{$presensi->jenis_kelamin}}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-left">{{ $presensi->nama_asrama }}
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                    {{ $presensi->nama_asrama }}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                     {{ $presensi->nama_kelas }}
