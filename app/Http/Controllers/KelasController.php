@@ -100,6 +100,7 @@ class KelasController extends Controller
         $dataSantri = Santri::all();
         $asramasantri = Asramasantri::all();
         $kelasSantri = Kelassantri::query()
+            ->select('kelassantri.*')
             ->where('kelas_id', $kelas->id)
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
