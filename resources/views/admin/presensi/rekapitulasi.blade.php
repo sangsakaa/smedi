@@ -39,11 +39,11 @@
                 </div>
             </div>
         </div>
-        <div id="div1" class=" w-full">
+        <div x class=" w-full">
             <div class="inline-flex overflow-hidden mt-2 bg-white w-full  shadow-md">
                 <div class="flex justify-center items-center w-1 bg-green-800">
                 </div>
-                <div class=" w-full  bg-white  shadow-xs px-4 py-2 ">
+                <div id="div1" class=" w-full  bg-white  shadow-xs px-4 py-2 ">
                     <img src="images/04.jpg" alt="">
                     <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
                     <hr class=" border border-b-green-800  ">
