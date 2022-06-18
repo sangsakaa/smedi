@@ -99,7 +99,12 @@ class KelasController extends Controller
         $dataAsrama = Asrama::all();
         $dataSantri = Santri::all();
         $asramasantri = Asramasantri::all();
-        $kelasSantri = Kelassantri::where('kelas_id', $kelas->id)->get();
+        $kelasSantri = Kelassantri::query()
+            ->where('kelas_id', $kelas->id)
+            ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
+            ->orderBy('santri.nama_santri')
+            ->get();
         $dataKelas = Kelas::all();
         return view('admin/kelas/detailKelas', ['list' => $dataAsrama, 'dataSantri' => $dataSantri, 'asrama' => $asrama, 'datakelas' => $dataKelas, 'kelas' => $kelas, 'DataAsrama' => $asramasantri, 'kelasSantri' => $kelasSantri]);
     }
