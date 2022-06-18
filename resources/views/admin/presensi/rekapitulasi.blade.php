@@ -17,6 +17,17 @@
                     <a href="/absen">
                         <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Reset</button>
                     </a>
+                    <script>
+                    function printContent(el) {
+                        var fullbody = document.body.innerHTML;
+                        var printContent = document.getElementById(el).innerHTML;
+                        document.body.innerHTML = printContent;
+                        window.print();
+                        document.body.innerHTML = fullbody;
+                    }
+                    </script>
+                    <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
+                        Cetak Presensi</button>
                 </div>
                 <div class=" grid justify-items-end">
                     <form action="/absen" method="get">
@@ -28,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class=" w-full">
+        <div id="div1" class=" w-full">
             <div class="inline-flex overflow-hidden mt-2 bg-white w-full  shadow-md">
                 <div class="flex justify-center items-center w-1 bg-green-800">
                 </div>
