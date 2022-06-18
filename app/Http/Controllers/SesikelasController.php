@@ -172,6 +172,8 @@ class SesikelasController extends Controller
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
             ->selectRaw("kelassantri_id, asrama.nama_asrama, kelas.nama_kelas, santri.nama_santri,santri.jenis_kelamin,  COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
             ->groupBy('kelassantri_id', 'nama_santri', 'jenis_kelamin', 'asrama.nama_asrama', 'kelas.nama_kelas')
+            ->orderBy('kelas.nama_kelas')
+            ->orderBy('santri.nama_kelas')
             ->get();
         $date = DB::table('absensi_kelas')
             ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
