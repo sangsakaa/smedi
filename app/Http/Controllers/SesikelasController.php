@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asramasantri;
 use App\Models\Kelas;
 use App\Models\Presensi;
 use App\Models\Sesikelas;
@@ -166,10 +167,16 @@ class SesikelasController extends Controller
         $rekapitulasi = DB::table('absensi_kelas')
             ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->join('asrama', 'asrama.id', '=', 'asramasantri.asrama_id')
+            ->join('kelas', 'kelas.id', '=', 'kelassantri.kelas_id')
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
-            ->selectRaw("kelassantri_id, santri.nama_santri,santri.jenis_kelamin, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
-            ->groupBy('kelassantri_id', 'nama_santri', 'jenis_kelamin')
+            ->selectRaw("kelassantri_id, asrama.nama_asrama, kelas.nama_kelas, santri.nama_santri,santri.jenis_kelamin,  COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
+            ->groupBy('kelassantri_id', 'nama_santri', 'jenis_kelamin', 'asrama.nama_asrama', 'kelas.nama_kelas')
             ->get();
-        return view('admin/presensi/rekapitulasi', ['rekapitulasi' => $rekapitulasi]);
+        $date = DB::table('absensi_kelas')
+            ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
+            ->selectRaw("MAX(sesi_kelas.tgl) AS max_date, MIN(sesi_kelas.tgl) AS min_date")
+            ->first();
+        return view('admin/presensi/rekapitulasi', ['rekapitulasi' => $rekapitulasi, 'date' => $date]);
     }
 }

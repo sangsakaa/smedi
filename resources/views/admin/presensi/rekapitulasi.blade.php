@@ -35,6 +35,9 @@
                 <div class=" w-full  bg-white  shadow-xs px-4 py-2 ">
                     <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
                     <hr class=" border border-b-green-800  ">
+                    <h2 class=" text-center text-2xl">Mulai Dari :{{ $date->min_date }} Sampai Dari
+                        {{ $date->max_date }}
+                    </h2>
                     <table class=" w-full  border border-green-80 mt-4">
                         <thead>
                             <tr class=" uppercase border">
@@ -55,8 +58,8 @@
                                 <td class=" px-2 border border-green-800 text-center">{{$loop->iteration}}</td>
                                 <td class=" px-2 border border-green-800 text-left">{{$presensi->nama_santri}}</td>
                                 <td class=" px-2 border border-green-800 text-center">{{$presensi->jenis_kelamin}}</td>
-                                <td class=" px-2 border border-green-800 text-left"></td>
-                                <td class=" px-2 border border-green-800 text-left"></td>
+                                <td class=" px-2 border border-green-800 text-left">{{ $presensi->nama_asrama }}</td>
+                                <td class=" px-2 border border-green-800 text-left">{{ $presensi->nama_kelas }}</td>
                                 <td class=" px-2 border border-green-800 text-center">{{ $presensi->hadir }}</td>
                                 <td class=" px-2 border border-green-800 text-center">{{ $presensi->izin }}</td>
                                 <td class=" px-2 border border-green-800 text-center">{{ $presensi->sakit }}</td>
