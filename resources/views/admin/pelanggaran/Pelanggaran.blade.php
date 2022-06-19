@@ -9,7 +9,7 @@
         </div>
         <div class="px-4 py-2 -mx-3">
             <div class="mx-3 font-semibold uppercase text-purple-600">
-                Daftar List Santri <form action="" method="get">
+                <form action="" method="get">
                     <input type="text" name="cari" value="{{ request('cari') }}"
                         class=" text-purple-600 rounded-md py-1 px-4" placeholder=" Cari .." autofocus>
                     <button type="submit" class=" bg-purple-600 py-1 px-2 rounded-md text-white">
@@ -26,17 +26,15 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/pelanggaran" method="post">
                         @csrf
-                        <input name="pelanggaran" type="text" class=" rounded-md py-1 px-4"
+                        <input name="pelanggaran" type="text" class="border border-green-800 rounded-md py-1 px-4"
                             placeholder=" Contoh : Bolos Sekolah ">
-                        <input name="level" class="form-control w-1/3 py-1 px-2 rounded-md  border"
-                            list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-                        <datalist id="datalistOptions">
-                            <option value="Rendah" @if (old('level')=="Rendah" ) {{ 'selected' }} @endif>
-                                Rendah</option>
-                            <option class=" capitalize block " value="Sedang">Sedang</option>
-                            <option class=" capitalize block " value="Berat">Berat</option>
-                        </datalist>
-                        <input name="poin" type="number" class=" rounded-md py-1 px-4"
+                        <select name="level" id="" class=" border border-green-800 rounded-md py-1 px-2 ">
+                            <option value="Sedang">-- Pilih Sesui Level --</option>
+                            <option value="Sedang">Rendah</option>
+                            <option value="Sedang">Sedang</option>
+                            <option value="Berat">Berat</option>
+                        </select>
+                        <input name="poin" type="number" class=" border border-green-800 rounded-md py-1 px-4"
                             placeholder=" Contoh Poin : 1-00 ">
                         <button type="submit" class="  bg-purple-600 py-1 px-2 rounded-md text-white" onClick="swal()">
                             Pelanggaran</button>

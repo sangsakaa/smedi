@@ -113,7 +113,7 @@
                                     @endforeach
                                     @else
                                     <tr class="bg-gray-50">
-                                        <td class="  px-4 py-2 text-sm text-center font-semibold">Data Mata
+                                        <td colspan="5" class="  px-4 py-2 text-sm text-center font-semibold">Data Mata
                                             Pelajaran tidak
                                             tersedia !!!</td>
                                     </tr>

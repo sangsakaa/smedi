@@ -19,10 +19,10 @@ class PenugasanController extends Controller
     public function index()
     {
         $pengurus = Penugasan::paginate(4);
-        $santri = Santri::all();
+        $santri = Santri::orderBy('nama_santri')->get();
         $jabatan = Jabatan::all();
-        $asrama = Asrama::all();
-        return view('admin/pengurus/pengurus',['asrama'=>$asrama,'jabatan'=>$jabatan,'pengurus'=>$pengurus,'santri'=>$santri]); 
+        $asrama = Asrama::orderBy('nama_asrama')->get();
+        return view('admin/pengurus/pengurus', ['asrama' => $asrama, 'jabatan' => $jabatan, 'pengurus' => $pengurus, 'santri' => $santri]);
     }
 
     /**
@@ -44,11 +44,11 @@ class PenugasanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'santri_id'=>'required',                     
-            'asrama_id'=>'required',            
-            'jabatan_id'=>'required',            
-        ]);  
-        $pengurus = New Penugasan;
+            'santri_id' => 'required',
+            'asrama_id' => 'required',
+            'jabatan_id' => 'required',
+        ]);
+        $pengurus = new Penugasan;
         $pengurus->santri_id = $request->santri_id;
         $pengurus->jabatan_id = $request->jabatan_id;
         $pengurus->asrama_id = $request->asrama_id;

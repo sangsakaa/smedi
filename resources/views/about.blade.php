@@ -38,7 +38,7 @@
                 value="{{ request('asrama') }}">
                 <option value="">- pilih Semua Kategori --</option>
                 @foreach( $asrama as $asrama)
-                <option value="Ula" {{ request('asrama')  }}>{{ $asrama->nama_kelas }} - {{ $asrama->jenjang }}
+                <option value="{{ $asrama->id }}" {{ request('asrama')  }}>{{ $asrama->nama_asrama }}
                 </option>
                 @endforeach
 
@@ -152,7 +152,7 @@
                     @endforeach
                     @else
                     <tr class=" bg-gray-50  ">
-                        <td class=" px-2 col-span-6">Data Berdasarkan Tanggal tidak di temukan</td>
+                        <td colspan="8" class=" px-2   text-center ">Data Berdasarkan Kategori tidak di temukan</td>
                     </tr>
                     @endif
                 </tbody>
