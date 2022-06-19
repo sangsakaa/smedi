@@ -43,16 +43,16 @@
             <div class="inline-flex overflow-hidden mt-2 bg-white w-full  shadow-md">
                 <div class="flex justify-center items-center w-1 bg-green-800">
                 </div>
-                <div id="div1" class=" w-full  bg-white  shadow-xs px-4 py-2 ">
+                <div id="div1" class=" w-full  bg-white  shadow-xs px-4  ">
                     <img src="images/04.jpg" alt="">
                     <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
 
                     <hr class=" border border-b-green-800  ">
-                    <h2 class=" text-center text-2xl">Mulai Dari
-                        :{{ date_format(date_create($date->min_date),'d-M-Y') }} Sampai Dari
-                        {{ date_format(date_create($date->max_date),'d-M-Y') }}
+                    <h2 class=" text-center text-2xl  ">Mulai Dari
+                        : {{ date_format(date_create($date->min_date),'d M') }} Sampai Dari
+                        {{ date_format(date_create($date->max_date),'d M Y') }}
                         <br>
-                        Bulan : {{ date_format(date_create($date->max_date),'M') }}
+                        Bulan : {{ date_format(date_create($date->max_date),'M  Y ') }}
                     </h2>
                     <table class=" w-full  border border-green-80 mt-4">
                         <thead>
