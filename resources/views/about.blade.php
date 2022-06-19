@@ -36,7 +36,7 @@
 
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_asrama" name="asrama"
                 value="{{ request('asrama') }}">
-                <option value="">- pilih Semua Kategori --</option>
+                <option value="">- Pilih Semua Kategori --</option>
                 @foreach( $asrama as $asrama)
                 <option value="{{ $asrama->id }}" {{ request('asrama')  }}>{{ $asrama->nama_asrama }}
                 </option>
@@ -46,7 +46,7 @@
             <label for="cari_keterangan">Keterangan</label>
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan"
                 value="{{ request('keterangan') }}">
-                <option value="">- pilih Semua Kategori --</option>
+                <option value="">- Pilih Semua Kategori --</option>
                 <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
                 <option value="Izin" {{ request('keterangan') == 'Izin' ? "selected" : "" }}>Izin</option>
                 <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>

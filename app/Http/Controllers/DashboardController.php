@@ -43,11 +43,13 @@ class DashboardController extends Controller
             $rekap
                 ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
                 ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
+                ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+                ->join('asrama', 'asrama.id', '=', 'asramasantri.asrama_id')
                 ->join('kelas', 'kelas.id', '=', 'kelassantri.kelas_id')
                 ->select('absensi_kelas.*', 'sesi_kelas.tgl')
                 ->where('sesi_kelas.tgl', 'like', '%' . request('cari') . '%');
             if ($req_asrama != null) {
-                $rekap->where('asrama.nama_asrama', '=', request('asrama'));
+                $rekap->where('asrama.id', '=', (int) request('asrama'));
             }
             if ($req_keterangan != null) {
                 $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));
