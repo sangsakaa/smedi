@@ -35,7 +35,8 @@
                     <form action="/rekapitulasiperasrama" method="get">
                         <input class=" border border-green-800 px-2 py-1 rounded-md" id="start_date" type="date"
                             name="start_date" value="{{request('start_date')}}">
-                        <input class=" border border-green-800 px-2 py-1 rounded-md" type="date" name="end_date">
+                        <input class=" border border-green-800 px-2 py-1 rounded-md" type="date" name="end_date"
+                            value="{{request('end_date')}}">
                         <input class=" border border-green-800 px-2 py-1 rounded-md" id="hari_terakhir" type="checkbox"
                             name="hari_terakhir"><label for="hari_terakhir">Hari
                             Terakhir</label>
@@ -106,6 +107,13 @@
                         </tbody>
 
                     </table>
+                    <div class=" mt-4 grid justify-items-end">
+
+                        Kedunglo, <br>
+                        Kepala Madin Wustho Wahidiyah <br><br><br><br>
+                        Muh. Bahrul Ulum
+
+                    </div>
                 </div>
             </div>
         </div>

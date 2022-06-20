@@ -187,6 +187,7 @@ class SesikelasController extends Controller
         $lisrekap = DB::table('absensi_kelas')
             ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+
             ->join('asrama', 'asrama.id', '=', 'asramasantri.asrama_id')
             ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
             ->selectRaw("asrama.nama_asrama, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
