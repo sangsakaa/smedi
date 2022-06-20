@@ -90,7 +90,7 @@
                                             <td class=" px-4 py-1 text-sm text-center">
 
                                                 @if (( $as->hitung) === ($as->kuota_asrama))
-                                                <span class="   text-green-800 "> Penuh kuota cuma
+                                                <span class=" font-semibold   text-green-800 "> Penuh kuota cuma
                                                     {{ ($as->hitung)}}</span>
                                                 @elseif (( $as->hitung) > ($as->kuota_asrama))
 
@@ -98,7 +98,7 @@
                                                     Penus lebih {{ (($as->hitung)-$as->kuota_asrama) }} orang
                                                 </span>
                                                 @else
-                                                <span class=" text-green-500"> Masih Bisa
+                                                <span class=" font-semibold text-green-800"> Masih Bisa
                                                     {{ ($as->kuota_asrama)-($as->hitung) }} Orang</span>
                                                 @endif
 
