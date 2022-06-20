@@ -15,13 +15,12 @@ class MapelController extends Controller
      */
     public function index()
     {
-        
+
         $cari = Mapel::latest();
-        if (request('cari')){
-            $cari->where('nama_mapel','like','%'.request('cari').'%');
+        if (request('cari')) {
+            $cari->where('nama_mapel', 'like', '%' . request('cari') . '%');
         }
-        return view('admin/mapel/mapel',['datamapel'=>$cari->get()]);
-        
+        return view('admin/mapel/mapel', ['datamapel' => $cari->get()]);
     }
 
     /**
@@ -42,9 +41,9 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([    
-            'nama_mapel'=>'required',
-            'keterangan'=>'required',
+        $request->validate([
+            'nama_mapel' => 'required',
+            'keterangan' => 'required',
         ]);
         $kelas_akhir = Mapel::orderBy('id', 'desc')->first();
         if (is_null($kelas_akhir)) {
@@ -54,12 +53,12 @@ class MapelController extends Controller
             $nomor = (int) substr($kode_akhir, -3); // 2013002 -> 003
             $nomor = $nomor + 1;
             $kode_mapel = 'M' . str_pad($nomor, 3, '0', STR_PAD_LEFT); // 4 -> 004
-        
+
         }
-        $mapel = New Mapel;
+        $mapel = new Mapel;
         $mapel->kode_mapel = $kode_mapel;
-        $mapel->nama_mapel = $request->nama_mapel; 
-        $mapel->keterangan = $request->keterangan; 
+        $mapel->nama_mapel = $request->nama_mapel;
+        $mapel->keterangan = $request->keterangan;
         $mapel->save();
         return redirect()->back();
     }
@@ -72,7 +71,7 @@ class MapelController extends Controller
      */
     public function show(Mapel $mapel)
     {
-        //
+        return view('admin/mapel/detailmapel');
     }
 
     /**
@@ -83,7 +82,7 @@ class MapelController extends Controller
      */
     public function edit(Mapel $mapel)
     {
-        return view('admin/mapel/editmapel',['mapel'=>$mapel]);
+        return view('admin/mapel/editmapel', ['mapel' => $mapel]);
     }
 
     /**
@@ -96,12 +95,12 @@ class MapelController extends Controller
     public function update(Request $request, Mapel $mapel)
     {
         $request->validate([
-            'kode_mapel'=>'required',
-            'nama_mapel'=>'required',
-            'keterangan'=>'required',
+            'kode_mapel' => 'required',
+            'nama_mapel' => 'required',
+            'keterangan' => 'required',
         ]);
         Mapel::where('id', $mapel->id)
-            ->update([ 
+            ->update([
                 'kode_mapel' => $request->kode_mapel,
                 'nama_mapel' => $request->nama_mapel,
                 'keterangan' => $request->keterangan,

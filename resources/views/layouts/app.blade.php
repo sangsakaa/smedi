@@ -31,7 +31,7 @@
                 <main class="h-full overflow-y-auto">
                     <div class="container px-2 py-2 mb-4 grid">
                         <h2 class=" text-2xl font-semibold  text-green-800">
-                            <div class=" mb-4 inline-flex overflow-hidden  w-full   rounded-lg shadow-md">
+                            <div class=" mb-4 inline-flex overflow-hidden  w-full    shadow-md">
                                 <div class="flex justify-center items-center w-1 bg-green-800">
 
                                 </div>

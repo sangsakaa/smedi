@@ -33,7 +33,6 @@
             <input type="date" id="cari_tanggal" name="cari" value="{{ request('cari') }}"
                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
             <label for="cari_asrama">Asrama</label>
-
             <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_asrama" name="asrama"
                 value="{{ request('asrama') }}">
                 <option value="">- Pilih Semua Kategori --</option>
