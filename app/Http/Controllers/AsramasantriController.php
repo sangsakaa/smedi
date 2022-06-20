@@ -71,7 +71,9 @@ class AsramasantriController extends Controller
      */
     public function edit(Asramasantri $asramasantri)
     {
-        //
+        $data = Asramasantri::all();
+        $asrama = Asrama::all();
+        return view('admin/asrama/editasramasantri', ['asrama' => $asrama, 'asramasantri' => $asramasantri, 'data' => $data]);
     }
     /**
      * Update the specified resource in storage.
@@ -82,7 +84,24 @@ class AsramasantriController extends Controller
      */
     public function update(Request $request, Asramasantri $asramasantri)
     {
-        //
+        $request->validate([
+            'santri_id' => 'required',
+            'histori_id' => 'required',
+            'asrama_id' => 'required',
+            'tanggal_masuk' => '',
+            'tanggal_keluar' => '',
+        ]);
+
+        Asramasantri::where('id', $asramasantri->id)
+            ->update([
+
+                'santri_id' => $request->santri_id,
+                'asrama_id' => $request->asrama_id,
+                'histori_id' => $request->histori_id,
+                'tanggal_masuk' => $request->tanggal_masuk,
+                'tanggal_keluar' => $request->tanggal_keluar,
+            ]);
+        return redirect('/asrama');
     }
 
     /**
