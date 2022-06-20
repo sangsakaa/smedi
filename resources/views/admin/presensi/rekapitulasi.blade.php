@@ -9,9 +9,6 @@
             <div type="text" class=" w-full grid grid-cols-2 bg-white  shadow-xs px-4 py-2 ">
                 <div>
                     <a href="/about">
-                        <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Kembali</button>
-                    </a>
-                    <a href="/about">
                         <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
                     </a>
                     <a href="/rekapitulasiperasrama">
