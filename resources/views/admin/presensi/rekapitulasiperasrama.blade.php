@@ -55,9 +55,8 @@
 
 
                     </h2>
-                    <table class=" w-full  border border-green-80 mt-4">
+                    <table class=" w-full  border border-green-80 mt-4 mb-4">
                         <thead>
-
                             <tr class=" uppercase border">
                                 <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">#</th>
                                 <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">Asrama</th>
