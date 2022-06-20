@@ -26,7 +26,7 @@ class SesikelasController extends Controller
         $cari = Sesikelas::query()
             ->select('sesi_kelas.*')
             ->join('kelas', 'kelas.id', '=', 'sesi_kelas.kelas_id')
-            ->orderBy('sesi_kelas.tgl')
+            ->orderBy('sesi_kelas.tgl', 'desc')
             ->orderBy('kelas.jenjang')
             ->orderBy('kelas.nama_kelas');
         if (request('cari')) {

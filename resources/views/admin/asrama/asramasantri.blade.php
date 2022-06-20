@@ -57,7 +57,7 @@
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-2 py-4 ">
-            <div class=" w-full mx-2">
+            <div class=" w-full ">
                 <div class=" w-full bg-white rounded-lg shadow-xs">
                     <form action="/asramasantri" method="post">
                         @csrf

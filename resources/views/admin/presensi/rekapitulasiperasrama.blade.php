@@ -103,37 +103,38 @@
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
-
                                     {{ ($rekap->hadir)}}
-
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ ($rekap->hadir) }}
+                                    {{ $rekap->hadir ? $rekap->hadir/100:0}}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
-                                </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                    {{ $rekap->izin ? $rekap->izin/100:0}}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                    {{$rekap->sakit ? $rekap->sakit/100:0}}
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->alfa }}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->alfa }}</td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                     {{ ($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit) }}
                                 </td>
+
                             </tr>
                             @endforeach
 
                             <tr>
-                                <td colspan="10"
+                                <td colspan="11"
                                     class=" font-semibold uppercase px-1 text-sm border border-green-800 text-center">
                                     Total
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ "" }}
+                                    {{ "d" }}
                                 </td>
                             </tr>
                         </tbody>
