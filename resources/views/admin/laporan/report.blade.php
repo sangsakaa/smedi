@@ -15,13 +15,13 @@
             <button class="text-white rounded-md  bg-green-800 px-2 py-1 " onclick="printContent('div1')">
                 Cetak Presensi</button>
             <script>
-                function printContent(el) {
-                    var fullbody = document.body.innerHTML;
-                    var printContent = document.getElementById(el).innerHTML;
-                    document.body.innerHTML = printContent;
-                    window.print();
-                    document.body.innerHTML = fullbody;
-                }
+            function printContent(el) {
+                var fullbody = document.body.innerHTML;
+                var printContent = document.getElementById(el).innerHTML;
+                document.body.innerHTML = printContent;
+                window.print();
+                document.body.innerHTML = fullbody;
+            }
             </script>
 
 
@@ -89,13 +89,28 @@
                             <td class=" text-center border">{{ $kelassantri->asramasantri->asrama->nama_asrama }}</td>
                             <td class=" text-center border">{{ $kelassantri->kelas->nama_kelas }}</td>
                             <td class=" text-right px-2 border py-1 text-xs ">
-                                <input type="radio" id="keteranganhadir[{{ $kelassantri->id }}]" name="keterangan[{{ $kelassantri->id }}]" value="Hadir" {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label for="keteranganhadir[{{ $kelassantri->id }}]">&nbsp;Hadir</label>&nbsp;
-                                <input type="radio" id="keteranganizin[{{ $kelassantri->id }}]" name="keterangan[{{ $kelassantri->id }}]" value="Izin" {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Izin'  ? 'checked' : ''}}><label for="keteranganizin[{{ $kelassantri->id }}]">&nbsp;Izin</label>&nbsp;
-                                <input type="radio" id="keterangansakit[{{ $kelassantri->id }}]" name="keterangan[{{ $kelassantri->id }}]" value="Sakit" {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Sakit' ? 'checked' : '' }}><label for="keterangansakit[{{ $kelassantri->id }}]">&nbsp;Sakit</label>
-                                <input type="radio" id="keteranganalfa[{{ $kelassantri->id }}]" name="keterangan[{{ $kelassantri->id }}]" value="Alfa" {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Alfa' ? 'checked' : '' }}><label for="keteranganalfa[{{ $kelassantri->id }}]">&nbsp;Alfa</label>
+                                <input type="radio" id="keteranganhadir[{{ $kelassantri->id }}]"
+                                    name="keterangan[{{ $kelassantri->id }}]" value="Hadir"
+                                    {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Hadir' || !$presensi ? 'checked' : ''}}><label
+                                    for="keteranganhadir[{{ $kelassantri->id }}]">&nbsp;Hadir</label>&nbsp;
+                                <input type="radio" id="keteranganizin[{{ $kelassantri->id }}]"
+                                    name="keterangan[{{ $kelassantri->id }}]" value="Izin"
+                                    {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Izin'  ? 'checked' : ''}}><label
+                                    for="keteranganizin[{{ $kelassantri->id }}]">&nbsp;Izin</label>&nbsp;
+                                <input type="radio" id="keterangansakit[{{ $kelassantri->id }}]"
+                                    name="keterangan[{{ $kelassantri->id }}]" value="Sakit"
+                                    {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Sakit' ? 'checked' : '' }}><label
+                                    for="keterangansakit[{{ $kelassantri->id }}]">&nbsp;Sakit</label>
+                                <input type="radio" id="keteranganalfa[{{ $kelassantri->id }}]"
+                                    name="keterangan[{{ $kelassantri->id }}]" value="Alfa"
+                                    {{ array_key_exists($kelassantri->id, $presensi) && $presensi[$kelassantri->id]['keterangan'] === 'Alfa' ? 'checked' : '' }}><label
+                                    for="keteranganalfa[{{ $kelassantri->id }}]">&nbsp;Alfa</label>
                             </td>
                             <td class=" text-xs py-0">
-                                <input type="text" id="alasan[{{ $kelassantri->id }}]" name=" alasan[{{ $kelassantri->id }}]" placeholder="masukan alasan" class=" py-0  w-full  border border-green-800 px-2 " value="{{ array_key_exists($kelassantri->id, $presensi) ? $presensi[$kelassantri->id]['alasan'] : '' }}">
+                                <input type="text" id="alasan[{{ $kelassantri->id }}]"
+                                    name=" alasan[{{ $kelassantri->id }}]" placeholder="masukan alasan"
+                                    class=" py-0  w-full  border border-green-800 px-2 "
+                                    value="{{ array_key_exists($kelassantri->id, $presensi) ? $presensi[$kelassantri->id]['alasan'] : '' }}">
                             </td>
                         </tr>
                         @endforeach

@@ -53,28 +53,47 @@
                     <img src="images/04.jpg" alt="">
                     <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
                     <h1 class=" text-center text-2xl"></h1>
-
-
                     </h2>
                     <table class=" w-full  border border-green-80 mt-4 mb-4">
                         <thead>
+                            <tr>
+                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">#</th>
+                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">Asrama</th>
+                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">JML</th>
+
+                                <th colspan="9" class=" text-sm border border-green-800 bg-green-200 uppercase ">
+                                    Keterangan</th>
+                            </tr>
                             <tr class=" uppercase border">
-                                <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">#</th>
-                                <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">Asrama</th>
-                                <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">JML</th>
-                                <th colspan="4" class=" text-sm border border-green-800 bg-green-200">
-                                    Keterangan
+
+
+                                <th colspan="2" class=" text-sm border border-green-800 bg-green-200">
+                                    Hadir
+                                </th>
+                                <th colspan="2" class=" text-sm border border-green-800 bg-green-200">
+                                    Izin
+                                </th>
+                                <th colspan="2" class=" text-sm border border-green-800 bg-green-200">
+                                    Sakit
+                                </th>
+                                <th colspan="2" class=" text-sm border border-green-800 bg-green-200">
+                                    Alfa
                                 </th>
                                 <th rowspan="2" class=" text-sm border border-green-800 bg-green-200 ">Tot</th>
                             </tr>
                             <tr class=" uppercase border">
-                                <th class=" text-sm border border-green-800 bg-green-200 ">Hadir</th>
-                                <th class=" text-sm border border-green-800 bg-green-200 ">Izin</th>
-                                <th class=" text-sm border border-green-800 bg-green-200 ">Sakit</th>
-                                <th class=" text-sm border border-green-800 bg-green-200 ">Alfa</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">H</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">I</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">S</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">A</th>
+                                <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach($lisrekap as $rekap)
                             <tr class=" hover:bg-gray-100 ">
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{$loop->iteration}}</td>
@@ -83,9 +102,21 @@
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ ($rekap->hadir) }}
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+
+                                    {{ ($rekap->hadir)}}
+
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                    {{ ($rekap->hadir) }}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
@@ -95,8 +126,9 @@
                                 </td>
                             </tr>
                             @endforeach
+
                             <tr>
-                                <td colspan="7"
+                                <td colspan="10"
                                     class=" font-semibold uppercase px-1 text-sm border border-green-800 text-center">
                                     Total
                                 </td>
