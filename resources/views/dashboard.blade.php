@@ -27,8 +27,8 @@
 
             <div class=" w-full bg-blue-200  px-4   grid grid-cols-2">
                 <div class=" grid content-center">
-                    <span class="font-semibold text-blue-700"> Santri Putra</span>
-                    <p class=" text-blue-800 lg:text-4xl  text-5xl">{{ $p }}</p>Santriwan
+                    <span class="font-semibold text-blue-700"> Santri Putri</span>
+                    <p class=" text-blue-800 lg:text-4xl  text-5xl">{{ $p }}</p>Santriwati
                 </div>
                 <div class=" grid  justify-end content-center  ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
@@ -46,7 +46,7 @@
 
             <div class=" w-full bg-blue-200  px-4   grid grid-cols-2">
                 <div class=" grid content-center">
-                    <span class="font-semibold text-blue-700"> Santri Putra</span>
+                    <span class="font-semibold text-blue-700"> Total Santri</span>
                     <p class=" text-blue-800 lg:text-4xl  text-5xl">{{ $putra }}</p>Santriwan
                 </div>
                 <div class=" grid  justify-end content-center  ">
@@ -65,7 +65,7 @@
 
             <div class=" w-full bg-blue-200  px-4   grid grid-cols-2">
                 <div class=" grid content-center">
-                    <span class="font-semibold text-blue-700"> Santri Putra</span>
+                    <span class="font-semibold text-blue-700"> Asrama</span>
                     <p class=" text-blue-800 lg:text-4xl  text-5xl">{{ $asrama }}</p>Santriwan
                 </div>
                 <div class=" grid  justify-end content-center  ">
