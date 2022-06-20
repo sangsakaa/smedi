@@ -75,7 +75,7 @@
                                             <td class="px-4 py-1 text-sm uppercase ">
                                                 <a href="asrama/{{$as->id}}">{{ $as->id}}</a>
                                             </td>
-                                            <td class="px-4 py-1 text-sm uppercase ">
+                                            <td class="px-4 py-1 text-sm uppercase font-semibold ">
                                                 <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
                                             </td>
                                             <td class="px-4 py-1 text-sm text-center ">
