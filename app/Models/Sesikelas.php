@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kelas;
+use App\Models\Presensi;
+use App\Models\Asramasantri;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sesikelas extends Model
 {
@@ -18,5 +21,9 @@ class Sesikelas extends Model
     public function presensi()
     {
         return $this->hasMany(Presensi::class, 'sesi_id', 'id');
+    }
+    public function getHitungAttribute()
+    {
+        return $this->hasMany(Asramasantri::class)->whereAsramaId($this->id)->count();
     }
 }

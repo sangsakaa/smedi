@@ -55,14 +55,14 @@
                                     <thead>
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                                            <th class="px-4 py-3">#</th>
-                                            <th class="px-4 py-3">ID</th>
-                                            <th class="px-4 py-3">Nama Asrama</th>
-                                            <th class="px-4 py-3 text-center ">Type Asrama</th>
-                                            <th class="px-4 py-3 text-center">Total Anggota</th>
-                                            <th class="px-4 py-3 text-center">Qty</th>
-                                            <th class="px-4 py-3 text-center">Status Asrama</th>
-                                            <th class="px-4 py-3">Aksi</th>
+                                            <th class="px-4 py-2">#</th>
+                                            <th class="px-4 ">ID</th>
+                                            <th class="px-4 ">Nama Asrama</th>
+                                            <th class="px-4  text-center ">Type Asrama</th>
+                                            <th class="px-4  text-center">Total Anggota</th>
+                                            <th class="px-4  text-center">Qty</th>
+                                            <th class="px-4  text-center">Status Asrama</th>
+                                            <th class="px-4 ">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y">

@@ -23,7 +23,7 @@ class KelasController extends Controller
         if (request('cari')) {
             $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
         }
-        return view('admin/kelas/kelas', ['' => $kelas, 'datakelas' => $cari->get()]);
+        return view('admin/kelas/kelas', ['kelas' => $kelas, 'datakelas' => $cari->get()]);
     }
 
     /**
