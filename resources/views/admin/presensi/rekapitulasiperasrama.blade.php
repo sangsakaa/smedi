@@ -83,9 +83,10 @@
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->hadir }}
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ ($rekap->hadir) }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}</td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->alfa }}</td>
@@ -94,7 +95,17 @@
                                 </td>
                             </tr>
                             @endforeach
+                            <tr>
+                                <td colspan="7"
+                                    class=" font-semibold uppercase px-1 text-sm border border-green-800 text-center">
+                                    Total
+                                </td>
+                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                    {{ "" }}
+                                </td>
+                            </tr>
                         </tbody>
+
                     </table>
                 </div>
             </div>
