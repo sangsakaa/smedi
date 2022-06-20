@@ -91,22 +91,22 @@
                                 <thead>
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800 border-b">
-                                        <th class="px-2 py-2">#</th>
-                                        <th class="px-2 py-2">Nama Anggota Asrama</th>
-                                        <th class="px-2 py-2">JK</th>
-                                        <th class="px-2 py-2">Asal Kota</th>
-                                        <th class="px-2 py-2">Nama Asrama</th>
-                                        <th class="px-2 py-2">Type Asrama</th>
-                                        <th class="px-2 py-2">Tanggal Masuk</th>
-                                        <th class="px-2 py-2">Tanggal Keluar</th>
-                                        <th class="px-2 py-2">Aksi</th>
+                                        <th class="px-2 py-2 text-center">#</th>
+                                        <th class="px-2 py-2 text-center">Nama Anggota Asrama</th>
+                                        <th class="px-2 py-2 text-center">JK</th>
+                                        <th class="px-2 py-2 text-center">Asal Kota</th>
+                                        <th class="px-2 py-2 text-center">Nama Asrama</th>
+                                        <th class="px-2 py-2 text-center">Type Asrama</th>
+                                        <th class="px-2 py-2 text-center">Tanggal Masuk</th>
+                                        <th class="px-2 py-2 text-center">Tanggal Keluar</th>
+                                        <th class="px-2 py-2 text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y">
                                     @if($anggota->count())
                                     @foreach ( $anggota as $item)
                                     <tr class=" hover:bg-gray-50 text-gray-700  text-xs ">
-                                        <td class="px-2 border py-1  text-sm  ">
+                                        <td class="px-2 border py-1  text-sm text-center  ">
                                             {{ $loop->iteration }}
                                         </td>
                                         <td class="px-2 border py-1  text-sm  ">
@@ -130,7 +130,7 @@
                                         <td class="px-2 border py-1  text-sm text-center ">
                                             {{$item->tanggal_keluar }}
                                         </td>
-                                        <td class="px-2 border py-1  text-sm flex ">
+                                        <td class="px-2 border py-1  text-sm flex  content-center ">
                                             <form action="/asramasantri/{{$item->id}}" method="post">
                                                 @csrf
                                                 @method('delete')
