@@ -63,7 +63,7 @@
                         Simpan
                     </button>
                     <a href="/santri"
-                        class=" mt-1 text-center   bg-red-700 py-1 px-2 d-block  mb-2 text-white rounded-md">
+                        class=" mt-1 text-center   bg-red-600 py-1 px-2 d-block  mb-2 text-white rounded-md">
                         Batal
                     </a>
                 </div>
