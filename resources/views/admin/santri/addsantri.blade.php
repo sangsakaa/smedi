@@ -47,7 +47,6 @@
                 </div>
                 <input name="tanggal_masuk" type="date" class=" border border-green-700 py-1 px-2 w-1/4  rounded-md"
                     placeholder=" Masuk tempat lahir " required>
-
                 <br>
                 <div class=" w-full flex">
                     <label for="" class=" text-green-700 mr-2"> Nama Ibu </label>
@@ -59,13 +58,15 @@
                 </div>
                 <input name="asal_kota" type="text" class="  border border-green-700 py-1 px-2 w-1/4  rounded-md"
                     placeholder=" Asal Kota " required>
-
-                <div class=" w-full flex">
-                    <button class=" mt-1   bg-green-700 py-1 px-2 w-1/4 d-block  mb-2 text-white rounded-md">
+                <div class="  grid grid-cols-2 w-1/4 gap-2 ">
+                    <button class=" mt-1   bg-green-700 py-1 px-2  d-block  mb-2 text-white rounded-md">
                         Simpan
                     </button>
+                    <a href="/santri"
+                        class=" mt-1 text-center   bg-red-700 py-1 px-2 d-block  mb-2 text-white rounded-md">
+                        Batal
+                    </a>
                 </div>
-
             </form>
 
         </div>
