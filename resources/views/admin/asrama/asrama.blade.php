@@ -120,7 +120,7 @@
                                                 {{ $as->type_asrama}}
                                             </td>
                                             <td class="px-4 py-1 text-sm text-center ">
-                                                {{ $as->keterangan}}
+                                                {{ $as->ket_asrama}}
                                             </td>
                                             <td class="px-4 py-1 text-sm text-center">
                                                 {{ $as->hitung}}
