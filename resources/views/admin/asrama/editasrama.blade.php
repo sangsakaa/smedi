@@ -21,7 +21,7 @@
                         <input value="{{ $asrama->kuota_asrama}}" name="kuota_asrama" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" kuota_asrama ">
 
-                        <input value="{{ $asrama->keterangan}}" name="keterangan" type="text"
+                        <input value="{{ $asrama->ket_asrama}}" name="ket_asrama" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" Keterangan ">
 
                         <select name="type_asrama" id="" class=" border border-green-800  py-1 px-4  rounded-md">

@@ -49,13 +49,14 @@ class AsramaController extends Controller
             'nama_asrama' => 'required',
             'type_asrama' => 'required',
             'kuota_asrama' => 'required',
+            'ket_asrama' => 'required',
         ]);
         $asrama = new Asrama;
         $asrama->kode_asrama = $request->kode_asrama;
         $asrama->nama_asrama = $request->nama_asrama;
         $asrama->type_asrama = $request->type_asrama;
         $asrama->kuota_asrama = $request->kuota_asrama;
-        $asrama->keterangan = $request->keterangan;
+        $asrama->ket_asrama = $request->ket_asrama;
 
 
         $asrama->save();
@@ -107,7 +108,7 @@ class AsramaController extends Controller
             'nama_asrama' => 'required',
             'type_asrama' => 'required',
             'kuota_asrama' => 'required',
-            'keterangan' => 'required',
+            'ket_asrama' => 'required',
         ]);
         Asrama::where('id', $asrama->id)
             ->update([
@@ -115,7 +116,7 @@ class AsramaController extends Controller
                 'nama_asrama' => $request->nama_asrama,
                 'type_asrama' => $request->type_asrama,
                 'kuota_asrama' => $request->kuota_asrama,
-                'keterangan' => $request->keterangan,
+                'ket_asrama' => $request->ket_asrama,
             ]);
         return redirect('/asrama')->with('success', 'Data Asrama berhasil diperbaharui');
     }
