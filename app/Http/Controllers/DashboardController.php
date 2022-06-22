@@ -21,7 +21,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $as = Asrama::where('type_asrama', 'putra')->get();
+        $asa = Asrama::where('type_asrama', 'putra')->get();
         $asi = Asrama::where('type_asrama', 'putri')->get();
         $asrama = Asrama::count();
         $asramapr = Asrama::where('type_asrama', 'putri')->count();
@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $l = Santri::where('jenis_kelamin', 'L')->count();
         $p = Santri::where('jenis_kelamin', 'p')->count();
         $kelas = Kelas::all();
-        return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $as, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
+        return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $asa, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
     }
     public function rekap(Kelas $kelas)
     {

@@ -63,30 +63,30 @@
                     <thead>
                         <tr
                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
-                            <th class="px-4 py-3">#</th>
-                            <th class="px-4 py-3">Jabatan</th>
-                            <th class="px-4 py-3">Petugas</th>
-                            <th class="px-4 py-3">Lokasi Tugas</th>
-                            <th class="px-4 py-3">Aksi</th>
+                            <th class="px-4 py-1">#</th>
+                            <th class="px-4 py-1">Jabatan</th>
+                            <th class="px-4 py-1">Petugas</th>
+                            <th class="px-4 py-1">Lokasi Tugas</th>
+                            <th class="px-4 py-1">Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y">
                         @if($pengurus->count())
                         @foreach( $pengurus as $item)
                         <tr class="text-gray-700">
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 {{ $loop->iteration }}
                             </td>
-                            <td class=" px-4 py-3 text-sm">
+                            <td class=" px-4 py-1 text-sm">
                                 {{ $item->pengurusJabatan->nama_jabatan }}
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 {{ $item->pengurusSantri->nama_santri}}
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 {{ $item->pengurusAsrama->nama_asrama}}
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 <form action="/penugasan/{{$item->id}}" method="post">
                                     @csrf
                                     @method('delete')
