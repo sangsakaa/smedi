@@ -85,7 +85,7 @@
         <div class=" grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div class=" grid grid-cols-2 gap-2">
                 @foreach($as as $as)
-                <a href="/asrama">
+                <a href="/asrama/{{$as->id}}">
                     <div class="inline-flex overflow-hidden   w-full bg-white  shadow-md">
                         <div class="flex justify-center items-center w-1 bg-blue-800">
                         </div>
@@ -115,7 +115,7 @@
             </div>
             <div class=" grid grid-cols-2 gap-2">
                 @foreach($asi as $as)
-                <a href="/asrama">
+                <a href="/asrama/{{$as->id}}">
                     <div class="inline-flex overflow-hidden   w-full bg-white  shadow-md">
                         <div class="flex justify-center items-center w-1 bg-blue-800">
                         </div>

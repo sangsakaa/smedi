@@ -30,8 +30,9 @@
                 <div class=" bg-white rounded-lg shadow-xs">
                     <form action="/asrama" method="post">
                         @csrf
-                        <div class=" gap-2 grid grid-cols-1 sm:grid-cols-4">
-
+                        <div class=" gap-2 grid grid-cols-1 sm:grid-cols-3">
+                            <input name="kode_asrama" type="text"
+                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" kode_asrama ">
                             <input name="nama_asrama" type="text"
                                 class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
                             <input name="kuota_asrama" type="text"
@@ -43,6 +44,8 @@
                                 <option value="Putri" @if (old('type_asrama')=="Putri" ) {{ 'selected' }} @endif>
                                     Asrama Putri</option>
                             </select>
+                            <input name="keterangan" type="text"
+                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder="keterangan ">
                             <button type="submit" class=" mb-2  bg-green-800 py-1 px-2 rounded-md text-white"
                                 onClick="swal()">
                                 Asrama</button>
@@ -56,54 +59,21 @@
                                         <tr
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4 py-2">#</th>
+                                            <th class="px-4 py-2">#</th>
                                             <th class="px-4 ">ID</th>
                                             <th class="px-4 ">Nama Asrama</th>
-                                            <th class="px-4  text-center ">Type Asrama</th>
+                                            <th class="px-4  text-ce`nter ">Type Asrama</th>
+                                            <th class="px-4 ">Keterangan</th>
                                             <th class="px-4  text-center">Total Anggota</th>
                                             <th class="px-4  text-center">Qty</th>
                                             <th class="px-4  text-center">Status Asrama</th>
-                                            <th class="px-4 ">Aksi</th>
+
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y">
                                         @if($asrama->count())
                                         @foreach ( $asrama as $as)
                                         <tr class="text-gray-700 hover:bg-gray-50">
-                                            <td class="px-4 py-1 text-sm ">
-                                                {{ $loop->iteration }}
-                                            </td>
-                                            <td class="px-4 py-1 text-sm uppercase ">
-                                                <a href="asrama/{{$as->id}}">{{ $as->id}}</a>
-                                            </td>
-                                            <td class="px-4 py-1 text-sm uppercase font-semibold ">
-                                                <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
-                                            </td>
-                                            <td class="px-4 py-1 text-sm text-center ">
-                                                {{ $as->type_asrama}}
-                                            </td>
-                                            <td class="px-4 py-1 text-sm text-center">
-                                                {{ $as->hitung}}
-                                            </td>
-                                            <td class="px-4 py-1 text-sm text-center">
-                                                {{ $as->kuota_asrama}}
-                                            </td>
-                                            <td class=" px-4 py-1 text-sm text-center">
-
-                                                @if (( $as->hitung) === ($as->kuota_asrama))
-                                                <span class=" font-semibold   text-green-800 "> Penuh kuota cuma
-                                                    {{ ($as->hitung)}}</span>
-                                                @elseif (( $as->hitung) > ($as->kuota_asrama))
-
-                                                <span class=" text-red-600">
-                                                    Penus lebih {{ (($as->hitung)-$as->kuota_asrama) }} orang
-                                                </span>
-                                                @else
-                                                <span class=" font-semibold text-green-800"> Masih Bisa
-                                                    {{ ($as->kuota_asrama)-($as->hitung) }} Orang</span>
-                                                @endif
-
-                                            </td>
-
                                             <td class=" px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class=" flex">
@@ -137,6 +107,45 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            <td class="px-4 py-1 text-sm ">
+                                                {{ $loop->iteration }}
+                                            </td>
+                                            <td class="px-4 py-1 text-sm uppercase ">
+                                                <a href="asrama/{{$as->id}}">{{ $as->id}}</a>
+                                            </td>
+                                            <td class="px-4 py-1 text-sm uppercase font-semibold ">
+                                                <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
+                                            </td>
+                                            <td class="px-4 py-1 text-sm text-center ">
+                                                {{ $as->type_asrama}}
+                                            </td>
+                                            <td class="px-4 py-1 text-sm text-center ">
+                                                {{ $as->keterangan}}
+                                            </td>
+                                            <td class="px-4 py-1 text-sm text-center">
+                                                {{ $as->hitung}}
+                                            </td>
+                                            <td class="px-4 py-1 text-sm text-center">
+                                                {{ $as->kuota_asrama}}
+                                            </td>
+                                            <td class=" px-4 py-1 text-sm text-center">
+
+                                                @if (( $as->hitung) === ($as->kuota_asrama))
+                                                <span class=" font-semibold   text-green-800 "> Penuh kuota cuma
+                                                    {{ ($as->hitung)}}</span>
+                                                @elseif (( $as->hitung) > ($as->kuota_asrama))
+
+                                                <span class=" text-red-600">
+                                                    Penus lebih {{ (($as->hitung)-$as->kuota_asrama) }} orang
+                                                </span>
+                                                @else
+                                                <span class=" font-semibold text-green-800"> Masih Bisa
+                                                    {{ ($as->kuota_asrama)-($as->hitung) }} Orang</span>
+                                                @endif
+
+                                            </td>
+
+
                                         </tr>
                                         @endforeach
                                         @else
