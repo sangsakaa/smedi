@@ -62,8 +62,8 @@
                                             <th class="px-4 py-2">#</th>
                                             <th class="px-4 ">ID</th>
                                             <th class="px-4 ">Nama Asrama</th>
-                                            <th class="px-4  text-ce`nter ">Type Asrama</th>
-                                            <th class="px-4 ">Keterangan</th>
+                                            <th class="px-4  text-center ">Type Asrama</th>
+                                            <th class="px-4 text-center ">Jenjang</th>
                                             <th class="px-4  text-center">Total Anggota</th>
                                             <th class="px-4  text-center">Qty</th>
                                             <th class="px-4  text-center">Status Asrama</th>
