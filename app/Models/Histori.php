@@ -15,28 +15,23 @@ class Histori extends Model
 
     public function santri()
     {
-        return $this->belongsTo(Santri::class,'santri_id','id');
+        return $this->belongsTo(Santri::class, 'santri_id', 'id');
     }
 
     public function asrama()
     {
-        return $this->belongsTo(Asramasantri::class,'santri_id','id');
+        return $this->belongsTo(Asramasantri::class, 'santri_id', 'id');
     }
     public function pendaftaran()
     {
-        return $this->belongsTo(Asramasantri::class,'histori_id','id');
+        return $this->belongsTo(Asramasantri::class, 'histori_id', 'id');
     }
     public function pondok()
     {
-        return $this->belongsTo(Pondok::class,'pondok_id','id');
+        return $this->belongsTo(Pondok::class, 'pondok_id', 'id');
     }
     public function santriTer()
     {
-        return $this->belongsTo(Histori::class,'santri_id','id');
+        return $this->belongsTo(Histori::class, 'santri_id', 'id');
     }
-    
-
-    
-
-    
 }

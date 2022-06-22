@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Kelas;
 use App\Models\Asrama;
 use App\Models\Santri;
+use App\Models\Presensi;
+use App\Models\Asramasantri;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -34,5 +37,10 @@ class Kelassantri extends Model
     public function kelassantri()
     {
         return $this->belongsTo(Presensi::class, 'kelassantri_id', 'id');
+    }
+    // kelasterahir
+    public function kelasTerakhir()
+    {
+        return $this->belongsTo(kelassantri::class, 'asramasantri_id', 'id');
     }
 }

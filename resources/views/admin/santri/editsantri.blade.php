@@ -52,12 +52,12 @@
                     <input name="asal_kota" type="text"
                         class="border border-green-800 text-green-800 py-1 px-2   rounded-md"
                         placeholder=" Masuk nama Lengkap " value="{{$santri->asal_kota}}" required>
-                    <div class=" grid grid-cols-2  gap-2 ">
+                    <div class=" w-full  grid grid-cols-2  gap-2 ">
                         <button class=" mt-1  bg-green-800 py-1 px-1    mb-2 text-white rounded-md">
                             Update
                         </button>
                         <a href="/santri">
-                            <button class=" mt-1  bg-green-800 py-1 px-1    mb-2 text-white rounded-md">
+                            <button class=" mt-1 w-full  bg-green-800 py-1 px-1    mb-2 text-white rounded-md">
                                 Kembali
                             </button>
                         </a>

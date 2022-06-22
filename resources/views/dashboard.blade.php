@@ -3,8 +3,8 @@
         {{ __('Dashboard Utama') }}
     </x-slot>
     <div class=" grid grid-cols-1 sm:grid-cols-4 w-full gap-2 text-blue-700 ">
-        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-md shadow-md">
-            <div class="flex justify-center items-center w-1 bg-green-700">
+        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white  shadow-md">
+            <div class="flex justify-center items-center w-1 bg-blue-800">
             </div>
             <div class=" w-full bg-blue-200  px-4   grid grid-cols-2">
                 <div class=" grid content-center text-blue-700">
@@ -21,7 +21,7 @@
             </div>
 
         </div>
-        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-md shadow-md">
+        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white  shadow-md">
             <div class="flex justify-center items-center w-1 bg-blue-800">
             </div>
 
@@ -40,7 +40,7 @@
             </div>
 
         </div>
-        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-md shadow-md">
+        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white  shadow-md">
             <div class="flex justify-center items-center w-1 bg-blue-800">
             </div>
 
@@ -59,7 +59,7 @@
             </div>
 
         </div>
-        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white rounded-md shadow-md">
+        <div class="inline-flex overflow-hidden  mb-2 w-full bg-white  shadow-md">
             <div class="flex justify-center items-center w-1 bg-blue-800">
             </div>
 

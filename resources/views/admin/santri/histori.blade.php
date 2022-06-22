@@ -1,22 +1,22 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __(' Detail Histori Data Santri') }}
+        {{ __(' Detail Histori Pendaftaran') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-4 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx-3 text-green-800 font-semibold">
-                Histori Santri <a href="/santri/{{$santri->id}}"><button
-                        class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <div class="px-4 py-2 ">
+            <div class=" text-green-800 font-semibold">
+                <a href="/santri/{{$santri->id}}"><button class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-left inline-block" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-                        </svg></button></a>
+                        </svg> Kembali </button></a>
             </div>
         </div>
     </div>
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-4 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
 
@@ -39,12 +39,12 @@
         </div>
     </div>
     <!-- form input Histori -->
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full  py-4 ">
             <div class="mx-3">
-                <div class=" bg-white rounded-lg shadow-xs">
+                <div class=" bg-white  shadow-xs">
                     <form action="/histori/{{$santri->id}}" method="post">
                         @csrf
                         <div class=" grid grid-cols-1 sm:grid-cols-4 gap-2">
@@ -71,7 +71,7 @@
                         </div>
                     </form>
                     <div class=" mt-2 bg-gray-50">
-                        <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
+                        <div class="overflow-hidden mb-2 w-full  border shadow-xs">
                             <div class="overflow-x-auto w-full">
                                 <table class="w-full whitespace-no-wrap">
                                     <thead>
@@ -89,27 +89,27 @@
                                     <tbody class="bg-white divide-y">
                                         @foreach ($h as $histori)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{$histori->status_pendaftaran }}
                                             </td>
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{$histori->santri->nis }}
                                             </td>
 
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{$histori->santri->nama_santri }}
 
                                             </td>
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{$histori->tanggal_masuk }}
                                             </td>
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 {{$histori->pondok->nama_pondok }}
                                             </td>
-                                            <td class="px-4 py-3 text-sm">
+                                            <td class="px-4 py-1 text-sm">
                                                 <form action="/histori/{{$histori->id}}" method="post">
                                                     @csrf
                                                     @method('delete')

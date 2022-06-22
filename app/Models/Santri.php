@@ -17,10 +17,25 @@ class Santri extends Model
 {
     use HasFactory;
     protected $table = "santri";
+
+
+
     public function historiTerakhir()
     {
         return $this->hasOne(Histori::class)->latestOfMany();
     }
+
+    public function asramaTerakhir()
+    {
+        return $this->hasOne(Asramasantri::class)->latestOfMany();
+    }
+
+    public function kelasTerakhir()
+    {
+        return $this->hasOne(Kelassantri::class)->latestOfMany();
+    }
+
+
 
     public function histori()
     {
@@ -31,10 +46,6 @@ class Santri extends Model
         return $this->belongsTo(Asramasantri::class, 'santri_id', 'id');
     }
     // 
-    public function asramaTerakhir()
-    {
-        return $this->hasOne(Asramasantri::class)->latestOfMany();
-    }
 
     public function historiPelanggaran()
     {
@@ -53,9 +64,5 @@ class Santri extends Model
     public function santriReport()
     {
         return $this->hasMany(Report::class, 'asramasantri_id', 'id');
-    }
-    public function santri()
-    {
-        return $this->hasMany(Kelassantri::class, 'kelassantri_id', 'id');
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Histori;
 use App\Models\Historipelanggaran;
-use App\Models\Kelassantri;
 use App\Models\Pelanggaran;
 use App\Models\Presensi;
 use App\Models\Santri;
@@ -137,14 +136,6 @@ class SantriController extends Controller
         $histori->save();
         return redirect()->back()->with('success', 'hehehe');
     }
-
-    // public function histori(Histori $histori, Santri $santri )
-    // {
-    //     $santri = Santri::where('id',$santri->id)->first();
-    //     $h = Histori::where('santri_id',$santri->id)->paginate(2);
-    //     $pondok_id = histori::firstWhere('pondok_id', $santri->id);
-    //     return view('admin/santri/histori',['histori'=>$histori,'santri'=>$santri ,'h'=>$h,'pondok'=>$pondok_id]); 
-    // }
     /**
      * Show the form for editing the specified resource.
      *

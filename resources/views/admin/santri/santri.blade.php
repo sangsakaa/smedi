@@ -2,16 +2,16 @@
     <x-slot name="header">
         {{ __(' Daftar Data Santri') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden  w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden  w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-2 py-2 ">
-            <div class=" bg-white rounded-lg shadow-xs">
+            <div class=" bg-white  shadow-xs">
                 <div class=" bg-gray-50 ">
-                    <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
+                    <div class="overflow-hidden mb-2 w-full  border shadow-xs">
                         <div class="overflow-x-auto w-full">
                             <div class=" w-full px-2 grid grid-cols-2  ">
-                                <div class=" py-1 font-semibold uppercase text-green-800">
+                                <div class=" py-1 font-semibold  text-green-800">
                                     <a href="/santri/create"><button
                                             class="px-2 py-1 inline-block bg-green-800  text-white rounded-md"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -33,17 +33,18 @@
                                     </form>
                                 </div>
                             </div>
-                            <table class="w-full whitespace-no-wrap" id="#myTable">
+                            <table class="w-full whitespace-no-wrap">
                                 <thead>
                                     <tr
                                         class="  text-xs font-semibold tracking-wide text-left text-gray-500 capitalize  bg-gray-50 border-b">
                                         <th class="px-1 py-2 border text-center ">Aksi</th>
                                         <th class="px-1 py-2 border text-center ">#</th>
-                                        <th class="px-1 py-2 border  ">Nomor Induk Siswa</th>
+                                        <th class="px-1 py-2 border text-center  ">Nomor Induk Siswa</th>
                                         <th class="px-1 py-2 border  ">Nama Santri</th>
                                         <th class="px-1 py-2 border   text-center">JK</th>
                                         <th class="px-1 py-2 border   text-center">Tanggal Lahir</th>
                                         <th class="px-1 py-2 border   text-center">Asrama</th>
+                                        <th class="px-1 py-2 border   text-center">KLS</th>
                                         <th class="px-1 py-2 border   text-center">Angkatan</th>
                                         <th class="px-1 py-2 border   text-center">Status</th>
                                     </tr>
@@ -89,7 +90,7 @@
                                         <td class="px-1 py-1  text-sm border text-center ">
                                             {{ $loop->iteration}}
                                         </td>
-                                        <td class="px-1 py-1 border text-sm ">
+                                        <td class="px-1 py-1 border text-sm text-center ">
                                             @if ($s->historiTerakhir !== null)
                                             {{ $s->historiTerakhir->nis }}
                                             @else
@@ -109,7 +110,7 @@
                                         <td class="px-1 py-1 border text-sm text-center">
                                             {{ date_format(date_create($s->tanggal_lahir),'d-m-Y') }}
                                         </td>
-                                        <td class=" px-1 py-1 border text-sm text-center uppercase">
+                                        <td class=" px-1 py-1 border text-sm text-center ">
                                             <a href="/asrama">
                                                 @if($s->asramaTerakhir !== null)
                                                 {{ $s->asramaTerakhir->asrama->nama_asrama }}
@@ -118,6 +119,18 @@
                                                     "Asrama"
                                                 </div>
                                                 @endif
+                                            </a>
+                                        </td>
+                                        <td class=" px-1 py-1 border text-sm text-center ">
+                                            <a href="/kelas">
+                                                @if($s->kelassantriTerakhir !== null)
+                                                {{ $s->kelassantriTerakhir}}
+                                                @else
+                                                <div class=" text-red-600">
+                                                    "Asrama"
+                                                </div>
+                                                @endif
+
                                             </a>
                                         </td>
                                         <td class=" px-1 py-1 border text-sm text-center">

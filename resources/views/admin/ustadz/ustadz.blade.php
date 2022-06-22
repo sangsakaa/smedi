@@ -2,38 +2,33 @@
     <x-slot name="header">
         {{ __(' Daftar Data Ustadz') }}
     </x-slot>
-
-    <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
-        <div class="flex justify-center items-center w-1  bg-green-800">
-        </div>
-        <div class="px-4 py-2 -mx-3">
-            <div class="mx-3 font-semibold uppercase text-green-800">
-
-                <form action="/ustadz" method="get">
-                    <input type="text" autofocus name="cari" value="{{ request('cari') }}"
-                        class=" text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Cari</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-2 py-4 ">
             <div class="mx-3">
-                <div class=" bg-white rounded-lg shadow-xs">
-                    Daftar List Asatidz <a href="/ustadz/create"><button
-                            class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                <path fill-rule="evenodd"
-                                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                            </svg></button></a>
+                <div class="  bg-white  shadow-xs">
+                    <div class=" bg-red-50 grid grid-cols-3 ">
+                        <div>
+                            <form action="/ustadz" method="get">
+                                <input type="text" autofocus name="cari" value="{{ request('cari') }}"
+                                    class=" border text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                                <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                                    Cari</button>
+                            </form>
+                            <a href="/ustadz/create"><button class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-plus-fill inline-block" viewBox="0 0 16 16">
+                                        <path
+                                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                                    </svg> Pedidik </button></a>
+                        </div>
+                    </div>
+
                     <div class=" bg-gray-50 mt-2">
-                        <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
+                        <div class="overflow-hidden mb-2 w-full  border shadow-xs">
                             <div class="overflow-x-auto w-full">
                                 <table class="w-full whitespace-no-wrap" id="#myTable">
                                     <thead>
@@ -53,28 +48,28 @@
                                         @if($ustadz->count())
                                         @foreach( $ustadz as $ustadz)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class=" border px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class=" border px-4 py-1 text-sm ">
                                                 {{ $ustadz->nama_ustadz }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class=" border px-4 py-1 text-sm ">
                                                 {{ $ustadz->jenis_kelamin }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class=" border px-4 py-1 text-sm ">
                                                 {{ $ustadz->no_hp }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm ">
+                                            <td class=" border px-4 py-1 text-sm ">
                                                 {{ $ustadz->nama_bank }} - {{ $ustadz->no_rekening }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
+                                            <td class=" border px-4 py-1 text-sm  ">
                                                 {{ date_format(date_create($ustadz->tanggal_masuk),'Y') }}
                                             </td>
-                                            <td class="px-4 py-2 text-sm  ">
+                                            <td class=" border px-4 py-1 text-sm  ">
                                                 {{ $ustadz->Khitmad}} Tahun
                                             </td>
-                                            <td class=" px-4 py-2 text-sm">
+                                            <td class=" border  px-4 py-1 text-sm">
                                                 <div class=" flex">
                                                     <div class="flex">
                                                         <form action="/ustadz/{{$ustadz->id}}" method="post">
