@@ -18,19 +18,20 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Asrama $asrama)
     {
 
         $asa = Asrama::where('type_asrama', 'putra')->get();
         $asi = Asrama::where('type_asrama', 'putri')->get();
-        $asrama = Asrama::count();
+        $totalAs = Asrama::count();
         $asramapr = Asrama::where('type_asrama', 'putri')->count();
         $asramalk = Asrama::where('type_asrama', 'putra')->count();
         $putra = Santri::count();
         $l = Santri::where('jenis_kelamin', 'L')->count();
         $p = Santri::where('jenis_kelamin', 'p')->count();
         $kelas = Kelas::all();
-        return view('/dashboard', ['kelas' => $kelas, 'asi' => $asi, 'as' => $asa, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $asrama, 'aspr' => $asramapr, 'aslk' => $asramalk]);
+        // dd($asrama);
+        return view('/dashboard', ['asrama' => $asrama, 'kelas' => $kelas, 'asi' => $asi, 'as' => $asa, 'putra' => $putra, 'l' => $l, 'p' => $p, 'asrama' => $totalAs, 'aspr' => $asramapr, 'aslk' => $asramalk]);
     }
     public function rekap(Kelas $kelas)
     {
