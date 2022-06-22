@@ -13,6 +13,8 @@
                     <form action="/asrama/{{$asrama->id}}" method="post">
                         @csrf
                         @method('PATCH')
+                        <input value="{{ $asrama->kode_asrama}}" name="kode_asrama" type="text"
+                            class=" border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
                         <input value="{{ $asrama->nama_asrama}}" name="nama_asrama" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
 

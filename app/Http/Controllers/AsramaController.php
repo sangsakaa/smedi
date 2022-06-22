@@ -50,8 +50,6 @@ class AsramaController extends Controller
             'type_asrama' => 'required',
             'kuota_asrama' => 'required',
         ]);
-
-
         $asrama = new Asrama;
         $asrama->kode_asrama = $request->kode_asrama;
         $asrama->nama_asrama = $request->nama_asrama;
