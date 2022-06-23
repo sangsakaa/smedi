@@ -28,30 +28,7 @@
         <div class=" w-full px-2 py-4 ">
             <div class="mx-3">
                 <div class=" bg-white rounded-lg shadow-xs">
-                    <form action="/asrama" method="post">
-                        @csrf
-                        <div class=" gap-2 grid grid-cols-1 sm:grid-cols-3">
-                            <input name="kode_asrama" type="text"
-                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" kode_asrama ">
-                            <input name="nama_asrama" type="text"
-                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
-                            <input name="kuota_asrama" type="text"
-                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder="kuota_asrama ">
-                            <select name="type_asrama" id="" class=" mb-2 border border-green-800 py-1 px-2 rounded-md">
-                                <option value=""> Pilih Asrama </option>
-                                <option value="Putra" @if (old('type_asrama')=="Putra" ) {{ 'selected' }} @endif>
-                                    Asrama Putra</option>
-                                <option value="Putri" @if (old('type_asrama')=="Putri" ) {{ 'selected' }} @endif>
-                                    Asrama Putri</option>
-                            </select>
-                            <input name="keterangan" type="text"
-                                class=" mb-2 border border-green-800 rounded-md py-1 px-4" placeholder="keterangan ">
-                            <button type="submit" class=" mb-2  bg-green-800 py-1 px-2 rounded-md text-white"
-                                onClick="swal()">
-                                Asrama</button>
-                        </div>
-                    </form>
-                    <div class=" bg-gray-50 mt-2">
+                    <div class=" bg-gray-50 ">
                         <div class="overflow-hidden mb-2 w-full rounded-lg border shadow-xs">
                             <div class="overflow-x-auto w-full">
                                 <table class="w-full whitespace-no-wrap">

@@ -34,6 +34,7 @@ class AsramaController extends Controller
      */
     public function create()
     {
+        return view('admin/asrama/addasrama');
     }
 
     /**

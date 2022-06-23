@@ -22,7 +22,7 @@
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" kuota_asrama ">
 
                         <input value="{{ $asrama->ket_asrama}}" name="ket_asrama" type="text"
-                            class=" border border-green-800 rounded-md py-1 px-4" placeholder=" Keterangan ">
+                            class=" border border-green-800 rounded-md py-1 px-4" placeholder=" ket_asrama ">
 
                         <select name="type_asrama" id="" class=" border border-green-800  py-1 px-4  rounded-md">
                             <option value=""> Pilih Type Asrama </option>
