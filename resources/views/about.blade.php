@@ -121,31 +121,31 @@
                 </thead>
                 <tbody class="  text-xs  ">
                     @if($rekap->count())
-                    @foreach ($rekap as $rekap)
+                    @foreach ($rekap as $rek)
                     <tr class=" hover:bg-gray-100  border border-green-700">
                         <td class=" text-center border  border-green-700">{{$loop->iteration}}</td>
                         <td class=" text-center border  border-green-700">
-                            {{ date_format(date_create($rekap->sesi->tgl),'d-m-Y') }}
+                            {{ date_format(date_create($rek->sesi->tgl),'d-m-Y') }}
                         </td>
                         <td class=" px-2  border border-green-700 uppercase">
-                            {{ $rekap->santri->asramasantri->santri->nama_santri}}
+                            {{ $rek->santri->asramasantri->santri->nama_santri}}
                         </td>
                         <td class="  border border-green-700 text-center">
-                            {{ $rekap->santri->asramasantri->asrama->nama_asrama}}
+                            {{ $rek->santri->asramasantri->asrama->nama_asrama}}
                         </td>
                         <td class="  border border-green-700 text-center">
-                            {{ $rekap->santri->kelas->nama_kelas}}
+                            {{ $rek->santri->kelas->nama_kelas}}
                         </td>
                         <td class="  border border-green-700 text-center">
-                            {{ $rekap->santri->kelas->jenjang}}
+                            {{ $rek->santri->kelas->jenjang}}
                         </td>
 
                         <td class=" border border-green-700 text-center">
-                            {{ $rekap->keterangan }}
+                            {{ $rek->keterangan }}
 
                         </td>
                         <td class="  border border-green-700 px-2">
-                            {{ $rekap->alasan }}
+                            {{ $rek->alasan }}
                         </td>
                     </tr>
                     @endforeach
@@ -156,9 +156,10 @@
                     @endif
                 </tbody>
             </table>
+            {{ $rekap->links() }}
             <div class=" mt-4 grid justify-items-end">
                 @if($rekap->count())
-                Kedunglo, {{ $rekap->tgl}} <br>
+                Kedunglo, {{ $rek->tgl}} <br>
                 Kepala Madin Wustho Wahidiyah <br><br><br><br>
                 Muh. Bahrul Ulum
                 @endif
