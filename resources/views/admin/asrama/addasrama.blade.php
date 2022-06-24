@@ -10,7 +10,7 @@
         <form action="/asrama" method="post">
             @csrf
             <div class=" gap-2 grid grid-cols-1 sm:grid-cols-3">
-                <input name="kode_asrama" type="text" class=" mb-2 border border-green-800 rounded-md py-1 px-4"
+                <input name="kelas_smt" type="text" class=" mb-2 border border-green-800 rounded-md py-1 px-4"
                     placeholder=" kode_asrama ">
                 <input name="nama_asrama" type="text" class=" mb-2 border border-green-800 rounded-md py-1 px-4"
                     placeholder=" nama_asrama ">

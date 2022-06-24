@@ -53,7 +53,7 @@ class AsramaController extends Controller
             'ket_asrama' => 'required',
         ]);
         $asrama = new Asrama;
-        $asrama->kode_asrama = $request->kode_asrama;
+        $asrama->kelas_smt = $request->kelas_smt;
         $asrama->nama_asrama = $request->nama_asrama;
         $asrama->type_asrama = $request->type_asrama;
         $asrama->kuota_asrama = $request->kuota_asrama;
@@ -105,7 +105,7 @@ class AsramaController extends Controller
     public function update(Request $request, Asrama $asrama)
     {
         $request->validate([
-            'kode_asrama' => 'required',
+            'kelas_smt' => 'required',
             'nama_asrama' => 'required',
             'type_asrama' => 'required',
             'kuota_asrama' => 'required',
@@ -113,7 +113,7 @@ class AsramaController extends Controller
         ]);
         Asrama::where('id', $asrama->id)
             ->update([
-                'kode_asrama' => $request->kode_asrama,
+                'kelas_smt' => $request->kelas_smt,
                 'nama_asrama' => $request->nama_asrama,
                 'type_asrama' => $request->type_asrama,
                 'kuota_asrama' => $request->kuota_asrama,

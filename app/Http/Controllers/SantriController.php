@@ -23,7 +23,8 @@ class SantriController extends Controller
 
         $cari = Santri::orderBy('tanggal_masuk')->orderBy('nama_santri');
         if (request('cari')) {
-            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderby('tanggal_masuk')->orderBy('nama_santri');
+            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderby('tanggal_masuk')->orderBy('nama_santri')
+                ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%');
         }
         return view('admin/santri/santri', ['listSantri' => $cari->get()]);
     }

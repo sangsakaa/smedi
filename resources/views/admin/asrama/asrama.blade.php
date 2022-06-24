@@ -37,7 +37,6 @@
                                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                                             <th class="px-4 py-2">#</th>
                                             <th class="px-4 py-2">#</th>
-                                            <th class="px-4 ">ID</th>
                                             <th class="px-4 ">Nama Asrama</th>
                                             <th class="px-4  text-center ">Type Asrama</th>
                                             <th class="px-4 text-center ">Jenjang</th>
@@ -87,9 +86,7 @@
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="px-4 py-1 text-sm uppercase ">
-                                                <a href="asrama/{{$as->id}}">{{ $as->id}}</a>
-                                            </td>
+
                                             <td class="px-4 py-1 text-sm uppercase font-semibold ">
                                                 <a href="asrama/{{$as->id}}">{{ $as->nama_asrama}}</a>
                                             </td>
