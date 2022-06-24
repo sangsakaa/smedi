@@ -38,7 +38,7 @@
                                     <tr
                                         class="  text-xs font-semibold tracking-wide text-left text-gray-500 capitalize  bg-gray-50 border-b">
                                         <th class="px-1 py-2 border text-center ">Aksi</th>
-                                        <th class="px-1 py-2 border text-center  ">ID</th>
+
                                         <th class="px-1 py-2 border text-center ">#</th>
                                         <th class="px-1 py-2 border text-center  ">Nomor Induk Siswa</th>
                                         <th class="px-1 py-2 border  ">Nama Santri</th>
@@ -88,9 +88,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-1 py-1 border text-sm  ">
-                                            <a href="/santri/{{ $s->id }}">{{ $s->id}}</a>
-                                        </td>
+
                                         <td class="px-1 py-1  text-sm border text-center ">
                                             {{ $loop->iteration}}
                                         </td>

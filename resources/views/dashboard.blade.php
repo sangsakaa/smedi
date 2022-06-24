@@ -122,6 +122,7 @@
                         <div class=" w-full bg-blue-200  px-2   grid grid-cols-2">
                             <div class=" grid content-center text-blue-700">
                                 <span class="font-semibold text-blue-700"> {{ $as->nama_asrama }}</span>
+                                <span class="font-semibold text-blue-700"> {{ $as->ket_asrama }}</span>
                                 <p class=" text-blue-700 lg:text-xs  text-sm"> Anggota :
                                     {{$as->hitung}}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
