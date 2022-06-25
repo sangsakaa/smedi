@@ -42,7 +42,7 @@ class DashboardController extends Controller
             $req_asrama = request('asrama');
             $req_keterangan = request(('keterangan'));
             $req_ket = request('ket');
-            dd($req_keterangan);
+            // dd($req_keterangan);
             $rekap
                 ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
                 ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')

@@ -8,18 +8,6 @@
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
         <div class=" grid grid-cols-1 gap-2 px-4 py-1 sm:grid-cols-2">
-            <form action="/asrama" method="get">
-                <input type="text" name="cari" value="{{ request('cari') }}"
-                    class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
-                <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                    Cari</button>
-            </form>
-            <div>
-                <a href="asramasantri/add_many">
-                    <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
-                        Tambah Kolektif</button>
-                </a>
-            </div>
         </div>
     </div>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
@@ -31,6 +19,18 @@
                     <a href="/asrama/create" class=" rounded-md py-1 px-4  bg-green-800 text-white">
                         + Asrama
                     </a>
+                    <form action="/asrama" method="get">
+                        <input type="text" name="cari" value="{{ request('cari') }}"
+                            class=" border border-green-800 text-green-800 rounded-md py-1 px-4" placeholder=" Cari ..">
+                        <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                            Cari</button>
+                    </form>
+                    <div>
+                        <a href="asramasantri/add_many">
+                            <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
+                                Tambah Kolektif</button>
+                        </a>
+                    </div>
                     <div class="overflow-hidden mb-2 mt-2 w-full rounded-lg border shadow-xs">
                         <div class="overflow-x-auto w-full">
                             <table class="w-full whitespace-no-wrap">
@@ -42,6 +42,7 @@
                                         <th class="px-4 ">Nama Asrama</th>
                                         <th class="px-4  text-center ">Type Asrama</th>
                                         <th class="px-4 text-center ">Jenjang</th>
+                                        <th class="px-4 text-center ">KLs</th>
                                         <th class="px-4  text-center">Total Anggota</th>
                                         <th class="px-4  text-center">Qty</th>
                                         <th class="px-4  text-center">Status Asrama</th>
@@ -97,6 +98,9 @@
                                         </td>
                                         <td class="px-4 py-1 text-sm text-center ">
                                             {{ $as->ket_asrama}}
+                                        </td>
+                                        <td class="px-4 py-1 text-sm text-center ">
+                                            {{ $as->kelas_smt}}
                                         </td>
                                         <td class="px-4 py-1 text-sm text-center">
                                             {{ $as->hitung}}

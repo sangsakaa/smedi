@@ -8,7 +8,7 @@
         <div class=" w-full px-2 py-4 ">
             <div class="mx-3">
                 <div class="  bg-white  shadow-xs">
-                    <div class=" bg-red-50 grid grid-cols-3 ">
+                    <div class="  grid grid-cols-2 ">
                         <div>
                             <form action="/ustadz" method="get">
                                 <input type="text" autofocus name="cari" value="{{ request('cari') }}"
@@ -16,6 +16,9 @@
                                 <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                                     Cari</button>
                             </form>
+
+                        </div>
+                        <div class=" w-full grid justify-items-end">
                             <a href="/ustadz/create"><button class=" bg-green-800 px-2 py-1 text-white rounded-md"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-person-plus-fill inline-block" viewBox="0 0 16 16">
