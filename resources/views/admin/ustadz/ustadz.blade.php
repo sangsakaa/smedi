@@ -56,7 +56,7 @@
                                             </td>
                                             <td class=" border px-2  text-sm ">
                                                 <a href="/ustadz/{{$ust->id}}">
-                                                    {{ $ust->nama_ust }}
+                                                    {{ $ust->nama_ustadz }}
                                                 </a>
                                             </td>
                                             <td class=" text-center border px-2  text-sm ">
