@@ -43,9 +43,10 @@
 
             </select>
             <label for="cari_keterangan">Keterangan</label>
-            <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan"
-                value="{{ request('keterangan') }}">
+            <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan[]"
+                value="{{ request('keterangan') }}" multiple>
                 <option value="">- Pilih Semua Kategori --</option>
+                <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
                 <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
                 <option value="Izin" {{ request('keterangan') == 'Izin' ? "selected" : "" }}>Izin</option>
                 <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>
@@ -53,6 +54,15 @@
             </select>
             <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                 Cari</button>
+            <input type="checkbox" name="ket" id="hadir" value="hadir">
+            <label for="hadir">Hadir</label>
+            <input type="checkbox" name="ket" id="izin" value="izin">
+            <label for="izin">Hadir</label>
+            <input type="checkbox" name="ket" id="sakit" value="sakit">
+            <label for="sakit">Hadir</label>
+            <input type="checkbox" name="ket" id="alfa" value="alfa">
+            <label for="alfa">Hadir</label>
+
         </form>
 
     </div>

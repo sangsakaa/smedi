@@ -160,7 +160,7 @@
                 </tbody>
             </table>
             <div class=" py-1  ">
-
+                {{ $sesi->links() }}
             </div>
         </div>
     </div>

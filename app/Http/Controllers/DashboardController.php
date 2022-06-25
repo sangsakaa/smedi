@@ -38,9 +38,11 @@ class DashboardController extends Controller
         // $nama = Kelas::all();
         $asrama = Asrama::orderBy('nama_asrama')->get();
         $rekap = Presensi::latest();
-        if (request('cari') || request('asrama') || request('keterangan')) {
+        if (request('cari') || request('asrama') || request('keterangan') || request('ket')) {
             $req_asrama = request('asrama');
             $req_keterangan = request(('keterangan'));
+            $req_ket = request('ket');
+            dd($req_keterangan);
             $rekap
                 ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
                 ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
