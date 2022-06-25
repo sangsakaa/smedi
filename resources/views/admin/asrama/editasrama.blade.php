@@ -29,11 +29,11 @@
                             <label for=""> Jenjang</label>
                             <select name="ket_asrama" id=""
                                 class=" mb-2  border border-green-800  py-1 px-4  w-full rounded-md">
-                                <option value=""> Pilih Type Asrama </option>
+                                <option value=""> Pilih Jenjang </option>
                                 <option {{old('ket_asrama',$asrama->ket_asrama)=="SMP"? 'selected':''}} value="SMP">
-                                    Asrama SMP</option>
+                                    SMP</option>
                                 <option {{old('ket_asrama',$asrama->ket_asrama)=="SMA"? 'selected':''}} value="SMA">
-                                    Asrama SMA</option>
+                                    SMA</option>
                             </select>
                         </div>
                         <div>
@@ -61,11 +61,7 @@
                                     Update</button></div>
                         </div>
                     </form>
-                    <div>
-                        <button type="submit" class=" mb-2  bg-green-600 py-1 px-2 w-full rounded-md text-white"
-                            onClick="swal()">
-                            Update</button>
-                    </div>
+
                 </div>
             </div>
         </div>
