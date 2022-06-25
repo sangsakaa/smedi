@@ -58,6 +58,6 @@ class DashboardController extends Controller
                 $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));
             }
         }
-        return view('about', ['rekap' => $rekap->paginate(50), 'asrama' => $asrama, 'kelas' => $kelas]);
+        return view('about', ['rekap' => $rekap->paginate(326), 'asrama' => $asrama, 'kelas' => $kelas]);
     }
 }
