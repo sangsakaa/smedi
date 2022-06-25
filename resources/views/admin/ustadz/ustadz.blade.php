@@ -51,7 +51,7 @@
                                         @if($ustadz->count())
                                         @foreach( $ustadz as $ust)
                                         <tr class="text-gray-700 hover:bg-gray-50">
-                                            <td class=" text-center border px-2  text-sm ">
+                                            <td class=" text-center border px-2 py-1  text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class=" border px-2  text-sm ">
