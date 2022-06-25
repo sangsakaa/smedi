@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __(' Daftar Data Ustadz') }}
+        {{ __(' Daftar Pendidik') }}
     </x-slot>
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">

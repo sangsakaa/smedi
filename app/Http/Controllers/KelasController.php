@@ -19,11 +19,11 @@ class KelasController extends Controller
      */
     public function index(Kelas $kelas)
     {
-        $cari = Kelas::orderBy('jenjang')->orderby('nama_kelas');
+        $cari = Kelas::orderBy('jenjang', 'desc')->orderby('nama_kelas');
         if (request('cari')) {
             $cari->where('jenjang', 'like', '%' . request('cari') . '%')->orderBy('nama_kelas');
         }
-        return view('admin/kelas/kelas', ['kelas' => $kelas, 'datakelas' => $cari->get()]);
+        return view('admin/kelas/kelas', ['kelas' => $kelas, 'datakelas' => $cari->paginate(10)]);
     }
 
     /**
@@ -152,8 +152,9 @@ class KelasController extends Controller
      */
     public function destroy(Kelas $kelas)
     {
-        Kelas::destroy($kelas->id);
         dd($kelas);
+        Kelas::destroy($kelas->id);
+        // dd($kelas);
         return redirect()->back();
     }
 
