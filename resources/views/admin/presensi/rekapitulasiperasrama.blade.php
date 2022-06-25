@@ -60,13 +60,10 @@
                                 <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">#</th>
                                 <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">Asrama</th>
                                 <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">JML</th>
-
                                 <th colspan="9" class=" text-sm border border-green-800 bg-green-200 uppercase ">
                                     Keterangan</th>
                             </tr>
                             <tr class=" uppercase border">
-
-
                                 <th colspan="2" class=" text-sm border border-green-800 bg-green-200">
                                     Hadir
                                 </th>
@@ -89,44 +86,50 @@
                                 <th class=" text-sm border border-green-800 bg-green-200 ">S</th>
                                 <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
                                 <th class=" text-sm border border-green-800 bg-green-200 ">A</th>
-                                <th class=" text-sm border border-green-800 bg-green-200 ">%</th>
+                                <th class=" text-sm border border-green-800 bg-green-200  ">%</th>
                             </tr>
                         </thead>
                         <tbody>
 
+                            @if($lisrekap->count())
                             @foreach($lisrekap as $rekap)
                             <tr class=" hover:bg-gray-100 ">
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{$loop->iteration}}</td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                <td class="  py-1 text-sm border border-green-800 text-center">{{$loop->iteration}}
+                                </td>
+                                <td class=" w-1/2  text-sm border border-green-800 text-center">
                                     {{ $rekap->nama_asrama }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                <td class="  text-sm border border-green-800 text-center">
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                <td class="  text-sm border border-green-800 text-center">
                                     {{ ($rekap->hadir)}}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ $rekap->hadir ? $rekap->hadir/100:0}}
+                                <td class="  text-sm border border-green-800 text-center">
+                                    {{ number_format((($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit)/($rekap->hadir)*100),0)}}
+                                    %
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->izin }}
+                                <td class="  text-sm border border-green-800 text-center">{{ $rekap->izin }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ $rekap->izin ? $rekap->izin/100:0}}
+                                <td class="  text-sm border border-green-800 text-center">
+
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->sakit }}
+                                <td class="  text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
+                                <td class="  text-sm border border-green-800 text-center">
                                     {{$rekap->sakit ? $rekap->sakit/100:0}}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->alfa }}
+                                <td class="  text-sm border border-green-800 text-center">{{ $rekap->alfa }}
                                 </td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">{{ $rekap->alfa }}</td>
-                                <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ ($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit) }}
+                                <td class="  text-sm border border-green-800 text-center">
+                                    {{number_format(($rekap->alfa ? $rekap->alfa/100:0),1)}} %
+                                </td>
+                                <td class="  text-sm border border-green-800 text-center">
+                                    {{ ($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit)/($rekap->hadir)*100 }}
                                 </td>
 
                             </tr>
                             @endforeach
+                            @endif
 
                             <tr>
                                 <td colspan="11"
@@ -134,7 +137,7 @@
                                     Total
                                 </td>
                                 <td class=" px-1 text-sm border border-green-800 text-center">
-                                    {{ "d" }}
+                                    {{ "#error" }}
                                 </td>
                             </tr>
                         </tbody>
