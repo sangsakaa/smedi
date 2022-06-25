@@ -21,7 +21,7 @@ class UstadzController extends Controller
             $cari->where('nama_ustadz', 'like', '%' . request('cari') . '%')->orderBy('nama_ustadz');
         }
 
-        return view('admin/ustadz/ustadz', ['ustadz' => $cari->get()]);
+        return view('admin/ustadz/ustadz', ['ustadz' => $cari->paginate(10)]);
     }
 
     /**

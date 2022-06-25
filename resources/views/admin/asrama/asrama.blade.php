@@ -7,8 +7,7 @@
         </div>
         <div class=" w-full px-2 py-4 ">
             <div class="  bg-white rounded-lg shadow-xs">
-
-                <div class=" grid grid-cols-2 ">
+                <div class=" grid grid-cols-1 sm:grid-cols-2 ">
                     <div class="   justify-items-start">
                         <a href="/asrama/create">
                             <button class=" rounded-md py-1 px-4  bg-green-800 text-white"> + Asrama</button>
@@ -18,7 +17,7 @@
                                 Tambah Kolektif</button>
                         </a>
                     </div>
-                    <div class=" grid justify-items-end">
+                    <div class=" grid-cols-1 sm:grid-cols-1 sm:justify-items-start  grid justify-items-end">
                         <form action="/asrama" method="get">
                             <input type="text" name="cari" value="{{ request('cari') }}"
                                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4"
