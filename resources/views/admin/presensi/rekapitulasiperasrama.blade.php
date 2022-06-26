@@ -123,7 +123,7 @@
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->alfa }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{ $rekap->alfa ? number_format(($rekap->izin / $rekap->total * 100), 0) : 0}} %
+                                    {{ $rekap->alfa ? number_format(($rekap->alfa / $rekap->total * 100), 0) : 0}} %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
                                     {{ $rekap->total }}
