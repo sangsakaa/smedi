@@ -32,7 +32,7 @@ class SesikelasController extends Controller
         if (request('cari')) {
             $cari->where('tgl', 'like', '%' . request('cari') . '%');
         }
-        return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $cari->paginate(10)]);
+        return view('admin/presensi/absen', ['kelas' => $kelas, 'sesi' => $cari->paginate(30)]);
     }
 
     /**
