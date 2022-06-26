@@ -145,10 +145,13 @@
                             {{ $rek->santri->kelas->nama_kelas}}
                         </td>
                         <td class="  border border-green-700 text-center">
+                            @if($rek->santri != null)
                             {{ $rek->santri->kelas->jenjang}}
+                            @endif
                         </td>
 
                         <td class=" border border-green-700 text-center">
+
                             {{ $rek->keterangan }}
 
                         </td>
