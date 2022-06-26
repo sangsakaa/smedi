@@ -211,4 +211,13 @@ class SesikelasController extends Controller
             ->get();
         return view('admin.presensi.rekapitulasiperasrama', ['lisrekap' => $hasil]);
     }
+    public function blangko()
+    {
+        //dd(request('bulan'));
+        $lisKelas = Kelas::all();
+        $kelas = Kelas::find(request('kelas'));
+        $kelasSantri = Kelassantri::where('kelas_id', request('kelas'))->get();
+        $jumlah_hari = request('bulan') ? date('t', strtotime(request('bulan'))) : date('t');
+        return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'kelas' => $kelas, 'jumlah_hari' => $jumlah_hari]);
+    }
 }
