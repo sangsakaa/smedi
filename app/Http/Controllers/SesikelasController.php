@@ -214,7 +214,7 @@ class SesikelasController extends Controller
     public function blangko()
     {
         //dd(request('bulan'));
-        $lisKelas = Kelas::orderBy('jenjang', 'desc')->get();
+        $lisKelas = Kelas::orderBy('jenjang', 'desc')->orderBy('nama_kelas')->get();
         $kelas = Kelas::find(request('kelas'));
         $kelasSantri = Kelassantri::where('kelas_id', request('kelas'))->get();
         $jumlah_hari = request('bulan') ? date('t', strtotime(request('bulan'))) : date('t');
