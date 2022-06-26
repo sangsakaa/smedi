@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kelassantri', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('asramasantri_id');
-            $table->bigInteger('kelas_id');
-            $table->timestamps();
+        Schema::table('absensi_kelas', function (Blueprint $table) {
+            $table->unsignedBigInteger('kelassantri_id')->change();
+            $table->foreign('kelassantri_id')->references('id')->on('kelassantri')->cascadeOnDelete();
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kelassantri');
+        Schema::table('absensi_kelas', function (Blueprint $table) {
+            $table->dropForeign(['kelassantri_id']);
+        });
     }
 };

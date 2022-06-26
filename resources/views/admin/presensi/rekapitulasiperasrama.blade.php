@@ -91,8 +91,8 @@
                         </thead>
                         <tbody>
 
-                            @foreach($lisrekap as $rekap)
                             @if($lisrekap->count())
+                            @foreach($lisrekap as $rekap)
                             <tr class=" hover:bg-gray-100 ">
                                 <td class="  py-1 text-sm border border-green-800 text-center">{{$loop->iteration}}
                                 </td>
@@ -128,9 +128,8 @@
                                 </td>
 
                             </tr>
-                            @endif
                             @endforeach
-
+                            @endif
                             <tr>
                                 <td colspan="11"
                                     class=" font-semibold uppercase px-1 text-sm border border-green-800 text-center">

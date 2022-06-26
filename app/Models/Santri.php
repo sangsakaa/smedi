@@ -65,4 +65,8 @@ class Santri extends Model
     {
         return $this->hasMany(Report::class, 'asramasantri_id', 'id');
     }
+    public function kelassantri()
+    {
+        return $this->hasMany(kelassantri::class, 'asramasantri_id', 'id');
+    }
 }
