@@ -132,7 +132,7 @@
                             {{ date_format(date_create($rek->sesi->tgl),'d-m-Y') }}
                         </td>
                         <td class=" px-2  border border-green-700 uppercase">
-                            @if($rek->santri->asramasantri->santri != null)
+                            @if($rek->santri != null)
                             {{ $rek->santri->asramasantri->santri->nama_santri}}
                             @endif
                         </td>
