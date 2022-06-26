@@ -142,7 +142,9 @@
                             @endif
                         </td>
                         <td class="  border border-green-700 text-center">
+                            @if($rek->santri != null)
                             {{ $rek->santri->kelas->nama_kelas}}
+                            @endif
                         </td>
                         <td class="  border border-green-700 text-center">
                             @if($rek->santri != null)
