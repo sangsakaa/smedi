@@ -42,26 +42,20 @@
                 @endforeach
 
             </select>
-            <label for="cari_keterangan">Keterangan</label>
-            <select class=" border border-green-800 rounded-md py-1 px-4" id="cari_keterangan" name="keterangan[]"
-                value="{{ request('keterangan') }}" multiple>
-                <option value="">- Pilih Semua Kategori --</option>
-                <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
-                <option value="Hadir" {{ request('keterangan') == 'Hadir' ? "selected" : "" }}>Hadir</option>
-                <option value="Izin" {{ request('keterangan') == 'Izin' ? "selected" : "" }}>Izin</option>
-                <option value="Sakit" {{ request('keterangan') == 'Sakit' ? "selected" : "" }}>Sakit</option>
-                <option value="Alfa" {{ request('keterangan') == 'Alfa' ? "selected" : "" }}>Alfa</option>
-            </select>
+            <input type="checkbox" name="keterangan[]" id="hadir" value="hadir"
+                {{ in_array('hadir',request('keterangan') ?? []) ? 'checked' : '' }}>
+            <label for="hadir">Hadir</label>
+            <input type="checkbox" name="keterangan[]" id="izin" value="izin"
+                {{ in_array('izin',request('keterangan') ?? []) ? 'checked' : '' }}>
+            <label for="izin">Izin</label>
+            <input type="checkbox" name="keterangan[]" id="sakit" value="sakit"
+                {{ in_array('sakit',request('keterangan') ?? []) ? 'checked' : '' }}>
+            <label for="sakit">Sakit</label>
+            <input type="checkbox" name="keterangan[]" id="alfa" value="alfa"
+                {{ in_array('alfa',request('keterangan') ?? []) ? 'checked' : '' }}>
+            <label for="alfa">Alfa</label>
             <button type="submit" class=" bg-green-800 py-1 px-2 rounded-md text-white">
                 Cari</button>
-            <input type="checkbox" name="ket" id="hadir" value="hadir">
-            <label for="hadir">Hadir</label>
-            <input type="checkbox" name="ket" id="izin" value="izin">
-            <label for="izin">Hadir</label>
-            <input type="checkbox" name="ket" id="sakit" value="sakit">
-            <label for="sakit">Hadir</label>
-            <input type="checkbox" name="ket" id="alfa" value="alfa">
-            <label for="alfa">Hadir</label>
 
         </form>
 

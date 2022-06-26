@@ -100,31 +100,33 @@
                                     {{ $rekap->nama_asrama }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
+                                    {{ $rekap->jumlah_santri }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
                                     {{ ($rekap->hadir)}}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{ number_format((($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit)/($rekap->hadir)*100),0)}}
+                                    {{ $rekap->hadir ? number_format($rekap->hadir / $rekap->total * 100, 0) : 0}}
                                     %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->izin }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-
+                                    {{ $rekap->izin ? number_format(($rekap->izin / $rekap->total * 100), 0) : 0}}
+                                    %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{$rekap->sakit ? $rekap->sakit/100:0}}
+                                    {{ $rekap->sakit ? number_format(($rekap->izin / $rekap->total * 100), 0) : 0}} %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->alfa }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{number_format(($rekap->alfa ? $rekap->alfa/100:0),1)}} %
+                                    {{ $rekap->alfa ? number_format(($rekap->izin / $rekap->total * 100), 0) : 0}} %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{ ($rekap->alfa)+($rekap->hadir)+($rekap->izin)+($rekap->sakit)/($rekap->hadir)*100 }}
+                                    {{ $rekap->total }}
                                 </td>
 
                             </tr>

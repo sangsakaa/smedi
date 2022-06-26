@@ -184,14 +184,19 @@ class SesikelasController extends Controller
 
     public function rekapitulasiPerAsramaPerHari(Request $request)
     {
+        $subQuery = DB::table('asramasantri')
+            ->selectRaw('asrama_id, COUNT(id) AS jumlah_santri')
+            ->groupBy('asrama_id')
+            ->toSql();
         $lisrekap = DB::table('absensi_kelas')
             ->join('kelassantri', 'kelassantri.id', '=', 'absensi_kelas.kelassantri_id')
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
 
             ->join('asrama', 'asrama.id', '=', 'asramasantri.asrama_id')
             ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
-            ->selectRaw("asrama.nama_asrama, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa")
-            ->groupBy('asrama.nama_asrama');
+            ->join(DB::raw("($subQuery) AS asrama_total"), 'asrama_total.asrama_id', '=', 'asrama.id')
+            ->selectRaw("asrama.nama_asrama, COUNT(CASE WHEN keterangan = 'Hadir' THEN 1 END) AS hadir, COUNT(CASE WHEN keterangan = 'Izin' THEN 1 END) AS izin, COUNT(CASE WHEN keterangan = 'Sakit' THEN 1 END) AS sakit, COUNT(CASE WHEN keterangan = 'Alfa' THEN 1 END) AS alfa, COUNT(keterangan) AS total, asrama_total.jumlah_santri")
+            ->groupByRaw('asrama.nama_asrama, asrama_total.jumlah_santri');
         if ($request->hari_terakhir) {
             $lisrekap->whereRaw('sesi_kelas.tgl = (SELECT MAX(tgl) FROM sesi_kelas)');
         } else if ($request->start_date && $request->end_date) {

@@ -41,7 +41,6 @@ class DashboardController extends Controller
         if (request('cari') || request('asrama') || request('keterangan') || request('ket')) {
             $req_asrama = request('asrama');
             $req_keterangan = request(('keterangan'));
-            $req_ket = request('ket');
             // dd($req_keterangan);
             $rekap
                 ->join('sesi_kelas', 'sesi_kelas.id', '=', 'absensi_kelas.sesi_id')
@@ -55,7 +54,7 @@ class DashboardController extends Controller
                 $rekap->where('asrama.id', '=', (int) request('asrama'));
             }
             if ($req_keterangan != null) {
-                $rekap->where('absensi_kelas.keterangan', '=', request('keterangan'));
+                $rekap->whereIn('absensi_kelas.keterangan', request('keterangan'));
             }
         }
         return view('about', ['rekap' => $rekap->paginate(326), 'asrama' => $asrama, 'kelas' => $kelas]);
