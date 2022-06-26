@@ -161,6 +161,7 @@
                         </div>
                         <div class=" text-center px-4 py-1 text-xs font-semibold tracking-wide text-gray-500 bg-gray-50 border-t
                                                 ">
+                            {{ $listSantri->links() }}
                         </div>
                     </div>
                 </div>
