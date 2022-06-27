@@ -57,8 +57,6 @@
                     wahidiyah</h1>
                 <hr>
 
-                {{ request('kelas')}}
-
             </div>
             <div class=" grid justify-items-end font-semibold text-4xl">
             </div>
@@ -69,6 +67,7 @@
                             No
                         </th>
                         <th class=" border border-green-800" class="" style="width: 30%" rowspan="2">Nama</th>
+                        <th class=" border border-green-800 px-1" class="" rowspan="2">KLS</th>
                         <th class=" border border-green-800" colspan="{{ $jumlah_hari }}">
                             Tanggal
                         </th>
@@ -88,6 +87,9 @@
                         </td>
                         <td class=" border border-green-800 px-2 text-xs">
                             {{ $kelassantri->AsramaSantri->santri->nama_santri }}
+                        </td>
+                        <td class=" border border-green-800 px-2 text-xs text-center">
+                            {{ $kelassantri->kelas->nama_kelas }}
                         </td>
 
                         @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
