@@ -53,7 +53,7 @@
         </div>
         <div id="div1" class=" w-full px-4 py-2">
             <div class="  w-full text-center">
-                <!-- <img src="images/04.jpg" alt=""> -->
+
                 <h1 class=" text-4xl  uppercase text-center py-2 font-semibold text-green-800">madrasah diniyah wustha
                     wahidiyah</h1>
                 <hr>
