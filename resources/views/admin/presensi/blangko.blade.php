@@ -52,7 +52,7 @@
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div id="div1" class=" w-full px-4 py-2">
-            <img src="images/04.jpg" alt="" width="100%" class=" img-size-50">
+            <img src="images/04.jpg" alt="">
             <div class=" grid justify-items-end"></div>
             <table class=" w-full">
                 <thead>
