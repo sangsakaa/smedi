@@ -66,8 +66,8 @@
                         <th class=" border border-green-800 px-1" style="width: {{ 70/($jumlah_hari+1) }}%" rowspan="2">
                             No
                         </th>
-                        <th class=" border border-green-800" class="" style="width: 30%" rowspan="2">Nama</th>
-                        <th class=" border border-green-800 px-1" class="" rowspan="2">KLS</th>
+                        <th class=" border border-green-800" class="" style="width: 20%" rowspan="2">Nama Siswa</th>
+                        <th class=" border border-green-800 px-1" class="" rowspan="2" style="width: 2%">KLS</th>
                         <th class=" border border-green-800" colspan="{{ $jumlah_hari }}">
                             Tanggal
                         </th>
@@ -88,10 +88,9 @@
                         <td class=" border border-green-800 px-2 text-xs">
                             {{ $kelassantri->AsramaSantri->santri->nama_santri }}
                         </td>
-                        <td class=" border border-green-800 px-2 text-xs text-center">
+                        <td class=" border border-green-800 px-0 text-xs text-center font-semibold">
                             {{ $kelassantri->kelas->nama_kelas }}
                         </td>
-
                         @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
                             style="width: {{ 70/($jumlah_hari+1) }}%">
                             </td>
