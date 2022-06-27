@@ -26,7 +26,7 @@ class SantriController extends Controller
             $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderby('tanggal_masuk')->orderBy('nama_santri')
                 ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%');
         }
-        return view('admin/santri/santri', ['listSantri' => $cari->paginate(30)]);
+        return view('admin/santri/santri', ['listSantri' => $cari->paginate(15)]);
     }
     /**
      * Show the form for creating a new resource.

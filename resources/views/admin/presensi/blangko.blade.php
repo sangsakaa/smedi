@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        Presensi Kelas
+        Cetak Blangko Presensi Kelas
     </x-slot>
     <div class="inline-flex overflow-hidden  w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
@@ -44,6 +44,7 @@
         </div>
         <div class=" w-full px-4 py-2">
             <img src="images/04.jpg" alt="">
+            <div class=" grid justify-items-end"></div>
             <table class=" w-full">
                 <thead>
                     <tr class=" border">
@@ -74,7 +75,6 @@
                             style="width: {{ 70/($jumlah_hari+1) }}%">
                             </td>
                             @endfor
-
                     </tr>
                     @endforeach
                     @endif
