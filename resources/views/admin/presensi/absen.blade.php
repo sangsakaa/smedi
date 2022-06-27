@@ -13,11 +13,12 @@
                 <a href="/about">
                     <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi</button>
                 </a>
-                <a href="/absen">
-                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Reset</button>
-                </a>
+
                 <a href="/rekapitulasi">
                     <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Rekapitulasi Siswa</button>
+                </a>
+                <a href="/blangko">
+                    <button class=" bg-green-700 text-white px-2 py-1 rounded-md ">Cetak Belangko Presensi</button>
                 </a>
             </div>
             <div class=" grid justify-items-end">
