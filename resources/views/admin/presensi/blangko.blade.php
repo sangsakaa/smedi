@@ -53,18 +53,20 @@
         </div>
         <div id="div1" class=" w-full px-4 py-2">
             <div class="  w-full text-center">
-
-                <h1 class=" text-4xl  uppercase text-center py-2 font-semibold text-green-800">madrasah diniyah wustha
+                <h1 class=" text-4xl  uppercase text-center py-1 font-semibold text-green-800">madrasah diniyah wustha
                     wahidiyah</h1>
                 <hr>
-                <h1 class=" text-2xl  capitalize text-center py-2 font-semibold text-green-800">Daftar Harian</h1>
+
+                {{ request('kelas')}}
 
             </div>
-            <div class=" grid justify-items-end"></div>
+            <div class=" grid justify-items-end font-semibold text-4xl">
+            </div>
             <table class=" w-full">
                 <thead>
                     <tr class=" border">
-                        <th class=" border border-green-800" style="width: {{ 70/($jumlah_hari+1) }}%" rowspan="2">No
+                        <th class=" border border-green-800 px-1" style="width: {{ 70/($jumlah_hari+1) }}%" rowspan="2">
+                            No
                         </th>
                         <th class=" border border-green-800" class="" style="width: 30%" rowspan="2">Nama</th>
                         <th class=" border border-green-800" colspan="{{ $jumlah_hari }}">
@@ -81,12 +83,13 @@
                     @if($kelas)
                     @foreach($kelasSantri as $kelassantri)
                     <tr class=" border border-green-800">
-                        <td class=" border border-green-800 px-1 py-1 text-center text-xs">
+                        <td class=" border border-green-800 font-semibold px-1 py-1 text-center text-xs">
                             {{ $loop->iteration }}
                         </td>
                         <td class=" border border-green-800 px-2 text-xs">
                             {{ $kelassantri->AsramaSantri->santri->nama_santri }}
                         </td>
+
                         @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
                             style="width: {{ 70/($jumlah_hari+1) }}%">
                             </td>
