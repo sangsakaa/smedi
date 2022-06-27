@@ -52,7 +52,7 @@
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div id="div1" class=" w-full px-4 py-2">
-            <img src="images/04.jpg" alt="">
+            <img src="images/04.jpg" alt="" width="100%" class=" img-size-50">
             <div class=" grid justify-items-end"></div>
             <table class=" w-full">
                 <thead>
@@ -74,7 +74,7 @@
                     @if($kelas)
                     @foreach($kelasSantri as $kelassantri)
                     <tr class=" border border-green-800">
-                        <td class=" border border-green-800 px-1 text-center text-xs">
+                        <td class=" border border-green-800 px-1 py-1 text-center text-xs">
                             {{ $loop->iteration }}
                         </td>
                         <td class=" border border-green-800 px-2 text-xs">
