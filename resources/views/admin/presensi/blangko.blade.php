@@ -77,7 +77,7 @@
                         <td class=" border border-green-800 px-1 text-center">
                             {{ $loop->iteration }}
                         </td>
-                        <td class=" border border-green-800 px-2">
+                        <td class=" border border-green-800 px-2 text-sm">
                             {{ $kelassantri->AsramaSantri->santri->nama_santri }}
                         </td>
                         @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
