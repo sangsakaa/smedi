@@ -74,10 +74,10 @@
                     @if($kelas)
                     @foreach($kelasSantri as $kelassantri)
                     <tr class=" border border-green-800">
-                        <td class=" border border-green-800 px-1 text-center">
+                        <td class=" border border-green-800 px-1 text-center text-xs">
                             {{ $loop->iteration }}
                         </td>
-                        <td class=" border border-green-800 px-2 text-sm">
+                        <td class=" border border-green-800 px-2 text-xs">
                             {{ $kelassantri->AsramaSantri->santri->nama_santri }}
                         </td>
                         @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
