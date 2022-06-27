@@ -22,7 +22,7 @@ class SesikelasController extends Controller
     public function index()
     {
 
-        $kelas = Kelas::orderBy('jenjang')->orderby('nama_kelas')->get();
+        $kelas = Kelas::orderBy('jenjang', 'desc')->orderby('nama_kelas')->get();
         $cari = Sesikelas::query()
             ->select('sesi_kelas.*')
             ->join('kelas', 'kelas.id', '=', 'sesi_kelas.kelas_id')
