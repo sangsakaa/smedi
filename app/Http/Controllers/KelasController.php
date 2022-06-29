@@ -31,9 +31,10 @@ class KelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function editanggota(Kelas $kelas)
     {
-        //
+
+        return view(' admin/kelas/editanggotakelas', ['kelas' => $kelas]);
     }
 
     /**

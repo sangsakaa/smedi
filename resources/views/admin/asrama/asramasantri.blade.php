@@ -103,6 +103,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y">
+
                                     @if($anggota->count())
                                     @foreach ( $anggota as $item)
                                     <tr class=" hover:bg-gray-50 text-gray-700  text-xs ">
@@ -110,19 +111,30 @@
                                             {{ $loop->iteration }}
                                         </td>
                                         <td class="px-2 border py-1  text-sm  ">
+                                            @if($item->santri !== null)
                                             {{ $item->santri->nama_santri}}
+                                            @endif
                                         </td>
+
                                         <td class="px-2 border py-1  text-sm text-center  ">
+                                            @if($item->santri !== null)
                                             {{ $item->santri->jenis_kelamin}}
+                                            @endif
                                         </td>
                                         <td class="px-2 border py-1  text-sm  ">
+                                            @if($item->santri !== null)
                                             {{ $item->santri->asal_kota}}
+                                            @endif
                                         </td>
                                         <td class="px-2 border py-1  text-sm text-center ">
+                                            @if($item->asrama !== null)
                                             {{$item->asrama->nama_asrama }}
+                                            @endif
                                         </td>
                                         <td class="px-2 border py-1  text-sm  text-center">
+                                            @if($item->asrama !== null)
                                             {{$item->asrama->type_asrama }}
+                                            @endif
                                         </td>
                                         <td class="px-2 border py-1  text-sm text-center ">
                                             {{$item->tanggal_masuk }}
@@ -130,6 +142,7 @@
                                         <td class="px-2 border py-1  text-sm text-center ">
                                             {{$item->tanggal_keluar }}
                                         </td>
+
                                         <td class="px-2 border py-1  text-sm flex  content-center ">
                                             <form action="/asramasantri/{{$item->id}}" method="post">
                                                 @csrf
@@ -166,6 +179,7 @@
                                         </td>
                                     </tr>
                                     @endif
+
                                 </tbody>
                             </table>
                         </div>

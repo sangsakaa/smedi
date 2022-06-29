@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('rekapitulasi', [App\Http\Controllers\SesikelasController::class, 'rekapitulasi']);
     Route::get('rekapitulasiperasrama', [SesikelasController::class, 'rekapitulasiPerAsramaPerHari']);
     Route::get('blangko', [App\Http\Controllers\SesikelasController::class, 'blangko']);
+    Route::get('kelasanggota', [App\Http\Controllers\KelasController::class, 'editanggota']);
 
     Route::get('asramasantri/add_many', [App\Http\Controllers\AsramasantriController::class, 'addManyPage']);
     Route::get('kolektifkelas', [App\Http\Controllers\KelasController::class, 'kolektifkelas']);

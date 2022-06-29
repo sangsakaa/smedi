@@ -82,6 +82,11 @@ class AsramaController extends Controller
             $listpengurus[$pengurus->pengurusJabatan->nama_jabatan] = $pengurus;
         }
         $anggota = Asramasantri::where('asrama_id', $asrama->id)->orderBy('santri_id')->get();
+
+        // $anggota = Santri::leftjoin('asramasantri', 'santri.id', '=', 'asramasantri.santri_id')
+        //     ->where('asramasantri.santri_id', '=', null)->select('santri.*')
+        //     ->where('asrama_id', $asrama->id)->orderBy('santri_id')->get();
+
         return view('admin/asrama/asramasantri', ['jabatan' => $jabatan, 'anggota' => $anggota, 'datasantri' => $listsantri, 'dataAsrama' => $listasrama, 'asramasantri' => $asramasantri, 'asrama' => $asrama, 'santri' => $santri, 'listpengurus' => $listpengurus]);
     }
 

@@ -17,15 +17,26 @@
                         <input value="{{ $asramasantri->asrama_id }}" name="asrama_id" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" kuota_asrama ">
 
+
+                        <select name="asrama_id">
+                            @foreach ($asrama as $asrama_id)
+                            <option value="{{ $asramasantri->asrama_id }}" @selected(old('asramasantri->
+                                asrama_id')==$asrama_id)>
+                                {{ $asrama_id->id }}
+                            </option>
+                            @endforeach
+
+                        </select>
+
                         <input value="{{ $asramasantri->asrama->tanggal_masuk }}" name="tanggal_masuk" type="date"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
 
                         <input value="{{ $asramasantri->asrama->tanggal_masuk }}" name="tanggal_keluar" type="date"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
 
+
                         <input hidden value="1" name="histori_id" type="text"
                             class=" border border-green-800 rounded-md py-1 px-4" placeholder=" kuota_asrama ">
-
                         <button type="submit" class="  bg-green-600 py-1 px-2 rounded-md text-white" onClick="swal()">
                             Update</button>
                     </form>
