@@ -216,7 +216,13 @@ class SesikelasController extends Controller
         //dd(request('bulan'));
         $lisKelas = Kelas::orderBy('jenjang', 'desc')->orderBy('nama_kelas')->get();
         $kelas = Kelas::find(request('kelas'));
-        $kelasSantri = Kelassantri::where('kelas_id', request('kelas'))->get();
+        $kelasSantri = Kelassantri::query()
+            ->select('kelassantri.*')
+            ->where('kelas_id', request('kelas'))
+            ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
+            ->join('santri', 'asramasantri.santri_id', '=', 'santri.id')
+            ->orderBy('nama_santri')
+            ->get();
         $jumlah_hari = request('bulan') ? date('t', strtotime(request('bulan'))) : date('t');
         return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'kelas' => $kelas, 'jumlah_hari' => $jumlah_hari]);
     }

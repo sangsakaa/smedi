@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Histori;
 use App\Models\Historipelanggaran;
+use App\Models\Kelassantri;
 use App\Models\Pelanggaran;
 use App\Models\Presensi;
 use App\Models\Santri;
@@ -74,10 +75,11 @@ class SantriController extends Controller
      * @param  \App\Models\Santri  $santri
      * @return \Illuminate\Http\Response
      */
-    public function show(Santri $santri, Sesikelas $kelassantri)
+    public function show(Santri $santri, Presensi $absen)
     {
 
-        $presensi = Presensi::where('kelassantri_id', $kelassantri->id)->get();
+        dd($absen);
+        $presensi = Presensi::where('kelassantri_id', $absen->id)->get();
         return view('admin/santri/detail', ['santri' => $santri, 'presensi' => $presensi]);
     }
 

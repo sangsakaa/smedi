@@ -13,16 +13,11 @@
                         @method('PATCH')
                         <input value="{{ $asramasantri->santri_id }}" name="santri_id" type="text"
                             class=" w-1/4 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
-
-                        <input value="{{ $asramasantri->asrama_id }}" name="asrama_id" type="text"
-                            class=" border border-green-800 rounded-md py-1 px-4" placeholder=" kuota_asrama ">
-
-
                         <select name="asrama_id">
                             @foreach ($asrama as $asrama_id)
-                            <option value="{{ $asramasantri->asrama_id }}" @selected(old('asramasantri->
-                                asrama_id')==$asrama_id)>
-                                {{ $asrama_id->id }}
+                            <option value="{{ $asrama_id->id }}" @selected($asramasantri->
+                                asrama_id==$asrama_id->id)>
+                                {{ $asrama_id->nama_asrama }}
                             </option>
                             @endforeach
 

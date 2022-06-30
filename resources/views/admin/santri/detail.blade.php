@@ -96,16 +96,25 @@
         </div>
 
     </div>
+
     <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1  bg-green-800">
         </div>
-        <div class="  border px-4 py-2 grid grid-cols-2">
-            <div class=" border  w-1/2">TGL</div>
-            <div class=" border">KELAS</div>
-            @foreach($presensi as $presensi)
-            {{ $loop->iteration }}
-            @endforeach
+        <div class=" w-full  border px-4 py-2 grid grid-cols-2">
+            <table class="">
+                <thead>
+                    <tr class=" border">
+                        <th class=" text-center">#</th>
+                        <th>Sesi Kelas</th>
+                        <th>Sesi Kelas</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                    {{ $presensi}}
+                </tbody>
+            </table>
         </div>
     </div>
+
 </x-app-layout>
