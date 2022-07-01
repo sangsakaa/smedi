@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('historipelanggaran', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('pelanggaran_id');
-            $table->bigInteger('santri_id');
-            $table->date('waktu');
-            $table->string('keterangan');
-            $table->timestamps();
+        Schema::table('kelas', function (Blueprint $table) {
+            $table->string('jenjang');
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historipelanggaran');
+        Schema::table('kelas', function (Blueprint $table) {
+            //
+        });
     }
 };
