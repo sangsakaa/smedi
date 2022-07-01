@@ -2,11 +2,11 @@
     <x-slot name="header">
         {{ __(' Daftar Data Asrama') }}
     </x-slot>
-    <div class="inline-flex overflow-hidden mb-2 w-full bg-white rounded-lg shadow-md">
+    <div class="inline-flex overflow-hidden mb-2 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
         <div class=" w-full px-2 py-4 ">
-            <div class="  bg-white rounded-lg shadow-xs">
+            <div class="  bg-white  shadow-xs">
                 <div class=" grid grid-cols-1 sm:grid-cols-2 ">
                     <div class="   justify-items-start">
                         <a href="/asrama/create">
@@ -17,7 +17,7 @@
                                 Tambah Kolektif</button>
                         </a>
                     </div>
-                    <div class=" grid-cols-1 sm:grid-cols-1 sm:justify-items-start  grid justify-items-end">
+                    <div class=" grid-cols-1 sm:grid-cols-1 sm:justify-items-end  grid justify-items-end">
                         <form action="/asrama" method="get">
                             <input type="text" name="cari" value="{{ request('cari') }}"
                                 class=" border border-green-800 text-green-800 rounded-md py-1 px-4"
@@ -28,7 +28,7 @@
                     </div>
 
                 </div>
-                <div class="overflow-hidden mb-2 mt-2 w-full rounded-lg border shadow-xs">
+                <div class="overflow-hidden  mt-2 w-full  border shadow-xs">
                     <div class="overflow-x-auto w-full">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
@@ -128,7 +128,7 @@
                         </table>
                     </div>
                     <div
-                        class="px-2 py-1 text-xs font-semibold tracking-wide text-gray-500  bg-gray-50 border-t sm:grid-cols-9">
+                        class="px-1 py-1 text-xs font-semibold tracking-wide text-gray-500  bg-gray-50 border-t sm:grid-cols-9">
                         {{ $asrama->links() }}
                     </div>
                 </div>

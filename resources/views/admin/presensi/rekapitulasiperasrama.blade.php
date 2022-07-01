@@ -118,7 +118,7 @@
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->sakit }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">
-                                    {{ $rekap->sakit ? number_format(($rekap->izin / $rekap->total * 100), 0) : 0}} %
+                                    {{ $rekap->sakit ? number_format(($rekap->sakit / $rekap->total * 100), 0) : 0}} %
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">{{ $rekap->alfa }}
                                 </td>
