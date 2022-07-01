@@ -93,6 +93,7 @@
                                         <th class="px-2 py-2 text-center">Asal Kota</th>
                                         <th class="px-2 py-2 text-center">Nama Asrama</th>
                                         <th class="px-2 py-2 text-center">Type Asrama</th>
+                                        <th class="px-2 py-2 text-center">KLS MI</th>
                                         <th class="px-2 py-2 text-center">Tanggal Masuk</th>
                                         <th class="px-2 py-2 text-center">Tanggal Keluar</th>
                                         <th class="px-2 py-2 text-center">Aksi</th>
@@ -125,6 +126,11 @@
                                         <td class="px-2 border py-1  text-sm text-center ">
                                             @if($item->asrama !== null)
                                             {{$item->asrama->nama_asrama }}
+                                            @endif
+                                        </td>
+                                        <td class="px-2 border py-1  text-sm  text-center">
+                                            @if($item->asrama !== null)
+                                            {{$item->asrama->type_asrama }}
                                             @endif
                                         </td>
                                         <td class="px-2 border py-1  text-sm  text-center">
