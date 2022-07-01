@@ -185,7 +185,7 @@
                         </div>
                         <div
                             class="px-4 py-1 text-xs font-semibold tracking-wide text-gray-500  bg-gray-50 border-t sm:grid-cols-9">
-
+                            {{$anggota->links()}}
                         </div>
                     </div>
                 </div>

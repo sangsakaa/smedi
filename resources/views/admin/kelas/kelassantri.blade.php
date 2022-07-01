@@ -47,16 +47,16 @@
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
                                         @if($kelas->count())
-                                        @foreach($kelas as $kelas)
+                                        @foreach($kelas as $kel)
                                         <tr class="text-gray-700 hover:bg-gray-100">
                                             <td class="px-4 py-1 text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                <a href="/kelas/{{$kelas->id}}">k{{$kelas->nama_kelas}}</a>
+                                                <a href="/kelas/{{$kel->id}}">k{{$kel->nama_kelas}}</a>
                                             </td>
                                             <td class="px-4 py-1 text-sm ">
-                                                {{$kelas->jenjang}}
+                                                {{$kel->jenjang}}
 
                                             </td>
 
@@ -72,7 +72,8 @@
                                 </table>
                             </div>
                             <div class=" px-4 py-1 text-xs font-semibold tracking-wide text-gray-500 bg-gray-50 border-t
-                                                sm:grid-cols-9">
+                                                sm:grid-cols-9">p
+
                             </div>
                         </div>
                     </div>

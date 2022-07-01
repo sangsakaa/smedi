@@ -81,7 +81,7 @@ class AsramaController extends Controller
         foreach ($jabatan as $pengurus) {
             $listpengurus[$pengurus->pengurusJabatan->nama_jabatan] = $pengurus;
         }
-        $anggota = Asramasantri::where('asrama_id', $asrama->id)->orderBy('santri_id')->get();
+        $anggota = Asramasantri::where('asrama_id', $asrama->id)->orderBy('santri_id')->paginate(10);
 
         // $anggota = Santri::leftjoin('asramasantri', 'santri.id', '=', 'asramasantri.santri_id')
         //     ->where('asramasantri.santri_id', '=', null)->select('santri.*')

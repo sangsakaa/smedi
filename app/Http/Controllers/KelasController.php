@@ -106,7 +106,7 @@ class KelasController extends Controller
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
             ->orderBy('santri.nama_santri')
-            ->get();
+            ->paginate(10);
         $dataKelas = Kelas::all();
         return view('admin/kelas/detailKelas', ['list' => $dataAsrama, 'dataSantri' => $dataSantri, 'asrama' => $asrama, 'datakelas' => $dataKelas, 'kelas' => $kelas, 'DataAsrama' => $asramasantri, 'kelasSantri' => $kelasSantri]);
     }
