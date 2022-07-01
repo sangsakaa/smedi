@@ -7,13 +7,14 @@
         </div>
         <div class=" w-full  px-4 py-4 ">
             <div class=" w-full">
-                <div class=" w-full bg-white rounded-lg shadow-xs">
+                <div class=" w-full bg-white rounded-lg shadow-xs grid ">
                     <form action="/asramasantri/{{$asramasantri->id}}" method="post">
                         @csrf
                         @method('PATCH')
-                        <input value="{{ $asramasantri->santri_id }}" name="santri_id" type="text"
+                        <input hidden value="{{ $asramasantri->santri_id }}" name="santri_id" type="text"
                             class=" w-1/4 border border-green-800 rounded-md py-1 px-4" placeholder=" nama_asrama ">
-                        <select name="asrama_id">
+                        <select name="asrama_id" class=" px-4 py-1 border border-green-800 rounded-md">
+                            <option value=""> -- Pilih Sesui Asrama -- </option>
                             @foreach ($asrama as $asrama_id)
                             <option value="{{ $asrama_id->id }}" @selected($asramasantri->
                                 asrama_id==$asrama_id->id)>

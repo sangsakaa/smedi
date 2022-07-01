@@ -55,15 +55,20 @@
             <div class="  w-full text-center">
                 <h1 class=" text-4xl  uppercase text-center py-1 font-semibold text-green-800">madrasah diniyah wustha
                     wahidiyah</h1>
-                Tahun Pelajaran {{ date('Y') }}
                 <hr>
+                <span class=" text-green-800 text-2xl uppercase">Tahun Pelajaran {{ date('Y') }} / 2023</span>
             </div>
-            <div class=" grid justify-items-end font-semibold text-4xl">
-                <?php
-                $date = date_create(request('bulan'));
-                echo date_format($date, "M");
-                ?>
+            <div class=" grid grid-cols-2">
+                <div>{{ request($kelas->nama_kelas)}}</div>
+                <div class=" grid justify-items-end font-semibold text-2xl">
+                    Bulan : <?php
+                            $date = date_create(request('bulan'));
+                            echo date_format($date, "M");
+                            ?>
+                </div>
+
             </div>
+
             <table class=" w-full">
                 <thead>
                     <tr class=" border">
