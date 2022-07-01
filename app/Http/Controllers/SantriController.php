@@ -78,7 +78,7 @@ class SantriController extends Controller
     public function show(Santri $santri, Presensi $absen)
     {
 
-        dd($absen);
+
         $presensi = Presensi::where('kelassantri_id', $absen->id)->get();
         return view('admin/santri/detail', ['santri' => $santri, 'presensi' => $presensi]);
     }
