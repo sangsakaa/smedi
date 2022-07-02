@@ -53,7 +53,7 @@
                                     @if($listSantri->count())
                                     @foreach ($listSantri as $s)
                                     <tr class="text-gray-700 text-xs  hover:bg-gray-50">
-                                        <td class=" grid px-1 py-1 text-sm">
+                                        <td class=" grid px-1 py-1 text-sm justify-items-center">
                                             <div class=" flex  text-center ">
                                                 <form action="/santri/{{$s->id}}" method="post">
                                                     @csrf
