@@ -51,12 +51,12 @@
     <div class="inline-flex overflow-hidden  mt-4 w-full bg-white  shadow-md">
         <div class="flex justify-center items-center w-1 bg-green-800">
         </div>
-        <div id="div1" class=" w-full px-4 py-2">
+        <div id="div1" class=" w-full px-4 py-1">
             <div class="  w-full text-center">
                 <h1 class=" text-4xl  uppercase text-center py-1 font-semibold text-green-800">madrasah diniyah wustha
                     wahidiyah</h1>
                 <hr>
-                <span class=" text-green-800 text-2xl uppercase">Tahun Pelajaran {{ date('Y') }} / 2023</span>
+                <span class=" text-green-800 text-2xl uppercase semi">Tahun Pelajaran {{ date('Y') }}/2023</span>
             </div>
             <div class=" grid grid-cols-2">
                 <div>{{ $data_kelas?->nama_kelas }}</div>
@@ -68,6 +68,7 @@
 
             <table class=" w-full">
                 <thead>
+
                     <tr class=" border">
                         <th class=" border border-green-800 px-1" style="width: {{ 70/($periodeBulan->count()+1) }}%" rowspan="2">
                             No
