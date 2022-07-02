@@ -61,10 +61,7 @@
             <div class=" grid grid-cols-2">
                 <div>{{ $data_kelas?->nama_kelas }}</div>
                 <div class=" grid justify-items-end font-semibold text-2xl">
-                    Bulan : <?php
-                            $date = date_create(request('bulan'));
-                            echo date_format($date, "M");
-                            ?>
+                    Bulan : {{ $bulan->monthName }}
                 </div>
 
             </div>
@@ -72,19 +69,19 @@
             <table class=" w-full">
                 <thead>
                     <tr class=" border">
-                        <th class=" border border-green-800 px-1" style="width: {{ 70/($jumlah_hari+1) }}%" rowspan="2">
+                        <th class=" border border-green-800 px-1" style="width: {{ 70/($periodeBulan->count()+1) }}%" rowspan="2">
                             No
                         </th>
                         <th class=" border border-green-800" class="" style="width: 20%" rowspan="2">Nama Siswa</th>
                         <th class=" border border-green-800 px-1" class="" rowspan="2" style="width: 2%">KLS</th>
-                        <th class=" border border-green-800" colspan="{{ $jumlah_hari }}">
+                        <th class=" border border-green-800" colspan="{{ $periodeBulan->count() }}">
                             Tanggal
                         </th>
                     </tr>
                     <tr class="border">
-                        @for($i = 1; $i <= $jumlah_hari; $i++) <th class=" border border-green-800  ">{{ $i }}
-                            </th>
-                            @endfor
+                        @foreach($periodeBulan as $hari)
+                        <th class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-800' : '' }}">{{ $hari->day }}</th>
+                        @endforeach
                     </tr>
                 </thead>
                 <tbody>
@@ -100,14 +97,13 @@
                         <td class=" border border-green-800 px-0 text-xs text-center font-semibold">
                             {{ $kelassantri->kelas->nama_kelas }}
                         </td>
-                        @for($i = 1; $i <= $jumlah_hari; $i++) <td class=" border border-green-800"
-                            style="width: {{ 70/($jumlah_hari+1) }}%">
-                            </td>
-                            @endfor
+                        @foreach($periodeBulan as $hari)
+                        <td class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-800' : '' }}"
+                            style="width: {{ 70/($periodeBulan->count()+1) }}%"></td>
+                        @endforeach
                     </tr>
                     @endforeach
                     @endif
-
                 </tbody>
             </table>
         </div>

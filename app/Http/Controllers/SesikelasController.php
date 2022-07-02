@@ -7,6 +7,8 @@ use App\Models\Kelas;
 use App\Models\Presensi;
 use App\Models\Sesikelas;
 use App\Models\Kelassantri;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
@@ -223,7 +225,8 @@ class SesikelasController extends Controller
             ->join('santri', 'asramasantri.santri_id', '=', 'santri.id')
             ->orderBy('nama_santri')
             ->get();
-        $jumlah_hari = request('bulan') ? date('t', strtotime(request('bulan'))) : date('t');
-        return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'data_kelas' => $kelas, 'jumlah_hari' => $jumlah_hari]);
+        $bulan = Carbon::parse(request('bulan'))->locale('id_ID');
+        $periodeBulan = $bulan->startOfMonth()->daysUntil($bulan->copy()->endOfMonth());
+        return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'data_kelas' => $kelas, 'periodeBulan' => $periodeBulan, 'bulan' => $bulan]);
     }
 }
