@@ -152,7 +152,7 @@ class SesikelasController extends Controller
                 $presensi->keterangan = $request->keterangan[$presensi->kelassantri_id];
                 $presensi->alasan = $request->alasan[$kelassantri->id];
                 $presensi->save();
-            } else if (in_array($kelassantri->id, $request->keterangan)) {
+            } else if (array_key_exists($kelassantri->id, $request->keterangan)) {
                 $presensi = new Presensi;
                 $presensi->sesi_id = $sesi->id;
                 $presensi->kelassantri_id = $kelassantri->id;
