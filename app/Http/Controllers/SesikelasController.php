@@ -224,6 +224,6 @@ class SesikelasController extends Controller
             ->orderBy('nama_santri')
             ->get();
         $jumlah_hari = request('bulan') ? date('t', strtotime(request('bulan'))) : date('t');
-        return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'kelas' => $kelas, 'jumlah_hari' => $jumlah_hari]);
+        return view('admin/presensi/blangko', ['lisKelas' => $lisKelas, 'kelasSantri' => $kelasSantri, 'data_kelas' => $kelas, 'jumlah_hari' => $jumlah_hari]);
     }
 }

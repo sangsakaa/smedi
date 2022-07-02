@@ -59,7 +59,7 @@
                 <span class=" text-green-800 text-2xl uppercase">Tahun Pelajaran {{ date('Y') }} / 2023</span>
             </div>
             <div class=" grid grid-cols-2">
-                <div>{{ request($kelas->nama_kelas)}}</div>
+                <div>{{ $data_kelas->nama_kelas }}</div>
                 <div class=" grid justify-items-end font-semibold text-2xl">
                     Bulan : <?php
                             $date = date_create(request('bulan'));
