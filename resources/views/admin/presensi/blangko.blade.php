@@ -59,13 +59,13 @@
                 <span class=" text-green-800 text-2xl uppercase semi">Tahun Pelajaran {{ date('Y') }}/2023</span>
             </div>
             <div class=" grid grid-cols-2">
-                <div>{{ $data_kelas?->nama_kelas }}</div>
-                <div class=" grid justify-items-end font-semibold text-2xl">
+                
+                <div class=" flex  content-end  font-semibold text-2xl">
                     Bulan : {{ $bulan->monthName }}
                 </div>
+                <div class=" grid justify-items-end font-semibold text-4xl">{{ $data_kelas?->nama_kelas }}</div>
 
             </div>
-
             <table class=" w-full">
                 <thead>
 
@@ -81,7 +81,7 @@
                     </tr>
                     <tr class="border">
                         @foreach($periodeBulan as $hari)
-                        <th class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-800' : '' }}">{{ $hari->day }}</th>
+                        <th class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-200' : '' }}">{{ $hari->day }}</th>
                         @endforeach
                     </tr>
                 </thead>
@@ -99,7 +99,7 @@
                             {{ $kelassantri->kelas->nama_kelas }}
                         </td>
                         @foreach($periodeBulan as $hari)
-                        <td class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-800' : '' }}"
+                        <td class=" border border-green-800 {{ $hari->isThursday() ? 'bg-green-200' : '' }}"
                             style="width: {{ 70/($periodeBulan->count()+1) }}%"></td>
                         @endforeach
                     </tr>
