@@ -34,14 +34,14 @@
         <div class=" grid grid-cols-1 sm:grid-cols-3 gap-2">
             <input name="kelas_id" type="hidden" value="{{$kelas->id}}" class=" px-1 py-1 rounded-md mr-2">
             <input name="asramasantri_id" class="form-control px-2 py-1 border border-green-800 rounded-md " list="datalistOptions" id="exampleDataList" placeholder="Type to search..." autofocus>
-            <datalist id="datalistOptions">
+            <!-- <datalist id="datalistOptions">
                 <option value="">pilih Anggota Kelas</option>
                 @if( $DataAsrama !== null)
                 @foreach($DataAsrama as $as)
                 <option value="{{$as->id}}">{{$as->santri->nama_santri}}</option>
                 @endforeach
                 @endif
-            </datalist>
+            </datalist> -->
             <button type="submit" class=" bg-green-800 px-1  w-1/4 text-white rounded-md">KELAS</button>
     </form>
     <div class=" grid  justify-end w-full px-2 ">
