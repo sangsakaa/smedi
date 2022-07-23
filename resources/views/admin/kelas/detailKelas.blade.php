@@ -27,14 +27,6 @@
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <div class=" grid  justify-end w-full px-2 ">
-        <a href="/kolektifkelas" class=" py-1 px-4 bg-green-800 text-white rounded-md">
-            Kolektif Kelas
-        </a>
-    </div>
     </div>
     <div class=" bg-gray-50 mt-2">
         <div class="overflow-hidden mb-2 w-full  border shadow-xs">
