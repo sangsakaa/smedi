@@ -52,7 +52,7 @@
                                             </td>
 
                                             <td class="px-4  text-sm ">
-                                                @if ($santri->asrama !== null)
+                                                @if ($santri->santri !== null)
                                                 {{ $santri->santri->jenis_kelamin }}
                                                 @endif
                                             </td>
