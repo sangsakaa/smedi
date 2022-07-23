@@ -120,10 +120,10 @@ class AsramasantriController extends Controller
     {
         $asrama = Asrama::all();
         $kelassantri = Santri::leftJoin('asramasantri', 'santri.id', '=', 'asramasantri.santri_id')
-        ->where('asramasantri.santri_id', '=', null)->orderby('jenis_kelamin')
-        ->orderby('nama_santri')
-        ->orderby('jenis_kelamin')
-        ->orderBy('tanggal_masuk')
+            ->where('asramasantri.santri_id', '=', null)
+            ->orderby('tanggal_masuk')
+            ->orderby('jenis_kelamin')
+            ->orderby('nama_santri')
         ->select('santri.*')->get();
         return view('admin/kelas/listsantri', ['list' => $kelassantri, 'asrama' => $asrama]);
     }
