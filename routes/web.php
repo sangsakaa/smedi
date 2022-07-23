@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SesikelasController;
 use Illuminate\Support\Facades\Route;
 
@@ -95,6 +96,9 @@ Route::middleware('auth')->group(function () {
     ])->parameters([
         'kelas' => 'kelas',
     ]);
+    Route::resource('kelas', KelasController::class)->except([
+        'create', 'store', 'update', 'destroy'
+    ])->parameters(['kelas']);
 
     Route::resource('mapel', App\Http\Controllers\MapelController::class)->only([
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'

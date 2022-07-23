@@ -21,13 +21,13 @@
                             <div class=" bg-red-50  w-2/3 sm:w-full grid grid-cols-1 sm:grid-cols-1">
                                 <table class="w-full  whitespace-no-wrap" id="#myTable">
                                     <thead>
-                                        <tr
-                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b ">
+                                        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b ">
                                             <th class="px-4  py-2"> <input type="checkbox" name="santri[]" id="">
                                             </th>
                                             <th class="px-4  py-2">No</th>
                                             <th class="px-4  py-2">Nama Santri</th>
                                             <th class="px-4  py-2">JK</th>
+                                            <th class="px-4  py-2  text-center">Anggkatan</th>
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y capitalize">
@@ -44,6 +44,13 @@
                                             </td>
                                             <td class="px-4  text-sm ">
                                                 {{ $santri->jenis_kelamin }}
+                                            </td>
+                                            <td class="px-4  text-sm text-center ">
+
+                                                <?php
+                                                $date = date_create($santri->tanggal_masuk);
+                                                echo date_format($date, "Y");
+                                                ?>
                                             </td>
                                         </tr>
                                         @endforeach
