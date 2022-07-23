@@ -21,10 +21,8 @@
                             <div class=" bg-red-50  w-2/3 sm:w-full grid grid-cols-1 sm:grid-cols-1">
                                 <table class="w-full  whitespace-no-wrap" id="#myTable">
                                     <thead>
-                                        <tr
-                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b ">
-                                            <th class="px-4  py-2"> <input type="checkbox" name="santri[]" id=""
-                                                    onclick="toggle(this)">
+                                        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b ">
+                                            <th class="px-4  py-2"> <input type="checkbox" name="santri[]" id="" onclick="toggle(this)">
                                             </th>
                                             <th class="px-4  py-2">No</th>
                                             <th class="px-4  py-2">Nama Santri</th>
@@ -37,14 +35,15 @@
                                         @foreach ($list as $santri)
                                         <tr class="text-gray-700 hover:bg-gray-50">
                                             <td class="px-4 py-1 text-sm ">
-                                                <input type="checkbox" name="asramasantri[]" id=""
-                                                    value="{{$santri->id}}" onclick="uncheckHeader(this)">
+                                                <input type="checkbox" name="asramasantri[]" id="" value="{{$santri->id}}" onclick="uncheckHeader(this)">
                                             </td>
                                             <td class="px-4  text-sm ">
                                                 {{ $loop->iteration }}
                                             </td>
                                             <td class="px-4  text-sm ">
+                                                @if ($santri->santri !== null)
                                                 {{ $santri->santri->nama_santri }}
+                                                @endif
                                             </td>
                                             <td class="px-4  text-sm ">
                                                 @if ($santri->asrama !== null)
@@ -74,18 +73,18 @@
         </div>
     </div>
     <script language="JavaScript">
-    function toggle(source) {
-        checkboxes = document.getElementsByName('asramasantri[]');
-        for (var i = 0, n = checkboxes.length; i < n; i++) {
-            checkboxes[i].checked = source.checked;
+        function toggle(source) {
+            checkboxes = document.getElementsByName('asramasantri[]');
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                checkboxes[i].checked = source.checked;
+            }
         }
-    }
 
-    function uncheckHeader(source) {
-        checkHeader = document.getElementsByName('santri[]');
-        if (!source.checked && checkHeader.checked) {
-            checkHeader.checked = false;
+        function uncheckHeader(source) {
+            checkHeader = document.getElementsByName('santri[]');
+            if (!source.checked && checkHeader.checked) {
+                checkHeader.checked = false;
+            }
         }
-    }
     </script>
 </x-app-layout>
