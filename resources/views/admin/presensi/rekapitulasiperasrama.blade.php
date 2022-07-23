@@ -43,6 +43,7 @@
                         <button class=" bg-green-800 rounded-md px-4 py-1 text-white" type="submit">Cari</button>
                     </form>
                 </div>
+                
             </div>
         </div>
         <div x class=" w-full">
@@ -51,14 +52,14 @@
                 </div>
                 <div id="div1" class=" w-full  bg-white  shadow-xs px-4  ">
                     <img src="images/04.jpg" alt="">
-                    <h1 class=" text-center text-2xl">Daftar Rekapitulasi Presensi Siswa Madin Wustho Wahidiyah</h1>
-                    <h1 class=" text-center text-2xl"></h1>
+                    <h1 class=" text-center text-2xl text-green-800">Laporan Rekapitulasi Presentasi Siswa </h1>
+                    <h2 class=" text-center text-2xl"> Berdasarkan Asrama</h2>
                     </h2>
                     <table class=" w-full  border border-green-80 mt-4 mb-4">
                         <thead>
                             <tr>
-                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">#</th>
-                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">Asrama</th>
+                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">NO</th>
+                                <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 uppercase ">Asrama</th>
                                 <th rowspan="3" class=" text-sm border border-green-800 bg-green-200 ">JML</th>
                                 <th colspan="9" class=" text-sm border border-green-800 bg-green-200 uppercase ">
                                     Keterangan</th>
@@ -96,7 +97,7 @@
                             <tr class=" hover:bg-gray-100 ">
                                 <td class="  py-1 text-sm border border-green-800 text-center">{{$loop->iteration}}
                                 </td>
-                                <td class=" w-1/2  text-sm border border-green-800 text-center">
+                                <td class=" w-1/2 font-semibold text-sm border border-green-800 text-center">
                                     {{ $rekap->nama_asrama }}
                                 </td>
                                 <td class="  text-sm border border-green-800 text-center">

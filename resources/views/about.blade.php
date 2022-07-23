@@ -60,9 +60,10 @@
         </form>
 
     </div>
-
+    <div  class="px-4 py-2 bg-white rounded-lg shadow-xs">
+        {{ $rekap->links() }}
+    </div>
     <div id="div1" class="p-4 bg-white rounded-lg shadow-xs">
-
         <img src="images/04.jpg" alt="">
         <h1 class=" py-2 text-2xl text-center font-semibold  uppercase text-green-800 "> LAPORAN HARIAN
             <hr>
@@ -169,7 +170,7 @@
                     @endif
                 </tbody>
             </table>
-            {{ $rekap->links() }}
+            
             <div class=" mt-4 grid justify-items-end">
                 @if($rekap->count())
                 Kedunglo, {{ $rek->tgl}} <br>
@@ -177,6 +178,8 @@
                 Muh. Bahrul Ulum
                 @endif
             </div>
+            
         </div>
     </div>
+   
 </x-app-layout>
