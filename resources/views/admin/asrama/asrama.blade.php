@@ -68,7 +68,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-1 text-sm ">
+                                    <td class="px-4 py-2 text-sm ">
                                         {{ $loop->iteration }}
                                     </td>
 
