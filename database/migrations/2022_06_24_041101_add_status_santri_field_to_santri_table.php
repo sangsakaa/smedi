@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('santri', function (Blueprint $table) {
-            $table->string('status_santri')->nullable->default('aktif');
+            $table->string('status_santri')->default('aktif');
         });
     }
 
