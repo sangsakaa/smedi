@@ -20,11 +20,12 @@ class SantriController extends Controller
     public function index()
     {
 
-        $cari = Santri::orderBy('tanggal_masuk')->orderBy('nama_santri');
+        $cari = Santri::where('status_santri', 'aktif')->orderBy('nama_santri');
         if (request('cari')) {
             $cari->where('nama_santri', 'like', '%' . request('cari') . '%')
                 ->orWhere('jenis_kelamin', 'like', '%' . request('cari') . '%')
                 ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%')
+            ->orWhere('status_santri', 'like', '%' . request('cari') . '%')
                 ->orderby('tanggal_masuk')
             ->orderBy('nama_santri');
         }
