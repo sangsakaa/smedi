@@ -22,7 +22,8 @@ class AsramaController extends Controller
     {
         $asrama = Asrama::orderBy('ket_asrama');
         if (request('cari')) {
-            $asrama->where('nama_asrama', 'like', '%' . request('cari') . '%')->orderBy('nama_asrama');
+            $asrama->where('nama_asrama', 'like', '%' . request('cari') . '%')
+                ->orderBy('nama_asrama')->orderby('ket_asrama');
         }
         return view('admin/asrama/asrama', ['asrama' => $asrama->paginate(10)]);
     }
