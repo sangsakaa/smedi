@@ -26,8 +26,7 @@ class SantriController extends Controller
                 ->orWhere('jenis_kelamin', 'like', '%' . request('cari') . '%')
                 ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%')
                 ->orderby('tanggal_masuk')
-                ->orderBy('nama_santri')
-                ->where('status_santri', 'aktif');
+            ->orderBy('nama_santri');
         }
         return view('admin/santri/santri', ['listSantri' => $cari->paginate(15)]);
     }
