@@ -167,7 +167,7 @@ class KelasController extends Controller
 
     public function kolektifkelas()
     {
-        $asrama = Kelas::all();
+        $asrama = Kelas::orderby('nama_kelas')->get();
         $kelassantri = Asramasantri::leftJoin('kelassantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
             ->where('kelassantri.asramasantri_id', '=', null)->select('asramasantri.*')->get();
         return view('admin/kelas/kolektifkelas', ['list' => $kelassantri, 'asrama' => $asrama]);
