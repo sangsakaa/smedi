@@ -11,15 +11,11 @@
                 @method('patch')
                 <div class=" grid grid-cols-1 sm:grid-cols-1 w-full sm:w-1/4">
                     <label for="" class=" capitalize mr-2"> Nomor Induk Santri</label>
-                    <input name="nis" type="text" class=" border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk nama Lengkap " value="{{$santri->nis}}" required>
+                    <input name="nis" type="text" class=" border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk nama Lengkap " value="{{$santri->nis}}" required>
                     <label for="" class=" capitalize mr-2"> Nama Lengkap</label>
-                    <input name="nama_santri" type="text"
-                        class=" border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk nama Lengkap " value="{{$santri->nama_santri}}" required>
+                    <input name="nama_santri" type="text" class=" border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk nama Lengkap " value="{{$santri->nama_santri}}" required>
                     <label for="" class=" mr-2"> Jenis Kelamin</label>
-                    <select name="jenis_kelamin" id=""
-                        class="border border-green-800  text-green-800 py-1 px-2  rounded-md  " required>
+                    <select name="jenis_kelamin" id="" class="border border-green-800  text-green-800 py-1 px-2  rounded-md  " required>
                         <option value="">Pilih Jenis Kelamin</option>
                         <option {{old('jenis_kelamin',$santri->jenis_kelamin)=="L"? 'selected':''}} value="L">
                             Laki Laki</option>
@@ -27,31 +23,28 @@
                             Perempuan</option>
                     </select>
                     <label for="" class=" mr-2">Agama </label>
-                    <select name="agama" id="" class="border border-green-800 text-green-800 py-1 px-2  rounded-md"
-                        value="{{$santri->agama}}" required>
+                    <select name="agama" id="" class="border border-green-800 text-green-800 py-1 px-2  rounded-md" value="{{$santri->agama}}" required>
                         <option {{old('agama',$santri->agama)=="Islam"? 'selected':''}} value="Islam">
                             Islam</option>
                     </select>
                     <label for="" class=" mr-2"> Tempat Lahir</label>
-                    <input name="tempat_lahir" type="text"
-                        class=" border border-green-800 text-green-800 py-1 px-2  rounded-md"
-                        placeholder=" Masuk tempat lahir " value="{{$santri->tempat_lahir}}" required>
+                    <input name="tempat_lahir" type="text" class=" border border-green-800 text-green-800 py-1 px-2  rounded-md" placeholder=" Masuk tempat lahir " value="{{$santri->tempat_lahir}}" required>
                     <label for="" class=" mr-2"> Tanggal Lahir </label>
-                    <input name="tanggal_lahir" type="date"
-                        class="border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk tempat lahir " value="{{$santri->tanggal_lahir}}" required>
+                    <input name="tanggal_lahir" type="date" class="border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk tempat lahir " value="{{$santri->tanggal_lahir}}" required>
                     <label for="">Tanggal Masuk</label>
-                    <input name="tanggal_masuk" type="date"
-                        class="border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk tempat lahir " value="{{$santri->tanggal_masuk}}" required>
+                    <input name="tanggal_masuk" type="date" class="border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk tempat lahir " value="{{$santri->tanggal_masuk}}" required>
                     <label for="" class=" mr-2"> Nama Ibu </label>
-                    <input name="nama_ibu" type="text"
-                        class="border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk nama ibu " value="{{$santri->nama_ibu}}" required>
+                    <input name="nama_ibu" type="text" class="border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk nama ibu " value="{{$santri->nama_ibu}}" required>
                     <label for="" class=" mr-2"> Asal Kota </label>
-                    <input name="asal_kota" type="text"
-                        class="border border-green-800 text-green-800 py-1 px-2   rounded-md"
-                        placeholder=" Masuk nama Lengkap " value="{{$santri->asal_kota}}" required>
+                    <input name="asal_kota" type="text" class="border border-green-800 text-green-800 py-1 px-2   rounded-md" placeholder=" Masuk nama Lengkap " value="{{$santri->asal_kota}}" required>
+                    <label for="" class=" mr-2"> Status</label>
+                    <select name="status_santri" id="" class="border border-green-800  text-green-800 py-1 px-2  rounded-md  " required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option {{old('status_santri',$santri->status_santri)=="aktif"? 'selected':''}} value="aktif">
+                            Aktif</option>
+                        <option {{old('status_santri',$santri->status_santri)=="lulus"? 'selected':''}} value="lulus">
+                            Lulus</option>
+                    </select>
                     <div class=" w-full  grid grid-cols-2  gap-2 ">
                         <button class=" mt-1  bg-green-800 py-1 px-1    mb-2 text-white rounded-md">
                             Update

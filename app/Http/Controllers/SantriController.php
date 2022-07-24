@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Histori;
 use App\Models\Historipelanggaran;
-use App\Models\Kelassantri;
 use App\Models\Pelanggaran;
 use App\Models\Presensi;
 use App\Models\Santri;
-use App\Models\Sesikelas;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -24,10 +22,14 @@ class SantriController extends Controller
 
         $cari = Santri::orderBy('tanggal_masuk')->orderBy('nama_santri');
         if (request('cari')) {
-            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')->orderby('tanggal_masuk')->orderBy('nama_santri')
-                ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%');
+            $cari->where('nama_santri', 'like', '%' . request('cari') . '%')
+                ->orWhere('jenis_kelamin', 'like', '%' . request('cari') . '%')
+                ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%')
+                ->orderby('tanggal_masuk')
+                ->orderBy('nama_santri')
+                ->where('status_santri', 'aktif');
         }
-        return view('admin/santri/santri', ['listSantri' => $cari->paginate(200)]);
+        return view('admin/santri/santri', ['listSantri' => $cari->paginate(15)]);
     }
     /**
      * Show the form for creating a new resource.
@@ -66,6 +68,7 @@ class SantriController extends Controller
         $santri->agama = $request->agama;
         $santri->nama_ibu = $request->nama_ibu;
         $santri->asal_kota = $request->asal_kota;
+        $santri->status_santri = $request->status_santri;
         $santri->save();
         return redirect('santri')->with('succes', 'ok');
     }
@@ -169,7 +172,6 @@ class SantriController extends Controller
         ]);
         Santri::where('id', $santri->id)
             ->update([
-
                 'nis' => $request->nis,
                 'nama_santri' => $request->nama_santri,
                 'tempat_lahir' => $request->tempat_lahir,
@@ -178,6 +180,7 @@ class SantriController extends Controller
                 'agama' => $request->agama,
                 'nama_ibu' => $request->nama_ibu,
                 'tanggal_masuk' => $request->tanggal_masuk,
+            'status_santri' => $request->status_santri,
 
             ]);
         return redirect('/santri')->with('success', 'Data Asrama berhasil diperbaharui');

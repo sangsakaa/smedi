@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('kelas/{kelas}', [App\Http\Controllers\KelasController::class, 'kelasstore'])->name('kelas.kelasstore');
     Route::delete('kelas/{kelassantri}', [App\Http\Controllers\KelasController::class, 'hapus']);
+    Route::delete('kelas/{kelas}', [App\Http\Controllers\KelasController::class, 'destroy']);
 
     Route::get('absen/{sesi}', [App\Http\Controllers\SesikelasController::class, 'absen']);
     Route::get('about', [App\Http\Controllers\DashboardController::class, 'rekap']);
@@ -92,7 +93,7 @@ Route::middleware('auth')->group(function () {
         'index', 'edit', 'update', 'show', 'destroy', 'create', 'store'
     ]);
     Route::resource('kelas', App\Http\Controllers\KelasController::class)->only([
-        'index', 'index2', 'edit', 'update', 'show', 'destroy', 'create', 'store',
+        'index', 'index2', 'edit', 'update', 'show'
     ])->parameters([
         'kelas' => 'kelas',
     ]);

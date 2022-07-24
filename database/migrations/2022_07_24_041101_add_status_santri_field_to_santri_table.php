@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('asrama', function (Blueprint $table) {
-            $table->string('ket_asrama');
+        Schema::table('santri', function (Blueprint $table) {
+            $table->string('status_santri')->default('aktif');
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('asrama', function (Blueprint $table) {
+        Schema::table('santri', function (Blueprint $table) {
             //
         });
     }

@@ -81,12 +81,7 @@ class KelasController extends Controller
         $kelas->save();
         return redirect()->back();
     }
-    public function hapus(Kelassantri $kelassantri)
-    {
-        Kelassantri::destroy($kelassantri->id);
-        // dd($kelassantri);
-        return redirect()->back();
-    }
+    
 
     /**
      * Display the specified resource.
@@ -151,13 +146,7 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelas $kelas)
-    {
-        dd($kelas);
-        Kelas::destroy($kelas->id);
-        // dd($kelas);
-        return redirect()->back();
-    }
+    
 
     public function index2()
     {
@@ -184,5 +173,17 @@ class KelasController extends Controller
             $kelassantri->save();
         }
         return redirect('/kelas/' . $request->kelas);
+    }
+    public function hapus(Kelassantri $kelassantri)
+    {
+        Kelassantri::destroy($kelassantri->id);
+        // dd($kelassantri);
+        return redirect()->back();
+    }
+    public function destroy(Kelas $kelas)
+    {
+        Kelas::destroy($kelas->id);
+        // // dd($kelas);
+        return redirect()->back()->with('delete');
     }
 }
