@@ -20,7 +20,7 @@ class AsramaController extends Controller
      */
     public function index()
     {
-        $asrama = Asrama::orderBy('ket_asrama');
+        $asrama = Asrama::orderBy('nama_asrama');
         if (request('cari')) {
             $asrama->where('nama_asrama', 'like', '%' . request('cari') . '%')
             ->orderBy('nama_asrama');
