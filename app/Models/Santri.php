@@ -19,7 +19,7 @@ class Santri extends Model
     protected $table = "santri";
     protected $fillable = ['status_santri'];
     protected $dates = ['created_at', 'updated_at'];
-    protected $timestamps = true;
+    protected $timestamps = false;
 
 
 
