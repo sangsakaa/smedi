@@ -18,7 +18,7 @@ class Santri extends Model
     use HasFactory;
     protected $table = "santri";
     protected $fillable = ['status_santri'];
-    protected $dates = ['created_at'];
+    protected $dates = ['created_at', 'updated_at'];
     protected $timestamps = true;
 
 
