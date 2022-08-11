@@ -25,9 +25,9 @@ class SantriController extends Controller
             $cari->where('nama_santri', 'like', '%' . request('cari') . '%')
                 ->orWhere('jenis_kelamin', 'like', '%' . request('cari') . '%')
                 ->orWhere('tanggal_masuk', 'like', '%' . request('cari') . '%')
-            ->orWhere('status_santri', 'like', '%' . request('cari') . '%')
+                ->orWhere('status_santri', 'like', '%' . request('cari') . '%')
                 ->orderby('tanggal_masuk')
-            ->orderBy('nama_santri');
+                ->orderBy('nama_santri');
         }
         return view('admin/santri/santri', ['listSantri' => $cari->paginate(15)]);
     }
@@ -170,19 +170,16 @@ class SantriController extends Controller
             'nama_ibu' => '',
             'tanggal_masuk' => '',
         ]);
-        Santri::where('id', $santri->id)
-            ->update([
-                'nis' => $request->nis,
-                'nama_santri' => $request->nama_santri,
-                'tempat_lahir' => $request->tempat_lahir,
-                'tanggal_lahir' => $request->tanggal_lahir,
-                'jenis_kelamin' => $request->jenis_kelamin,
-                'agama' => $request->agama,
-                'nama_ibu' => $request->nama_ibu,
-                'tanggal_masuk' => $request->tanggal_masuk,
-            'status_santri' => $request->status_santri,
-
-            ]);
+        $santri->nis = $request->nis;
+        $santri->nama_santri = $request->nama_santri;
+        $santri->tempat_lahir = $request->tempat_lahir;
+        $santri->tanggal_lahir = $request->tanggal_lahir;
+        $santri->jenis_kelamin = $request->jenis_kelamin;
+        $santri->agama = $request->agama;
+        $santri->nama_ibu = $request->nama_ibu;
+        $santri->tanggal_masuk = $request->tanggal_masuk;
+        $santri->status_santri = $request->status_santri;
+        $santri->save();
         return redirect('/santri')->with('success', 'Data Asrama berhasil diperbaharui');
     }
     /**
