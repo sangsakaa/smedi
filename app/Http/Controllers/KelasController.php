@@ -81,7 +81,7 @@ class KelasController extends Controller
         $kelas->save();
         return redirect()->back();
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -101,7 +101,7 @@ class KelasController extends Controller
             ->join('asramasantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
             ->join('santri', 'santri.id', '=', 'asramasantri.santri_id')
             ->orderBy('santri.nama_santri')
-        ->paginate(20);
+            ->paginate(20);
         $dataKelas = Kelas::all();
         return view('admin/kelas/detailKelas', ['list' => $dataAsrama, 'dataSantri' => $dataSantri, 'asrama' => $asrama, 'datakelas' => $dataKelas, 'kelas' => $kelas, 'DataAsrama' => $asramasantri, 'kelasSantri' => $kelasSantri]);
     }
@@ -146,7 +146,7 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    
+
 
     public function index2()
     {
@@ -158,7 +158,8 @@ class KelasController extends Controller
     {
         $asrama = Kelas::orderby('nama_kelas')->get();
         $kelassantri = Asramasantri::leftJoin('kelassantri', 'asramasantri.id', '=', 'kelassantri.asramasantri_id')
-            ->where('kelassantri.asramasantri_id', '=', null)->select('asramasantri.*')->get();
+            ->where('kelassantri.asramasantri_id', '=', null)
+            ->select('asramasantri.*')->get();
         return view('admin/kelas/kolektifkelas', ['list' => $kelassantri, 'asrama' => $asrama]);
     }
 
