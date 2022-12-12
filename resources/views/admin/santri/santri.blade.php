@@ -27,7 +27,7 @@
                             </div>
                             <table class="w-full whitespace-no-wrap">
                                 <thead>
-                                    <tr class="  text-xs font-semibold tracking-wide text-left text-gray-500 capitalize  bg-gray-50 border-b">
+                                    <tr class=" text-xs font-semibold tracking-wide text-left text-gray-500 capitalize  bg-gray-50 border-b">
                                         <th class="px-1 py-2 border text-center ">Aksi</th>
                                         <th class="px-1 py-2 border text-center ">#</th>
                                         <th class="px-1 py-2 border text-center  ">Nomor Induk Siswa</th>
@@ -43,7 +43,7 @@
                                 <tbody class="bg-white divide-y capitalize">
                                     @if($listSantri->count())
                                     @foreach ($listSantri as $s)
-                                    <tr class="text-gray-700 text-xs  hover:bg-gray-50">
+                                    <tr class="text-gray-700 text-xs even:bg-gray-100   hover:bg-gray-50">
                                         <td class=" grid px-1 py-1 text-sm justify-items-center">
                                             <div class=" flex  text-center ">
                                                 <form action="/santri/{{$s->id}}" method="post">

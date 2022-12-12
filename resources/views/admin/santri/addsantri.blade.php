@@ -3,7 +3,7 @@
         {{ __(' Form Tambah Santri') }}
     </x-slot>
     <div class="inline-flex overflow-hidden mb-4 w-full bg-white rounded-lg shadow-md">
-        <div class="flex justify-center items-center w-1  bg-green-800">
+        <div class="flex justify-center items-center w-1  bg-purple-800">
         </div>
         <div class="px-4 py-2 w-full">
             <form action="/santri" method="post">

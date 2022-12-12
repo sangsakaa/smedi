@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('statussantri', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('santri_id');
             $table->string('status');
             $table->timestamps();
         });

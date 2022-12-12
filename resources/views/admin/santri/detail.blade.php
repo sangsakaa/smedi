@@ -30,8 +30,7 @@
                     <div class="overflow-x-auto w-full">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
-                                <tr
-                                    class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800  border-b">
+                                <tr class="text-xs font-semibold tracking-wide text-left text-white uppercase bg-green-800  border-b">
                                     <th class=" px-4 py-3">
                                         Detail Data Santri
                                     </th>
@@ -105,13 +104,15 @@
                 <thead>
                     <tr class=" border">
                         <th class=" text-center">#</th>
-                        <th>Sesi Kelas</th>
-                        <th>Sesi Kelas</th>
+                        <th>Nama</th>
+                        <th>Status siswa</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{ $presensi}}
+
+
+
                 </tbody>
             </table>
         </div>

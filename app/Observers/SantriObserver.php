@@ -29,6 +29,7 @@ class SantriObserver
         if ($santri->status_santri !== $santri->getOriginal('status_santri')) {
             $statussantri = new StatusSantri();
             $statussantri->status = $santri->status_santri;
+            $statussantri->santri_id = $santri->id;
             $statussantri->save();
         }
     }

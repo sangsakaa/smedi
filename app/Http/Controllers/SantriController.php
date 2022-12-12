@@ -7,6 +7,7 @@ use App\Models\Historipelanggaran;
 use App\Models\Pelanggaran;
 use App\Models\Presensi;
 use App\Models\Santri;
+use App\Models\StatusSantri;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -80,10 +81,12 @@ class SantriController extends Controller
      */
     public function show(Santri $santri, Presensi $absen)
     {
-
-
+        $statusSantri = StatusSantri::query()
+            ->leftjoin('santri', 'santri.id', '=', 'statussantri.santri_id')
+            ->select('santri.nama_santri', 'santri.status_santri', 'statussantri.santri_id', 'statussantri.created_at')
+            ->where('santri_id', $santri->id)->first();
         $presensi = Presensi::where('kelassantri_id', $absen->id)->get();
-        return view('admin/santri/detail', ['santri' => $santri, 'presensi' => $presensi]);
+        return view('admin/santri/detail', ['santri' => $santri, 'presensi' => $presensi, 'status' => $statusSantri]);
     }
 
     public function tampilkan(Santri $santri)
